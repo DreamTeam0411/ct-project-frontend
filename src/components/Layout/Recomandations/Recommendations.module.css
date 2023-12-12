@@ -1,9 +1,12 @@
 .recommendations {
-    width: 1245px;
+    max-width: 1366px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-left: 30px;
+    margin-right: 30px;
+    
     margin-bottom: 90px;
 }
 .recommendationsTitle {

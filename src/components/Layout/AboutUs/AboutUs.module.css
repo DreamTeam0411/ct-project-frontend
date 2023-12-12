@@ -1,8 +1,10 @@
 .aboutUsBlock {
-    width: 1245px;
+    max-width: 1366px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left:30px ;
+    margin-right:30px ;
 
 }
 
