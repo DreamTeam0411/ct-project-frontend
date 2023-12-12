@@ -1,9 +1,11 @@
 .footer {
-    width: 1250px;
+    max-width: 1366px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 300px;
+    margin-left:30px ;
+    margin-right:30px ;
     margin-bottom: 100px;
 
 }

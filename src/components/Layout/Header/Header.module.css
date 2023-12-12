@@ -1,15 +1,15 @@
 
 .header {
     display: flex;
-    align-items: center;
+    /* justify-content: center; */
     justify-content: space-between;
     background-color: white;
     height: 86px;
 
     @media screen and (min-width: 1366px) {
-        width: 1366px;
-        margin-left: 10px;
-        margin-right: 10px;}
+       max-width: 1350px;
+        margin-left: 30px;
+        margin-right: 30px;}
     
     
 }

@@ -1,8 +1,10 @@
 .searchByCityBlock {
-    width: 1245px;
+    max-width: 1366px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left:30px ;
+    margin-right:30px ;
     margin-bottom: 200px;
 
 }
