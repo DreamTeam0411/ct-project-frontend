@@ -10,7 +10,9 @@ const Header = ()=> {
 			<div className={styles.header}>
 				<div className={styles.linksBlock}>
 					<div className={styles.logo}>{dataState.logo}</div>
-					<div className={styles.links}>ВСІ СЕРВІСИ</div>
+					<Link to={'/services-all'}>
+						<div className={styles.links}>{'ВСІ СЕРВІСИ'} </div>
+					</Link>
 				</div>
 				<div className={styles.headerButtons}>
 					<input placeholder={'Пошук'}/>

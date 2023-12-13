@@ -5,6 +5,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage.tsx";
 import {SuccessRegistrationPage} from "./pages/SuccessRegistrationPage/SuccessRegistrationPage.tsx";
+import {AllServicesPage} from "./pages/AllServicesPage/AllServicesPage.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
 	{
 		path: '/success',
 		element: <SuccessRegistrationPage/>
+	},
+	{
+		path: '/services-all',
+		element: <AllServicesPage/>
 	}
 ])
 
