@@ -1,21 +1,23 @@
 .categoryBlock {
-    width: 1245px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 90px;
 }
+
 .categoryTitleBlock {
-    width: 1245px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
     align-items: center;
-margin-bottom: 90px;
+    margin-bottom: 90px;
     font-size: 14px;
 }
+
 .categoryTitle {
     display: flex;
     justify-content: center;
@@ -31,10 +33,11 @@ margin-bottom: 90px;
     background: #5B5B5B;
     margin-bottom: 20px;
 }
+
 .description {
-    width: 557px;
+    width: 30%;
     display: inline-block;
-padding: 10px;
+    padding: 10px;
     border-radius: 10px;
     background: #C8C8C8;
 }
