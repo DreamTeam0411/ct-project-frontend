@@ -1,5 +1,6 @@
 import styles from './AboutUs.module.css'
 import useFetchData from "../../../stores/fetchData.tsx";
+import {Button} from "../../UI/buttons/Button/Button.tsx";
 
 const AboutUs = () => {
 	const dataState = useFetchData(state => state.data)
@@ -17,7 +18,7 @@ const AboutUs = () => {
 						<div className={styles.description}>{el.description}</div>
 						<div className={styles.description}>{el.description}</div>
 						<div className={styles.button}>
-							<img src="/Button.svg" alt="button"/>
+							<Button children={'Детальніше'}/>
 						</div>
 					</div>
 				</div>
