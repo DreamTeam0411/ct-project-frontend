@@ -7,7 +7,7 @@
     align-items: center;
     border-radius: 12px;
     background: #5B5B5B;
-    max-width: 142px;
+    max-width: 100%;
     color: #FFFFFF ;
     cursor: pointer;
 }
