@@ -9,7 +9,9 @@ const Header = ()=> {
 	return (<div className={styles.headerBlock}>
 			<div className={styles.header}>
 				<div className={styles.linksBlock}>
-					<div className={styles.logo}>{dataState.logo}</div>
+					<Link to={'/'}>
+						<div className={styles.logo}>{dataState.logo}</div>
+					</Link>
 					<Link to={'/services-all'}>
 						<div className={styles.links}>{'ВСІ СЕРВІСИ'} </div>
 					</Link>
