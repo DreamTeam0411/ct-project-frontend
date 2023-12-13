@@ -1,13 +1,12 @@
 .faqBlock {
-    width: 90%;
+    width: 1245px;
     display: flex;
     flex-direction: column;
-
-    margin: auto auto 90px;
+    margin-bottom: 90px;
 }
 
 .title {
-    max-width: 20%;
+    width: 278.473px;
     height: 30px;
     border-radius: 50px;
     background: #5B5B5B;
@@ -23,12 +22,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
 }
 .questionsBlock {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     flex-wrap: wrap;
-    font-family: Inter;
 }
