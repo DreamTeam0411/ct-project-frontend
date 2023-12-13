@@ -1,6 +1,7 @@
 import styles from './Header.module.css'
 import {Link} from "react-router-dom";
-import useFetchData, {Links} from "../../../stores/fetchData.tsx";
+import useFetchData from "../../../stores/fetchData.tsx";
+import {Button} from "../../UI/buttons/Button/Button.tsx";
 const Header = ()=> {
 	const dataState = useFetchData(state => state.data)
 
@@ -9,18 +10,12 @@ const Header = ()=> {
 			<div className={styles.header}>
 				<div className={styles.linksBlock}>
 					<div className={styles.logo}>{dataState.logo}</div>
-					<ul className={styles.links}>
-						{dataState && dataState.links.map((link: Links, index:number) => (
-							<li key={index}><a href={`${link.link}`}>{link.title}</a></li>
-						))}
-
-					</ul>
+					<div className={styles.links}>ВСІ СЕРВІСИ</div>
 				</div>
 				<div className={styles.headerButtons}>
-					<Link to="/login"><button className={styles.loginButton}> Увійти</button></Link>
+					<Link to="/login"><Button children={'Увійти'}/></Link>
 					<div className={styles.buttonBusiness}>
-						<img src="/Button.svg" alt="button"/>
-						<div className={styles.buttonText}>Для бізнесу</div>
+						<Button children={'Для бізнесу'} />
 					</div>
 
 				</div>

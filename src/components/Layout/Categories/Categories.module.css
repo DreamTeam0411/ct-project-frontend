@@ -1,21 +1,23 @@
 .categoryBlock {
-    width: 1245px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 90px;
+    margin: auto auto 90px;
 }
+
 .categoryTitleBlock {
-    width: 1245px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
     align-items: center;
-margin-bottom: 90px;
+    margin-bottom: 90px;
     font-size: 14px;
 }
+
 .categoryTitle {
     display: flex;
     justify-content: center;
@@ -25,16 +27,17 @@ margin-bottom: 90px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 640px;
+    width: 40%;
     height: 30px;
     border-radius: 50px;
     background: #5B5B5B;
     margin-bottom: 20px;
 }
+
 .description {
-    width: 557px;
+    width: 30%;
     display: inline-block;
-padding: 10px;
+    padding: 10px;
     border-radius: 10px;
     background: #C8C8C8;
 }
@@ -45,7 +48,7 @@ padding: 10px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 1440px;
+    width: 100%;
 
 
 }

@@ -1,0 +1,11 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 31px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #5B5B5B;
+    max-width: 142px;
+}

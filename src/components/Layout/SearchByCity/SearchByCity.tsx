@@ -5,9 +5,8 @@ const SearchByCity = () => {
 	return (<div className={styles.searchByCityBlock}>
 			<div className={styles.titleContent}>
 				<div className={styles.title}>
-					<div className={styles.titleContent}>
-						Пошук по містах
-					</div>
+					Пошук по містах
+
 				</div>
 			</div>
 

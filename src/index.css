@@ -2,7 +2,10 @@
 
 
 }
+* {
 
+
+}
 /* Указываем box sizing */
 *,
 *::before,
@@ -36,10 +39,15 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
+
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    max-width: 100%;
+    font-family: Inter;
+
+
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/

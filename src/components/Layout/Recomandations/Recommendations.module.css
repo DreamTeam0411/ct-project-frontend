@@ -1,10 +1,10 @@
 .recommendations {
-    width: 1245px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 90px;
+    margin: auto auto 120px;
 }
 .recommendationsTitle {
     width: 278.473px;
@@ -21,4 +21,8 @@
 .cards {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
 }

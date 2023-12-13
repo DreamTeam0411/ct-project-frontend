@@ -6,7 +6,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 255px;
-    height: 13px;
+    min-width: 255px;
+    height: 20px;
     padding-left: 30px;
+   display: flex;
+    align-items: center;
+    font-family: Inter;
 }
