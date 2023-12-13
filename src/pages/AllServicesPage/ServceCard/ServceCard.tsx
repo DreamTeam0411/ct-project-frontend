@@ -8,7 +8,7 @@ export const ServiceCard = () => {
 				<div className={styles.cardImg}>
 					<div className={styles.rating}>
 						<div className={styles.cardStarsNumber}>
-							<img src="../../../../public/Star%201.svg" alt=""/>
+							<img src="../../../../public/star.svg" alt="star"/>
 							5.0</div>
 						<div className={styles.cardRatingNumber}>35 відгуків</div>
 					</div>
