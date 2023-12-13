@@ -107,11 +107,18 @@ display: flex;
     background: #FFF;
 }
 .select select {
-    color: #5B5B5B;
-    font-size: 12px;
+    color: black;
+    font-size: 15px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     outline: none;
     border: none;
  }
+.select select option {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

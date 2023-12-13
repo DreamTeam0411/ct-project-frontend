@@ -50,14 +50,15 @@ export const AllServicesPage = () => {
 							<div className={styles.allServices}>Всі сервіси (350)</div>
 							<button>Ранок</button>
 						</div>
-						<div className={styles.select}><label htmlFor="sorting">Сортувати за:</label><select name="sort" id="sorting">
-							<option value="">Рейтинг</option>
+						<div className={styles.select}>
+							<label htmlFor="sorting">Сортувати за:</label>
+							<select name="sort" id="sorting">
+							<option value="">Рекомендовано</option>
 							<option value="rating">Рейтинг</option>
 							<option value="cost">Ціна</option>
 							<option value="daytime">Частина доби</option>
-							<option value=""></option>
-							<option value=""></option>
-						</select></div>
+							</select>
+						</div>
 
 					</div>
 					<div>
