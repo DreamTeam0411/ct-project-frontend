@@ -41,6 +41,18 @@ a {
     margin-left: 31px;
 
 }
+input {
+    width: 219px;
+    height: 35px;
+    border-radius: 12px ;
+    background: #E8E8E8;
+    border-style: none;
+    padding: 10px;
+    outline: none;
+    background: url('../../../../public/Magnifier.svg') no-repeat;
+    background-position: right 5% bottom 45%;;
+    background-color: #E8E8E8;
+}
 
 
 .headerButtons {
