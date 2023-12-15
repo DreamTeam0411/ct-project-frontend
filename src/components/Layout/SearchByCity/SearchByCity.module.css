@@ -42,8 +42,8 @@
 .cities {
     display: flex;
     width: 100%;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
 
