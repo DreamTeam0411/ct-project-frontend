@@ -1,7 +1,7 @@
 import styles from './RegistrationPage.module.css'
-import {Link} from "react-router-dom";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {RegistrationForm} from "./RegistrationPageTypes.tsx";
+import Header from "../../components/Layout/Header/Header.tsx";
 
 
 const RegistrationPage = () => {
@@ -14,7 +14,10 @@ const RegistrationPage = () => {
 
 	}
 
-	return (<div className={styles.registrationForm}>
+	return (
+		<div>
+			<Header/>
+		<div className={styles.registrationForm}>
 			<h2>Реєстрація</h2>
 			<form className={styles.form} onSubmit={handleSubmit(submit)}>
 				<label htmlFor="name">Ім'я</label>
@@ -84,7 +87,8 @@ const RegistrationPage = () => {
 				</div>
 
 			</form>
-			<Link to='/'> ← На головну</Link>
+
+		</div>
 		</div>
 	)
 }

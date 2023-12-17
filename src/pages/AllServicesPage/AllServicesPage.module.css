@@ -51,50 +51,229 @@
     margin: 0 auto;
     display: flex;
     gap: 40px;
+    align-content: space-between;
+    font-size: 20px;
+
 }
 
 .filtersBlock {
-    width: 300px;
-    height: 699px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 700px;
     border-radius: 24px;
     border: 1px solid #E8E8E8;
     background: #FFF;
+    padding: 20px 25px;
+    gap: 25px;
+}
+
+.titleFilterBlock {
+    width: 100%;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}
+
+.titleFilterBlock::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: .2px solid #E8E8E8;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 219px;
+    height: 35px;
+    border-radius: 12px;
+    background: #E8E8E8;
+    border-style: none;
+    outline: none;
+    background: url('../../../public/pin.svg') no-repeat;
+    background-position: left 5% bottom 45%;
+    background-color: #E8E8E8;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 5px;
+    padding: 10px 10px 10px 35px;
+}
+
+.input::placeholder {
+    color: #C8C8C8;
+
+
+}
+
+.searchCityBlock {
+    width: 100%;
+    padding-bottom: 20px;
+    color: #000;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}
+
+.searchCityTitle {
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.searchCityBlock::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: .2px solid #E8E8E8;
 }
 
 .servicesBlock {
     width: 100%;
-
     display: flex;
     flex-direction: column;
+    justify-content: start;
     align-items: start;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
 }
 
+
+.subCategoriesBlockTitle {
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 20px;
+}
+
+.subCategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    width: fit-content;
+
+}
+.subCategoriesBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}
+.subCategoriesBlock::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: .2px solid #E8E8E8;
+}
+
+.priceBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}
+.priceBlock::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: .2px solid #E8E8E8;
+}
+.priceBlockTitle {
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 20px;
+}
 .contentHeadBlock {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 30px;
 }
+
 .contentHead {
-display: flex;
+    display: flex;
     flex-direction: column;
     gap: 30px;
 
 }
+
 .allServices {
     color: #000;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
+
+.serviceCardList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
 .contentHead button {
     border: none;
     border-radius: 12px;
     background: #E8E8E8;
     width: 109px;
     height: 35px;
+    font-size: 18px;
 }
+
 .select {
     display: flex;
     justify-content: center;
@@ -103,22 +282,29 @@ display: flex;
     padding: 10px;
     border-radius: 24px;
     border: 1px solid #E8E8E8;
-
+    font-size: 14px;
     background: #FFF;
 }
+
 .select select {
     color: black;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     outline: none;
     border: none;
- }
+}
+
 .select select option {
     color: #000;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.filterButton {
+    width: 100%;
+    font-size: 15px;
 }

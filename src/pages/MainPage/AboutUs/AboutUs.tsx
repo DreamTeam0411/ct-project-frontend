@@ -1,6 +1,6 @@
 import styles from './AboutUs.module.css'
 import useFetchData from "../../../stores/fetchData.tsx";
-import {Button} from "../../UI/buttons/Button/Button.tsx";
+import {Button} from "../../../components/UI/buttons/Button/Button.tsx";
 
 const AboutUs = () => {
 	const dataState = useFetchData(state => state.data)

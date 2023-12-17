@@ -17,7 +17,7 @@ const Header = ()=> {
 					</Link>
 				</div>
 				<div className={styles.headerButtons}>
-					<input placeholder={'Пошук'}/>
+					<div className={styles.input}>Пошук</div>
 					<Link to="/login"><Button children={'Увійти'}/></Link>
 					<div className={styles.buttonBusiness}>
 						<Button children={'Для бізнесу'} />

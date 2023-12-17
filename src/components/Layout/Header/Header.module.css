@@ -56,13 +56,14 @@ a {
 
 }
 
-input {
+.input {
     width: 219px;
     height: 35px;
     border-radius: 12px;
     background: #E8E8E8;
     border-style: none;
     padding: 10px;
+    color: #8f8d8d;
     outline: none;
     background: url('../../../../public/Magnifier.svg') no-repeat;
     background-position: right 5% bottom 45%;;

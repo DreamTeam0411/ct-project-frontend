@@ -2,6 +2,7 @@ import styles from './LoginPage.module.css'
 import {Link} from "react-router-dom";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {RegistrationForm} from "../RegistrationPage/RegistrationPageTypes.tsx";
+import Header from "../../components/Layout/Header/Header.tsx";
 
 
 const LoginPage = () => {
@@ -13,7 +14,10 @@ const LoginPage = () => {
 		window.location.href = '/'
 
 	}
-	return (<div className={styles.loginForm}>
+	return (
+		<div>
+			<Header/>
+		<div className={styles.loginForm}>
 			<h2>Логін</h2>
 		<form action="" className={styles.form} onSubmit={handleSubmit(submit)}>
 			<label htmlFor="email">Логін</label>
@@ -46,6 +50,8 @@ const LoginPage = () => {
 				<Link to={'/registration'}>Зареєструватись</Link>
 			</div>
 		</div>
+		</div>
+
 
 	)
 }
