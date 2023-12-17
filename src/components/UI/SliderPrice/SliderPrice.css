@@ -10,12 +10,14 @@
     top: 20px;
     height: 15px;
     background: #8f8d8d;
+    border-radius: 20px;
 
 }
 
 .example-track.example-track-0 {
     background: #5B5B5B;
     border-radius: 20px ;
+
 }
 
 .example-track.example-track-1 {
@@ -26,23 +28,20 @@
     border-radius: 20px ;
 }
 .example-thumb {
-    top:12px;
+    top:13px;
     line-height: 35px;
-    text-align: center;
     cursor: pointer;
     border-radius: 20px;
     box-sizing: border-box;
-    font-size: 15px;
     width: 30px;
     height: 30px;
     flex-shrink: 0;
     background:#5B5B5B;
-    transition-duration: 1s;
 
 }
 .example-thumb:focus {
     outline: 0;
-    border:none;
+
 }
 .example-thumb:hover {
     transform: scale(1.1);
