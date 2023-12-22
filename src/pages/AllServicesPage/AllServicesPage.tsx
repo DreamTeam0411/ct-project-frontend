@@ -4,6 +4,7 @@ import {ServiceCard} from "./ServceCard/ServceCard.tsx";
 import {SubCategoryUI} from "../../components/UI/SubCategoryUI/SubCategoryUI.tsx";
 import {SliderPrice} from "../../components/UI/SliderPrice/SliderPrice.tsx";
 import {Button} from "../../components/UI/buttons/Button/Button.tsx";
+import Footer from "../../components/Layout/Footer/Footer.tsx";
 
 export const AllServicesPage = () => {
 	return (
@@ -102,17 +103,13 @@ export const AllServicesPage = () => {
 						<ServiceCard/>
 						<ServiceCard/>
 						<ServiceCard/>
-						<ServiceCard/>
-						<ServiceCard/>
-						<ServiceCard/>
-						<ServiceCard/>
-						<ServiceCard/>
-						<ServiceCard/>
+
 					</div>
 
 				</div>
 
 			</div>
+			<Footer/>
 		</div>
 	)
 }

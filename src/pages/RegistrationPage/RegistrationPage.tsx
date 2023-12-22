@@ -2,6 +2,7 @@ import styles from './RegistrationPage.module.css'
 import {SubmitHandler, useForm} from "react-hook-form";
 import {RegistrationForm} from "./RegistrationPageTypes.tsx";
 import Header from "../../components/Layout/Header/Header.tsx";
+import Footer from "../../components/Layout/Footer/Footer.tsx";
 
 
 const RegistrationPage = () => {
@@ -89,6 +90,7 @@ const RegistrationPage = () => {
 			</form>
 
 		</div>
+			<Footer/>
 		</div>
 	)
 }

@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {RegistrationForm} from "../RegistrationPage/RegistrationPageTypes.tsx";
 import Header from "../../components/Layout/Header/Header.tsx";
+import Footer from "../../components/Layout/Footer/Footer.tsx";
 
 
 const LoginPage = () => {
@@ -50,6 +51,7 @@ const LoginPage = () => {
 				<Link to={'/registration'}>Зареєструватись</Link>
 			</div>
 		</div>
+			<Footer/>
 		</div>
 
 
