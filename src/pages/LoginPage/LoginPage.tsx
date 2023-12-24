@@ -6,6 +6,7 @@ import Header from "../../components/Layout/Header/Header.tsx";
 import Footer from "../../components/Layout/Footer/Footer.tsx";
 
 
+
 const LoginPage = () => {
 	const {register, reset, handleSubmit, formState: {errors, isValid}} = useForm<RegistrationForm>({mode: "onChange"})
 	const submit: SubmitHandler<RegistrationForm> = () => {

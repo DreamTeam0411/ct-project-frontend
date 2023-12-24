@@ -10,4 +10,12 @@
     max-width: 100%;
     color: #FFFFFF ;
     cursor: pointer;
+    transition-duration: 0.5s;
+    border: 1px solid   #5B5B5B;
+}
+.button:hover {
+    color: #222b32;
+    border: 1px solid   black;
+    background: #F1F1F1;
+    transition-duration: 0.5s;
 }
