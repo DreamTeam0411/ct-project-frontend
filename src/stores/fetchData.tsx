@@ -76,7 +76,7 @@ const useFetchData = create<Root>()(persist((set): Root => ({
 
 		},
 		fetchData: async (): Promise<Data> => {
-			const url = 'http://35.158.227.40:86/api/v1/homepage'
+			const url = 'https://ct-project.pp.ua/api/v1/homepage'
 			const response = await axios.get(url)
 			set({data: await response.data.data})
 			return response.data.data

@@ -5,13 +5,14 @@ import {SubCategoryUI} from "../../components/UI/SubCategoryUI/SubCategoryUI.tsx
 import {SliderPrice} from "../../components/UI/SliderPrice/SliderPrice.tsx";
 import {Button} from "../../components/UI/buttons/Button/Button.tsx";
 import Footer from "../../components/Layout/Footer/Footer.tsx";
+import {Link} from "react-router-dom";
 
 export const AllServicesPage = () => {
 	return (
 		<div className={styles.container}>
 			<Header/>
 			<div className={styles.linksBlock}>
-				<div className={styles.breadCrumb}>Головна/Сервіси</div>
+				<div className={styles.breadCrumb}><Link to={'/'}>Головна/Сервіси</Link></div>
 				<div className={styles.serviceListBlock}>
 					<ul className={styles.servicesList}>
 						<li><a href="#">
