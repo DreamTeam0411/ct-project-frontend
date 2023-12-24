@@ -1,10 +1,14 @@
 import styles from './ServceCard.module.css'
 import {Button} from "../../../components/UI/buttons/Button/Button.tsx";
 import {SubCategoryButton} from "../../../components/UI/SubCategoryUI/SubCategoryButton/SubCategoryButton.tsx";
+import {Link} from "react-router-dom";
+
 
 export const ServiceCard = () => {
 	return (
+
 		<div className={styles.container}>
+
 			<div className={styles.cardImgBlock}>
 				<div className={styles.cardImg}>
 					<div className={styles.rating}>
@@ -14,7 +18,7 @@ export const ServiceCard = () => {
 						<div className={styles.cardRatingNumber}>35 відгуків</div>
 					</div>
 				</div>
-				<div className={styles.button}><Button children={"Вибрати і продовжити"}></Button></div>
+				<div className={styles.button}><Link to={'/service'}> <Button children={"Вибрати і продовжити"}></Button></Link></div>
 
 			</div>
 			<div className={styles.cardInformation}>
@@ -27,6 +31,8 @@ export const ServiceCard = () => {
 					<div className={styles.icon}><img src="../../../../public/facebook.svg" alt="facebook"/></div>
 				</div>
 			</div>
+
 		</div>
+
 	)
 }

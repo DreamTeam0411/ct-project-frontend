@@ -16,11 +16,9 @@
     position: absolute;
     bottom: 0;
     content: '';
-
     margin: 0 auto;
     left:80px;
     right: 80px;
-
     border: .2px solid #E8E8E8;
 }
 

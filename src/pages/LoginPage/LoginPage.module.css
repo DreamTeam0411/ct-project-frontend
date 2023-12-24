@@ -1,5 +1,11 @@
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
 
+}
 .loginForm {
     width: 100%;
     display: flex;
@@ -7,7 +13,8 @@
     font-family: Inter;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    height: 55vh;
+
 }
 
 .form {
@@ -15,7 +22,6 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
-    font-family: Inter;
     margin-bottom: 40px;
 
 }

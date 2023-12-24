@@ -16,7 +16,7 @@ const RegistrationPage = () => {
 	}
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<Header/>
 		<div className={styles.registrationForm}>
 			<h2>Реєстрація</h2>

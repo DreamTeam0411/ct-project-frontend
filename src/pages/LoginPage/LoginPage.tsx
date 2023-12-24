@@ -16,7 +16,7 @@ const LoginPage = () => {
 
 	}
 	return (
-		<div>
+		<div className={styles.container}>
 			<Header/>
 		<div className={styles.loginForm}>
 			<h2>Логін</h2>

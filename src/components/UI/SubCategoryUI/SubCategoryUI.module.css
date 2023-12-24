@@ -14,4 +14,10 @@
     color: black;
     width: fit-content;
     cursor: pointer;
+    transition: background 9999999s;
+}
+.subCategory:active  {
+    color: #F1F1F1;
+    background-color: #222b32;
+    transition: background 0s;
 }
