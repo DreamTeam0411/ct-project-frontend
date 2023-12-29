@@ -16,6 +16,8 @@ const LoginPage = () => {
 		window.location.href = '/'
 
 	}
+
+
 	return (
 		<div className={styles.container}>
 			<Header/>
