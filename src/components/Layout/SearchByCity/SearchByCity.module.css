@@ -2,49 +2,24 @@
     max-width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: auto auto 200px;
     flex-wrap: wrap;
-
-}
-
-.titleContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    margin: auto;
-
 }
 
 .title {
-    width: 100%;
-    height: 30px;
-    border-radius: 50px;
-    background: #5B5B5B;
-    margin-bottom: 90px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: 12px;
+    color: var(--black, #21151F);
+    font-size: 32px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
-
-
-
+    margin-bottom: 40px;
 }
-
 
 .cities {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-
+    gap: 17px;
+    height: 400px;
 }
