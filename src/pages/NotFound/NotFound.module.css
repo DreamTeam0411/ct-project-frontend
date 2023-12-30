@@ -1,0 +1,16 @@
+.title{
+    text-align: center;
+    font-size: 150px;
+}
+
+.text{
+    margin: 150px;
+    font-size: 25px;
+} 
+
+.link {
+    display: flex;
+   justify-content: center;
+    font-size: 50px;
+color: black;
+}

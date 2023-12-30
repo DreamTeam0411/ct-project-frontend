@@ -1,13 +1,29 @@
-import styles from './Card.module.css'
-const Card = () => {
-	return (
-		<div className={styles.card}>
-			<div className={styles.image}><img src="/Icon.svg" alt="icon"/></div>
+import React from "react";
 
-			<div className={styles.serviceName}>Назва сервісу</div>
-			<div className={styles.description}>Опис</div>
-			<div className={styles.rate}>Рейтинг</div>
-		</div>
-	)
-}
-export default Card
+import styles from "./Card.module.css";
+import { CardProps } from "./Card.props.ts";
+
+const Card: React.FC<CardProps> = ({
+  image,
+  serviceName,
+  cardCategory,
+  cardAddress,
+  cardTel,
+}) => {
+  return (
+    <div className={styles.card}>
+      <div className={styles.image}>
+        <img src={image} alt="icon" />
+      </div>
+      <div className={styles.serviceName}>
+        {serviceName}{" "}
+        <img src="/Verification.svg" className={styles.serviceNameIcon} />
+      </div>
+      <div className={styles.cardCategory}>{cardCategory}</div>
+      <div className={styles.cardAddress}>{cardAddress}</div>
+      <div className={styles.cardTel}>{cardTel}</div>
+    </div>
+  );
+};
+
+export default Card;

@@ -1,5 +1,5 @@
 .recommendations {
-    width: 90%;
+    width: 1280px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -7,22 +7,20 @@
     margin: auto auto 120px;
 }
 .recommendationsTitle {
-    width: 278.473px;
-    height: 30px;
-    border-radius: 50px;
-    background: #5B5B5B;
-    color: #E8E8E8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 70px;
+    margin-top: 60px;
+    margin-bottom: 32px;
+        
+    color:#21151F;
+    font-family: "Lato", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
 
 }
 .cards {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
