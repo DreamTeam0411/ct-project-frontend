@@ -68,6 +68,8 @@
   width: 38px;
   height: 38px;
   margin-right: 10px;
+  cursor: pointer;
+
   background-color: #e19192;
   border: none;
   border-radius: 50%;

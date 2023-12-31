@@ -1,67 +1,59 @@
-.aboutUsBlock {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto auto 100px;
+.aboutUsContainer {
+  width: 1284px;
+  height: 646px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
-.block {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 60px;
-
+.aboutUsTitle {
+  font-family: "Lato", sans-serif;
+  font-size: 32px;
 }
 
 .aboutUsImage {
-    width: 522px;
-    height: 560px;
-    border-radius: 12px;
-    background: #F1F1F1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 511px;
+  height: 549px;
+  margin-top: 48px;
+  border-radius: 36px;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.aboutUsDescription {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 522px;
-    height: 560px;
-    gap: 20px;
+.aboutUsImageShadow {
+  width: 501px;
+  height: 541px;
+  background-color: #e19192;
+  border-radius: 36px;
+  position: absolute;
+  z-index: -1;
 
+  margin-left: 20px;
+  margin-top: 123px;
 }
 
-.description {
-
-    font-size: 12px;
-    border-radius: 10px;
-    padding: 10px;
-    background: #C8C8C8;
+.aboutUsPromoBlock {
+  width: 648px;
+  height: 382px;
+  margin-left: 130px;
 }
 
-.descriptionBold {
-    width: 500px;
-
-    border-radius: 10px;
-    padding: 10px;
-    background: #5B5B5B;
-    color: #FFF;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+.aboutUsPromo {
+    margin-bottom: 22px;
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  color: #d37677;
 }
 
-.button {
-    width: 132px;
-    height: 41px;
-    margin-top: 30px;
-}
+.aboutUsText {
+    margin-bottom: 45px;
+    line-height: 2.16;
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    color: #000000;
+  }
