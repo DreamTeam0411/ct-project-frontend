@@ -7,28 +7,28 @@ const Recommendations = () => {
       <div className={styles.recommendationsTitle}>Рекомендовано</div>
       <div className={styles.cards}>
         <Card
-          image="/public/hairdresser-4.jpg"
+          image="/hairdresser-4.jpg"
           serviceName={"Архіпова Єлизавета"}
           cardCategory={"Майстер манікюру"}
           cardAddress={"Політехнічна, 15, Львів"}
           cardTel={"050-312-66-55"}
         />
         <Card
-          image="/public/hairdresser-1.jpg"
+          image="/hairdresser-1.jpg"
           serviceName={"Сващенко Ірина"}
           cardCategory={"Косметолог"}
           cardAddress={"Шевченківська, 15, Київ"}
           cardTel={"073-658-86-77"}
         />
         <Card
-          image="/public/hairdresser-2.jpg"
+          image="/hairdresser-2.jpg"
           serviceName={"Волошина Дарина"}
           cardCategory={"Перукар"}
           cardAddress={"Героїв праці, 20, Харків"}
           cardTel={"093-207-67-55"}
         />
         <Card
-          image="/public/hairdresser-3.jpg"
+          image="/hairdresser-3.jpg"
           serviceName={"Андрущевич Ігор"}
           cardCategory={"Масажист"}
           cardAddress={"Перемоги, 100, Дніпро"}
