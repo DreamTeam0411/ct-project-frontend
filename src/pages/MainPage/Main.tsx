@@ -15,7 +15,7 @@ function MainPage() {
 	const [isError, setIsError] = useState(false)
 	const fetchData = useFetchData(state => state.fetchData)
 	const dataState = useFetchData(state => state.data)
-	console.log('render')
+	
 	useEffect(() => {
 		try {
 			setIsLoading(true)
