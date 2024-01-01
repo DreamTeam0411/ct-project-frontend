@@ -5,8 +5,7 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  margin: auto;
-  margin-bottom: 96px;
+  margin: auto auto 96px;
 }
 
 .aboutUsTitle {
