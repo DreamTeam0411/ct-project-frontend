@@ -31,10 +31,10 @@ const Header = () => {
 
 				</div>
 				<div className={styles.headerButtons}>
-
 					<Link to="/login"><Button children={'Увійти'}/></Link>
 					<div className={styles.buttonBusiness}>
-						<Button children={'Для бізнесу'}/>
+						<Link to='/forbusiness'>
+						<Button children={'Для бізнесу'}/></Link>
 					</div>
 
 				</div>

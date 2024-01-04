@@ -9,6 +9,7 @@ import { AllServicesPage } from "./pages/AllServicesPage/AllServicesPage.tsx";
 import { ServicePage } from "./pages/ServicePage/ServicePage.tsx";
 import{NotFoundPage}from "./pages/NotFound/NotFound.tsx";
 import { StrictMode } from "react";
+import {ForBusiness} from "./pages/ForBusiness/ForBusiness.tsx";
 
 const router = createBrowserRouter([
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
     path: "/*",
     element: <NotFoundPage />,
   },
+  {
+    path: '/forbusiness',
+    element:<ForBusiness/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

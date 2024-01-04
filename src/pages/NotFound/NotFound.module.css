@@ -1,16 +1,28 @@
-.title{
+.title {
     text-align: center;
     font-size: 150px;
+    color: var(--pink);
+    margin-top: 100px;
+
 }
 
-.text{
-    margin: 150px;
+.text {
     font-size: 25px;
-} 
+    max-width: 1000px;
+    color: var(--blue);
+}
 
 .link {
     display: flex;
-   justify-content: center;
-    font-size: 50px;
-color: black;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--yellow);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
 }

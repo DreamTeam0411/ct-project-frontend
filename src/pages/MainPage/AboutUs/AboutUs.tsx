@@ -5,7 +5,7 @@ const AboutUs = () => {
     <div className={styles.aboutUsContainer}>
       <h2 className={styles.aboutUsTitle}>Про нас</h2>
       <img src="/aboutUsImg.jpg" alt="women" className={styles.aboutUsImage} />
-      <img src="" alt="" className={styles.aboutUsImageShadow} />
+
       <div className={styles.aboutUsPromoBlock}>
         <h3 className={styles.aboutUsPromo}>
           BeautyBook - твій гід у світі краси!
