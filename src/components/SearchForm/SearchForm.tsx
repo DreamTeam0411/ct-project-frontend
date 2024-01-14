@@ -8,14 +8,15 @@ interface SearchFormProps {
 
 export const SearchForm: React.FC<SearchFormProps> = () => {
   const [inputValue, setInputValue] = useState("");
+  const [inputSelect, setInputSelect] = useState("");
   const navigate = useNavigate();
 
   const addTask = (evt) => {
-    if (inputValue) {
+    if (inputValue||inputSelect) {
       evt.preventDefault();
       console.log(inputValue);
       setInputValue("");
-      navigate(`/services-all?searchForm=${inputValue}`);
+      navigate(`/services-all?serviseQuerry=${inputValue}&cityQuerry=${inputSelect}`);
     } else {
       evt.preventDefault();
       console.log("empty");
@@ -43,26 +44,35 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
           ></input>
           <div className={styles.searchFormDivLine}></div>
           <div className={styles.searchFormSelect}>
-            <select name="select" className={styles.searchFormSelectBox}>
+            <select name="select" className={styles.searchFormSelectBox}
+            onChange={(event) => {
+                setInputSelect(event.target.value);
+
+                console.log(inputSelect);
+                
+              }}
+            >
               <option
                 value=""
                 disabled
                 selected
                 hidden
                 className={styles.searchFormSelectDisabled}
+                
               >
                 Локація
               </option>
-              <option value="value1">Київ</option>
-              <option value="value2">Харків</option>
-              <option value="value3">Одеса</option>
-              <option value="value3">Миколаїв</option>
-              <option value="value3">Хмельницький</option>
-              <option value="value3">Львів</option>
-              <option value="value3">Тернопіль</option>
-              <option value="value3">Рівне</option>
-              <option value="value3">Дніпро</option>
-              <option value="value3">Луцьк</option>
+              <option value="">Всі міста</option>
+              <option value="Київ">Київ</option>
+              <option value="Харків">Харків</option>
+              <option value="Одеса">Одеса</option>
+              <option value="Миколаїв">Миколаїв</option>
+              <option value="Хмельницький">Хмельницький</option>
+              <option value="Львів">Львів</option>
+              <option value="Тернопіль">Тернопіль</option>
+              <option value="Рівне">Рівне</option>
+              <option value="Дніпро">Дніпро</option>
+              <option value="Луцьк">Луцьк</option>
             </select>
           </div>
         </div>
