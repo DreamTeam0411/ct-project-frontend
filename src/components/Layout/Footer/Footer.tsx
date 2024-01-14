@@ -1,10 +1,11 @@
 import styles from './Footer.module.css'
 import {Link} from "react-router-dom";
+import useFetchData from "../../../stores/fetchData.tsx";
 
 
 
-const Footer = ({privacyPolicyLink, termsAndConditionLink}: {privacyPolicyLink:string, termsAndConditionLink:string }) => {
-	console.log(privacyPolicyLink)
+const Footer = () => {
+	const dataState = useFetchData(state => state.data)
 
 	return (
 		<div className={styles.footerContainer}>
@@ -67,8 +68,8 @@ const Footer = ({privacyPolicyLink, termsAndConditionLink}: {privacyPolicyLink:s
 					</div>
 					<div className={styles.footerContactsBlock}>
 						<div className={styles.title}>Документи</div>
-						<div className={styles.docs}><Link target={"_blank"} to={termsAndConditionLink}>Умови використання</Link></div>
-						<div className={styles.docs}><Link target={"_blank"} to={privacyPolicyLink}>Політика конфіденційності</Link></div>
+						<div className={styles.docs}><Link target={"_blank"} to={dataState.footer.termsAndCondition}>Умови використання</Link></div>
+						<div className={styles.docs}><Link target={"_blank"} to={dataState.footer.privacyPolicyLink}>Політика конфіденційності</Link></div>
 					</div>
 				</div>
 			</div>
