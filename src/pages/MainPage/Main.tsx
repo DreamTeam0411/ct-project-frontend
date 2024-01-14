@@ -44,7 +44,7 @@ function MainPage() {
 				<SubCategories/>
 				<AboutUs/>
 				<SearchByCity/>
-				<Footer/>
+				<Footer privacyPolicyLink={dataState.footer.privacyPolicyLink} termsAndConditionLink={dataState.footer.termsAndCondition}/>
 			</div>
 		)
 	else {
