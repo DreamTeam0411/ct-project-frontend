@@ -1,6 +1,6 @@
 import styles from './AllServicesPage.module.css'
 import Header from "../../components/Layout/Header/Header.tsx";
-import {ServiceCard} from "./ServceCard/ServceCard.tsx";
+import {ServiceCard} from "./ServiceCard/ServiceCard.tsx";
 import Footer from "../../components/Layout/Footer/Footer.tsx";
 import {Link} from "react-router-dom";
 
@@ -51,7 +51,7 @@ export const AllServicesPage = () => {
 					<div className={styles.contentHeadBlock}>
 						<div className={styles.contentHead}>
 							<div className={styles.allServices}>Всі сервіси (350)</div>
-							
+
 						</div>
 						<div className={styles.select}>
 							<label htmlFor="sorting">Сортувати за:</label>
