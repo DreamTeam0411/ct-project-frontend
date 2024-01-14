@@ -1,14 +1,17 @@
-.searchByCityBlock {
-    max-width: 1280px;
+.subCategoriesBlock {
+    width: 1280px;
     display: flex;
     flex-direction: column;
     margin: auto auto 200px;
     flex-wrap: wrap;
-    min-height: 200px;
-
+}
+.categories {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
-
 .title {
     color: var(--black, #21151F);
     font-size: 32px;
@@ -16,17 +19,4 @@
     font-weight: 500;
     line-height: normal;
     margin-bottom: 50px;
-}
-
-.cities {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
 }

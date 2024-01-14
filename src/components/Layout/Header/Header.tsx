@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../UI/buttons/Button/Button.tsx";
-import  SearchForm  from "../../SearchForm/SearchForm.tsx";
+import  {SearchForm}  from "../../SearchForm/SearchForm.tsx";
 
 const Header = () => {
   return (

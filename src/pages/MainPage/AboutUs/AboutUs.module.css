@@ -5,8 +5,7 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  margin: auto;
-  margin-bottom: 96px;
+  margin: auto auto 96px;
 }
 
 .aboutUsTitle {
@@ -24,19 +23,18 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  transition-duration: 0.5s;
+    box-shadow:
+            1px 1px var(--pink),
+            2px 2px var(--pink),
+            3px 3px var(--pink),
+            4px 4px var(--pink),
+            5px 5px var(--pink),
+            6px 6px var(--pink),
+            7px 7px var(--pink);
 }
 
-.aboutUsImageShadow {
-  width: 501px;
-  height: 541px;
-  background-color: #e19192;
-  border-radius: 36px;
-  position: absolute;
-  z-index: -1;
 
-  margin-left: 20px;
-  margin-top: 123px;
-}
 
 .aboutUsPromoBlock {
   width: 648px;

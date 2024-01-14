@@ -1,81 +1,49 @@
-.promoContainer {
-    min-width: 320px;
-    max-width: 1440px;
-    height: 307px;
-    margin: auto;
+.searchFormContainer {
+  width: 560px;
+  height: 36px;
+  margin: auto;
+}
+
+.searchForm {
+  display: flex;
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.searchFormButton {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.searchFormInput {
+  width: 390px;
+  font-size: 14px;
+  border: none;
+  outline: none;
   
-   
-    background-position: center;
-    background-repeat: no-repeat;
-  }
   
-  .promoHeader {
-    width: 560px;
-    height: 89px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 25px;
-  
-    font-family: "Vollkorn SC", serif;
-    font-size: 64px;
-    color: #ffffff;
-  }
-  
-  .promoText {
-    width: 491px;
-    height: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35px;
-  
-    font-size: 20px;
-    text-align: center;
-    line-height: 2;
-  
-    font-family: "Lato", sans-serif;
-    font-weight: 500;
-    color: #ffffff;
-  }
-  
-  .promoSearchContainer {
-    margin-top: 55px;
-  }
-  
-  .promoSearch {
-    display: flex;
-    width: 630px;
-    height: 56px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid #ffd12c;
-    border-radius: 30px;
-    background-color: #ffffff;
-  }
-  
-  .promoSearchInput {
-    margin-left: 20px;
-    width: 570px;
-    font-size: 20px;
-    border: none;
-    outline: none;
-  
-    color: #5b5b5b;
-  }
-  
-  .promoSearcButton {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 38px;
-    height: 38px;
-    margin-right: 10px;
-    cursor: pointer;
-  
-    background-color: #e19192;
-    border: none;
-    border-radius: 50%;
-  }
-  
-  .promoSearcButtonImg {
-    color: #ffffff;
-  }
-  
+}
+
+.searchFormDivLine{
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #8f8f98;
+  border: none; 
+  border-right: 1px solid #eaecf0; 
+}
+
+.searchFormSelect {
+  margin: auto 10px;
+}
+.searchFormSelectBox {
+  border: none;
+  outline: none;
+  color: #8f8f98;
+  font-size: 14px;
+}

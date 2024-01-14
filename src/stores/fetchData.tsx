@@ -53,6 +53,8 @@ export interface AboutUsBlock {
 
 export interface Footer {
 	description: string
+	privacyPolicyLink: string
+	termsAndCondition:string
 }
 
 export interface SocialMedia {
@@ -71,7 +73,9 @@ const useFetchData = create<Root>()(persist((set): Root => ({
 			categoriesBlock: {title:'',description:''},
 			categoriesContent: [],
 			aboutUsBlock: [],
-			footer: {description:''},
+			footer: {description:'',
+			privacyPolicyLink: '',
+				termsAndCondition:''},
 			socialMedia: []
 
 		},

@@ -4,6 +4,10 @@
   align-items: flex-start;
   justify-content: center;
   gap: 8px;
+  transition-duration: 0.5s;
+}
+.card:hover {
+  scale: 105%;
 }
 .image {
   width: 305px;

@@ -1,9 +1,10 @@
 import styles from './Footer.module.css'
+import {Link} from "react-router-dom";
 
 
 
-const Footer = () => {
-
+const Footer = ({privacyPolicyLink, termsAndConditionLink}: {privacyPolicyLink:string, termsAndConditionLink:string }) => {
+	console.log(privacyPolicyLink)
 
 	return (
 		<div className={styles.footerContainer}>
@@ -66,8 +67,8 @@ const Footer = () => {
 					</div>
 					<div className={styles.footerContactsBlock}>
 						<div className={styles.title}>Документи</div>
-						<div className={styles.docs}>Умови використання</div>
-						<div className={styles.docs}>Політика конфіденційності</div>
+						<div className={styles.docs}><Link target={"_blank"} to={termsAndConditionLink}>Умови використання</Link></div>
+						<div className={styles.docs}><Link target={"_blank"} to={privacyPolicyLink}>Політика конфіденційності</Link></div>
 					</div>
 				</div>
 			</div>

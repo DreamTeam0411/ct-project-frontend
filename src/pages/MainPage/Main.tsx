@@ -8,6 +8,9 @@ import styles from './Main.module.css'
 import {useEffect, useState} from "react";
 import Loader from "../../components/UI/Loader/Loader..tsx";
 import useFetchData from "../../stores/fetchData.tsx";
+import {SubCategories} from "../../components/Layout/SubCategories/SubCategories.tsx";
+
+
 
 
 function MainPage() {
@@ -15,7 +18,7 @@ function MainPage() {
 	const [isError, setIsError] = useState(false)
 	const fetchData = useFetchData(state => state.fetchData)
 	const dataState = useFetchData(state => state.data)
-	
+
 	useEffect(() => {
 		try {
 			setIsLoading(true)
@@ -38,9 +41,10 @@ function MainPage() {
 				<Header/>
 				<Promo/>
 				<Recommendations/>
+				<SubCategories/>
 				<AboutUs/>
 				<SearchByCity/>
-				<Footer/>
+				<Footer privacyPolicyLink={dataState.footer.privacyPolicyLink} termsAndConditionLink={dataState.footer.termsAndCondition}/>
 			</div>
 		)
 	else {

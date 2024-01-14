@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NotFoundPage = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>404</h1>
+      <h1 className={styles.title}>ERROR 404</h1>
       <p className={styles.text}>
         Sorry, you have reached a page that we could not find. It seems that you
         are lost among the numbers and letters of our virtual space. Perhaps
@@ -13,7 +13,7 @@ export const NotFoundPage = () => {
       </p>
 
       <Link to="/" className={styles.link}>
-        
+
         ← На головну
       </Link>
     </div>
