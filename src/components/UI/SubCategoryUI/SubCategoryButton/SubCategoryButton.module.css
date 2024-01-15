@@ -6,10 +6,11 @@
     padding: 4px 12px;
     align-items: flex-start;
     border-radius: 8px;
-    background: #044AB2;
+    background: var(--blue-dark);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
     color: var(--white);
+    border-style: none;
 }
