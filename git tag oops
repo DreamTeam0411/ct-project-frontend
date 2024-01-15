@@ -1,0 +1,488 @@
+[33mcommit 342bb2b8944d4aba135b81b19befdfde41cdc19f[m[33m ([m[1;36mHEAD -> [m[1;32msearchForm[m[33m, [m[1;33mtag: oops[m[33m, [m[1;31morigin/searchForm[m[33m, [m[1;31morigin/ihor-filter[m[33m, [m[1;32mihor-filter[m[33m)[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Jan 14 20:54:42 2024 +0200
+
+    serachForm
+
+[33mcommit 0e94d9a503af9bb6eef0a2f3299c7a80bc8d8dfc[m
+Merge: f0d74b3 b644c32
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Jan 14 20:21:39 2024 +0200
+
+    Merge branch 'dev' into ihor-filter
+
+[33mcommit f0d74b3626514256103004fcb6d1ccef750ca69e[m
+Merge: 9680057 79c5b11
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Jan 14 20:19:59 2024 +0200
+
+    serchForm
+
+[33mcommit 9680057f659a7a77d0096b529da121f797c6acff[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Jan 14 18:18:58 2024 +0200
+
+    searchForm
+
+[33mcommit b644c32358f90bc0ddf03cac29045d0eae2965f1[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Jan 14 18:14:54 2024 +0200
+
+    Fix: Footer, AllServiceCard
+    Feature:
+
+[33mcommit de88fe37e0e51d7c57b3515e5387848507df79dd[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Jan 14 17:38:44 2024 +0200
+
+    filter fix
+
+[33mcommit fc67ddd83a868acdefea21f787f2b994e19a4231[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Jan 14 16:21:11 2024 +0200
+
+    Fix: State & props
+    Feature:
+
+[33mcommit 79c5b11f6f49610a176b3ea5113d501acf58d066[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Jan 14 16:08:30 2024 +0200
+
+    Fix: AllServicesPage
+    Feature: Add PrivacyPolicy & Terms
+
+[33mcommit 6d3deb15885a499f4927c90604e29902a405652b[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Thu Jan 4 18:12:44 2024 +0200
+
+    Fix: AboutUs, Card, SearchByCity
+    Feature: Add ForBusiness page
+
+[33mcommit 90a7640b39e32ec3809f685f284a6f360b3e3056[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Mon Jan 1 20:11:14 2024 +0200
+
+    Fix: cities fix
+    Feature: Add Categories
+
+[33mcommit 4989bd03bc9cc02a5261cbf5399578f59484bbd0[m
+Merge: 09c5d51 88f08c0
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Sun Dec 31 17:14:45 2023 +0200
+
+    Merge pull request #7 from DreamTeam0411/ihor-about
+    
+    Hotfix: Recommendation
+
+[33mcommit 88f08c046c7734273415ba500ad30b18530b2b8d[m[33m ([m[1;32mihor-about[m[33m)[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Dec 31 17:09:50 2023 +0200
+
+    fif Recomendation
+
+[33mcommit 09c5d51b408fa228eba12e152dd66fd5f87fe492[m
+Merge: e80559a 611627e
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Sun Dec 31 17:05:33 2023 +0200
+
+    Merge pull request #6 from DreamTeam0411/ihor-about
+    
+    Feature: About Сomponent
+
+[33mcommit 611627ee104798ddd2d3d620f57234021b3effe9[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Dec 31 17:02:56 2023 +0200
+
+    about
+
+[33mcommit 389b0a4d333bc62e7e1ca5595328b307b405edf7[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Sun Dec 31 16:56:07 2023 +0200
+
+    About component
+
+[33mcommit e80559aa2a9d756df39326e65f20f91fcc9a839c[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sat Dec 30 04:37:10 2023 +0200
+
+    Fix:
+    Feature: Delete Categories & FAQ
+
+[33mcommit 0dffe8497c0cd4f1e20e93578f7ddb0ba5469fc2[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sat Dec 30 04:24:15 2023 +0200
+
+    Fix:
+    Feature: Add Cities
+
+[33mcommit aa59ed74746f51ee87b0705a1c1a9f00771f81f9[m
+Merge: 562b77b 8320f04
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sat Dec 30 03:52:00 2023 +0200
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+[33mcommit 562b77bdb450a2fc9a0240d3f087cf21c48aefe7[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sat Dec 30 03:51:39 2023 +0200
+
+    Fix:
+    Feature: Add design Header & Footer
+
+[33mcommit 8320f04794913a97f489d687d679ec8bf144f187[m
+Merge: 4631e64 353202a
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Fri Dec 29 22:49:18 2023 +0200
+
+    Merge pull request #5 from DreamTeam0411/ihor-banner
+    
+    Feature: Promo, Recommendation
+
+[33mcommit 353202a5d843e6ac9308326f6a8bc0aa242a9a4b[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Fri Dec 29 22:04:05 2023 +0200
+
+    promo+recomendation
+
+[33mcommit 4631e64de712dae67f08e50a7739853ad38fa0e8[m
+Merge: 8dc3d61 7907a62
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Wed Dec 27 21:44:04 2023 +0200
+
+    Merge pull request #4 from DreamTeam0411/ihor12
+    
+    Page 404
+
+[33mcommit 7907a62e5f64ac812d0ac527999fdbcc61e94d29[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Mon Dec 25 20:05:48 2023 +0200
+
+    ‘notFoundPage’
+
+[33mcommit 8dc3d61cc8da1d4b51b986495875e934c16ee4c0[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 24 20:46:17 2023 +0200
+
+    Fix: buttons
+    Feature:
+
+[33mcommit d01426154646572942ff87e3588fc4103f88f57d[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 24 20:28:03 2023 +0200
+
+    Fix: fetch
+    Feature:
+
+[33mcommit 67911cfbce37d8dfb3d8eafd06c6a59c2a4db3f9[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 24 19:13:59 2023 +0200
+
+    Fix:
+    Feature: create ServicePage
+
+[33mcommit 9d408c18196fbbba6c6db44676c46b4e977e8186[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sat Dec 23 00:25:02 2023 +0200
+
+    Fix: Fetching, Add footer on all pages.
+    Feature: create ServicePage
+
+[33mcommit e88b2670733fbb1b982b440cd6cdacc82bf2f3b2[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 17 20:45:44 2023 +0200
+
+    Fix: Filters
+
+[33mcommit e01b4497b6ebff91b18274160b0a2ec630800318[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 17 20:29:55 2023 +0200
+
+    Feature & Fix: Filters, Header, RegistrationForm, better file management
+
+[33mcommit de8974b7c0403e79432723c152ddfae496cd71aa[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Fri Dec 15 15:02:08 2023 +0200
+
+    Fix: Landing Cities
+
+[33mcommit 76ad146abc2bdebb1784302cacb3906d3b93f4ac[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Fri Dec 15 15:01:03 2023 +0200
+
+    Fix: Landing Cities
+
+[33mcommit 84b4e8433b59edb688c27014fd178c28203f6a0e[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Fri Dec 15 15:00:47 2023 +0200
+
+    Fix: Landing Cities
+
+[33mcommit 8de9efe292eaeaebc43158fdf2a0ce381cbb01b2[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 20:47:11 2023 +0200
+
+    Fix: Landing ServicePage
+
+[33mcommit ec6eb1856d89e3e422bc5d7997d2027afca69d05[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 20:43:18 2023 +0200
+
+    Feature: Landing ServicePage
+
+[33mcommit b4be9a808acaad7b092ecee850fc823e4b568ff7[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 19:02:17 2023 +0200
+
+    Fix: star img
+
+[33mcommit 7d362ea3f58cbb361e8a32a58d79d0dfdbd10a1d[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 18:59:13 2023 +0200
+
+    Feature: Add AllServicesPage & ServiceCard
+
+[33mcommit 6697387ba5c40181ad52f10c8e179e34bc0f967c[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 17:38:51 2023 +0200
+
+    Fix: Header
+
+[33mcommit aa0de15246ced8932e63cdaaf7853efbcf2d4380[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 17:37:29 2023 +0200
+
+    Fix: Header
+
+[33mcommit c0d37158e59e07fa0d3847a832fb60c9f80f79a4[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 17:35:36 2023 +0200
+
+    Fix: Header
+
+[33mcommit ef33e53ad2c785dd854f0024b2a6e54862f83e69[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 17:05:53 2023 +0200
+
+    Add search input in Header
+
+[33mcommit 3ae5bdb8eb91076f5c8d0e57eb77c2f2d5a3baed[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 17:05:45 2023 +0200
+
+    Add search input in Header
+
+[33mcommit cf0c67f732446fbea0aa029df7961dd8e382eb5e[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 16:33:16 2023 +0200
+
+    Fix: responsive HomePage & add default button
+
+[33mcommit b7980242c4579c5f25115f7c510539ab89cf5ce0[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 05:33:39 2023 +0200
+
+    Fix: responsive HomePage
+
+[33mcommit 3a3533f0d18bb7b92082d758c87d98c7cd745e75[m
+Merge: 1cb0688 34d3bf5
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 05:28:18 2023 +0200
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    # Conflicts:
+    #       src/components/Layout/AboutUs/AboutUs.module.css
+    #       src/components/Layout/Categories/Categories.module.css
+    #       src/components/Layout/FAQ/FAQ.module.css
+    #       src/components/Layout/Footer/Footer.module.css
+    #       src/components/Layout/Header/Header.module.css
+    #       src/components/Layout/Recomandations/Recommendations.module.css
+    #       src/components/Layout/SearchByCity/SearchByCity.module.css
+    #       src/pages/MainPage/Main.module.css
+
+[33mcommit 1cb0688924aacabb5193dd2890486dff0bfa0146[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Dec 13 05:26:25 2023 +0200
+
+    Fix: responsive HomePage
+
+[33mcommit 34d3bf5d0be2e77467b063da7f7381c5a8d02ddb[m
+Merge: 939414c b348cd2
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Tue Dec 12 15:00:38 2023 +0200
+
+    Merge pull request #3 from DreamTeam0411/ihor-k-ft-res
+    
+     ihor-k-feature-responsive-home
+
+[33mcommit b348cd2a5f89248b1c79bdbf1fd0a1ddf86219bc[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Tue Dec 12 13:57:52 2023 +0200
+
+     ihor-k-feature-responsive-home
+
+[33mcommit 939414c21873bee95efbb49a379fd5cf93c0b738[m
+Merge: 2d7277f 202571e
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Mon Dec 11 21:26:00 2023 +0200
+
+    Merge pull request #2 from DreamTeam0411/igor-k-feature-responsive-homepage
+    
+    Feature: Responsive Layout 1366px
+
+[33mcommit 202571ebff762ec41e2a76ea2273735fc759365b[m
+Author: IhorKiy <kiyanichenko@ukr.net>
+Date:   Mon Dec 11 20:50:14 2023 +0200
+
+    Feature: Responsive Layout 1366px
+    - Now the layout is adapted for screens larger than 1366px
+
+[33mcommit 2d7277f80f46e3cbb1da853bcea5e9d57f1767e9[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Mon Dec 11 17:05:09 2023 +0200
+
+    fix types
+
+[33mcommit e2f35b1f1bccf7b464c6a6609f7b6a7f3bb142f7[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Mon Dec 11 16:32:49 2023 +0200
+
+    creating state
+
+[33mcommit 5839326501e388cc0780d8f8c99fc1e2fd7810f1[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 10 20:48:42 2023 +0200
+
+    creating state
+
+[33mcommit 9899b6cb7d45696080ac23517eeada2f7467dc72[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 10 15:40:52 2023 +0200
+
+    fix types
+
+[33mcommit 0dc66bb3576f6bd40817e64469018cc6c37a41b7[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 10 15:40:39 2023 +0200
+
+    fix types
+
+[33mcommit e478d8bb92cebeb0258c91f94cfac8dfe8f1af32[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 10 15:35:20 2023 +0200
+
+    fix types
+
+[33mcommit a3ae53ba763db5485db9fea1a99c242fc1fc8850[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 10 14:24:01 2023 +0200
+
+    fix types
+
+[33mcommit 926a9ef33451552da546e9d261a172294caae6b7[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Thu Dec 7 02:04:19 2023 +0200
+
+    add fetch content on HomePage
+
+[33mcommit dcf8d1a581fac79f76b0dd7273bc870121a3cba2[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Tue Dec 5 02:29:42 2023 +0200
+
+    validation form registration & login, creating success page
+
+[33mcommit 04f3665d0aeb7ed17ab917d864f5128ac311c97b[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 3 20:55:29 2023 +0200
+
+    validation form registration & login, creating success page
+
+[33mcommit 0660c0696d132f3458c520c2c71a05a64fb3653c[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 3 20:36:13 2023 +0200
+
+    validation form registration & login, creating success page
+
+[33mcommit 7b5c61b5e4e908ca08c32f87e95fa0a66a5e8b27[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Dec 3 20:36:02 2023 +0200
+
+    validation form registration & login, creating success page
+
+[33mcommit fb2dcd0a3a170de8f1ab93b0aa03b174ba7e8fd8[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Tue Nov 28 20:20:17 2023 +0200
+
+    creating registration and login page. Routing
+
+[33mcommit 5f9fb41ce8998f1404811f0584958b3bf96eda0f[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 22:17:55 2023 +0200
+
+    fix promo size
+
+[33mcommit 65f67a08d5a840cab8e683228d9647ddd35c014c[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 22:10:04 2023 +0200
+
+    fix promo size
+
+[33mcommit 4c7e1b5be6a668ced9001e32db34d90edc74f741[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 22:07:15 2023 +0200
+
+    fix promo size
+
+[33mcommit e86ad6a456b7768fefcf208cf131a0a125590c8e[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 20:48:45 2023 +0200
+
+    landing
+
+[33mcommit 9acb4884c6154d2f3c1412e390de3d54136e0944[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 20:04:33 2023 +0200
+
+    landing
+
+[33mcommit 77bdda2d5d20954560033e0866451c8042d5d326[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Sun Nov 26 17:10:01 2023 +0200
+
+    landing header & promo
+
+[33mcommit 31deb0eeaa0805fdb863a3ba32c0016d44b5c326[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Fri Nov 24 18:39:39 2023 +0200
+
+    marking and create structure
+
+[33mcommit 152ab40d3cd9189557748d095e5cf2416b3d141c[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Fri Nov 24 17:14:40 2023 +0200
+
+    clearing project
+
+[33mcommit 1dacca4d3d6da3ff30875322d2e5bdc3e31f221a[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Nov 22 19:03:56 2023 +0200
+
+    clearing project
+
+[33mcommit fa14e2642cffd2b626ad384accc944b81c582781[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Nov 22 18:04:33 2023 +0200
+
+    clearing project
+
+[33mcommit 599b004911ab1dc0fc8213ed9f15da4482f47e93[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Yaroslav Sokolyansky <93289052+Sokolyanskyi@users.noreply.github.com>
+Date:   Wed Nov 22 17:14:06 2023 +0200
+
+    react installation
+
+[33mcommit ad7c9afdaa10b2ee0345fd3027de421fd5f3a081[m
+Author: DreamTeam0411 <150288131+DreamTeam0411@users.noreply.github.com>
+Date:   Sun Nov 19 22:31:40 2023 +0200
+
+    Initial commit
