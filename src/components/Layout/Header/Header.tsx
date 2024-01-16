@@ -47,9 +47,9 @@ const Header = () => {
 
 
         <div className={styles.headerButtons}>
-          <Link to="/login">
+          {/* <Link to="/login">
             <Button children={"Увійти"} />
-          </Link>
+          </Link> */}
           <div className={styles.buttonBusiness}>
             <Link to="/forbusiness">
               <Button children={"Для бізнесу"} />
