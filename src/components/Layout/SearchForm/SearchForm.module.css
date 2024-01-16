@@ -1,0 +1,50 @@
+.searchFormContainer {
+    width: 560px;
+    height: 36px;
+    margin: auto;
+  }
+  
+  .searchForm {
+    display: flex;
+    border: 1px solid #eaecf0;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+  
+  .searchFormButton {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .searchFormInput {
+    width: 390px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    
+    
+  }
+  
+  .searchFormDivLine{
+    width: 20px;
+    height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #8f8f98;
+    border: none; 
+    border-right: 1px solid #eaecf0; 
+  }
+  
+  .searchFormSelect {
+    margin: auto 10px;
+  }
+  .searchFormSelectBox {
+    border: none;
+    outline: none;
+    color: #8f8f98;
+    font-size: 14px;
+  }
+  
