@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
+
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchForm.module.css";
 
@@ -11,7 +12,9 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
   const [inputCity, setInputCity] = useState("");
   const navigate = useNavigate();
 
-  const addTask = (evt) => {
+  const addTask = (evt:MouseEvent) => {
+    console.log(typeof evt);
+    
     if (inputValue) {
       evt.preventDefault();
       console.log(inputValue);
