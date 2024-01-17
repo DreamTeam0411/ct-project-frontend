@@ -1,24 +1,25 @@
 import styles from './ServiceCard.module.css'
 import {SubCategoryButton} from "../../../components/UI/SubCategoryUI/SubCategoryButton/SubCategoryButton.tsx";
+import {DataAllMasters} from "../../../stores/fetchAllMasters.tsx";
 
 
-export const ServiceCard = () => {
+export const ServiceCard = (props:DataAllMasters) => {
 	return (
 
 		<div className={styles.container}>
 			<div className={styles.mainPart}>
 				<div className={styles.cardImgBlock}>
-					<div className={styles.cardImg}>
-					</div>
+
+						<img src={'/master.png'} alt="master-photo"/>
+
 				</div>
 				<div className={styles.cardInformation}>
-					<div className={styles.cardCategory}>{<SubCategoryButton children={'Манікюр'}/>}</div>
+					<div className={styles.cardCategory}>{<SubCategoryButton children={props.category.title}/>}</div>
 					<div className={styles.mainInformation}>
-						<div className={styles.cardTitle}>Косяненко Ангеліна</div>
-						<div className={styles.cardProfession}>Майстер манікюру</div>
-						<div className={styles.cardAddress}>Політехнічна 15, Львів</div>
-						<div className={styles.cardDescription}>Привіт усім! Мене звуть Наталя, я - досвідчений майстер
-							манікюру та педикюру. запрошую вас - у затишний салон в самому центрі міста.
+						<div className={styles.cardTitle}>{props.user.firstName} {props.user.lastName}</div>
+						<div className={styles.cardProfession}>{props.title}</div>
+						<div className={styles.cardAddress}>{props.city.name}</div>
+						<div className={styles.cardDescription}>{props.description}
 						</div>
 					</div>
 					<div className={styles.social}>

@@ -7,17 +7,18 @@
     margin-bottom: 100px;
 }
 .linksBlock {
-    margin-top: 20px;
-    margin-left: 80px;
+    margin: 0 auto;
+    width: 90%;
     display: flex;
     height: 100px;
     flex-direction: column;
-    gap: 35px;
+    gap: 25px;
+
 }
 
 .breadCrumb a {
     color: #5B5B5B;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -37,16 +38,37 @@
     display: flex;
     width: fit-content;
     gap: 10px;
-    color: #000;
-    font-size: 12px;
+    color: var(--gray);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    padding: 4px 12px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 500;
+    line-height: 20px;
     cursor: pointer;
+    transition-duration: .5s;
 }
 .servicesList li a:active, .servicesList li a:focus {
-    font-weight: bold;
-    outline: none;
+    color: var(--blue-dark);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    border-bottom: 1px solid var(--blue-dark);
+    display: flex;
+    padding-bottom: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.servicesList li a:hover {
+    background: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 8px;
 }
 .numberService {
     color: #5B5B5B;

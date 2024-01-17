@@ -1,23 +1,19 @@
 .button {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 10px 36px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 18px;
-    background: var(--blue);
-    font-size: 14px;
-    font-weight: 500;
-    max-width: 100%;
-    color: #FFFFFF ;
+    padding: 8px 24px;
     cursor: pointer;
     transition-duration: 0.5s;
-    border: 1px solid   var(--blue);
+    border-radius: 8px;
+    background: var(--pink);
+    color: var(--blue-dark);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
 }
 .button:hover {
     color: var(--blue);
-    border: 1px solid   var(--blue);
     background: #F1F1F1;
     transition-duration: 0.5s;
 }

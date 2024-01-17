@@ -2,12 +2,12 @@ import {create} from "zustand";
 import axios from "axios";
 import {persist} from "zustand/middleware";
 
-export interface Root {
+ interface Root {
 	data: Data
 	fetchData: () => Promise<Data>
 }
 
-export interface Data {
+ interface Data {
 	logo: string
 	links: Links[]
 	header: Header
@@ -18,46 +18,46 @@ export interface Data {
 	socialMedia: SocialMedia[]
 }
 
-export interface Links {
+ interface Links {
 	title: string
 	link: string
 }
 
-export interface Header {
+ interface Header {
 	title: string
 	description: string
 }
 
-export interface CategoriesBlock {
+ interface CategoriesBlock {
 	title: string
 	description: string
 }
 
-export interface CategoriesContent {
+ interface CategoriesContent {
 	title: string
 	icon: string
 	slug: string
 	subcategories: Subcategory[]
 }
 
-export interface Subcategory {
+ interface Subcategory {
 	title: string
 	slug: string
 }
 
-export interface AboutUsBlock {
+ interface AboutUsBlock {
 	title: string
 	description: string
 	image: string
 }
 
-export interface Footer {
+ interface Footer {
 	description: string
 	privacyPolicyLink: string
 	termsAndCondition:string
 }
 
-export interface SocialMedia {
+ interface SocialMedia {
 	title: string
 	link: string
 	icon: string

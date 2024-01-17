@@ -28,11 +28,9 @@ a {
 }
 
 .logo {
-    color: #5B5B5B;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+
+    width: 112px;
+    height: 15px;
 
 }
 
