@@ -21,7 +21,7 @@ const Header = () => {
           </Link>
         </div>
 
-          <div><SearchForm/></div>
+          <div className={styles.searchForm}><SearchForm/></div>
 
 
           <div className={styles.headerButtons}>

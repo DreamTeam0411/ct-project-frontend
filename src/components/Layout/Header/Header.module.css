@@ -57,7 +57,9 @@ a {
     background-position: right 5% bottom 45%;;
     background-color: #E8E8E8;
 }
-
+.searchForm {
+    margin-top: 12px;
+}
 
 .headerButtons {
     display: flex;

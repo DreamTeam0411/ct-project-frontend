@@ -19,7 +19,7 @@ export const ServiceCard = (props:DataAllMasters) => {
 						<div className={styles.cardTitle}>{props.user.firstName} {props.user.lastName}</div>
 						<div className={styles.cardProfession}>{props.title}</div>
 						<div className={styles.cardAddress}>{props.city.name}</div>
-
+						<div className={styles.phoneNumber}>{props.user.phoneNumber}</div>
 						<div className={styles.cardDescription}>{props.description}
 						</div>
 					</div>

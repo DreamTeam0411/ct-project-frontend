@@ -76,6 +76,14 @@
     font-weight: 400;
     line-height: normal;
 }
+.phoneNumber {
+    color: var(--gray);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
 
 .cardCategory {
     font-size: 14px;
@@ -127,6 +135,7 @@
 .button:hover {
     background-color: var(--blue-dark);
     color: var(--white);
+    cursor: pointer;
 }
 
 .rating {

@@ -27,7 +27,7 @@ export const AllServicesPage = () => {
 
 
 	}, []);
-	console.log(dataState)
+
 
 	if (isLoading) return <Loader/>
 	if (Object.keys(dataState).length !== 0 && !isError)

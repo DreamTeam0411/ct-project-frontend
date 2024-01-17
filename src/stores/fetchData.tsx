@@ -74,8 +74,7 @@ const useFetchData = create<Root>()(persist((set): Root => ({
 			categoriesContent: [],
 			aboutUsBlock: [],
 			footer: {description:'',
-			privacyPolicyLink: '',
-				termsAndCondition:''},
+			privacyPolicyLink: '', termsAndCondition:''},
 			socialMedia: []
 
 		},

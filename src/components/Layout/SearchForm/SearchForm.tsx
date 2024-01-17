@@ -6,14 +6,14 @@ interface SearchFormProps {}
 
 export const SearchForm: React.FC<SearchFormProps> = () => {
   const [searchParams] = useSearchParams();
-  const categorie = searchParams.get("categorie");
+  const category = searchParams.get("category");
   const city = searchParams.get("city");
 
-  const [inputValue, setInputValue] = useState(categorie || "");
+  const [inputValue, setInputValue] = useState(category || "");
   const [inputCity, setInputCity] = useState(city || "");
   const navigate = useNavigate();
 
-  console.log(categorie, city);
+  console.log(category, city);
 
   const addTask = (evt: MouseEvent) => {
     if (inputValue || inputCity) {
@@ -47,7 +47,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
               setInputValue(evt.target.value);
             }}
             ></input> */}
-          
+
           <select
             name="services"
             className={styles.searchFormCategorieBox}
