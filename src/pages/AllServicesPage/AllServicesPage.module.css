@@ -66,9 +66,7 @@
     gap: 10px;
 }
 .servicesList li a:hover {
-    background: #f5f5f5;
-    padding: 4px 12px;
-    border-radius: 8px;
+    font-weight: 600;
 }
 .numberService {
     color: #5B5B5B;
