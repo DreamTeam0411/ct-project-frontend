@@ -5,12 +5,12 @@
   width: 26px;
   height: 26px;
   border: none;
-  background: #b2acac;
+background-color: var(--white);
 }
 
 .appointmentImgButton{
     fill: #10100f;
-   
+
 }
 
 .appointmentWelcome{
@@ -27,13 +27,13 @@
 .appointmentTel{
     margin-top: 10px;
     padding-top: 5px;
-   
+
     width: 133px;
     height: 28px;
     border-radius: 8px;
     text-align: center;
-  
+
     color: var(--white);
-    background-color:var(--blue-dark); 
+    background-color:var(--blue-dark);
     font-size:14px;
 }
