@@ -13,8 +13,6 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
   const [inputCity, setInputCity] = useState(city || "");
   const navigate = useNavigate();
 
-  console.log(categorie, city);
-
   const addTask = (evt: MouseEvent) => {
     if (inputValue || inputCity) {
       evt.preventDefault();
@@ -47,7 +45,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
               setInputValue(evt.target.value);
             }}
             ></input> */}
-          
+
           <select
             name="services"
             className={styles.searchFormCategorieBox}
