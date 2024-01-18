@@ -1,0 +1,39 @@
+.appointmentButton{
+    position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: #b2acac;
+}
+
+.appointmentImgButton{
+    fill: #10100f;
+   
+}
+
+.appointmentWelcome{
+    font-size:16px;
+}
+
+.appointmentText{
+    margin-top: 30px;
+    font-size:14px;
+
+    color: var(--gray);
+}
+
+.appointmentTel{
+    margin-top: 10px;
+    padding-top: 5px;
+   
+    width: 133px;
+    height: 28px;
+    border-radius: 8px;
+    text-align: center;
+  
+    color: var(--white);
+    background-color:var(--blue-dark); 
+    font-size:14px;
+}
