@@ -19,7 +19,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
       console.log(inputValue);
       console.log(inputCity);
 
-      navigate(`/services-all?categorie=${inputValue}&city=${inputCity}`);
+      navigate(`/services-all?category=${inputValue}&city=${inputCity}`);
     } else {
       evt.preventDefault();
       console.log("empty");
