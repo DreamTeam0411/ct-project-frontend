@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-          <Link to={"/services-all"}>
+          <Link to={"/all-services"}>
         <img src={image} alt="icon" />
           </Link>
       </div>

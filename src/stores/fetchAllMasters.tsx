@@ -1,10 +1,11 @@
-import {create} from "zustand";
+ import {create} from "zustand";
 import {persist} from "zustand/middleware";
 import axios from "axios";
 
 export interface Root {
 	data: DataAllMasters[]
-	fetchData: () => Promise<DataAllMasters>
+	fetchData: (category:string | null, city:string | null) => Promise<DataAllMasters>
+
 }
 
 export interface DataAllMasters {
@@ -17,6 +18,7 @@ export interface DataAllMasters {
 	price: number
 	city: City
 	createdAt: string
+
 }
 
 interface Category {
@@ -63,12 +65,15 @@ const useFetchDataAllMasters = create<Root>()(persist((set): Root => ({
 			createdAt: ''
 
 		}],
-		fetchData: async (): Promise<DataAllMasters> => {
-			const url = 'https://ct-project.pp.ua/api/v1/all-services'
+
+		fetchData: async (category, city): Promise<DataAllMasters> => {
+			const url = `https://ct-project.pp.ua/api/v1/all-services/?category=${category}&city=${city}`
 			const response = await axios.get(url)
 			set({data: await response.data.data})
+			console.log(response.data.data)
 			return response.data.data
 		},
+
 
 
 	}), {
