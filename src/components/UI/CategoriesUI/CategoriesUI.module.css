@@ -1,38 +1,41 @@
 .container {
-    position: relative;
-    border-radius: 12px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-   }
+  position: relative;
+  border-radius: 12px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.container:hover {
+  scale: 103%;
+}
 
 .container img {
-    position: relative;
-
+  position: relative;
 }
 
 .content {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: var(--white);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    width: 160px;
-    display: flex;
-    flex-wrap: wrap;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: var(--white);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  width: 160px;
+  display: flex;
+  flex-wrap: wrap;
 }
-.container:hover {
+/* .container:hover {
     box-shadow:
-            1px 1px var(--yellow),
-            2px 2px var(--yellow),
-            3px 3px var(--yellow),
-            4px 4px var(--yellow),
-            5px 5px var(--yellow),
-            6px 6px var(--yellow),
-            7px 7px var(--yellow);
+            1px 1px var(--pink),
+            3px 3px var(--pink),
+            4px 4px var(--pink),
+            2px 2px var(--pink),
+            5px 5px var(--pink),
+            6px 6px var(--pink),
+            7px 7px var(--pink);
     -webkit-transform: translateX(-7px);
     transform: translateX(-7px);
-}
+} */

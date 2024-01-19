@@ -1,0 +1,106 @@
+.promoContainer {
+  display: flex;
+  justify-content:space-between;
+  width: 1280px;
+  height: 544px;
+  margin: auto;
+
+margin-top:10px ;
+padding-top: 48px;
+  /* border-top: 2px solid #000; */
+  border-top: 1px solid #EAECF0;
+  
+}
+
+.promoLeftBlock {
+  display: flex;
+  flex-wrap: wrap;
+  width: 522px;
+  height: 254px;
+  margin-top: 90px;
+
+}
+
+.promoRightBlock {
+  width: 630px;
+  height: 464px;
+  
+ }
+
+.promoText1 {
+  font-weight: 500;
+  font-size: 48px;
+  margin-right: 12px;
+}
+
+.promoBlockText2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 64px;
+  margin-top: 7px;
+  background: var(--blue-dark);
+
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.promoText2 {
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--white);
+  padding-bottom: 7px;
+}
+
+.promoText3 {
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.promoBlockText4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 415px;
+  height: 64px;
+
+  background: var(--pink);
+
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.promoText4 {
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--white);
+}
+
+
+.promoText5 {
+  font-weight: 400;
+  font-size: 20px;
+  color: #8F8F98;
+ margin-top: 20px;
+}
+
+
+.promoRightBlock{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.promoFoto1{
+  width:197px;
+height: auto;
+}
+
+
+
+
+

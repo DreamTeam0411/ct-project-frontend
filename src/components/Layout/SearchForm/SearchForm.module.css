@@ -2,7 +2,7 @@
   width: 560px;
   height: 36px;
   margin: auto;
-}
+  }
 
 .searchForm {
   display: flex;
@@ -12,6 +12,7 @@
 }
 
 .searchFormButton {
+  margin-left: 5px;
   width: 30px;
   height: 30px;
   background-color: #ffffff;
@@ -24,7 +25,7 @@
   font-size: 14px;
   border: none;
   outline: none;
-  color: #8f8f98;
+  color: var(--gray);
   
 }
 
@@ -35,7 +36,7 @@
   margin-bottom: auto;
   color: #8f8f98;
   border: none; 
-  border-right: 1px solid #eaecf0; 
+  border-right: 1px solid #B6B6BC; 
 }
 
 .searchFormSelect {
@@ -44,6 +45,6 @@
 .searchFormSelectBox {
   border: none;
   outline: none;
-  color: #8f8f98;
+  color:var(--gray);
   font-size: 14px;
 }
