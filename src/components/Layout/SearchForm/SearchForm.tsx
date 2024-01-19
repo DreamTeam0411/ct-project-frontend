@@ -1,6 +1,7 @@
-import {MouseEvent, useState} from "react";
+import {MouseEvent, useEffect, useState} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import styles from "./SearchForm.module.css";
+import useFetchDataAllMasters from "../../../stores/fetchAllMasters.tsx";
 
 interface SearchFormProps {
 }
@@ -40,19 +41,48 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 	const [inputValue, setInputValue] = useState(category || "");
 	const [inputCity, setInputCity] = useState(city || "");
 	const navigate = useNavigate();
+	const fetchData = useFetchDataAllMasters(state => state.fetchData)
+	useEffect(() => {
+		try {
+
+			fetchData(inputValue, inputCity)
+		} catch (error) {
+
+			console.log(error)
+		}
+
+
+	}, [inputCity, fetchData,inputValue]);
 
 	const addTask = (evt: MouseEvent) => {
-		if (inputValue || inputCity) {
-			evt.preventDefault();
+		let categoryLink = ''
+		let cityLink = ''
+		if(inputValue !=='' && inputValue !== null) {
+			categoryLink = `?category=${inputValue}`
+			evt.preventDefault()
 			console.log(inputValue);
-			console.log(inputCity);
-
-			navigate(`/all-services?category=${inputValue}&city=${inputCity}`);
-
-		} else {
-			evt.preventDefault();
-			console.log("empty");
+			navigate(`/all-services/${categoryLink+cityLink }`)
 		}
+		if (inputCity !== '' && inputCity !== null) {
+			cityLink = `&city=${inputCity}`
+			evt.preventDefault()
+			console.log(inputCity);
+			navigate(`/all-services/${categoryLink+cityLink }`)
+
+		}
+		// if (inputValue || inputCity) {
+		// 	evt.preventDefault();
+		// 	console.log(inputValue);
+		// 	console.log(inputCity);
+		//
+		// 	navigate(`/all-services/${categoryLink+cityLink }`);
+		//
+		// } else {
+		// 	evt.preventDefault();
+		// 	console.log("empty");
+		// }
+		evt.preventDefault()
+		navigate(`/all-services/${categoryLink+cityLink }`)
 	}
 
 	return (
@@ -84,6 +114,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 						value={inputValue}
 						onChange={(evt) => {
 							setInputValue(evt.target.value);
+
 						}}
 					>
 						<option

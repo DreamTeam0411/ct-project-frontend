@@ -17,6 +17,7 @@ export const AllServicesPage = () => {
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
 	const [selectedCategory, setSelectedCategory] = useState(category)
+	console.log(city, category)
 
 	useEffect(() => {
 		try {

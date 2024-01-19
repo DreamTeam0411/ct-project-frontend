@@ -67,7 +67,18 @@ const useFetchDataAllMasters = create<Root>()(persist((set): Root => ({
 		}],
 
 		fetchData: async (category, city): Promise<DataAllMasters> => {
-			const url = `https://ct-project.pp.ua/api/v1/all-services/?category=${category}&city=${city}`
+
+
+            let categoryLink = ''
+			let cityLink = ''
+			if(category !=='' && category !== null) {
+				categoryLink = `?category=${category}`
+			}
+			if (city !== '' && city !== null) {
+				cityLink = `&city=${city}`
+			}
+			const url = `https://ct-project.pp.ua/api/v1/all-services/${categoryLink + cityLink}`
+
 			const response = await axios.get(url)
 			set({data: await response.data.data})
 			console.log(response.data.data)
