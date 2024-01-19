@@ -5,14 +5,14 @@ export const CategoriesUI = (props: {
   path: string;
   onClick?: () => void;
 }) => {
-  const on = () => {
+  const onclick = () => {
     if (props.onClick) {
       props.onClick();
     }
   };
 
   return (
-    <div className={styles.container} onClick={() => on()}>
+    <div className={styles.container} onClick={() => onclick()}>
       <img src={props.path} alt={props.content} />
     </div>
   );

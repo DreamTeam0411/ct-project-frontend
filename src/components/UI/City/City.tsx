@@ -1,8 +1,15 @@
 import styles from './City.module.css'
 import {PropsWithChildren} from "react";
-export const City = ({children}:PropsWithChildren) => {
+
+interface CityProps {
+	onClick?: () => void;
+  }
+
+
+
+export const City = ({children, onClick}:PropsWithChildren<CityProps>) => {
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} onClick={onClick}>
 			{children}
 		</div>
 	)
