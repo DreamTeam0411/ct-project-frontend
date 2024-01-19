@@ -10,64 +10,20 @@
     margin: 0 auto;
     width:90%;
     display: flex;
-    height: 100px;
+    height: 70px;
     flex-direction: column;
     gap: 25px;
-
+justify-content: center;
 }
 
-.breadCrumb a {
-    color: #5B5B5B;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.serviceListBlock {
+.notFound {
+    height: 245px;
     display: flex;
-    flex-direction: column;
-}
-
-.servicesList {
-    display: flex;
-    gap: 40px;
-}
-
-.servicesList li a {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    color: var(--gray);
-    text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
-
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    cursor: pointer;
-    transition-duration: .2s;
-}
-.servicesList li a:active, .servicesList li a:focus {
-    color: var(--blue-dark);
-    text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
-
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    border-bottom: 1px solid var(--blue-dark);
-    display: flex;
-    padding-bottom: 4px;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
-.servicesList li a:hover {
-    filter: opacity(50%);
-}
+
+
 .numberService {
     color: #5B5B5B;
     font-size: 12px;

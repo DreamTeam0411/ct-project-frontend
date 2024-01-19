@@ -1,30 +1,35 @@
-.appointmentButton{
+.appointmentButton {
     position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 26px;
-  height: 26px;
-  border: none;
-background-color: var(--white);
+    top: 14px;
+    right: 14px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    background-color: var(--white);
+    transition-duration: 0.5s;
 }
 
-.appointmentImgButton{
+.appointmentButton:hover {
+    transform: rotate(1turn);
+    cursor: pointer;
+}
+
+.appointmentImgButton {
     fill: #10100f;
 
 }
 
-.appointmentWelcome{
-    font-size:16px;
+.appointmentWelcome {
+    font-size: 16px;
 }
 
-.appointmentText{
+.appointmentText {
     margin-top: 30px;
-    font-size:14px;
-
+    font-size: 14px;
     color: var(--gray);
 }
 
-.appointmentTel{
+.appointmentTel {
     margin-top: 10px;
     padding-top: 5px;
 
@@ -34,6 +39,6 @@ background-color: var(--white);
     text-align: center;
 
     color: var(--white);
-    background-color:var(--blue-dark);
-    font-size:14px;
+    background-color: var(--blue-dark);
+    font-size: 14px;
 }

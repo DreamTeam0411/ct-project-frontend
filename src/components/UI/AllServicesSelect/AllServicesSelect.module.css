@@ -1,0 +1,32 @@
+.servicesList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listItem  {
+    display: flex;
+    width: fit-content;
+    gap: 10px;
+    color: var(--gray);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition-duration: .2s;
+}
+.active {
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--blue-dark);
+    font-size: 14px;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+}
+.serviceListBlock {
+    display: flex;
+    flex-direction: column;
+}
