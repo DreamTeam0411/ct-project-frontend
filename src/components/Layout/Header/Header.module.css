@@ -1,91 +1,32 @@
+.headerBlock {
+  width: 1280px;
+  height: 40px;
+  margin: auto;
+  margin-top: 18px;
+}
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    width: 100%;
-    height: 86px;
-    margin: 0 auto;
-    position: relative;
-
-
-}
-
-
-
-a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.linksBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 80px;
-
-}
-
-.logo {
-
-    width: 112px;
-    height: 15px;
-
-}
-
-.links {
-    color: #000;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-left: 31px;
-
-}
-
-.input {
-    width: 219px;
-    height: 35px;
-    border-radius: 12px;
-    background: #E8E8E8;
-    border-style: none;
-    padding: 10px;
-    color: #8f8d8d;
-    outline: none;
-    background: url('../../../../public/Magnifier.svg') no-repeat;
-    background-position: right 5% bottom 45%;;
-    background-color: #E8E8E8;
-}
-.searchForm {
-    margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
 }
 
 .headerButtons {
-    display: flex;
-    gap: 20px;
-    color: #FFF;
+  display: flex;
+  gap: 20px;
+  color: #fff;
 
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    justify-content: center;
-    align-items: center;
-
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  justify-content: center;
+  align-items: center;
 }
-
-.loginButton {
-    margin-right: 30px;
-}
-
 
 .buttonBusiness {
-    margin-right: 87px;
+  text-decoration: none;
 }
-
-
-
-
-
-

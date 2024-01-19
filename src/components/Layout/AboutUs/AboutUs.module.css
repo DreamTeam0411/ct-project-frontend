@@ -1,0 +1,77 @@
+.aboutUsContainer {
+  width: 1280px;
+  height: 511px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto auto 96px;
+}
+
+.aboutUsImage {
+  width: 413px;
+  height: 511px;
+  border-radius: 12px;
+}
+
+.aboutUsBlockText {
+  width: 738px;
+  height: 460px;
+  margin-top:80px;
+  margin-left:129px;
+}
+
+.aboutUsText1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 289px;
+  height: 64px;
+  margin-top: 7px;
+  background: var(--blue-dark);
+
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--white);
+ margin-bottom: 20px;
+
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.aboutUsBlockText2 {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.aboutUsText2{
+  font-weight: 500;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.aboutUsText3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 164px;
+  height: 64px;
+  margin-left: 10px;
+
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--white);
+
+  background: var(--pink);
+
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.aboutUsText4{
+  font-size: 21px;
+  color: var(--gray);
+  line-height: 2;
+}

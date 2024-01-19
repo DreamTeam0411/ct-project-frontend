@@ -16,9 +16,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
   const addTask = (evt: MouseEvent) => {
     if (inputValue || inputCity) {
       evt.preventDefault();
-      console.log(inputValue);
-      console.log(inputCity);
-
+     
       navigate(`/services-all?category=${inputValue}&city=${inputCity}`);
     } else {
       evt.preventDefault();
@@ -35,17 +33,6 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
           >
             <img src="/Magnifier.svg" alt="" />
           </button>
-          {/* <input
-            type="text"
-            name="services"
-            value={inputValue}
-            placeholder="Сервіс"
-            className={styles.searchFormInput}
-            onChange={(evt) => {
-              setInputValue(evt.target.value);
-            }}
-            ></input> */}
-
           <select
             name="services"
             className={styles.searchFormCategorieBox}
@@ -54,12 +41,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
               setInputValue(evt.target.value);
             }}
           >
-            <option
-              disabled
-              // selected||
-              hidden
-              // className={styles.searchFormSelectDisabled}
-            >
+            <option disabled hidden>
               Локація
             </option>
             <option value="">Всі сервіси</option>
