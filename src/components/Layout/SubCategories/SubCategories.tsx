@@ -3,14 +3,11 @@ import { useNavigate } from "react-router-dom";
 import styles from "./SubCategories.module.css";
 import { CategoriesUI } from "../../UI/CategoriesUI/CategoriesUI.tsx";
 
-
 export const SubCategories = () => {
   const navigate = useNavigate();
 
-  const addTask = (content: string) => {
-    console.log(content);
-
-    navigate(`/services-all?category=${content}&city=`);
+  const addCategorie = (content: string) => {
+    navigate(`/all-services?category=${content}&city=`);
   };
 
   return (
@@ -22,29 +19,29 @@ export const SubCategories = () => {
             <CategoriesUI
               path={"/CategorieUI-1-min.jpg"}
               content={"Макіяж"}
-              onClick={() => addTask("makiiaz")}
+              onClick={() => addCategorie("makiiaz")}
             />
           </div>
           <div className={styles.categoriesBlock1Right}>
             <CategoriesUI
               path={"/CategorieUI-2-min.jpg"}
               content={"Догляд за нігтями"}
-              onClick={() => addTask("dogliad-za-nigtiami")}
+              onClick={() => addCategorie("dogliad-za-nigtiami")}
             />
             <CategoriesUI
               path={"/CategorieUI-3-min.jpg"}
               content={"Жіноча стрижка"}
-              onClick={() => addTask("zinoca-strizka")}
+              onClick={() => addCategorie("zinoca-strizka")}
             />
             <CategoriesUI
               path={"/CategorieUI-4-min.jpg"}
               content={"Вії та брови"}
-              onClick={() => addTask("viyi-ta-brovi")}
+              onClick={() => addCategorie("viyi-ta-brovi")}
             />
             <CategoriesUI
               path={"/CategorieUI-5-min.jpg"}
               content={"Татуаж"}
-              onClick={() => addTask("tatuaz")}
+              onClick={() => addCategorie("tatuaz")}
             />
           </div>
         </div>
@@ -52,25 +49,29 @@ export const SubCategories = () => {
           <CategoriesUI
             path={"/CategorieUI-6-min.jpg"}
             content={"Фарбування та зачіска"}
-            onClick={() => addTask("farbuvannia-volossia")}
+            onClick={() => addCategorie("farbuvannia-volossia")}
           />
           <CategoriesUI
             path={"/CategorieUI-7-min.jpg"}
             content={"Косметологія"}
-            onClick={() => addTask("kosmetologiia")}
+            onClick={() => addCategorie("kosmetologiia")}
           />
         </div>
         <div className={styles.categoriesBlock3}>
           <CategoriesUI
             path={"/CategorieUI-8-min.jpg"}
             content={"Чоловіча стрижка"}
-            onClick={() => addTask("colovica-strizka")}
+            onClick={() => addCategorie("colovica-strizka")}
           />
-          <CategoriesUI path={"/CategorieUI-9-min.jpg"} content={"Масаж"}  onClick={() => addTask("masaz")}/>
+          <CategoriesUI
+            path={"/CategorieUI-9-min.jpg"}
+            content={"Масаж"}
+            onClick={() => addCategorie("masaz")}
+          />
           <CategoriesUI
             path={"/CategorieUI-10-min.jpg"}
             content={"Видалення волосся"}
-            onClick={() => addTask("vidalennia-volossia")}
+            onClick={() => addCategorie("vidalennia-volossia")}
           />
         </div>
       </div>

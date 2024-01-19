@@ -1,26 +1,33 @@
-import styles from './SearchByCity.module.css'
-import {City} from "../../UI/City/City.tsx";
+import { useNavigate } from "react-router-dom";
+
+import styles from "./SearchByCity.module.css";
+import { City } from "../../UI/City/City.tsx";
 
 const SearchByCity = () => {
-	return (<div className={styles.searchByCityBlock}>
+  const navigate = useNavigate();
+  const addCity = (city: string) => {
+    navigate(`/all-services?category=&city=${city}`);
+  };
 
-			<div className={styles.title}>Обирайте по містах</div>
+  return (
+    <div className={styles.searchByCityBlock}>
+      <div className={styles.title}>Обирайте по містах</div>
 
-			<div className={styles.wrap}>
-				<div className={styles.cities}>
-					<City>Київ</City>
-					<City>Харків</City>
-					<City>Одеса</City>
-					<City>Миколаїв </City>
-					<City>Хмельницький</City>
-					<City>Львів</City>
-					<City>Тернопіль</City>
-					<City>Рівне</City>
-					<City>Дніпро</City>
-					<City>Луцьк</City>
-				</div>
-			</div>
-		</div>
-	)
-}
-export default SearchByCity
+      <div className={styles.wrap}>
+        <div className={styles.cities}>
+          <City onClick={() => addCity("ukrayina-kiyiv")}>Київ</City>
+          <City onClick={() => addCity("ukrayina-xarkiv")}>Харків</City>
+          <City onClick={() => addCity("ukrayina-odesa")}>Одеса</City>
+          <City onClick={() => addCity("ukrayina-mikolayiv")}>Миколаїв </City>
+          <City onClick={() => addCity("ukrayina-xmelnickii")}>Хмельницький</City>
+          <City onClick={() => addCity("ukrayina-lviv")}>Львів</City>
+          <City onClick={() => addCity("ukrayina-ternopil")}>Тернопіль</City>
+          <City onClick={() => addCity("ukrayina-rivne")}>Рівне</City>
+          <City onClick={() => addCity("ukrayina-dnipro")}>Дніпро</City>
+          <City onClick={() => addCity("ukrayina-luck")}>Луцьк</City>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default SearchByCity;
