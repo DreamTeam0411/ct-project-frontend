@@ -1,19 +1,30 @@
 .container {
-    display: flex ;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
 }
+.footer {
+    position: absolute;bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
 .mainBlock {
-    margin-bottom: 100px;
+    width: 1440px;
+
 }
+
 .linksBlock {
     margin: 0 auto;
-    width:90%;
+    width: 90%;
     display: flex;
     height: 70px;
     flex-direction: column;
     gap: 25px;
-justify-content: center;
+    justify-content: center;
 }
 
 .notFound {
@@ -39,6 +50,7 @@ justify-content: center;
     gap: 40px;
     align-content: space-between;
     font-size: 20px;
+    min-height: 500px;
 
 }
 
@@ -165,6 +177,7 @@ justify-content: center;
     width: fit-content;
 
 }
+
 .subCategoriesBlock {
     width: 100%;
     display: flex;
@@ -179,6 +192,7 @@ justify-content: center;
     line-height: normal;
     position: relative;
 }
+
 .subCategoriesBlock::after {
     position: absolute;
     bottom: 0;
@@ -203,6 +217,7 @@ justify-content: center;
     line-height: normal;
     position: relative;
 }
+
 .priceBlock::after {
     position: absolute;
     bottom: 0;
@@ -212,6 +227,7 @@ justify-content: center;
     right: 0;
     border: .2px solid #E8E8E8;
 }
+
 .priceBlockTitle {
     width: 100%;
     color: #000;
@@ -221,6 +237,7 @@ justify-content: center;
     line-height: normal;
     padding-bottom: 20px;
 }
+
 .contentHeadBlock {
     display: flex;
     justify-content: space-between;
@@ -244,7 +261,7 @@ justify-content: center;
 }
 
 .serviceCardList {
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

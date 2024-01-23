@@ -68,7 +68,6 @@ const useFetchDataAllMasters = create<Root>()(persist((set): Root => ({
 
 		fetchData: async (category, city): Promise<DataAllMasters> => {
 
-
             let categoryLink = ''
 			let cityLink = ''
 			if(category !=='' && category !== null) {

@@ -2,87 +2,49 @@ import {MouseEvent, useEffect, useState} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import styles from "./SearchForm.module.css";
 import useFetchDataAllMasters from "../../../stores/fetchAllMasters.tsx";
+import useFetchCategories from "../../../stores/fetchCategories.tsx";
+import useFetchDataCities from "../../../stores/fetcthCities.tsx";
 
 interface SearchFormProps {
+
 }
 
-const services = [
-	{value: '', title: 'Всі сервіси', id: 0},
-	{value: 'dogliad-za-nigtiami', title: 'Догляд за нігтями', id: 1},
-	{value: 'makiiaz', title: 'Макіяж', id: 2},
-	{value: 'farbuvannia-volossia', title: 'Фарбування та волосся', id: 3},
-	{value: 'zinoca-strizka', title: 'Жіноча стрижка', id: 4},
-	{value: 'colovica-strizka', title: 'Чоловіча стрижка', id: 5},
-	{value: 'viyi-ta-brovi', title: 'Вії та брови', id: 6},
-	{value: 'masaz', title: 'Масаж', id: 7},
-	{value: 'tatuaz', title: 'Татуаж', id: 8},
-	{value: 'vidalennia-volossia', title: 'Видалення волосся', id: 9},
-	{value: 'kosmetologiia', title: 'Косметологія', id: 10}
-];
-const cities = [
-	{value: "", title: 'Всі міста', id: 0},
-	{value: "ukrayina-kiyiv", title: 'Київ', id: 1},
-	{value: "ukrayina-xarkiv", title: 'Харків', id: 2},
-	{value: "ukrayina-odesa", title: 'Одеса', id: 3},
-	{value: "ukrayina-mikolayiv", title: 'Миколаїв', id: 4},
-	{value: "ukrayina-xmelnickii", title: 'Хмельницький', id: 5},
-	{value: "ukrayina-lviv", title: 'Львів', id: 6},
-	{value: "ukrayina-ternopil", title: 'Тернопіль', id: 7},
-	{value: "ukrayina-rivne", title: 'Рівне', id: 8},
-	{value: "ukrayina-dnipro", title: 'Дніпро', id: 9},
-	{value: "ukrayina-luck", title: 'Луцьк', id: 10},
-]
 
 export const SearchForm: React.FC<SearchFormProps> = () => {
+
 	const [searchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
-
 	const [inputValue, setInputValue] = useState(category || "");
 	const [inputCity, setInputCity] = useState(city || "");
 	const navigate = useNavigate();
+
 	const fetchData = useFetchDataAllMasters(state => state.fetchData)
+
+	const fetchDataCities = useFetchDataCities(state => state.fetchData)
+	const dataStateCities = useFetchDataCities(state => state.data)
+
+	const fetchDataCategories = useFetchCategories(state => state.fetchData)
+	const dataStateCategories = useFetchCategories(state => state.data)
+
+
+	useEffect(() => {
+		fetchDataCities();
+		fetchDataCategories();
+	}, []);
+
 	useEffect(() => {
 		try {
-
 			fetchData(inputValue, inputCity)
-		} catch (error) {
 
+		} catch (error) {
 			console.log(error)
 		}
-
-
-	}, [inputCity, fetchData,inputValue]);
+	}, [inputCity, inputValue, category, city, setInputCity, setInputValue]);
 
 	const addTask = (evt: MouseEvent) => {
-		let categoryLink = ''
-		let cityLink = ''
-		if(inputValue !=='' && inputValue !== null) {
-			categoryLink = `?category=${inputValue}`
-			evt.preventDefault()
-			console.log(inputValue);
-			navigate(`/all-services/${categoryLink+cityLink }`)
-		}
-		if (inputCity !== '' && inputCity !== null) {
-			cityLink = `&city=${inputCity}`
-			evt.preventDefault()
-			console.log(inputCity);
-			navigate(`/all-services/${categoryLink+cityLink }`)
-
-		}
-		// if (inputValue || inputCity) {
-		// 	evt.preventDefault();
-		// 	console.log(inputValue);
-		// 	console.log(inputCity);
-		//
-		// 	navigate(`/all-services/${categoryLink+cityLink }`);
-		//
-		// } else {
-		// 	evt.preventDefault();
-		// 	console.log("empty");
-		// }
 		evt.preventDefault()
-		navigate(`/all-services/${categoryLink+cityLink }`)
+		navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
 	}
 
 	return (
@@ -95,38 +57,22 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 					>
 						<img src="/Magnifier.svg" alt=""/>
 					</button>
-					{/* <input
-            type="text"
-            name="services"
-            value={inputValue}
-            placeholder="Сервіс"
-            className={styles.searchFormInput}
-            onChange={(evt) => {
-              setInputValue(evt.target.value);
-            }}
-            ></input> */}
-
 					<select
-
 						name="services"
 						className={styles.searchFormCategorieBox}
-
 						value={inputValue}
 						onChange={(evt) => {
 							setInputValue(evt.target.value);
-
+							navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
 						}}
 					>
 						<option
 							disabled
-							// selected||
-							hidden
-							// className={styles.searchFormSelectDisabled}
-						>
+							hidden>
 							Локація
 						</option>
 
-						{services.map(el => <option key={el.id} value={el.value}>{el.title}</option>)}
+						{dataStateCategories.map(el => <option key={el.id} value={el.slug}>{el.title}</option>)}
 
 					</select>
 
@@ -138,17 +84,16 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 							value={inputCity}
 							onChange={(evt) => {
 								setInputCity(evt.target.value);
+								navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
 							}}
 						>
 							<option
 								disabled
 								selected
-								hidden
-								// className={styles.searchFormSelectDisabled}
-							>
+								hidden>
 								Локація
 							</option>
-							{cities.map(el => <option key={el.id} value={el.value}>{el.title}</option>)}
+							{dataStateCities.map(el => <option key={el.id} value={el.slug}>{el.name}</option>)}
 						</select>
 					</div>
 				</div>

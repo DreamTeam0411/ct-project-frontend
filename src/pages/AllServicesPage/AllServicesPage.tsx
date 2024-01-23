@@ -6,23 +6,32 @@ import useFetchDataAllMasters from "../../stores/fetchAllMasters.tsx";
 import {ServiceCard} from "./ServiceCard/ServiceCard.tsx";
 import {AllServicesSelect} from "../../components/UI/AllServicesSelect/AllServicesSelect.tsx";
 import {useSearchParams} from "react-router-dom";
+import useFetchCategories from "../../stores/fetchCategories.tsx";
 
 
 export const AllServicesPage = () => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [isError, setIsError] = useState(false)
-	const fetchData = useFetchDataAllMasters(state => state.fetchData)
+
+	const fetchDataAllMasters = useFetchDataAllMasters(state => state.fetchData)
+	const fetchDataCategories = useFetchCategories(state => state.fetchData)
+
 	const dataState = useFetchDataAllMasters(state => state.data)
+
 	const [searchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
-	const [selectedCategory, setSelectedCategory] = useState(category)
+
+	const [selectedCategory, setSelectedCategory] = useState(category || '')
+	const [selectedCity, setSelectedCity] = useState(city || '')
+
 	console.log(city, category)
 
 	useEffect(() => {
 		try {
 			setIsLoading(true)
-			fetchData(selectedCategory, city)
+			fetchDataAllMasters(selectedCategory, selectedCity)
+
 		} catch (error) {
 			setIsError(true)
 			console.log(error)
@@ -31,9 +40,12 @@ export const AllServicesPage = () => {
 		}
 
 
-	}, [ city, fetchData,selectedCategory]);
-	// console.log(dataState)
+	}, [ city, fetchDataAllMasters,selectedCategory, category]);
 
+
+	useEffect(() => {
+		fetchDataCategories()
+	}, []);
 
 
 
@@ -41,7 +53,7 @@ export const AllServicesPage = () => {
 		{
 			return (
 						<div className={styles.container}>
-							<Header/>
+							<Header setSelectedCity={setSelectedCity} setSelectedCategory={setSelectedCategory}/>
 							<div className={styles.mainBlock}>
 								<div className={styles.linksBlock}>
 									<AllServicesSelect setCategory={(value:string) => setSelectedCategory(value)}/>
@@ -124,7 +136,10 @@ export const AllServicesPage = () => {
 
 					</div>
 				</div>
-				<Footer/>
+				<div className={styles.footer}>
+					<Footer/>
+				</div>
+
 			</div>
 		)
 	}
