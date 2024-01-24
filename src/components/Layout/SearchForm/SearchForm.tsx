@@ -1,7 +1,6 @@
 import {MouseEvent, useEffect, useState} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import styles from "./SearchForm.module.css";
-import useFetchDataAllMasters from "../../../stores/fetchAllMasters.tsx";
 import useFetchCategories from "../../../stores/fetchCategories.tsx";
 import useFetchDataCities from "../../../stores/fetcthCities.tsx";
 
@@ -15,38 +14,33 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 	const [searchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
-	const [inputValue, setInputValue] = useState(category || "");
-	const [inputCity, setInputCity] = useState(city || "");
+
 	const navigate = useNavigate();
-
-	const fetchData = useFetchDataAllMasters(state => state.fetchData)
-
 	const fetchDataCities = useFetchDataCities(state => state.fetchData)
 	const dataStateCities = useFetchDataCities(state => state.data)
-
 	const fetchDataCategories = useFetchCategories(state => state.fetchData)
 	const dataStateCategories = useFetchCategories(state => state.data)
+	const [categoryState, setCategoryState] = useState(category)
+	const [cityState, setCityState] = useState(city)
 
 
 	useEffect(() => {
 		fetchDataCities();
 		fetchDataCategories();
 	}, []);
-
 	useEffect(() => {
-		try {
-			fetchData(inputValue, inputCity)
-
-		} catch (error) {
-			console.log(error)
-		}
-	}, [inputCity, inputValue, category, city, setInputCity, setInputValue]);
+		setCityState(city)
+		setCategoryState(category)
+	}, [city, category]);
 
 	const addTask = (evt: MouseEvent) => {
+
+		navigate(`/all-services?category=${categoryState}&city=${cityState}`)
 		evt.preventDefault()
-		navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
 	}
 
+
+	// @ts-ignore
 	return (
 		<div className={styles.searchFormContainer}>
 			<form>
@@ -60,16 +54,21 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 					<select
 						name="services"
 						className={styles.searchFormCategorieBox}
-						value={inputValue}
+						value={categoryState || ''}
 						onChange={(evt) => {
-							setInputValue(evt.target.value);
-							navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
+							setCategoryState(evt.target.value)
+							if (city !== null) {
+								navigate(`/all-services?category=${evt.target.value}&city=${city}`)
+							} else {
+								navigate(`/all-services?category=${evt.target.value}`)
+							}
+
 						}}
 					>
 						<option
 							disabled
 							hidden>
-							Локація
+							Сервіс
 						</option>
 
 						{dataStateCategories.map(el => <option key={el.id} value={el.slug}>{el.title}</option>)}
@@ -81,10 +80,16 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 						<select
 							name="select"
 							className={styles.searchFormSelectBox}
-							value={inputCity}
+							value={cityState || ''}
 							onChange={(evt) => {
-								setInputCity(evt.target.value);
-								navigate(`/all-services/?category=${inputValue}&city=${inputCity}`)
+								setCityState(evt.target.value)
+								if (category !== null) {
+									navigate(`/all-services?category=${category}&city=${evt.target.value}`)
+								} else {
+									navigate(`/all-services?city=${evt.target.value}`)
+								}
+
+								console.log(evt.target.value)
 							}}
 						>
 							<option

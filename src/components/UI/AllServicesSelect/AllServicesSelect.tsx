@@ -3,7 +3,6 @@ import {useNavigate, useSearchParams} from "react-router-dom";
 import useFetchCategories from "../../../stores/fetchCategories.tsx";
 
 
-
 // const services = [
 // 	{value: '', title: 'Всі сервіси', id: 0},
 // 	{value: 'dogliad-za-nigtiami', title: 'Догляд за нігтями', id: 1},
@@ -17,19 +16,21 @@ import useFetchCategories from "../../../stores/fetchCategories.tsx";
 // 	{value: 'vidalennia-volossia', title: 'Видалення волосся', id: 9},
 // 	{value: 'kosmetologiia', title: 'Косметологія', id: 10}
 // ];
-interface AllServicesSelectProps {
-	setCategory:(value:string)=>void
-}
-export const AllServicesSelect = (props:AllServicesSelectProps) => {
-	const [searchParams] = useSearchParams();
+
+export const AllServicesSelect = () => {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
 	const navigate = useNavigate();
 	const dataCategories = useFetchCategories(state => state.data)
 
 	const select = (value: string) => {
-		props.setCategory(value)
-		navigate(`/all-services?category=${value}&city=${city}`);
+		setSearchParams({category: value})
+		if(city!== null){ navigate(`/all-services?category=${value}&city=${city}`)
+		} else {
+			navigate(`/all-services?category=${value}`)
+		}
+		scroll(0,0)
 	}
 
 
@@ -38,7 +39,7 @@ export const AllServicesSelect = (props:AllServicesSelectProps) => {
 			<ul className={styles.servicesList}>
 
 				{dataCategories.map(el => <li key={el.id} onClick={() => select(el.slug)}
-										className={(el.slug === category) ? styles.active : styles.listItem}>
+											  className={(el.slug === category) ? styles.active : styles.listItem}>
 					{el.title}
 				</li>)}
 

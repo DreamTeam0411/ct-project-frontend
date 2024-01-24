@@ -1,15 +1,23 @@
 .container {
     display: flex;
     flex-direction: column;
-
-    width: 1440px;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
     height: 100vh;
 }
-.footer {
-    position: absolute;bottom: 0;
+
+.header {
     width: 100%;
-    left: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer {
+
+    width: 100%;
+
 }
 
 .mainBlock {
@@ -25,6 +33,7 @@
     flex-direction: column;
     gap: 25px;
     justify-content: center;
+    padding: 50px;
 }
 
 .notFound {
@@ -267,6 +276,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    height: fit-content;
 }
 
 .contentHead button {

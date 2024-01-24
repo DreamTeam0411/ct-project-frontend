@@ -22,15 +22,13 @@ export const AllServicesPage = () => {
 	const category = searchParams.get("category");
 	const city = searchParams.get("city");
 
-	const [selectedCategory, setSelectedCategory] = useState(category || '')
-	const [selectedCity, setSelectedCity] = useState(city || '')
 
 	console.log(city, category)
 
 	useEffect(() => {
 		try {
 			setIsLoading(true)
-			fetchDataAllMasters(selectedCategory, selectedCity)
+			fetchDataAllMasters(category, city)
 
 		} catch (error) {
 			setIsError(true)
@@ -40,7 +38,7 @@ export const AllServicesPage = () => {
 		}
 
 
-	}, [ city, fetchDataAllMasters,selectedCategory, category]);
+	}, [city, category]);
 
 
 	useEffect(() => {
@@ -48,64 +46,64 @@ export const AllServicesPage = () => {
 	}, []);
 
 
+	if (dataState.length !== 0 && !isError && !isLoading) {
+		return (
+			<div className={styles.container}>
+				<div className={styles.header}><Header/></div>
 
-	if (dataState.length !== 0 && !isError && !isLoading)
-		{
-			return (
-						<div className={styles.container}>
-							<Header setSelectedCity={setSelectedCity} setSelectedCategory={setSelectedCategory}/>
-							<div className={styles.mainBlock}>
-								<div className={styles.linksBlock}>
-									<AllServicesSelect setCategory={(value:string) => setSelectedCategory(value)}/>
-								</div>
+				<div className={styles.mainBlock}>
+					<div className={styles.linksBlock}>
+						<AllServicesSelect/>
+					</div>
 
-								<div className={styles.content}>
+					<div className={styles.content}>
 
-									<div className={styles.servicesBlock}>
-										<div className={styles.contentHeadBlock}>
-											<div className={styles.contentHead}>
-												<div className={styles.allServices}>Вибрано ({dataState.length})</div>
-
-											</div>
-											<div className={styles.select}>
-												<label htmlFor="sorting">Сортувати за:</label>
-												<select name="sort" id="sorting">
-													<option value="">Рекомендовано</option>
-													<option value="rating">Рейтинг</option>
-													<option value="cost">Ціна</option>
-													<option value="daytime">Частина доби</option>
-												</select>
-											</div>
-
-										</div>
-										<div className={styles.serviceCardList}>
-											{
-												dataState.map(data => <ServiceCard id={data.id} category={data.category}
-																				title={data.title} key={data.id}
-																				description={data.description} photo={data.photo}
-																				user={data.user} price={data.price}
-																				createdAt={data.createdAt}
-																				city={data.city}/>)}
-
-										</div>
-
-									</div>
+						<div className={styles.servicesBlock}>
+							<div className={styles.contentHeadBlock}>
+								<div className={styles.contentHead}>
+									<div className={styles.allServices}>Вибрано ({dataState.length})</div>
 
 								</div>
+								<div className={styles.select}>
+									<label htmlFor="sorting">Сортувати за:</label>
+									<select name="sort" id="sorting">
+										<option value="">Рекомендовано</option>
+										<option value="rating">Рейтинг</option>
+										<option value="cost">Ціна</option>
+										<option value="daytime">Частина доби</option>
+									</select>
+								</div>
+
 							</div>
-							<Footer/>
+							<div className={styles.serviceCardList}>
+								{
+									dataState.map(data => <ServiceCard id={data.id} category={data.category}
+																	   title={data.title} key={data.id}
+																	   description={data.description} photo={data.photo}
+																	   user={data.user} price={data.price}
+																	   createdAt={data.createdAt}
+																	   city={data.city}/>)}
+
+							</div>
+
 						</div>
-					)
-		}
-	else {
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
+					</div>
+				</div>
+				<div className={styles.footer}>
+					<Footer/>
+				</div>
+			</div>
+		)
+	} else {
+
 
 		return (
 			<div className={styles.container}>
 				<Header/>
 				<div className={styles.mainBlock}>
 					<div className={styles.linksBlock}>
-						<AllServicesSelect setCategory={(value:string) => setSelectedCategory(value)}/>
+						<AllServicesSelect/>
 					</div>
 
 					<div className={styles.content}>

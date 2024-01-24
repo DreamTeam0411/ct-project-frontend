@@ -34,13 +34,16 @@ function MainPage() {
 	if (Object.keys(dataState).length !== 0 && !isError)
 		return (
 			<div className={styles.app}>
-				<Header/>
+				<div className={styles.header}><Header/></div>
+
 				<Promo/>
 				<Recommendations/>
 				<SubCategories/>
 				<AboutUs/>
 				<SearchByCity/>
-				<Footer/>
+				<div className={styles.footer}>
+					<Footer/>
+				</div>
 
 			</div>
 		);

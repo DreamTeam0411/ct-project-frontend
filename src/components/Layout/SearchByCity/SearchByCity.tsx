@@ -4,10 +4,12 @@ import styles from "./SearchByCity.module.css";
 import {City} from "../../UI/City/City.tsx";
 
 const SearchByCity = () => {
+
+
 	const navigate = useNavigate();
 	const addCity = (city: string) => {
-
 		navigate(`/all-services?city=${city}`);
+		scroll(0,0)
 	};
 
 	return (

@@ -70,12 +70,21 @@ const useFetchDataAllMasters = create<Root>()(persist((set): Root => ({
 
             let categoryLink = ''
 			let cityLink = ''
-			if(category !=='' && category !== null) {
+			if(category !== null && city!==null) {
 				categoryLink = `?category=${category}`
-			}
-			if (city !== '' && city !== null) {
 				cityLink = `&city=${city}`
 			}
+			if(category === null && city===null) {
+				categoryLink = ``
+				cityLink = ``
+			}
+			if (category === null && city !== null ) {
+				cityLink = `?city=${city}`
+			}
+			if(city ===null && category !== null) {
+				categoryLink = `?category=${category}`
+			}
+			console.log(categoryLink, cityLink)
 			const url = `https://ct-project.pp.ua/api/v1/all-services/${categoryLink + cityLink}`
 
 			const response = await axios.get(url)
