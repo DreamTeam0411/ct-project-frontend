@@ -81,8 +81,7 @@ export const AllServicesPage = () => {
 																	   title={data.title} key={data.id}
 																	   description={data.description} photo={data.photo}
 																	   user={data.user} price={data.price}
-																	   createdAt={data.createdAt}
-																	   city={data.city}/>)}
+																	   createdAt={data.createdAt} city={data.city}/>)}
 
 							</div>
 
