@@ -1,7 +1,6 @@
 .headerBlock {
-  width: 1280px;
-  height: 40px;
-  margin: auto;
+  width: 1440px;
+  max-height: 40px;
   margin-top: 18px;
 }
 

@@ -7,7 +7,8 @@ export const SubCategories = () => {
   const navigate = useNavigate();
 
   const addCategorie = (content: string) => {
-    navigate(`/all-services?category=${content}&city=`);
+        navigate(`/all-services?category=${content}`);
+        scroll(0,0)
   };
 
   return (

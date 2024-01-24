@@ -1,5 +1,16 @@
 .app {
-    width: 1440px;
-    margin:  auto;
+    width: 100%;
+    margin: auto;
+
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.footer {
+    width: 100%;
 
 }
