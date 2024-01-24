@@ -34,8 +34,18 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 	}, [city, category]);
 
 	const addTask = (evt: MouseEvent) => {
+		if (categoryState && cityState) {
+			navigate(`/all-services?category=${categoryState}&city=${cityState}`)
+		} else {
+			navigate(`/all-services?category=${categoryState}`)
+		}
+		if (!categoryState) {
+			navigate(`/all-services?city=${cityState}`)
+		}
+		if (!cityState && !categoryState) {
+			navigate(`/all-services`)
+		}
 
-		navigate(`/all-services?category=${categoryState}&city=${cityState}`)
 		evt.preventDefault()
 	}
 

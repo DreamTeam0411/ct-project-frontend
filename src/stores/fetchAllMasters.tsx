@@ -70,18 +70,23 @@ const useFetchDataAllMasters = create<Root>()(persist((set): Root => ({
 
             let categoryLink = ''
 			let cityLink = ''
-			if(category !== null && city!==null) {
+			if(category  && city) {
 				categoryLink = `?category=${category}`
 				cityLink = `&city=${city}`
 			}
-			if(category === null && city===null) {
+			if(!category && !city) {
 				categoryLink = ``
 				cityLink = ``
 			}
-			if (category === null && city !== null ) {
-				cityLink = `?city=${city}`
+			if (!category && city ) {
+
+				if(city === null) {
+					cityLink=''
+				} else {
+					cityLink = `?city=${city}`
+				}
 			}
-			if(city ===null && category !== null) {
+			if(!city && category) {
 				categoryLink = `?category=${category}`
 			}
 			console.log(categoryLink, cityLink)
