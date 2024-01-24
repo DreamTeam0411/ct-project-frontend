@@ -14,11 +14,12 @@ export const AllServicesSelect = () => {
 
 		setSearchParams({category: value})
 
-		if(city!== null){ navigate(`/all-services?category=${value}&city=${city}`)
+		if (city !== null) {
+			navigate(`/all-services?category=${value}&city=${city}`)
 		} else {
 			navigate(`/all-services?category=${value}`)
 		}
-		scroll(0,0)
+		scroll(0, 0)
 	}
 
 
@@ -26,7 +27,8 @@ export const AllServicesSelect = () => {
 		<div className={styles.serviceListBlock}>
 			<ul className={styles.servicesList}>
 
-				{dataCategories.map(el => <li key={el.id} onClick={() => select(el.slug)} className={(el.slug === category) ? styles.active : styles.listItem}>
+				{dataCategories.map(el => <li key={el.id} onClick={() => select(el.slug)}
+											  className={(el.slug === category) ? styles.active : styles.listItem}>
 					{el.title}
 				</li>)}
 

@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 
 				<img src={image} alt="icon" onClick={() => {
 					navigate('/all-services')
-					scroll(0,0)
+					scroll(0, 0)
 				}
 				}/>
 

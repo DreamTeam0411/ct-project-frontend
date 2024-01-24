@@ -40,7 +40,6 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 	}
 
 
-
 	return (
 		<div className={styles.searchFormContainer}>
 			<form>
@@ -57,13 +56,14 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 						value={categoryState || ''}
 						onChange={(evt) => {
 							setCategoryState(evt.target.value)
-							if (city  && evt.target.value) {
+							if (city && evt.target.value) {
 								navigate(`/all-services?category=${evt.target.value}&city=${city}`)
 							} else {
 								navigate(`/all-services?category=${evt.target.value}`)
 							}
-                           if (!evt.target.value) {navigate(`/all-services?city=${city}`)
-						}
+							if (!evt.target.value) {
+								navigate(`/all-services?city=${city}`)
+							}
 							if (!city && !evt.target.value) {
 								navigate(`/all-services`)
 							}
@@ -89,7 +89,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 							value={cityState || ''}
 							onChange={(evt) => {
 								setCityState(evt.target.value)
-								if (category  && evt.target.value) {
+								if (category && evt.target.value) {
 									navigate(`/all-services?category=${category}&city=${evt.target.value}`)
 								} else {
 									navigate(`/all-services?city=${evt.target.value}`)
