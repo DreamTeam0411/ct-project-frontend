@@ -40,7 +40,6 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 	}
 
 
-	// @ts-ignore
 	return (
 		<div className={styles.searchFormContainer}>
 			<form>
@@ -57,20 +56,27 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 						value={categoryState || ''}
 						onChange={(evt) => {
 							setCategoryState(evt.target.value)
-							if (city !== null) {
+							if (city && evt.target.value) {
 								navigate(`/all-services?category=${evt.target.value}&city=${city}`)
 							} else {
 								navigate(`/all-services?category=${evt.target.value}`)
 							}
+							if (!evt.target.value) {
+								navigate(`/all-services?city=${city}`)
+							}
+							if (!city && !evt.target.value) {
+								navigate(`/all-services`)
+							}
 
 						}}
+
 					>
 						<option
 							disabled
 							hidden>
 							Сервіс
 						</option>
-
+						<option value=''>Всі сервіси</option>
 						{dataStateCategories.map(el => <option key={el.id} value={el.slug}>{el.title}</option>)}
 
 					</select>
@@ -83,13 +89,19 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 							value={cityState || ''}
 							onChange={(evt) => {
 								setCityState(evt.target.value)
-								if (category !== null) {
+								if (category && evt.target.value) {
 									navigate(`/all-services?category=${category}&city=${evt.target.value}`)
 								} else {
 									navigate(`/all-services?city=${evt.target.value}`)
 								}
+								if (!evt.target.value) {
+									navigate(`/all-services?category=${category}`)
+								}
+								if (!evt.target.value && !category) {
+									navigate(`/all-services`)
+								}
 
-								console.log(evt.target.value)
+
 							}}
 						>
 							<option
@@ -98,6 +110,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 								hidden>
 								Локація
 							</option>
+							<option value=''>Всі міста</option>
 							{dataStateCities.map(el => <option key={el.id} value={el.slug}>{el.name}</option>)}
 						</select>
 					</div>
