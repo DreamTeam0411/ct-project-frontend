@@ -101,7 +101,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
 									navigate(`/all-services`)
 								}
 
-								console.log(evt.target.value)
+
 							}}
 						>
 							<option
