@@ -4,8 +4,9 @@ import { SubCategoryButton } from "../../../components/UI/SubCategoryUI/SubCateg
 import { DataAllMasters } from "../../../stores/fetchAllMasters.tsx";
 import { AppointmentBlock } from "../../../components/Layout/AppointmentBlock/AppointmentBlock.tsx";
 import { BasicModalWindow } from "../../../components/UI/BasicModalWindow/BasicModalWindow.tsx";
-
+import {useNavigate} from "react-router-dom";
 export const ServiceCard = (props: DataAllMasters) => {
+  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
 
   const closeModal = () => {
@@ -15,17 +16,22 @@ export const ServiceCard = (props: DataAllMasters) => {
   const openModalButton = () => {
     setOpenModal(true);
   };
+
+  const handleCardClick = (productId:number) => {
+    navigate(`/all-services/${productId}`);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.mainPart}>
         <div className={styles.cardImgBlock}>
-          <img src={"/master.png"} alt="master-photo" />
+          <img key={props.id} onClick={()=>handleCardClick(props.id)} src={"/master.png"} alt="master-photo" />
         </div>
         <div className={styles.cardInformation}>
           <div className={styles.cardCategory}>
             {<SubCategoryButton children={props.category.title} />}
           </div>
-          <div className={styles.mainInformation}>
+          <div className={styles.mainInformation} key={props.id} onClick={()=>handleCardClick(props.id)}  >
             <div className={styles.cardTitle}>
               {props.user.firstName} {props.user.lastName}
             </div>

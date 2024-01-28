@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+    width: 1440px;
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
@@ -8,28 +8,99 @@
     margin: 20px auto;
 }
 
-.mainPart {
+.header {
     width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.mainPart {
+    width: 544px;
     display: flex;
     border-radius: 8px;
     gap: 10px;
-
     margin: 0 auto;
 }
 
-.cardImgBlock {
+.breadCrumbs {
+    color: #5B5B5B;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    margin-bottom: 26px;
+}
 
+.breadCrumbs p {
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+
+.imageBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.upperImages {
+    display: flex;
+    gap: 20px;
+}
+
+.lowerImages {
+    display: flex;
+    gap: 20px;
+}
+
+.image1 {
+    width: 413px;
+    height: 242px;
+    flex-shrink: 0;
     background-color: var(--gray2);
-    border-radius: 12px;
-    width: 264px;
-    height: 100%;
-    position: relative;
+    border-radius: 20px;
+}
+
+.image2 {
+    width: 305px;
+    height: 243px;
+    flex-shrink: 0;
+    background-color: var(--gray2);
+    border-radius: 20px;
+}
+
+.image3 {
+    width: 305px;
+    height: 243px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: var(--gray2);
+}
+
+.image4 {
+    width: 197px;
+    height: 243px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: var(--gray2);
+}
+
+.image5 {
+    width: 196px;
+    height: 243px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: var(--gray2);
+}
 
 
-}
-.cardImgBlock:hover {
-    cursor: pointer;
-}
 .cardImgBlock img {
     height: 100%;
     width: 100%;
@@ -43,9 +114,11 @@
     flex-direction: column;
     gap: 10px;
 }
+
 .mainInformation:hover {
     cursor: pointer;
 }
+
 .cardInformation {
     max-width: 100%;
     display: flex;
@@ -63,10 +136,21 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardTitleInfo {
+    color: var(--black);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px;
 }
 
 .cardProfession {
-    color: #000;
+    color: var(--black);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -80,6 +164,7 @@
     font-weight: 400;
     line-height: normal;
 }
+
 .phoneNumber {
     color: var(--gray);
     font-feature-settings: 'clig' off, 'liga' off;
@@ -99,11 +184,38 @@
 }
 
 .cardDescription {
-    width: 640px;
-    font-size: 14px;
+    width: 100%;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
+    color: var(--gray);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.workTimeBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workTime {
+    color: var(--black);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.phoneNumber {
+    color: var(--black);
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
 }
 
 .social {
@@ -111,6 +223,15 @@
     gap: 10px;
     height: 30px;
     align-items: end;
+    overflow: hidden;
+    color: #5B5B5B;
+    font-feature-settings: 'clig' off, 'liga' off;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 }
 
 .icon {
@@ -136,6 +257,7 @@
     line-height: 20px;
     transition-duration: 0.5s;
 }
+
 .button:hover {
     background-color: var(--blue-dark);
     color: var(--white);

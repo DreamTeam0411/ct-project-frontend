@@ -64,24 +64,20 @@ export const AllServicesPage = () => {
 									<div className={styles.allServices}>Вибрано ({dataState.length})</div>
 
 								</div>
-								<div className={styles.select}>
-									<label htmlFor="sorting">Сортувати за:</label>
-									<select name="sort" id="sorting">
-										<option value="">Рекомендовано</option>
-										<option value="rating">Рейтинг</option>
-										<option value="cost">Ціна</option>
-										<option value="daytime">Частина доби</option>
-									</select>
-								</div>
+								{/*<div className={styles.select}>*/}
+								{/*	<label htmlFor="sorting">Сортувати за:</label>*/}
+								{/*	<select name="sort" id="sorting">*/}
+								{/*		<option value="">Рекомендовано</option>*/}
+								{/*		<option value="rating">Рейтинг</option>*/}
+								{/*		<option value="cost">Ціна</option>*/}
+								{/*		<option value="daytime">Частина доби</option>*/}
+								{/*	</select>*/}
+								{/*</div>*/}
 
 							</div>
 							<div className={styles.serviceCardList}>
 								{
-									dataState.map(data => <ServiceCard id={data.id} category={data.category}
-																	   title={data.title} key={data.id}
-																	   description={data.description} photo={data.photo}
-																	   user={data.user} price={data.price}
-																	   createdAt={data.createdAt} city={data.city}/>)}
+									dataState.map(data => <ServiceCard id={data.id} category={data.category} title={data.title} key={data.id} description={data.description} photo={data.photo} user={data.user} price={data.price} createdAt={data.createdAt} city={data.city}/>)}
 
 							</div>
 
@@ -113,15 +109,15 @@ export const AllServicesPage = () => {
 									<div className={styles.allServices}>Всі сервіси ({dataState.length})</div>
 
 								</div>
-								<div className={styles.select}>
-									<label htmlFor="sorting">Сортувати за:</label>
-									<select name="sort" id="sorting">
-										<option value="">Рекомендовано</option>
-										<option value="rating">Рейтинг</option>
-										<option value="cost">Ціна</option>
-										<option value="daytime">Частина доби</option>
-									</select>
-								</div>
+								{/*<div className={styles.select}>*/}
+								{/*	<label htmlFor="sorting">Сортувати за:</label>*/}
+								{/*	<select name="sort" id="sorting">*/}
+								{/*		<option value="">Рекомендовано</option>*/}
+								{/*		<option value="rating">Рейтинг</option>*/}
+								{/*		<option value="cost">Ціна</option>*/}
+								{/*		<option value="daytime">Частина доби</option>*/}
+								{/*	</select>*/}
+								{/*</div>*/}
 
 							</div>
 							<div className={styles.serviceCardList}>

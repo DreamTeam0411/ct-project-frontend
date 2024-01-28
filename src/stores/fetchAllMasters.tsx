@@ -21,12 +21,12 @@ export interface DataAllMasters {
 
 }
 
-interface Category {
+export interface Category {
 	title: string
 	slug: string
 }
 
-interface User {
+export interface User {
 	id: number
 	firstName: string
 	lastName: string
@@ -34,7 +34,7 @@ interface User {
 	address: string
 }
 
-interface City {
+export interface City {
 	name: string
 	slug: string
 }
