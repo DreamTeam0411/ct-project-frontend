@@ -15,35 +15,25 @@
 }
 .serviceName {
   display: flex;
-  margin-top: 8px;
-  margin-right: 5px;
+  margin-bottom: 4px;
   font-family: "Lato", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
-}
-
-.serviceNameIcon {
-  margin-left: 5px;
+  line-height: 32px;
 }
 
 .cardCategory {
   font-family: "Lato", sans-serif;
   font-size: 14px;
-  line-height: 16.8px;
+  line-height: 20px;
+  background: #eaecf0;
+  padding: 4px 12px;
+  border-radius: 4px;
 }
 
 .cardAddress {
   font-family: "Lato", sans-serif;
-  font-size: 12px;
-  line-height: 16.8px;
-
-  color: #5b5b5b;
-}
-
-.cardTel {
-  font-family: "Lato", sans-serif;
   font-size: 14px;
-  line-height: 16.8px;
-
+  line-height: 20px;
   color: #5b5b5b;
 }

@@ -4,11 +4,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: auto auto 120px;
+    margin: auto auto 80px;
 }
 .recommendationsTitle {
-    margin-top: 60px;
-    margin-bottom: 32px;
+    margin-top: 80px;
+    margin-bottom: 40px;
         
     color:#21151F;
     font-family: "Lato", sans-serif;
