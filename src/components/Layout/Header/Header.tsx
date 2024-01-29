@@ -5,8 +5,8 @@ import { SearchForm } from "../SearchForm/SearchForm.tsx";
 
 const Header = () => {
   return (
-    <div className={styles.headerBlock}>
-      <div className={styles.header}>
+    
+      <div className={styles.container}>
         <div className={styles.linksBlock}>
           <Link to={"/"}>
             <div className={styles.logo}>
@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </div>
+   
   );
 };
 export default Header;
