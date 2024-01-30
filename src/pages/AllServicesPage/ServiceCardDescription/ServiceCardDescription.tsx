@@ -3,6 +3,7 @@ import {Category, City, User} from "../../../stores/fetchAllMasters.tsx";
 import {BasicModalWindow} from "../../../components/UI/BasicModalWindow/BasicModalWindow.tsx";
 import {AppointmentBlock} from "../../../components/Layout/AppointmentBlock/AppointmentBlock.tsx";
 import {useState} from "react";
+import { Link } from 'react-router-dom';
 
 type PropsType = {
 	description: string
@@ -25,18 +26,10 @@ export const ServiceCardDescription = ({description,  user, category,  city}: Pr
 	};
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.breadCrumbs}>Головна/<p>{category.title}</p></div>
+			<div className={styles.breadCrumbs}><Link to='/'>Головна/</Link><p>{category.title}</p></div>
 			<div className={styles.container}>
 				<div className={styles.imageBlock}>
-					<div className={styles.upperImages}>
-						<div className={styles.image1}></div>
-						<div className={styles.image2}></div>
-					</div>
-					<div className={styles.lowerImages}>
-						<div className={styles.image3}></div>
-						<div className={styles.image4}></div>
-						<div className={styles.image5}></div>
-					</div>
+
 
 				</div>
 				<div>
