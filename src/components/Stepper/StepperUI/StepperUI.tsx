@@ -1,15 +1,15 @@
 import React from "react";
-import { HiOutlineCheck, HiPencil } from "react-icons/hi2";
 import styles from "./StepperUI.module.css";
 
 interface FormStepperProps {
   activeStep: number;
-  steps: Array<never>;
+  steps: Array<any>;
   changeActiveStep: (step: number) => void;
 }
 
 const FormStepper: React.FC<FormStepperProps> = ({ activeStep, steps }) => {
-  const isStepComplete = (currentStep: number) => activeStep > currentStep;
+  const isStepComplete = (currentStep: number) =>
+    activeStep > currentStep || activeStep === 4;
 
   return (
     <div>
@@ -21,16 +21,15 @@ const FormStepper: React.FC<FormStepperProps> = ({ activeStep, steps }) => {
         <ol className={styles.stepperList}>
           {steps.map(({ value, label, label2 }) => (
             <li key={value}>
-              <div>
+              <div className={styles.listItems}>
                 <div
-                  className={`${activeStep === value ? "step-active" : ""} ${
-                    isStepComplete(value) ? "step-complete" : ""
+                  className={`${activeStep === value ? styles.active : ""} ${
+                    isStepComplete(value) ? styles.complete : ""
                   }`}
                 >
                   <span>
-                    <p>{label}</p>
+                    <h3>{label}</h3>
                     <p>{label2}</p>
-                    {isStepComplete(value) ? <HiOutlineCheck /> : <HiPencil />}
                   </span>
                 </div>
               </div>

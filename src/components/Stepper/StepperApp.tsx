@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
 import { Stepper } from "./StepperUI/index";
-import { StepOne } from "./Steps/StepOne.tsx";
-import { StepThree } from "./Steps/StepThree.tsx";
-import { StepTwo } from "./Steps/StepoTwo.tsx";
+import { StepOne } from "./Steps/StepOne/StepOne.tsx";
+import { StepThree } from "./Steps/StepThree/StepThree.tsx";
+import { StepTwo } from "./Steps/StepTwo/StepoTwo.tsx";
+import { StepFour } from "./Steps/StepFour/StepFour.tsx";
 
 // import "./App.css";
 
@@ -34,6 +35,12 @@ function StepperApp() {
         label2: "Додати фото",
         value: 3,
         component: <StepThree changeActiveStep={changeActiveStep} />,
+      },
+      {
+        label: "Крок 4",
+        label2: "Сервіс додано",
+        value: 4,
+        component: <StepFour changeActiveStep={changeActiveStep} />,
       },
     ],
     []

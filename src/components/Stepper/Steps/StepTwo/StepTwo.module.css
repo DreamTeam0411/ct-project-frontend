@@ -1,0 +1,126 @@
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid var(--pink);
+}
+form textarea:focus {
+    outline: none;
+    border: 1px solid var(--pink);
+    resize: none;
+}
+
+form select:focus {
+    outline: none;
+    border: 1px solid var(--pink);
+}
+
+form label {
+    margin-bottom: 6px;
+    color: var(--black, #21151F);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.categoriesBlock option {
+    color: var(--gray4);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+
+.address, .description, .categoriesBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--gray4, #8F8F98);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.categoriesBlock select {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--gray3);
+    background: var(--white, #FFF);
+    color: var(--gray4, #8F8F98);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+
+
+.address input {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--gray3);
+    background: var(--white, #FFF);
+    color: var(--gray4, #8F8F98);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.description textarea {
+    min-height: 120px;
+    max-height: 144px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--gray3);
+    background: var(--white, #FFF);
+}
+
+form button {
+    display: flex;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 8px;
+    background: var(--pink);
+    color: var(--blue-dark);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-style: none;
+    width: 100%;
+}
+
+form button:hover {
+    color: var(--blue);
+    background: var(--white);
+    transition-duration: 0.5s;
+}
