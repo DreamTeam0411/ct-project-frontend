@@ -4,7 +4,7 @@ import styles from "./StepperUI.module.css";
 
 interface FormStepperProps {
   activeStep: number;
-  steps: Array<any>;
+  steps: Array<never>;
   changeActiveStep: (step: number) => void;
 }
 
