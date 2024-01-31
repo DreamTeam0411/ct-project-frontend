@@ -1,7 +1,7 @@
 import React from "react";
-import { IStepProps } from "./Stepone";
+import { IStepProps } from "./StepOne.tsx";
 
-export const Stepthree: React.FC<IStepProps> = ({ changeActiveStep }) => {
+export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
   const completeSteps = () => {
     changeActiveStep(4);
     console.log("check conditions and/or push to new route");

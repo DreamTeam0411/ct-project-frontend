@@ -8,7 +8,7 @@ import StepperApp from "../../components/Stepper/StepperApp.tsx";
 export const ForBusiness = () => {
   const [activeJoinUs, setActiveJoinUs] = useState(false);
 
-  const joinus = () => {
+  const joinUs = () => {
     setActiveJoinUs(true);
   };
 
@@ -92,7 +92,7 @@ export const ForBusiness = () => {
                 </div>
               </div>
             </div>
-            <div onClick={joinus}>
+            <div onClick={joinUs}>
               <Button children={"Приєднатись"} />
             </div>
           </>

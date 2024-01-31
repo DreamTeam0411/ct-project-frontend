@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
-
 import { Stepper } from "./StepperUI/index";
-import { Stepone } from "./Steps/Stepone";
-import { Steptwo } from "./Steps/Stepotwo";
-import { Stepthree } from "./Steps/Stepthree";
+import { StepOne } from "./Steps/StepOne.tsx";
+import { StepThree } from "./Steps/StepThree.tsx";
+import { StepTwo } from "./Steps/StepoTwo.tsx";
 
 // import "./App.css";
 
@@ -16,26 +15,29 @@ function StepperApp() {
     }
   };
 
-  const steps = useMemo(() => [
-    {
-      label: "Крок 1",
-      label2: "Контактні дані",
-      value: 1,
-      component: <Stepone changeActiveStep={changeActiveStep} />,
-    },
-    {
-      label: "Крок 2",
-      label2: "Дані про послуги",
-      value: 2,
-      component: <Steptwo changeActiveStep={changeActiveStep} />,
-    },
-    {
-      label: "Крок 3",
-      label2: "Додати фото",
-      value: 3,
-      component: <Stepthree changeActiveStep={changeActiveStep} />,
-    },
-  ], []);
+  const steps = useMemo(
+    () => [
+      {
+        label: "Крок 1",
+        label2: "Контактні дані",
+        value: 1,
+        component: <StepOne changeActiveStep={changeActiveStep} />,
+      },
+      {
+        label: "Крок 2",
+        label2: "Дані про послуги",
+        value: 2,
+        component: <StepTwo changeActiveStep={changeActiveStep} />,
+      },
+      {
+        label: "Крок 3",
+        label2: "Додати фото",
+        value: 3,
+        component: <StepThree changeActiveStep={changeActiveStep} />,
+      },
+    ],
+    []
+  );
 
   const activeComponent = useMemo(() => {
     return steps.find(({ value }) => value === activeStep)?.component || null;

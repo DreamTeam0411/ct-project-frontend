@@ -10,7 +10,7 @@ interface IFormData {
   phone: string;
 }
 
-export const Stepone: React.FC<IStepProps> = ({ changeActiveStep }) => {
+export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
   const [formData, setFormData] = useState<IFormData>({
     name: "",
     email: "",
@@ -23,7 +23,7 @@ export const Stepone: React.FC<IStepProps> = ({ changeActiveStep }) => {
     changeActiveStep(2);
   };
 
-  const handleImputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
@@ -38,7 +38,7 @@ export const Stepone: React.FC<IStepProps> = ({ changeActiveStep }) => {
             id="name"
             name="name"
             value={formData.name}
-            onChange={handleImputChange}
+            onChange={handleInputChange}
           ></input>
         </div>
 
@@ -49,7 +49,7 @@ export const Stepone: React.FC<IStepProps> = ({ changeActiveStep }) => {
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleImputChange}
+            onChange={handleInputChange}
           ></input>
         </div>
 
@@ -60,7 +60,7 @@ export const Stepone: React.FC<IStepProps> = ({ changeActiveStep }) => {
             id="phone"
             name="phone"
             value={formData.phone}
-            onChange={handleImputChange}
+            onChange={handleInputChange}
           ></input>
         </div>
 

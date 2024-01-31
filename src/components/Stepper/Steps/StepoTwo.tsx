@@ -1,7 +1,7 @@
 import React from "react";
-import { IStepProps } from "./Stepone";
+import { IStepProps } from "./StepOne.tsx";
 
-export const Steptwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
+export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
   return (
     <div>
       <h2>
