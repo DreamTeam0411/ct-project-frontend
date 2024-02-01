@@ -1,20 +1,20 @@
 import React from "react";
-import { HiOutlineCheck, HiPencil } from "react-icons/hi2";
-import styles from "./StepperUI.module.css"
+import styles from "./StepperUI.module.css";
 
-interface FormstepperProps {
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+interface FormStepperProps {
   activeStep: number;
-  steps: Array<any>;
   changeActiveStep: (step: number) => void;
+  steps: Array<any>;
 }
 
-const Formstepper: React.FC<FormstepperProps> = ({ activeStep, steps }) => {
-  const isStepComplete = (currentStep: number) => activeStep > currentStep;
+const FormStepper: React.FC<FormStepperProps> = ({ activeStep, steps }) => {
+  const isStepComplete = (currentStep: number) =>
+    activeStep > currentStep || activeStep === 4;
 
   return (
     <div>
       <div>
-        
         <h2 className={styles.header}>Приєднатись до BeautyBook</h2>
       </div>
 
@@ -22,13 +22,15 @@ const Formstepper: React.FC<FormstepperProps> = ({ activeStep, steps }) => {
         <ol className={styles.stepperList}>
           {steps.map(({ value, label, label2 }) => (
             <li key={value}>
-              <div>
-                <div className={`${activeStep === value ? "step-active" : ""} ${isStepComplete(value) ? "step-complete" : ""}`}>
+              <div className={styles.listItems}>
+                <div
+                  className={`${activeStep === value ? styles.active : ""} ${
+                    isStepComplete(value) ? styles.complete : ""
+                  }`}
+                >
                   <span>
-                  <p>{label}</p>
-                  <p>{label2}</p>
-                    {isStepComplete(value) ? <HiOutlineCheck /> : <HiPencil />}
-                    
+                    <h3>{label}</h3>
+                    <p>{label2}</p>
                   </span>
                 </div>
               </div>
@@ -40,4 +42,4 @@ const Formstepper: React.FC<FormstepperProps> = ({ activeStep, steps }) => {
   );
 };
 
-export default Formstepper;
+export default FormStepper;

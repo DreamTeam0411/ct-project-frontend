@@ -1,7 +1,8 @@
 import React from "react";
-import { IStepProps } from "./Stepone";
+import { IStepProps } from "../StepOne/StepOne.tsx";
+import styles from "./StepThree.module.css";
 
-export const Stepthree: React.FC<IStepProps> = ({ changeActiveStep }) => {
+export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
   const completeSteps = () => {
     changeActiveStep(4);
     console.log("check conditions and/or push to new route");
@@ -10,14 +11,12 @@ export const Stepthree: React.FC<IStepProps> = ({ changeActiveStep }) => {
   return (
     <div>
       <section>
-        <div>
-          <h2>Lorem ipsum dolor sit amet.</h2>
-        </div>
+        <div className={styles.imageDownLoad}></div>
       </section>
 
-      <div>
+      <div className={styles.button}>
         <button type="submit" onClick={() => completeSteps()}>
-          Next step
+          Продовжити
         </button>
       </div>
     </div>

@@ -31,7 +31,15 @@
     font-weight: 500;
     line-height: 20px;
     display: flex;
-    margin-bottom: 26px;
+    margin-bottom: 40px;
+}
+.breadCrumbs a{
+    color: #5B5B5B;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 .breadCrumbs p {
@@ -48,6 +56,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: var(--gray2);
+    border-radius: 20px;
+    width: 738px;
+    height: 500px;
 }
 
 .upperImages {
@@ -60,45 +72,7 @@
     gap: 20px;
 }
 
-.image1 {
-    width: 413px;
-    height: 242px;
-    flex-shrink: 0;
-    background-color: var(--gray2);
-    border-radius: 20px;
-}
 
-.image2 {
-    width: 305px;
-    height: 243px;
-    flex-shrink: 0;
-    background-color: var(--gray2);
-    border-radius: 20px;
-}
-
-.image3 {
-    width: 305px;
-    height: 243px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: var(--gray2);
-}
-
-.image4 {
-    width: 197px;
-    height: 243px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: var(--gray2);
-}
-
-.image5 {
-    width: 196px;
-    height: 243px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: var(--gray2);
-}
 
 
 .cardImgBlock img {
@@ -264,36 +238,5 @@
     cursor: pointer;
 }
 
-.rating {
-    position: absolute;
-    right: 0;
-    border-radius: 8px;
-    background-color: var(--gray2);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    width: 70px;
-    height: 50px;
-}
 
-.cardStarsNumber {
-    color: var(--white);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    display: flex;
-    gap: 5px
-}
 
-.cardRatingNumber {
-    color: var(--white);
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding: 3px;
-}

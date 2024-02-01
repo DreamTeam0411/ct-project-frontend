@@ -1,15 +1,19 @@
 :root {
---pink: #E19192;
-    --yellow:#FFD12C;
-    --blue:#78C5CC;
-    --white:#FFFFFF;
-    --black:#21151F;
-    --error:#CF1922;
-    --gray2:#D1D1D1;
+    --pink: #FFBBD8;
+    --yellow: #FFD12C;
+    --blue: #78C5CC;
+    --white: #FFFFFF;
+    --black: #21151F;
+    --error: #CF1922;
+    --gray2: #D1D1D1;
     --gray: #5B5B5B;
+    --gray3: #B6B6BC;
+    --gray4: #8F8F98;
     --blue-dark: #044AB2
 
+
 }
+
 * {
 
 
@@ -63,6 +67,7 @@ ul[class],
 ol[class] {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }

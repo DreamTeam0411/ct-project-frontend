@@ -9,10 +9,7 @@ const RegistrationPage = () => {
 
 	const {register, watch, reset, handleSubmit, formState: {errors, isValid}} = useForm<RegistrationForm>({mode: "onChange"})
 	const submit: SubmitHandler<RegistrationForm> = () => {
-
 		reset()
-
-
 	}
 
 	return (

@@ -1,0 +1,88 @@
+
+.formBlock {
+	width: 480px;
+	display: flex;
+
+}
+
+.nameOfUserBlock {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+.name, .surname, .email, .phone {
+	display: flex;
+	flex-direction: column;
+	color: var(--black, #21151F);
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px;
+
+}
+
+.form {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.form label {
+	margin-bottom: 6px;
+}
+.form input:focus {
+	outline: none;
+	border: 1px solid var(--pink);
+}
+.name input{
+	display: flex;
+	padding: 12px 16px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+	border-radius: 8px;
+	border: 1px solid var(--gray2, #B6B6BC);
+	background: var(--white, #FFF);
+	width: 232px;
+}
+.surname input{
+	display: flex;
+	padding: 12px 16px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+	border-radius: 8px;
+	border: 1px solid var(--gray2, #B6B6BC);
+	background: var(--white, #FFF);
+	width: 232px;
+
+}
+.email input {
+	display: flex;
+	padding: 12px 16px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+	border-radius: 8px;
+	border: 1px solid var(--gray2, #B6B6BC);
+	background: var(--white, #FFF);
+}
+.phone input {
+	display: flex;
+	padding: 12px 16px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+	border-radius: 8px;
+	border: 1px solid var(--gray2, #B6B6BC);
+	background: var(--white, #FFF);
+}
+.name input[placeholder] {
+	color: var(--gray2, #8F8F98);
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px;
+}
