@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./StepperUI.module.css";
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 interface FormStepperProps {
   activeStep: number;
   changeActiveStep: (step: number) => void;
