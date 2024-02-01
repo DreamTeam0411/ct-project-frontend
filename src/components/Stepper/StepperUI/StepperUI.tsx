@@ -3,8 +3,8 @@ import styles from "./StepperUI.module.css";
 
 interface FormStepperProps {
   activeStep: number;
-  steps: Array<any>;
   changeActiveStep: (step: number) => void;
+  steps: Array<any>;
 }
 
 const FormStepper: React.FC<FormStepperProps> = ({ activeStep, steps }) => {
