@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Button } from "../../../UI/buttons/Button/Button.tsx";
+import React from "react";
 import styles from "./StepOne.module.css";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 export interface IStepProps {
   changeActiveStep: (step: number) => void;
@@ -14,50 +14,67 @@ interface IFormData {
 }
 
 export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
-  const [formData, setFormData] = useState<IFormData>({
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-  });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<IFormData>({ mode: "onChange" });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    console.log("Form data submitted:", formData);
+  const submit: SubmitHandler<IFormData> = (data): void => {
+    console.log("Form data submitted:", data);
     changeActiveStep(2);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   return (
     <div className={styles.formBlock}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(submit)}>
         <div className={styles.form}>
           <div className={styles.nameOfUserBlock}>
             <div className={styles.name}>
               <label htmlFor="name">Ім'я</label>
               <input
+                {...register("name", {
+                  required: "Обов'язкове для заповнення",
+                  minLength: {
+                    value: 3,
+                    message: "Мінімум три символи",
+                  },
+                  pattern: {
+                    value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
+                    message: "Неправильні сімволи",
+                  },
+                })}
                 type="text"
                 id="name"
                 name="name"
                 placeholder="Введіть ім'я"
-                value={formData.name}
-                onChange={handleInputChange}
               ></input>
+              <div className={styles.error}>
+                {errors?.name && <p>{errors?.name?.message}</p>}
+              </div>
             </div>
             <div className={styles.surname}>
               <label htmlFor="surname">Прізвище</label>
               <input
                 placeholder="Введіть прізвище"
+                {...register("surname", {
+                  required: "Обов'язкове для заповнення",
+                  minLength: {
+                    value: 3,
+                    message: "Мінімум три символи",
+                  },
+                  pattern: {
+                    value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
+                    message: "Неправильні сімволи",
+                  },
+                })}
                 type="text"
                 id="surname"
                 name="surname"
-                value={formData.surname}
-                onChange={handleInputChange}
               ></input>
+              <div className={styles.error}>
+                {errors?.surname && <p>{errors?.surname?.message}</p>}
+              </div>
             </div>
           </div>
 
@@ -65,27 +82,47 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
             <label htmlFor="email">Email:</label>
             <input
               placeholder="Ввведіть email"
-              type="text"
+              {...register("email", {
+                required: "Обов'язкове для заповнення",
+                pattern: {
+                  value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
+                  message: "Невірний email",
+                },
+              })}
+              type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
             ></input>
+            <div className={styles.error}>
+              {errors?.email && <p>{errors?.email?.message}</p>}
+            </div>
           </div>
 
           <div className={styles.phone}>
             <label htmlFor="phone">Номер телефону</label>
             <input
               placeholder="+38(063) 000-0000"
-              type="text"
+              {...register("phone", {
+                required: "Обов'язкове для заповнення",
+                pattern: {
+                  value: /^[0-9]+$/,
+                  message: "Тільки цифри",
+                },
+                minLength: {
+                  value: 10,
+                  message: "Мінімум десять символів",
+                },
+              })}
+              type="tel"
               id="phone"
               name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
             ></input>
+            <div className={styles.error}>
+              {errors?.phone && <p>{errors?.phone?.message}</p>}
+            </div>
           </div>
         </div>
-        <Button>Продовжити</Button>
+        <button type={"submit"}>Продовжити</button>
       </form>
     </div>
   );

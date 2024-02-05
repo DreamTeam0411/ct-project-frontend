@@ -32,6 +32,7 @@
     line-height: 20px;
     display: flex;
     margin-bottom: 40px;
+    align-items: center;
 }
 .breadCrumbs a{
     color: #5B5B5B;
@@ -40,15 +41,17 @@
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+
 }
 
-.breadCrumbs p {
+.breadCrumbsCategory {
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+
 }
 
 
