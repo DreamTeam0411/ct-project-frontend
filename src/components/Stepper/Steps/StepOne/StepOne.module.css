@@ -78,11 +78,8 @@
 	border: 1px solid var(--gray2, #B6B6BC);
 	background: var(--white, #FFF);
 }
-.name input[placeholder] {
-	color: var(--gray2, #8F8F98);
-	font-feature-settings: 'clig' off, 'liga' off;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 20px;
+
+.error p{
+	color: darkred;
+	font-size: 12px;
 }

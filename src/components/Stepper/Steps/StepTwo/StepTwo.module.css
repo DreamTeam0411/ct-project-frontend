@@ -124,3 +124,7 @@ form button:hover {
     background: var(--white);
     transition-duration: 0.5s;
 }
+.error p{
+    color: darkred;
+    font-size: 12px;
+}
