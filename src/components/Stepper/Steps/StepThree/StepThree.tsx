@@ -2,6 +2,8 @@ import React from "react";
 import { IStepProps } from "../StepOne/StepOne.tsx";
 import styles from "./StepThree.module.css";
 
+import FileUpload from "../../../Layout/Drag&Drop/Drag_Drop.jsx";
+
 export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
   const completeSteps = () => {
     changeActiveStep(4);
@@ -10,10 +12,9 @@ export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
 
   return (
     <div>
-      <section>
-        <div className={styles.imageDownLoad}></div>
-      </section>
-
+      <div className={styles.imageDownLoad}>
+        <FileUpload />
+      </div>
       <div className={styles.button}>
         <button type="submit" onClick={() => completeSteps()}>
           Продовжити
