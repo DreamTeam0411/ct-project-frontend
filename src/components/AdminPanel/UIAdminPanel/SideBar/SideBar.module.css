@@ -1,0 +1,80 @@
+.container {
+background: #21151F;
+    width: 280px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.logoBlock {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: start;
+    align-items: center;
+}
+.logo {
+    width: 112px;
+    height: 24px;
+    padding-left: 30px;
+    font-size: 24px;
+
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding-left: 20px ;
+}
+.link {
+    display: flex;
+    gap: 12px;
+    color: white;
+    width: 224px;
+    height: 24px;
+    padding: 24px 12px;
+    font-size: 16px;
+    line-height: 24px;
+    justify-content: start;
+    align-items: center;
+}
+.link:hover {
+    border-radius: 6px;
+    background: #044AB2;
+    transition: all 0.5s;
+}
+.active {
+    border-radius: 6px;
+    background: #044AB2;
+    transition: all 0.5s;
+    gap: 12px;
+    display: flex;
+    color: white;
+    width: 224px;
+    height: 24px;
+    padding: 24px 12px;
+    font-size: 16px;
+    line-height: 24px;
+    justify-content: start;
+    align-items: center;
+}
+.icon {
+    font-size: 24px;
+}
+.bottom {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom a {
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #8f8d8d;
+    transition-duration: 0.5s;
+}
+.bottom a:hover {
+    background: none;
+}

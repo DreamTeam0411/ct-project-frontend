@@ -82,4 +82,9 @@
 .error p{
 	color: darkred;
 	font-size: 12px;
+	margin: 0;
+}
+.error {
+	height: fit-content;
+	padding: 0;
 }
