@@ -34,7 +34,7 @@ export const useGetData = create((set) => {
           password: password,
         });
 
-                res.data.roles.forEach((role) => {
+           res.data.roles.forEach((role) => {
           if (role.id === 1) {
             const token =res.data.Bearer.accessToken
                        

@@ -44,7 +44,7 @@ function SideBar() {
           ))}
         </div>
       </div>
-      <div className={styles.bottom} onClick={clearToken()}>
+      <div className={styles.bottom} onClick={clearToken}>
         <Link to={"/"}>Main</Link>
       </div>
     </div>
