@@ -31,7 +31,6 @@ const LoginPage = () => {
   } = useForm<RegistrationForm>({ mode: "onChange" });
 
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
-    console.log(data.email, data.password);
     getData.execute(data.email, data.password);
   };
 
