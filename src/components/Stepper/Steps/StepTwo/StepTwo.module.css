@@ -127,4 +127,10 @@ form button:hover {
 .error p{
     color: darkred;
     font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.error {
+    margin: 0;
+    padding: 0;
 }

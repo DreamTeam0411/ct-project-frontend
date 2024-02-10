@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     element: <NotFoundPage />,
   },
   {
-    path: "/forbusiness",
+    path: "/for-business",
     element: <ForBusiness />,
   },
   {
