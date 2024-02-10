@@ -21,7 +21,7 @@ const useFetchCategories = create<RootCategories>()(persist((set): RootCategorie
 			const url = `https://ct-project.pp.ua/api/v1/categories`
 			const response = await axios.get(url)
 			set({data: await response.data.data})
-			console.log(response.data.data)
+			// console.log(response.data.data)
 			return response.data.data
 		},
 

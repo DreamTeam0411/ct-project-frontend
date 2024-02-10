@@ -22,7 +22,7 @@ const useFetchDataCities = create<RootCities>()(persist((set): RootCities => ({
 			const url = `https://ct-project.pp.ua/api/v1/cities`
 			const response = await axios.get(url)
 			set({data: await response.data.data})
-			console.log(response.data.data)
+			// console.log(response.data.data)
 			return response.data.data
 		},
 
