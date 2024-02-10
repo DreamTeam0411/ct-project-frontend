@@ -6,17 +6,17 @@ const AboutUs = () => {
       <img src="/About.jpg" alt="women" className={styles.aboutUsImage} />
 
       <div className={styles.aboutUsBlockText}>
-        <div className={styles.aboutUsText1}>
-          <p>BeautyBook</p>
+        <div>
+          <p className={styles.aboutUsText1}>BeautyBook</p>
         </div>
 
         <div className={styles.aboutUsBlockText2}>
-          <div className={styles.aboutUsText2}>
-            <p>- твій гід у світі</p>
+          <div >
+            <p className={styles.aboutUsText2}>- твій гід у світі</p>
           </div>
 
-          <div className={styles.aboutUsText3}>
-            <p>краси</p>
+          <div>
+            <p  className={styles.aboutUsText3}>краси</p>
           </div>
         </div>
 

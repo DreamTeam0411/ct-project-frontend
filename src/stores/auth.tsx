@@ -3,7 +3,6 @@
 import axios from "axios";
 import { create } from "zustand";
 
-
 axios.defaults.baseURL = "https://ct-project.pp.ua/api/v1";
 
 const setAuthHeader = (token) => {
@@ -23,29 +22,34 @@ const initialState = {
 };
 
 export const useGetData = create((set) => {
-
-
   return {
     ...initialState,
 
-    execute: async (email:string, password:string) => {
-          
-      set({ ...initialState, loading: true});
+    execute: async (email: string, password: string) => {
+      console.log(email, password);
+
+      set({ ...initialState, loading: true });
       try {
         const res = await axios.post("/login", {
           email: email,
           password: password,
         });
 
-
+        console.log(res.data.roles);
         res.data.roles.forEach((role) => {
           if (role.id === 1) {
-            setAuthHeader(res.data.Bearer.accessToken);
-            localStorage.setItem("token", res.data.Bearer.accessToken);
-            set({ ...initialState, success: true, data: res.data.Bearer.accessToken });
-   
+            const token =res.data.Bearer.accessToken
+            console.log(token);
+            
+            setAuthHeader(token);
+            localStorage.setItem("token", token);
+            set({
+              ...initialState,
+              success: true,
+              data: token,
+            });
           } else {
-            alert('You are not an admin ')
+            alert("You are not an admin ");
           }
         });
       } catch (err) {

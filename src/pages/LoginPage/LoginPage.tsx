@@ -11,13 +11,17 @@ interface GetDataFunction {
   execute: (email: string | number, password: string | number) => void; // Adjust the return type as needed
 }
 
-
 const LoginPage = () => {
   const getData = useGetData() as GetDataFunction;
+  const local = localStorage.getItem("token");
+
   const navigate = useNavigate();
+
   useEffect(() => {
-     navigate('/forbusiness')
-  }, [getData]);
+    if (local) {
+      navigate("/admin-panel");
+    }
+  }, [local]);
 
   const {
     register,
@@ -31,9 +35,9 @@ const LoginPage = () => {
     getData.execute(data.email, data.password);
   };
 
-  const forgetPassword =()=>{
-    alert('Женя нагадає!')
-  }
+  const forgetPassword = () => {
+    alert("Женя нагадає!");
+  };
 
   return (
     <div className={styles.container}>
@@ -104,12 +108,12 @@ const LoginPage = () => {
               </div>
             </div>
 
-            <div className={styles.forgetPassword} onClick={(()=>forgetPassword())}>
-        
-            
+            <div
+              className={styles.forgetPassword}
+              onClick={() => forgetPassword()}
+            >
               <p className={styles.forgetlink}>Не пам’ятаю пароль</p>
-           
-          </div>
+            </div>
 
             <div className={styles.formButton}>
               <button disabled={!isValid}>Увійти</button>
