@@ -26,8 +26,7 @@ export const useGetData = create((set) => {
     ...initialState,
 
     execute: async (email: string, password: string) => {
-      console.log(email, password);
-
+      
       set({ ...initialState, loading: true });
       try {
         const res = await axios.post("/login", {
@@ -35,12 +34,10 @@ export const useGetData = create((set) => {
           password: password,
         });
 
-        console.log(res.data.roles);
-        res.data.roles.forEach((role) => {
+                res.data.roles.forEach((role) => {
           if (role.id === 1) {
             const token =res.data.Bearer.accessToken
-            console.log(token);
-            
+                       
             setAuthHeader(token);
             localStorage.setItem("token", token);
             set({
