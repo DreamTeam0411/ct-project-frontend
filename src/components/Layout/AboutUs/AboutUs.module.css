@@ -40,10 +40,11 @@
   border-bottom-left-radius: 12px;
 }
 
+
 .aboutUsBlockText2 {
   display: flex;
-  margin-bottom: 20px;
-}
+  align-items: center;
+ }
 
 .aboutUsText2{
   font-weight: 500;

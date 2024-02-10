@@ -4,6 +4,11 @@ import { sideBarItems } from "../../data/dataSidebar.tsx";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function SideBar() {
+
+  const clearToken=()=>{
+   localStorage.removeItem("token");
+      }
+  
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -39,7 +44,7 @@ function SideBar() {
           ))}
         </div>
       </div>
-      <div className={styles.bottom}>
+      <div className={styles.bottom} onClick={clearToken}>
         <Link to={"/"}>Main</Link>
       </div>
     </div>
