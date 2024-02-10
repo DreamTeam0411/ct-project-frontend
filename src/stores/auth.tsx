@@ -22,13 +22,13 @@ const initialState = {
   errorData: null,
 };
 
-export const useGetData = create((set, get) => {
+export const useGetData = create((set) => {
 
 
   return {
     ...initialState,
 
-    execute: async (email, password) => {
+    execute: async (email:string, password:string) => {
           
       set({ ...initialState, loading: true});
       try {

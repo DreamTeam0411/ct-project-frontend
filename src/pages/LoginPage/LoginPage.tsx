@@ -7,8 +7,13 @@ import { useGetData } from "../../stores/auth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+interface GetDataFunction {
+  execute: (email: string | number, password: string | number) => void; // Adjust the return type as needed
+}
+
+
 const LoginPage = () => {
-  const getData = useGetData();
+  const getData = useGetData() as GetDataFunction;
   const navigate = useNavigate();
   useEffect(() => {
      navigate('/forbusiness')
@@ -16,7 +21,7 @@ const LoginPage = () => {
 
   const {
     register,
-    reset,
+    // reset,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<RegistrationForm>({ mode: "onChange" });
@@ -80,7 +85,7 @@ const LoginPage = () => {
             </div>
 
             <div className={styles.password}>
-              <label htmlFor="email">Password:</label>
+              <label htmlFor="password">Password:</label>
               <input
                 placeholder="Ввведіть password"
                 {...register("password", {
