@@ -11,7 +11,7 @@ const LoginPage = () => {
   const getData = useGetData();
   const navigate = useNavigate();
   useEffect(() => {
-     // navigate('/forbusiness')
+     navigate('/forbusiness')
   }, [getData]);
 
   const {
