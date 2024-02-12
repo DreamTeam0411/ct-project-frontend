@@ -7,11 +7,11 @@ export const Documents = () => {
       <form>
         <div className={styles.inputs}>
           <label htmlFor="terms">Умови використання</label>
-          <input type="text" name="terms" />
+          <input type="text" name="terms" placeholder="Додайте посилання" />
         </div>
         <div className={styles.inputs}>
           <label htmlFor="politics">Політика конфіденційності</label>
-          <input type="text" name="politics" />
+          <input type="text" name="politics" placeholder="Додайте посилання" />
         </div>
         <div className={styles.buttons}>
           <button>Відмінити</button>

@@ -29,6 +29,11 @@ h1 {
     line-height: 20px;
     font-weight: 500;
 }
+.inputs input[placeholder] {
+    font-size: 14px;
+    line-height: 20px;
+    color: #8F8F98;
+}
 
 .buttons {
     display: flex;
