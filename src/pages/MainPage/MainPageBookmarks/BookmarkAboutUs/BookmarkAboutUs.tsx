@@ -15,7 +15,7 @@ const BookmarkAboutUs = () => {
                 placeholder="Введіть підзаголовок"
                 name="subtitle"
               ></textarea>
-              <p>0/300</p>
+              <p className={styles.p}>0/300</p>
             </div>
           </div>
           <div className={styles.photo}>

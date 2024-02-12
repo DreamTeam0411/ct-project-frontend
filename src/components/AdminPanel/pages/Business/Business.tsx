@@ -17,7 +17,7 @@ function Business() {
                 placeholder="Введіть підзаголовок"
                 name="subtitle"
               ></textarea>
-              <p>0/300</p>
+              <p className={styles.p}>0/300</p>
             </div>
             <div className={styles.inputsSubtitle}>
               <label htmlFor="content-subtitle">Заголовок контенту</label>
@@ -31,7 +31,7 @@ function Business() {
                 placeholder="Введіть текст контенту"
                 name="content"
               ></textarea>
-              <p>0/300</p>
+              <p className={styles.p}>0/300</p>
             </div>
           </div>
           <div className={styles.photo}>

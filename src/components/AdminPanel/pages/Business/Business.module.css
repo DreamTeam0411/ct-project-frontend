@@ -55,7 +55,7 @@ h2 {
     font-weight: 400;
     scrollbar-width:thin;
 }
-p {
+.p {
     display: flex;
     justify-content: end;
     font-size: 14px;
