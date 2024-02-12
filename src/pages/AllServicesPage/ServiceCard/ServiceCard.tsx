@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styles from "./ServiceCard.module.css";
-import { SubCategoryButton } from "../../../components/UI/SubCategoryUI/SubCategoryButton/SubCategoryButton.tsx";
 import { DataAllMasters } from "../../../stores/fetchAllMasters.tsx";
 import { AppointmentBlock } from "../../../components/Layout/AppointmentBlock/AppointmentBlock.tsx";
 import { BasicModalWindow } from "../../../components/UI/BasicModalWindow/BasicModalWindow.tsx";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 export const ServiceCard = (props: DataAllMasters) => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
@@ -17,7 +17,7 @@ export const ServiceCard = (props: DataAllMasters) => {
     setOpenModal(true);
   };
 
-  const handleCardClick = (productId:number) => {
+  const handleCardClick = (productId: number) => {
     navigate(`/all-services/${productId}`);
   };
 
@@ -25,13 +25,19 @@ export const ServiceCard = (props: DataAllMasters) => {
     <div className={styles.container}>
       <div className={styles.mainPart}>
         <div className={styles.cardImgBlock}>
-          <img key={props.id} onClick={()=>handleCardClick(props.id)} src={"/master.png"} alt="master-photo" />
+          <img
+            key={props.id}
+            onClick={() => handleCardClick(props.id)}
+            src={"/master.png"}
+            alt="master-photo"
+          />
         </div>
         <div className={styles.cardInformation}>
-          <div className={styles.cardCategory}>
-            {<SubCategoryButton children={props.category.title} />}
-          </div>
-          <div className={styles.mainInformation} key={props.id} onClick={()=>handleCardClick(props.id)}  >
+          <div
+            className={styles.mainInformation}
+            key={props.id}
+            onClick={() => handleCardClick(props.id)}
+          >
             <div className={styles.cardTitle}>
               {props.user.firstName} {props.user.lastName}
             </div>
@@ -143,7 +149,7 @@ export const ServiceCard = (props: DataAllMasters) => {
       </BasicModalWindow>
 
       <div className={styles.orderButton}>
-        <button className={styles.button} onClick={openModalButton}>
+        <button className={styles.buttonSC} onClick={openModalButton}>
           Записатись
         </button>
       </div>

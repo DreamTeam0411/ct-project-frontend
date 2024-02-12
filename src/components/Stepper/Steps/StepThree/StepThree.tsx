@@ -16,7 +16,11 @@ export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
         <FileUpload />
       </div>
       <div className={styles.button}>
-        <button type="submit" onClick={() => completeSteps()}>
+        <button
+          type="submit"
+          className={styles.button}
+          onClick={() => completeSteps()}
+        >
           Продовжити
         </button>
       </div>

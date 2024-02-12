@@ -1,7 +1,7 @@
 .container {
 
 }
-.container button {
+.subCategoryButton {
     display: flex;
     padding: 4px 12px;
     align-items: flex-start;
@@ -13,4 +13,5 @@
     line-height: 20px;
     color: var(--white);
     border-style: none;
+    width: 132px;
 }

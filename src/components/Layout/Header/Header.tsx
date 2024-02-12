@@ -31,7 +31,15 @@ const Header = () => {
         <SearchForm />
       </div>
       <div>
-        <Link to="/admin-panel/main-page" className={styles.buttonBusiness}>
+        <Link to="/login" className={styles.buttonBusiness}>
+          <Button children={"Login"} />
+        </Link>
+      </div>
+      <div>
+        <Link
+          to="/admin-panel/main-page/banner"
+          className={styles.buttonBusiness}
+        >
           <Button children={"Admin"} />
         </Link>
       </div>

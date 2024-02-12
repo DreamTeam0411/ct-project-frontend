@@ -1,7 +1,7 @@
 import styles from "./StepFour.module.css";
 import React from "react";
 import { IStepProps } from "../StepOne/StepOne.tsx";
-import { Button } from "../../../UI/buttons/Button/Button.tsx";
+
 import { Link } from "react-router-dom";
 
 export const StepFour: React.FC<IStepProps> = () => {
@@ -14,7 +14,7 @@ export const StepFour: React.FC<IStepProps> = () => {
       </p>
       <div>
         <Link to={"/"}>
-          <Button>На головну</Button>
+          <button className={styles.button}>На головну</button>
         </Link>
       </div>
     </div>

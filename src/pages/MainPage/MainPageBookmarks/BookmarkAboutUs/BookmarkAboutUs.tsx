@@ -1,14 +1,12 @@
-import styles from "./Business.module.css";
+import styles from "../BookmarkBanner/BookmarkBanner.module.css";
 
-function Business() {
+const BookmarkAboutUs = () => {
   return (
     <div className={styles.container}>
-      <h1>Для бізнесу</h1>
-
       <form>
         <div className={styles.content}>
           <div className={styles.forms}>
-            <h2>Основні дані</h2>
+            <h2>Редагувати Про нас</h2>
             <div className={styles.inputsTitle}>
               <label htmlFor="title">Заголовок</label>
               <input type="text" name="title" placeholder="Введіть заголовок" />
@@ -16,20 +14,6 @@ function Business() {
               <textarea
                 placeholder="Введіть підзаголовок"
                 name="subtitle"
-              ></textarea>
-              <p className={styles.p}>0/300</p>
-            </div>
-            <div className={styles.inputsSubtitle}>
-              <label htmlFor="content-subtitle">Заголовок контенту</label>
-              <input
-                type="text"
-                name="content-subtitle"
-                placeholder="Введіть заголовок контенту"
-              />
-              <label htmlFor="content">Контент</label>
-              <textarea
-                placeholder="Введіть текст контенту"
-                name="content"
               ></textarea>
               <p className={styles.p}>0/300</p>
             </div>
@@ -46,6 +30,6 @@ function Business() {
       </form>
     </div>
   );
-}
+};
 
-export default Business;
+export default BookmarkAboutUs;

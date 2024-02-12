@@ -1,15 +1,12 @@
-import styles from "./AllMasters.module.css";
+import styles from "./BookmarkRecommendations.module.css";
 
-function AllMasters() {
+const BookmarkRecommendations = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h1>Всі майстри</h1>
         <button>+ Додати майстра</button>
       </div>
-      <div className={styles.filter}>
-        <input type="text" name="filter" placeholder="Пошук" />
-      </div>
+
       <div className={styles.list}>
         <ul>
           <li className={styles.id}>Id</li>
@@ -34,6 +31,6 @@ function AllMasters() {
       </div>
     </div>
   );
-}
+};
 
-export default AllMasters;
+export default BookmarkRecommendations;

@@ -1,0 +1,35 @@
+.container {
+    padding: 48px 40px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+
+}
+.items {
+    display: flex;
+    gap: 24px;
+}
+h1 {
+    font-size: 30px;
+    line-height: 38px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.link {
+    display: flex;
+    color: #8f8d8d;
+    font-size: 16px;
+    line-height: 24px;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 4px solid var(--white);
+}
+.link:hover {
+    border-bottom: 4px solid #8787dc;
+    transition-duration: 0.5s;
+}
+.active {
+    border-bottom: 4px solid var(--blue-dark);
+    color: var(--black);
+}

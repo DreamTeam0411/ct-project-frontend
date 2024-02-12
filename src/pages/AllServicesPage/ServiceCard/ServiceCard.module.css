@@ -22,7 +22,7 @@
     background-color: var(--gray2);
     border-radius: 12px;
     width: 264px;
-    height: 100%;
+    height: 214px;
     position: relative;
 
 
@@ -119,12 +119,10 @@
     align-items: end;
 }
 
-.button {
+.buttonSC {
     display: flex;
     padding: 8px 24px;
     justify-content: flex-end;
-    align-items: flex-start;
-    gap: 12px;
     border-radius: 8px;
     border: 1px solid var(--blue-dark);
     color: var(--blue-dark);
@@ -135,6 +133,7 @@
     font-weight: 500;
     line-height: 20px;
     transition-duration: 0.5s;
+    width: 132px;
 }
 .button:hover {
     background-color: var(--blue-dark);

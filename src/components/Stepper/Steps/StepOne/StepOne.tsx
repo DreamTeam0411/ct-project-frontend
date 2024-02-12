@@ -33,6 +33,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
             <div className={styles.name}>
               <label htmlFor="name">Ім'я</label>
               <input
+                className={styles.inputName}
                 {...register("name", {
                   required: "Обов'язкове для заповнення",
                   minLength: {
@@ -56,6 +57,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
             <div className={styles.surname}>
               <label htmlFor="surname">Прізвище</label>
               <input
+                className={styles.inputSurname}
                 placeholder="Введіть прізвище"
                 {...register("surname", {
                   required: "Обов'язкове для заповнення",
@@ -81,6 +83,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
           <div className={styles.email}>
             <label htmlFor="email">Email:</label>
             <input
+              className={styles.inputEmail}
               placeholder="Ввведіть email"
               {...register("email", {
                 required: "Обов'язкове для заповнення",
@@ -101,6 +104,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
           <div className={styles.phone}>
             <label htmlFor="phone">Номер телефону</label>
             <input
+              className={styles.inputPhone}
               placeholder="+38(063) 000-0000"
               {...register("phone", {
                 required: "Обов'язкове для заповнення",

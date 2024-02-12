@@ -53,6 +53,7 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
         <div className={styles.address}>
           <label htmlFor="address">Адреса обслуговування</label>
           <input
+            className={styles.inputAddress}
             placeholder="Введіть адресу"
             name="address"
             {...register("address", { required: "Введіть адрессу" })}

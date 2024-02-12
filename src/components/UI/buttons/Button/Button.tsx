@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 export const Button = ({ children }: PropsWithChildren) => {
   return (
-    <button type={"submit"} className={styles.button}>
+    <button type={"submit"} className={styles.buttonStyle}>
       {children}
     </button>
   );

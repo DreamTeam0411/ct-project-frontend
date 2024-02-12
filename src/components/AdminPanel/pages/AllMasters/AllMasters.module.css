@@ -1,0 +1,95 @@
+.container {
+    padding: 48px 40px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 38px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+button {
+    width: 196px;
+    height: 40px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--blue-dark);
+    background: var(--white);
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+input[placeholder] {
+    line-height: 20px;
+    font-size: 14px;
+    color: #8F8F98;
+}
+
+.list {
+    border-bottom: solid 1px #EAECF0;
+
+}
+
+.list ul {
+    display: flex;
+    list-style: none;
+    padding-inline-start: 0;
+    color: #8F8F98;
+    gap: 8px;
+    align-items: end;
+}
+.mastersList {
+    display: flex;
+    list-style: none;
+    padding-inline-start: 0;
+    color: #8F8F98;
+    gap: 8px;
+    align-items: end;
+    height: 56px;
+}
+
+.id {
+
+    width: 72px;
+}
+
+.name {
+    width: 195px;
+}
+
+.service {
+    width: 176px;
+}
+
+.email {
+    width: 195px;
+}
+
+.address {
+    width: 195px;
+}
+
+.phone {
+    width: 160px;
+}
+
+.empty {
+    width: 36px;
+}

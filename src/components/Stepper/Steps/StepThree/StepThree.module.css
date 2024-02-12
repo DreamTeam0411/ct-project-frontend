@@ -4,9 +4,8 @@
   margin-bottom: 30px;
 }
 
-button {
+.button {
   display: flex;
-  padding: 8px 24px;
   cursor: pointer;
   transition-duration: 0.5s;
   border-radius: 8px;
@@ -24,7 +23,7 @@ button {
   width: 100%;
 }
 
-button:hover {
+.button:hover {
   color: var(--blue);
   background: var(--white);
   transition-duration: 0.5s;
