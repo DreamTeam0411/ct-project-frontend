@@ -1,12 +1,12 @@
 import SideBar from "./UIAdminPanel/SideBar/SideBar.tsx";
 import styles from "./AdminPanel.module.css";
 import PagesLayer from "./UIAdminPanel/PagesLayer/PagesLayer.tsx";
-import Documents from "./pages/Documents/Documents.tsx";
 import { Route, Routes } from "react-router-dom";
 import Contacts from "./pages/Contacts/Contacts.tsx";
 import MainPageAdmin from "./pages/MainPageAdmin/MainPageAdmin.tsx";
 import Business from "./pages/Business/Business.tsx";
 import AllMasters from "./pages/AllMasters/AllMasters.tsx";
+import { Documents } from "./pages/Documents/Documents.tsx";
 
 function AdminPanel() {
   return (
@@ -14,7 +14,7 @@ function AdminPanel() {
       <div>
         <SideBar />
       </div>
-      <div>
+      <div className={styles.content}>
         <Routes>
           <Route path="/" element={<PagesLayer />}>
             <Route path="main-page" element={<MainPageAdmin />} />

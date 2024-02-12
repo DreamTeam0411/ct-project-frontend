@@ -1,5 +1,23 @@
-function Documents() {
-  return <div>Documents</div>;
-}
+import styles from "./Documents.module.css";
 
-export default Documents;
+export const Documents = () => {
+  return (
+    <div className={styles.container}>
+      <h1>Документи</h1>
+      <form>
+        <div className={styles.inputs}>
+          <label htmlFor="terms">Умови використання</label>
+          <input type="text" name="terms" />
+        </div>
+        <div className={styles.inputs}>
+          <label htmlFor="politics">Політика конфіденційності</label>
+          <input type="text" name="politics" />
+        </div>
+        <div className={styles.buttons}>
+          <button>Відмінити</button>
+          <button>Зберегти</button>
+        </div>
+      </form>
+    </div>
+  );
+};
