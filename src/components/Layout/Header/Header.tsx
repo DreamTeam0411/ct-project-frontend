@@ -36,7 +36,10 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <Link to="/admin-panel/main-page" className={styles.buttonBusiness}>
+        <Link
+          to="/admin-panel/main-page/banner"
+          className={styles.buttonBusiness}
+        >
           <Button children={"Admin"} />
         </Link>
       </div>

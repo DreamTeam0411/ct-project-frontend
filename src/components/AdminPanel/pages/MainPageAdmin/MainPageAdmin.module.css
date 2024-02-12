@@ -31,4 +31,5 @@ h1 {
 }
 .active {
     border-bottom: 4px solid var(--blue-dark);
+    color: var(--black);
 }

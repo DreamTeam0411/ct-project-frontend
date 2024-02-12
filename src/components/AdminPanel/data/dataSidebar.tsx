@@ -16,7 +16,7 @@ type TypeBookmarkItems = {
 export const sideBarItems: TypeSideBarItems[] = [
   {
     title: "Головна сторінка",
-    path: "/admin-panel/main-page",
+    path: "/admin-panel/main-page/banner",
     icon: <HiOutlineLightningBolt />,
   },
   {
