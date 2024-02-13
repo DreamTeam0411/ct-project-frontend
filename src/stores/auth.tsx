@@ -2,8 +2,9 @@
 
 import axios from "axios";
 import { create } from "zustand";
+import { API } from "./ROUTES.tsx";
 
-axios.defaults.baseURL = "https://ct-project.pp.ua/api/v1";
+axios.defaults.baseURL = API;
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -26,7 +27,6 @@ export const useGetData = create((set) => {
     ...initialState,
 
     execute: async (email: string, password: string) => {
-      
       set({ ...initialState, loading: true });
       try {
         const res = await axios.post("/login", {
@@ -34,10 +34,10 @@ export const useGetData = create((set) => {
           password: password,
         });
 
-           res.data.roles.forEach((role) => {
+        res.data.roles.forEach((role) => {
           if (role.id === 1) {
-            const token =res.data.Bearer.accessToken
-                       
+            const token = res.data.Bearer.accessToken;
+
             setAuthHeader(token);
             localStorage.setItem("token", token);
             set({
