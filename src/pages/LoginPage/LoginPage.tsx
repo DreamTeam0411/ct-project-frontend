@@ -1,11 +1,10 @@
 import styles from "./LoginPage.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegistrationForm } from "../RegistrationPage/RegistrationPageTypes.tsx";
 
 import { useGetData } from "../../stores/auth";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface GetDataFunction {
   execute: (email: string | number, password: string | number) => void; // Adjust the return type as needed
@@ -19,7 +18,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (local) {
-      navigate("/admin-panel");
+      navigate("/admin-panel/main-page/banner");
     }
   }, [local]);
 

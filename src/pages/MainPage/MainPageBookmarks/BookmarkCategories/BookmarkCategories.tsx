@@ -1,6 +1,22 @@
 import styles from "../BookmarkCities/BookmarkCities.module.css";
+import { ADMIN_CATEGORIES } from "../../../../stores/ROUTES.tsx";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+const local = localStorage.getItem("token");
+
+const FetchData = async () => {
+  return await axios.get(ADMIN_CATEGORIES, {
+    headers: {
+      Authorization: "Bearer " + local,
+    },
+  });
+};
 const BookmarkCategories = () => {
+  const [data] = useState([]);
+  useEffect(() => {
+    FetchData().then((res) => console.log(res));
+  }, []);
   return (
     <div>
       <div className={styles.title}>
@@ -10,7 +26,7 @@ const BookmarkCategories = () => {
       <div className={styles.list}>
         <ul>
           <div className={styles.listItems}>
-            <li className={styles.id}>Id</li>
+            <li className={styles.id}>{data.map((item) => item)}</li>
             <li className={styles.city}>Назва категорії</li>
           </div>
         </ul>
