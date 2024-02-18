@@ -5,6 +5,7 @@ background: #21151F;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    position: sticky;
 }
 .logoBlock {
     display: flex;

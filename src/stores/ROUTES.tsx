@@ -4,3 +4,5 @@ export const CATEGORIES = `https://ct-project.pp.ua/api/v1/categories`;
 export const CITIES = `https://ct-project.pp.ua/api/v1/cities`;
 export const API = "https://ct-project.pp.ua/api/v1";
 export const ADMIN_CATEGORIES = `https://ct-project.pp.ua/api/v1/admin/categories`;
+export const ADMIN_CITIES = `https://ct-project.pp.ua/api/v1/admin/cities`;
+export const ADMIN_SERVICES = `https://ct-project.pp.ua/api/v1/admin/services`;

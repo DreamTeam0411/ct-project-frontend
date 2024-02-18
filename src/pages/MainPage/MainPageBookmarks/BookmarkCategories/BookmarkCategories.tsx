@@ -1,21 +1,20 @@
 import styles from "../BookmarkCities/BookmarkCities.module.css";
 import { ADMIN_CATEGORIES } from "../../../../stores/ROUTES.tsx";
-import axios from "axios";
+
 import { useEffect, useState } from "react";
-
-const local = localStorage.getItem("token");
-
-const FetchData = async () => {
-  return await axios.get(ADMIN_CATEGORIES, {
-    headers: {
-      Authorization: "Bearer " + local,
-    },
-  });
-};
+import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
+import { PuffLoader } from "react-spinners";
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCategories = () => {
-  const [data] = useState([]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    FetchData().then((res) => console.log(res));
+    setLoading(true);
+    FetchDataAdmin(ADMIN_CATEGORIES).then((res): any => {
+      setData(res.data.data);
+      console.log(res.data.data);
+      setLoading(false);
+    });
   }, []);
   return (
     <div>
@@ -26,21 +25,30 @@ const BookmarkCategories = () => {
       <div className={styles.list}>
         <ul>
           <div className={styles.listItems}>
-            <li className={styles.id}>{data.map((item) => item)}</li>
-            <li className={styles.city}>Назва категорії</li>
-          </div>
-        </ul>
-      </div>
-      <div className={styles.listData}>
-        <ul className={styles.cityList}>
-          <div className={styles.listItems}>
             <li className={styles.id}>Id</li>
             <li className={styles.city}>Назва категорії</li>
           </div>
-
-          <li className={styles.empty}>...</li>
         </ul>
       </div>
+      {loading ? (
+        <div className={"loader-box"}>
+          {" "}
+          <PuffLoader color="#21151F" size={200} />
+        </div>
+      ) : (
+        data.map((item) => (
+          <div className={styles.listData}>
+            <ul className={styles.cityList}>
+              <div className={styles.listItems}>
+                <li className={styles.id}>{item.id}</li>
+                <li className={styles.city}>{item.title}</li>
+              </div>
+
+              <li className={styles.empty}>...</li>
+            </ul>
+          </div>
+        ))
+      )}
     </div>
   );
 };

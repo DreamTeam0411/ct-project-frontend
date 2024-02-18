@@ -1,4 +1,9 @@
 .container {
     display: flex;
 }
-.content { width: 1200px}
+.sidebar {width: 280px;
+    position: fixed;
+
+}
+.content { width: 1200px;
+margin-left: 280px}

@@ -17,7 +17,7 @@ import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAbou
 function AdminPanel() {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.sidebar}>
         <SideBar />
       </div>
       <div className={styles.content}>
