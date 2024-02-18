@@ -2,9 +2,9 @@ import styles from "./ServicePage.module.css";
 import Header from "../../components/Layout/Header/Header.tsx";
 import Footer from "../../components/Layout/Footer/Footer.tsx";
 import useFetchDataAllMasters from "../../stores/fetchAllMasters.tsx";
-import Loader from "../../components/UI/Loader/Loader..tsx";
 import { useParams } from "react-router-dom";
 import { ServiceCardDescription } from "../AllServicesPage/ServiceCardDescription/ServiceCardDescription.tsx";
+import { PuffLoader } from "react-spinners";
 
 export const ServicePage = () => {
   const searchParams = useParams();
@@ -41,6 +41,6 @@ export const ServicePage = () => {
       </div>
     );
   else {
-    <Loader />;
+    <PuffLoader color="#36d7b7" size={200} />;
   }
 };

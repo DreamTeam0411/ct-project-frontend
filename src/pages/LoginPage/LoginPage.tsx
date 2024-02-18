@@ -1,11 +1,10 @@
 import styles from "./LoginPage.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegistrationForm } from "../RegistrationPage/RegistrationPageTypes.tsx";
 
 import { useGetData } from "../../stores/auth";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface GetDataFunction {
   execute: (email: string | number, password: string | number) => void; // Adjust the return type as needed
@@ -19,7 +18,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (local) {
-      navigate("/admin-panel");
+      navigate("/admin-panel/main-page/banner");
     }
   }, [local]);
 
@@ -27,11 +26,12 @@ const LoginPage = () => {
     register,
     // reset,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<RegistrationForm>({ mode: "onChange" });
-
+  console.log(errors);
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
     getData.execute(data.email, data.password);
+    !errors && alert("Вхід успішний");
   };
 
   const forgetPassword = () => {
@@ -115,7 +115,7 @@ const LoginPage = () => {
             </div>
 
             <div className={styles.formButton}>
-              <button disabled={!isValid}>Увійти</button>
+              <button type={"submit"}>Увійти</button>
             </div>
           </form>
 

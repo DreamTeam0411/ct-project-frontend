@@ -23,7 +23,15 @@ background-color: var(--white);
   border: none;
 }
 
-.searchFormCategorieBox {
+.searchFormCategoryBox {
+  width: 390px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  color: var(--gray);
+
+}
+.searchFormCategoryBox:focus {
   width: 390px;
   font-size: 14px;
   border: none;
@@ -44,8 +52,19 @@ background-color: var(--white);
 
 .searchFormSelect {
   margin: auto 10px;
+  border: none;
+}
+.searchFormSelect:focus {
+  margin: auto 10px;
+  border: none;
 }
 .searchFormSelectBox {
+  border: none;
+  outline: none;
+  color:var(--gray);
+  font-size: 14px;
+}
+.searchFormSelectBox:focus {
   border: none;
   outline: none;
   color:var(--gray);

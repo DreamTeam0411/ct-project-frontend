@@ -1,19 +1,35 @@
 import styles from "./SideBar.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { sideBarItems } from "../../data/dataSidebar.tsx";
+import { useEffect, useState } from "react";
+import { PROFILE } from "../../../../stores/ROUTES.tsx";
+import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function SideBar() {
-  const clearToken = () => {
-    localStorage.removeItem("token");
-  };
+  // const clearToken = () => {
+  //   localStorage.removeItem("token");
+  // };
+  const [data, setData] = useState({
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  console.log(data);
+  useEffect(() => {
+    setLoading(true);
+    FetchDataAdmin(PROFILE).then((res): any => {
+      setData(res.data.data);
+      console.log(res.data.data);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.logoBlock}>
           <div className={styles.logo}>
-            <Link to="/" onClick={clearToken}>
+            <Link to="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="112"
@@ -45,7 +61,13 @@ function SideBar() {
           ))}
         </div>
       </div>
-      <div className={styles.bottom}></div>
+      {!loading && data ? (
+        <div className={styles.bottom}>
+          <p>{data.email}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

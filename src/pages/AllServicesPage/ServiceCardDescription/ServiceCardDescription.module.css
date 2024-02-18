@@ -217,7 +217,7 @@
     align-items: end;
 }
 
-.button {
+.buttonModal {
     display: flex;
     padding: 8px 24px;
     justify-content: flex-end;
@@ -235,7 +235,7 @@
     transition-duration: 0.5s;
 }
 
-.button:hover {
+.buttonModal:hover {
     background-color: var(--blue-dark);
     color: var(--white);
     cursor: pointer;

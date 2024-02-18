@@ -17,7 +17,7 @@ import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAbou
 function AdminPanel() {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.sidebar}>
         <SideBar />
       </div>
       <div className={styles.content}>
@@ -31,7 +31,9 @@ function AdminPanel() {
                   element={<BookmarkRecommendations />}
                 />
                 <Route path="categories" element={<BookmarkCategories />} />
-                <Route path="cities" element={<BookmarkCities />} />
+                <Route path="cities" element={<BookmarkCities />}>
+                  <Route path="city/:id" />
+                </Route>
                 <Route path="about-us" element={<BookmarkAboutUs />} />
               </Route>
             </Route>

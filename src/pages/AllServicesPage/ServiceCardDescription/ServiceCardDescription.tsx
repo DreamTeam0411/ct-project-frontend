@@ -46,7 +46,10 @@ export const ServiceCardDescription = ({
                   </div>
 
                   <div className={styles.orderButton}>
-                    <button className={styles.button} onClick={openModalButton}>
+                    <button
+                      className={styles.buttonModal}
+                      onClick={openModalButton}
+                    >
                       Записатись
                     </button>
                   </div>
