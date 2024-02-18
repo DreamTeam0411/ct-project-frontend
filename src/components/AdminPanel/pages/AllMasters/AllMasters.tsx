@@ -1,3 +1,4 @@
+import DropdownMenu from "../../UIAdminPanel/Dropdown_Menu/DropdownMenu";
 import styles from "./AllMasters.module.css";
 import { useEffect, useState } from "react";
 import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
@@ -56,6 +57,7 @@ function AllMasters() {
                 У юзера в базі нема номера телефону
               </li>
               <li className={styles.empty}>...</li>
+              <DropdownMenu />
             </ul>
           </div>
         ))
