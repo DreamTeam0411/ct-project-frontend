@@ -1,3 +1,4 @@
+import DropdownMenu from "../../UIAdminPanel/Dropdown_Menu/DropdownMenu";
 import styles from "./AllMasters.module.css";
 
 function AllMasters() {
@@ -29,7 +30,9 @@ function AllMasters() {
           <li className={styles.email}>Email</li>
           <li className={styles.address}>Адрес</li>
           <li className={styles.phone}>Телефон</li>
-          <li className={styles.empty}>...</li>
+          <li className={styles.empty}>
+            <DropdownMenu />
+          </li>
         </ul>
       </div>
     </div>
