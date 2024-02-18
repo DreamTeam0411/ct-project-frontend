@@ -37,7 +37,7 @@ const BookmarkCategories = () => {
         </div>
       ) : (
         data.map((item) => (
-          <div className={styles.listData}>
+          <div className={styles.listData} key={item.id}>
             <ul className={styles.cityList}>
               <div className={styles.listItems}>
                 <li className={styles.id}>{item.id}</li>

@@ -31,7 +31,9 @@ function AdminPanel() {
                   element={<BookmarkRecommendations />}
                 />
                 <Route path="categories" element={<BookmarkCategories />} />
-                <Route path="cities" element={<BookmarkCities />} />
+                <Route path="cities" element={<BookmarkCities />}>
+                  <Route path="city/:id" />
+                </Route>
                 <Route path="about-us" element={<BookmarkAboutUs />} />
               </Route>
             </Route>

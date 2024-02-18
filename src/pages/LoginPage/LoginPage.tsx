@@ -26,11 +26,12 @@ const LoginPage = () => {
     register,
     // reset,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<RegistrationForm>({ mode: "onChange" });
-
+  console.log(errors);
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
     getData.execute(data.email, data.password);
+    !errors && alert("Вхід успішний");
   };
 
   const forgetPassword = () => {
@@ -114,7 +115,7 @@ const LoginPage = () => {
             </div>
 
             <div className={styles.formButton}>
-              <button disabled={!isValid}>Увійти</button>
+              <button type={"submit"}>Увійти</button>
             </div>
           </form>
 

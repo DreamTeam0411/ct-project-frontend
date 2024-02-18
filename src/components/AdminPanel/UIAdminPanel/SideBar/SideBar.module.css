@@ -69,13 +69,14 @@ background: #21151F;
     align-items: center;
     justify-content: center;
 }
-.bottom a {
-    font-size: 24px;
+.bottom p {
+    font-size: 16px;
     padding: 10px;
     border-radius: 6px;
-    background-color: #8f8d8d;
+    color: white;
     transition-duration: 0.5s;
 }
-.bottom a:hover {
-    background: none;
+.bottom p:hover {
+    color: #8f8d8d;
+
 }

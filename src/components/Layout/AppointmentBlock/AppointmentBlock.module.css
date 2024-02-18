@@ -32,7 +32,9 @@
 .appointmentTel {
     margin-top: 10px;
     padding-top: 5px;
-
+display: flex;
+    align-items: center;
+    justify-content: center;
     width: 133px;
     height: 28px;
     border-radius: 8px;

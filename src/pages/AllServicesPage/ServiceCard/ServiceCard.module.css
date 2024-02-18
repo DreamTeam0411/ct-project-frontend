@@ -135,7 +135,7 @@
     transition-duration: 0.5s;
     width: 132px;
 }
-.button:hover {
+.buttonSC:hover {
     background-color: var(--blue-dark);
     color: var(--white);
     cursor: pointer;

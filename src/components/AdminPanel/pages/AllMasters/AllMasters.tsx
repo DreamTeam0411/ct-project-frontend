@@ -43,7 +43,7 @@ function AllMasters() {
         </div>
       ) : (
         data.map((item) => (
-          <div>
+          <div key={item.id}>
             <ul className={styles.mastersList}>
               <li className={styles.id}>{item.id}</li>
               <li className={styles.name}>

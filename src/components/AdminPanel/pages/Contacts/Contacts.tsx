@@ -1,6 +1,19 @@
 import styles from "../Documents/Documents.module.css";
+import useFetchData from "../../../../stores/fetchData.tsx";
 
 function Contacts() {
+  const dataState = useFetchData((state) => state.data);
+  // const [formData, setFormData] = useState({
+  //   description: "Footer links",
+  //   privacyPolicyLink: dataState.footer.privacyPolicyLink,
+  //   termsAndCondition: dataState.footer.termsAndCondition,
+  // });
+  // const token = localStorage.getItem("token");
+  // const handleChange = (event) => {
+  //   setFormData({ ...formData, [event.target.name]: event.target.value });
+  // };
+  console.log(dataState);
+
   return (
     <div className={styles.container}>
       <h1>Контакти</h1>

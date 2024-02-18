@@ -1,7 +1,10 @@
 .container {
   display: flex;
 }
-
+.error p {
+  color: red;
+  font-size: 14px;
+}
 .loginBlock {
   width: 720px;
   height: auto;
@@ -64,6 +67,7 @@
   border-radius: 8px;
   border: 1px solid var(--gray2, #b6b6bc);
   background: var(--white, #fff);
+  margin: 0;
 }
 
 
