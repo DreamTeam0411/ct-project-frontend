@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
 import { ADMIN_CITIES } from "../../../../stores/ROUTES.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCities = () => {
   const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ const BookmarkCities = () => {
   return (
     <div>
       <div className={styles.title}>
-        <button>+ Додати місто</button>
+        <NavLink to={"/"}>+ Додати місто</NavLink>
       </div>
 
       <div className={styles.list}>

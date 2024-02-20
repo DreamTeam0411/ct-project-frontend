@@ -18,17 +18,17 @@ const Promo = () => {
       </div>
       <div className={styles.promoRightBlock}>
         <div className={styles.promoFotoSmall}>
-          <img src="/promo1-min.jpg" />
+          <img src="/promo1-min.jpg" alt="promo-1" />
         </div>
 
         <div className={styles.promoFotoLarge}>
-          <img src="/promo2-min.jpg" />
+          <img src="/promo2-min.jpg" alt="promo-2" />
         </div>
         <div className={styles.promoFotoLarge}>
-          <img src="/promo3-min.jpg" />
+          <img src="/promo3-min.jpg" alt="promo-3" />
         </div>
         <div className={styles.promoFotoSmall}>
-          <img src="/promo4-min.jpg" />
+          <img src="/promo4-min.jpg" alt="promo-4" />
         </div>
       </div>
     </div>

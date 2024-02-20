@@ -1,9 +1,11 @@
-import styles from "../BookmarkCities/BookmarkCities.module.css";
+import styles from "./BookmarkCategories.module.css";
 import { ADMIN_CATEGORIES } from "../../../../stores/ROUTES.tsx";
 
 import { useEffect, useState } from "react";
 import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
+import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCategories = () => {
   const [data, setData] = useState([]);
@@ -19,7 +21,7 @@ const BookmarkCategories = () => {
   return (
     <div>
       <div className={styles.title}>
-        <button>+ Додати категорію</button>
+        <NavLink to={"/"}>+ Додати категорію</NavLink>
       </div>
 
       <div className={styles.list}>
@@ -44,7 +46,9 @@ const BookmarkCategories = () => {
                 <li className={styles.city}>{item.title}</li>
               </div>
 
-              <li className={styles.empty}>...</li>
+              <li className={styles.empty}>
+                <DropdownMenu />
+              </li>
             </ul>
           </div>
         ))

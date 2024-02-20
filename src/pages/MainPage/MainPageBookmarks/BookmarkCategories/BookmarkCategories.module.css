@@ -18,6 +18,15 @@ h1 {
     width: 100%;
     align-items: center;
 }
+.title a {
+    color: rgb(4, 74, 178);
+    transition-duration: 0.5s;
+    border-bottom: 1px solid white;
+
+}
+.title:hover a {
+    text-decoration: underline;
+}
 
 button {
     color: #8f8d8d;
@@ -71,7 +80,9 @@ input[placeholder] {
     height: 56px;
     justify-content: space-between;
 }
-
+.listItems {
+    display: flex;
+}
 .id {
 
     width: 72px;

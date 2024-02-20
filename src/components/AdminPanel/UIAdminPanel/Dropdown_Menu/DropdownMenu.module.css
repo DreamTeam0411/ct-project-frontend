@@ -3,10 +3,11 @@
   /* top: 50px;
   left: 50px; */
   display: flex;
-  align-items: center;
+  align-items: end;
   /* width: 100%; */
   /* padding: 10px 16px; */
   /* background-color: blue; */
+justify-content: center;
 }
 .menu_button {
   /* margin-left: auto; */
@@ -16,12 +17,15 @@
   border: 0;
   /* border-radius: 50%; */
   cursor: pointer;
-}
 
+}
+.image {
+    width: 30px;
+}
 .menu {
   position: absolute;
-  top: calc(100% + 5px);
-  right: 10px;
+  top: calc(50% + 5px);
+  right: -150px;
   width: 160px;
   height: 88px;
  padding-top: 5px;
@@ -38,6 +42,7 @@
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
+    z-index: 999;
 }
 
 /* .menu::before, .menu::after{

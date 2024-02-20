@@ -16,6 +16,15 @@ h1 {
     width: 100%;
     align-items: center;
 }
+.title a {
+    color: rgb(4, 74, 178);
+    transition-duration: 0.5s;
+    border-bottom: 1px solid white;
+
+}
+.title:hover a {
+    text-decoration: underline;
+}
 
 button {
     color: #8f8d8d;
@@ -60,6 +69,7 @@ input[placeholder] {
     gap: 8px;
     align-items: end;
     height: 56px;
+    color: black;
 }
 
 .id {
@@ -89,4 +99,7 @@ input[placeholder] {
 
 .empty {
     width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

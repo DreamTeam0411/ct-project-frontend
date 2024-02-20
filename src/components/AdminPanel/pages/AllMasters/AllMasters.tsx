@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
 import { ADMIN_SERVICES } from "../../../../stores/ROUTES.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function AllMasters() {
@@ -21,10 +22,10 @@ function AllMasters() {
     <div className={styles.container}>
       <div className={styles.title}>
         <h1>Всі майстри</h1>
-        <button>+ Додати майстра</button>
       </div>
       <div className={styles.filter}>
         <input type="text" name="filter" placeholder="Пошук" />
+        <NavLink to={"/"}>+ Додати майстра</NavLink>
       </div>
       <div className={styles.list}>
         <ul>
