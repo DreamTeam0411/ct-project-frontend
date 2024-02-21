@@ -74,7 +74,14 @@ function AllMasters() {
               <li className={styles.email}>{item.user.email}</li>
               <li className={styles.address}>{item.city.name}</li>
               <li className={styles.phone}>{Date.now()}</li>
-              <li className={styles.empty}>{<DropdownMenu />}</li>
+              <li className={styles.empty}>
+                {
+                  <DropdownMenu
+                    deleteMethod={() => setData}
+                    editMethod={() => setData}
+                  />
+                }
+              </li>
             </ul>
           </div>
         ))

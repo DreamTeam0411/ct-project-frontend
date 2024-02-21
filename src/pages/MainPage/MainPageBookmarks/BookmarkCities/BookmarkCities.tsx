@@ -43,7 +43,14 @@ const BookmarkCities = () => {
                 <li className={styles.city}>{item.name}</li>
               </div>
 
-              <li className={styles.empty}>{<DropdownMenu />}</li>
+              <li className={styles.empty}>
+                {
+                  <DropdownMenu
+                    deleteMethod={() => setData}
+                    editMethod={() => setData}
+                  />
+                }
+              </li>
             </ul>
           </div>
         ))

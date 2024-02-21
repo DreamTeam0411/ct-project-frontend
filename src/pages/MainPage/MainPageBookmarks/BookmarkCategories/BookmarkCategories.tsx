@@ -46,7 +46,10 @@ const BookmarkCategories = () => {
               </div>
 
               <li className={styles.empty}>
-                <DropdownMenu />
+                <DropdownMenu
+                  deleteMethod={() => setData}
+                  editMethod={() => setData}
+                />
               </li>
             </ul>
           </div>
