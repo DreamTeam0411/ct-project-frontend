@@ -132,6 +132,10 @@ h2 {
 .buttons button:active {
     background-color: var(--blue-dark);
 }
+.image {
+    max-width:100%;
+    height:auto;
+}
 
 .message {
     position: fixed;

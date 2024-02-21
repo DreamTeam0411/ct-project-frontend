@@ -125,6 +125,7 @@ const BookmarkAboutUs = () => {
               style={{ display: "none" }}
             />
             <img
+              className={styles.image}
               src={item.image}
               alt="From store"
               onClick={handleImageClick}

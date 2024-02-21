@@ -29,21 +29,25 @@ const BookmarkRecommendations = () => {
         </ul>
       </div>
 
-      {items.map((item) => (
-        <div key={item.id}>
-          <ul className={styles.mastersList}>
-            <li className={styles.id}>{item.id}</li>
-            <li className={styles.name}>{item.serviceName}</li>
-            <li className={styles.service}>{item.cardCategory}</li>
-            <li className={styles.email}>Email</li>
-            <li className={styles.address}>{item.cardAddress}</li>
-            <li className={styles.phone}>{item.cardTel}</li>
-            <li className={styles.empty}>
-              <DropdownMenu editMethod={updateItem} deleteMethod={removeItem} />
-            </li>
-          </ul>
-        </div>
-      ))}
+      {items.length > 0 &&
+        items.map((item) => (
+          <div key={item.id}>
+            <ul className={styles.mastersList}>
+              <li className={styles.id}>{item.id}</li>
+              <li className={styles.name}>{item.serviceName}</li>
+              <li className={styles.service}>{item.cardCategory}</li>
+              <li className={styles.email}>Email</li>
+              <li className={styles.address}>{item.cardAddress}</li>
+              <li className={styles.phone}>{item.cardTel}</li>
+              <li className={styles.empty}>
+                <DropdownMenu
+                  editMethod={() => updateItem}
+                  deleteMethod={() => removeItem(item.id)}
+                />
+              </li>
+            </ul>
+          </div>
+        ))}
     </div>
   );
 };
