@@ -12,10 +12,11 @@
 }
 
 .searchFormButton {
-  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   display: flex;
   justify-content: start;
-  width: 75px;
+  width: 30px;
   height: 30px;
 background-color: var(--white);
   color: black;

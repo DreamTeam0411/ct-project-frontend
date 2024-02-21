@@ -28,7 +28,6 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<RegistrationForm>({ mode: "onChange" });
-  console.log(errors);
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
     getData.execute(data.email, data.password);
     !errors && alert("Вхід успішний");
@@ -37,6 +36,19 @@ const LoginPage = () => {
   const forgetPassword = () => {
     alert("Женя нагадає!");
   };
+
+  function tooglePassword() {
+    const x = document.getElementById("password") as HTMLInputElement;
+    const eyeIcon = document.getElementById("eyeIcon") as HTMLImageElement;
+    if (x.type === "password") {
+      x.type = "text";
+      eyeIcon.src = "/eye-open-min.svg";
+    } else {
+      x.type = "password";
+      eyeIcon.src = "/eye-close-min.svg";
+      
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -101,7 +113,10 @@ const LoginPage = () => {
                 type="password"
                 id="password"
                 name="password"
-              ></input>
+              />
+
+              <button className={styles.toggleButton}onClick={tooglePassword} ><img id="eyeIcon" src="/eye-close-min.svg" alt="" /></button>
+
               <div className={styles.error}>
                 {errors?.password && <p>{errors?.password?.message}</p>}
               </div>
@@ -118,13 +133,6 @@ const LoginPage = () => {
               <button type={"submit"}>Увійти</button>
             </div>
           </form>
-
-          <div className={styles.noAcc}>
-            <p className={styles.noAccAsc}>Немає аккаунту?</p>
-            <Link to={"/registration"}>
-              <p className={styles.noAcclink}>Зареєструватись</p>
-            </Link>
-          </div>
         </div>
       </div>
 
