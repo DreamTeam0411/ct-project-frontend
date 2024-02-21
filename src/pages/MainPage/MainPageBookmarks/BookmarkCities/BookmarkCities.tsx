@@ -1,24 +1,25 @@
 import styles from "./BookmarkCities.module.css";
 import { useEffect, useState } from "react";
-import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
-import { ADMIN_CITIES } from "../../../../stores/ROUTES.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
+import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
+import useFetchAdminCities from "../../../../stores/AdminStore/fetch_admin_cities.tsx";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCities = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { dataCity, fetchData } = useFetchAdminCities();
   useEffect(() => {
     setLoading(true);
-    FetchDataAdmin(ADMIN_CITIES).then((res): any => {
-      setData(res.data.data);
-      console.log(res.data.data);
-      setLoading(false);
-    });
+    fetchData();
+    setData(dataCity);
+    console.log(dataCity);
+    setLoading(false);
   }, []);
   return (
     <div>
       <div className={styles.title}>
-        <button>+ Додати місто</button>
+        <NavLink to={"/"}>+ Додати місто</NavLink>
       </div>
 
       <div className={styles.list}>
@@ -37,12 +38,19 @@ const BookmarkCities = () => {
         data.map((item): any => (
           <div key={item.id}>
             <ul className={styles.cityList}>
-              <div className={styles.listItems}>
+              <div className={styles.listItemsFetch}>
                 <li className={styles.id}>{item.id}</li>
                 <li className={styles.city}>{item.name}</li>
               </div>
 
-              <li className={styles.empty}>...</li>
+              <li className={styles.empty}>
+                {
+                  <DropdownMenu
+                    deleteMethod={() => setData}
+                    editMethod={() => setData}
+                  />
+                }
+              </li>
             </ul>
           </div>
         ))

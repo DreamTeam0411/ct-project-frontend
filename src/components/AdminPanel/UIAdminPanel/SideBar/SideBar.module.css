@@ -80,3 +80,16 @@ background: #21151F;
     color: #8f8d8d;
 
 }
+.logout {
+    cursor: pointer;
+    width: 40px;
+}
+
+.logoutIcon {
+    color: white;
+    width: 40px;
+    transition-duration: 0.5s;
+}
+.logoutIcon:hover{
+    color: grey;
+}

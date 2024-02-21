@@ -1,25 +1,26 @@
-import styles from "../BookmarkCities/BookmarkCities.module.css";
-import { ADMIN_CATEGORIES } from "../../../../stores/ROUTES.tsx";
+import styles from "./BookmarkCategories.module.css";
 
 import { useEffect, useState } from "react";
-import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
+import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
+import useFetchAdminCategories from "../../../../stores/AdminStore/fetch_admin_categories.tsx";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCategories = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { dataCategory, fetchData } = useFetchAdminCategories();
   useEffect(() => {
     setLoading(true);
-    FetchDataAdmin(ADMIN_CATEGORIES).then((res): any => {
-      setData(res.data.data);
-      console.log(res.data.data);
-      setLoading(false);
-    });
+    fetchData();
+    setData(dataCategory);
+    console.log(dataCategory);
+    setLoading(false);
   }, []);
   return (
     <div>
       <div className={styles.title}>
-        <button>+ Додати категорію</button>
+        <NavLink to={"/"}>+ Додати категорію</NavLink>
       </div>
 
       <div className={styles.list}>
@@ -39,12 +40,17 @@ const BookmarkCategories = () => {
         data.map((item) => (
           <div className={styles.listData} key={item.id}>
             <ul className={styles.cityList}>
-              <div className={styles.listItems}>
+              <div className={styles.listItemsData}>
                 <li className={styles.id}>{item.id}</li>
                 <li className={styles.city}>{item.title}</li>
               </div>
 
-              <li className={styles.empty}>...</li>
+              <li className={styles.empty}>
+                <DropdownMenu
+                  deleteMethod={() => setData}
+                  editMethod={() => setData}
+                />
+              </li>
             </ul>
           </div>
         ))

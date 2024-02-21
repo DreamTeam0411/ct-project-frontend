@@ -8,3 +8,4 @@ export const ADMIN_CITIES = `https://ct-project.pp.ua/api/v1/admin/cities`;
 export const ADMIN_SERVICES = `https://ct-project.pp.ua/api/v1/admin/services`;
 export const ADMIN_FOOTER_UPDATE = `https://ct-project.pp.ua/api/v1/admin/homepage/footer-update`;
 export const PROFILE = `https://ct-project.pp.ua/api/v1/profile`;
+export const LOGOUT = `https://ct-project.pp.ua/api/v1/logout`;

@@ -1,9 +1,11 @@
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import useFetchData from "../../../stores/fetchData.tsx";
+import { useStoreContacts } from "../../../stores/fakeStores/contactsStore.tsx";
 
 const Footer = () => {
   const dataState = useFetchData((state) => state.data);
+  const { phoneNumber, email } = useStoreContacts();
 
   return (
     <div className={styles.footerContainer}>
@@ -80,10 +82,10 @@ const Footer = () => {
           <div className={styles.footerContactsBlock}>
             <div className={styles.title}>Контакти</div>
             <div className={styles.contacts}>
-              <a href="tel:+380 735 98 67">+380 735 98 67</a>
+              <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
             </div>
             <div className={styles.contacts}>
-              <a href="mailto:beautybook@gmail.com">beautybook@gmail.com</a>
+              <a href={`mailto:${email}`}>{email}</a>
             </div>
           </div>
           <div className={styles.footerContactsBlock}>

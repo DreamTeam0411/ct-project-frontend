@@ -47,6 +47,20 @@ input[placeholder] {
 
 }
 
+.filter {
+    display: flex;
+    justify-content: space-between;
+}
+.filter a {
+    color: rgb(4, 74, 178);
+    transition-duration: 0.5s;
+    border-bottom: 1px solid white;
+
+}
+.filter:hover a {
+    text-decoration: underline;
+}
+
 .list ul {
     display: flex;
     list-style: none;
@@ -59,7 +73,7 @@ input[placeholder] {
     display: flex;
     list-style: none;
     padding-inline-start: 0;
-    color: #8F8F98;
+    color:black;
     gap: 8px;
     align-items: end;
     height: 56px;

@@ -1,15 +1,16 @@
 import styles from "./SideBar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { sideBarItems } from "../../data/dataSidebar.tsx";
 import { useEffect, useState } from "react";
-import { PROFILE } from "../../../../stores/ROUTES.tsx";
+import { LOGOUT, PROFILE } from "../../../../stores/ROUTES.tsx";
 import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
+import { MdOutlineLogout } from "react-icons/md";
+import axios from "axios";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function SideBar() {
-  // const clearToken = () => {
-  //   localStorage.removeItem("token");
-  // };
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     email: "",
   });
@@ -23,6 +24,19 @@ function SideBar() {
       setLoading(false);
     });
   }, []);
+  const logout = async () => {
+    localStorage.removeItem("token");
+
+    try {
+      const response = await axios.post(LOGOUT);
+      setData({ email: null });
+      alert(`Ответ от сервера: ${response.data.message}`);
+      navigate("/");
+    } catch (error) {
+      console.error("Ошибка при выходе из системы", error);
+      alert(`Ошибка: ${error.message}`);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -64,6 +78,13 @@ function SideBar() {
       {!loading && data ? (
         <div className={styles.bottom}>
           <p>{data.email}</p>
+          <div className={styles.logout}>
+            <MdOutlineLogout
+              size={"20px"}
+              onClick={logout}
+              className={styles.logoutIcon}
+            />
+          </div>
         </div>
       ) : (
         ""

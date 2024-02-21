@@ -1,30 +1,50 @@
 import DropdownMenu from "../../UIAdminPanel/Dropdown_Menu/DropdownMenu";
 import styles from "./AllMasters.module.css";
 import { useEffect, useState } from "react";
-import { FetchDataAdmin } from "../../../../stores/AdminStore/fetch_admin_data.tsx";
-import { ADMIN_SERVICES } from "../../../../stores/ROUTES.tsx";
 import { PuffLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
+import useFetchAdminMasters from "../../../../stores/AdminStore/fetch_admin_all_masters.tsx"; /* eslint-disable  @typescript-eslint/no-explicit-any */
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function AllMasters() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { dataMasters, fetchData } = useFetchAdminMasters();
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const filteredData = dataMasters.filter(
+      (item) =>
+        item.user.firstName.toLowerCase().includes(search.toLowerCase()) ||
+        item.user.lastName.toLowerCase().includes(search.toLowerCase()) ||
+        item.user.email.toLowerCase().includes(search.toLowerCase()) ||
+        item.category.title.toLowerCase().includes(search.toLowerCase()) ||
+        item.city.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setData(filteredData);
+  }, [search]);
+
   useEffect(() => {
     setLoading(true);
-    FetchDataAdmin(ADMIN_SERVICES).then((res): any => {
-      setData(res.data.data);
-      console.log(res.data.data);
-      setLoading(false);
-    });
+    fetchData();
+    setData(dataMasters);
+    console.log(dataMasters);
+    setLoading(false);
   }, []);
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <h1>Всі майстри</h1>
-        <button>+ Додати майстра</button>
       </div>
       <div className={styles.filter}>
-        <input type="text" name="filter" placeholder="Пошук" />
+        <input
+          type="text"
+          name="filter"
+          placeholder="Пошук"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <NavLink to={"/"}>+ Додати майстра</NavLink>
       </div>
       <div className={styles.list}>
         <ul>
@@ -42,7 +62,7 @@ function AllMasters() {
           {" "}
           <PuffLoader color="#21151F" size={200} />
         </div>
-      ) : (
+      ) : data.length > 0 ? (
         data.map((item) => (
           <div key={item.id}>
             <ul className={styles.mastersList}>
@@ -53,14 +73,20 @@ function AllMasters() {
               <li className={styles.service}>{item.category.title}</li>
               <li className={styles.email}>{item.user.email}</li>
               <li className={styles.address}>{item.city.name}</li>
-              <li className={styles.phone}>
-                У юзера в базі нема номера телефону
+              <li className={styles.phone}>{Date.now()}</li>
+              <li className={styles.empty}>
+                {
+                  <DropdownMenu
+                    deleteMethod={() => setData}
+                    editMethod={() => setData}
+                  />
+                }
               </li>
-              <li className={styles.empty}>...</li>
-              <DropdownMenu />
             </ul>
           </div>
         ))
+      ) : (
+        <p>Нічого не знайдено</p>
       )}
     </div>
   );

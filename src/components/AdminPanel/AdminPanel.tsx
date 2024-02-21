@@ -13,6 +13,7 @@ import BookmarkRecommendations from "../../pages/MainPage/MainPageBookmarks/Book
 import BookmarkCategories from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/BookmarkCategories.tsx";
 import BookmarkCities from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCities.tsx";
 import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAboutUs/BookmarkAboutUs.tsx";
+import BookmarkAddRecommendation from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.tsx";
 
 function AdminPanel() {
   return (
@@ -26,10 +27,16 @@ function AdminPanel() {
             <Route path="main-page" element={<MainPageAdmin />}>
               <Route path="/main-page/" element={<BookmarkPagesLayer />}>
                 <Route path="banner" element={<BookmarkBanner />} />
-                <Route
-                  path="recommendations"
-                  element={<BookmarkRecommendations />}
-                />
+                <Route path="recommendations" element={<PagesLayer />}>
+                  <Route
+                    path="/main-page/recommendations/"
+                    element={<BookmarkRecommendations />}
+                  />
+                  <Route
+                    path="add-recommendation"
+                    element={<BookmarkAddRecommendation />}
+                  />
+                </Route>
                 <Route path="categories" element={<BookmarkCategories />} />
                 <Route path="cities" element={<BookmarkCities />}>
                   <Route path="city/:id" />
