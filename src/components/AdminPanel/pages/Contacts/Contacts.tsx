@@ -1,28 +1,57 @@
 import styles from "../Documents/Documents.module.css";
-import useFetchData from "../../../../stores/fetchData.tsx";
+import { useForm } from "react-hook-form";
+import { useStoreContacts } from "../../../../stores/fakeStores/contactsStore.tsx";
+import { useState } from "react";
 
 function Contacts() {
-  const dataState = useFetchData((state) => state.data);
+  const { register, handleSubmit, setValue } = useForm();
+  const { phoneNumber, email, setPhoneNumber, setEmail } = useStoreContacts();
+  const [showMessage, setShowMessage] = useState(false);
 
-  console.log(dataState);
+  const onSubmit = (data) => {
+    setPhoneNumber(data.phoneNumber);
+    setEmail(data.email);
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 3000);
+  };
+
+  const onReset = () => {
+    setValue("phoneNumber", ""); // Очистите поле ввода номера телефона
+    setValue("email", "");
+  };
 
   return (
     <div className={styles.container}>
       <h1>Контакти</h1>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputs}>
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" />
+          <input
+            {...register("email")}
+            type="email"
+            defaultValue={email}
+            name="email"
+            placeholder="Введіть электронную почту"
+          />
         </div>
         <div className={styles.inputs}>
-          <label htmlFor="phone">Номер телефону</label>
-          <input type="tel" name="phone" />
+          <label htmlFor="phoneNumber">Номер телефону</label>
+          <input
+            {...register("phoneNumber")}
+            type="tel"
+            defaultValue={phoneNumber}
+            name="phoneNumber"
+            placeholder="Введіть номер телефона"
+          />
         </div>
         <div className={styles.buttons}>
-          <button>Відмінити</button>
-          <button>Зберегти</button>
+          <button type="button" onClick={onReset}>
+            Відмінити
+          </button>
+          <button type="submit">Зберегти</button>
         </div>
       </form>
+      {showMessage && <div className={styles.messageShow}>Збереженно</div>}
     </div>
   );
 }

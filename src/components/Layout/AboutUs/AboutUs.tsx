@@ -1,32 +1,31 @@
 import styles from "./AboutUs.module.css";
+import { useStoreAboutUs } from "../../../stores/fakeStores/aboutUsStore.tsx";
 
 const AboutUs = () => {
+  const { item } = useStoreAboutUs();
   return (
     <div className={styles.aboutUsContainer}>
-      <img src="/About.jpg" alt="women" className={styles.aboutUsImage} />
+      <img src={item.image} alt="women" className={styles.aboutUsImage} />
 
       <div className={styles.aboutUsBlockText}>
         <div>
-          <p className={styles.aboutUsText1}>BeautyBook</p>
+          <p className={styles.aboutUsText1}>{item.titleFirstLineText}</p>
         </div>
 
         <div className={styles.aboutUsBlockText2}>
-          <div >
-            <p className={styles.aboutUsText2}>- твій гід у світі</p>
+          <div>
+            <p className={styles.aboutUsText2}>{item.titleSecondLineText}</p>
           </div>
 
           <div>
-            <p  className={styles.aboutUsText3}>краси</p>
+            <p className={styles.aboutUsText3}>{item.titleThirdLineText}</p>
           </div>
         </div>
 
         <div className={styles.aboutUsText4}>
-          <p>
-            Великий вибір послуг та професіоналів, зручний пошук - все це на
-            нашому сайті.
-          </p>
-          <p>Знайди ідеального майстра за кілька кліків. </p>
-          <p>Записуйся на процедури швидко та без зайвих зусиль. </p>
+          <p>{item.descriptionFirstLineText}</p>
+          <p>{item.descriptionSecondLineText} </p>
+          <p>{item.descriptionThirdLineText} </p>
         </div>
       </div>
     </div>

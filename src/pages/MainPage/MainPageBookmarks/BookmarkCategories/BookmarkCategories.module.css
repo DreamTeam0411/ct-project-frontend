@@ -83,6 +83,10 @@ input[placeholder] {
 .listItems {
     display: flex;
 }
+.listItemsData {
+    display: flex;
+    color: black;
+}
 .id {
 
     width: 72px;

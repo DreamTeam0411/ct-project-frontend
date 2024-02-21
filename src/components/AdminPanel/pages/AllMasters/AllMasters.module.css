@@ -73,7 +73,7 @@ input[placeholder] {
     display: flex;
     list-style: none;
     padding-inline-start: 0;
-    color: #8F8F98;
+    color:black;
     gap: 8px;
     align-items: end;
     height: 56px;

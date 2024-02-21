@@ -39,6 +39,9 @@ button {
 .listItems {
     display: flex;
 }
+.listItemsFetch {
+    display: flex;
+    color:black;}
 
 input {
     width: 400px;
