@@ -1,6 +1,8 @@
 .recommendations {
-    width: 1280px;
-    display: flex;
+    position: absolute;
+    top: 2650px;
+    width: 328px;
+    display: block;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -23,4 +25,41 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  
+  
+}
+
+@media screen and (min-width: 1440px) {
+  
+    .recommendations {
+        position: relative;
+        top:0px;
+        width: 1280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: auto auto 80px;
+    }
+    .recommendationsTitle {
+        margin-top: 80px;
+        margin-bottom: 40px;
+            
+        color:#21151F;
+        font-family: "Lato", sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+    
+    }
+    .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }

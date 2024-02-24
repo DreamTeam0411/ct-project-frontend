@@ -7,8 +7,8 @@ export const SubCategories = () => {
   const navigate = useNavigate();
 
   const addCategorie = (content: string) => {
-        navigate(`/all-services?category=${content}`);
-        scroll(0,0)
+    navigate(`/all-services?category=${content}`);
+    scroll(0, 0);
   };
 
   return (
@@ -24,56 +24,74 @@ export const SubCategories = () => {
             />
           </div>
           <div className={styles.categoriesBlock1Right}>
-            <CategoriesUI
-              path={"/CategorieUI-2-min.jpg"}
-              content={"Догляд за нігтями"}
-              onClick={() => addCategorie("dogliad-za-nigtiami")}
-            />
-            <CategoriesUI
-              path={"/CategorieUI-3-min.jpg"}
-              content={"Жіноча стрижка"}
-              onClick={() => addCategorie("zinoca-strizka")}
-            />
-            <CategoriesUI
-              path={"/CategorieUI-4-min.jpg"}
-              content={"Вії та брови"}
-              onClick={() => addCategorie("viyi-ta-brovi")}
-            />
-            <CategoriesUI
-              path={"/CategorieUI-5-min.jpg"}
-              content={"Татуаж"}
-              onClick={() => addCategorie("tatuaz")}
-            />
+            <div className={styles.categoriesBlock1Img}>
+              <CategoriesUI
+                path={"/CategorieUI-2-min.jpg"}
+                content={"Догляд за нігтями"}
+                onClick={() => addCategorie("dogliad-za-nigtiami")}
+              />
+            </div>
+            <div className={styles.categoriesBlock1Img}>
+              <CategoriesUI
+                path={"/CategorieUI-3-min.jpg"}
+                content={"Жіноча стрижка"}
+                onClick={() => addCategorie("zinoca-strizka")}
+              />
+            </div>
+            <div className={styles.categoriesBlock1Img}>
+              <CategoriesUI
+                path={"/CategorieUI-4-min.jpg"}
+                content={"Вії та брови"}
+                onClick={() => addCategorie("viyi-ta-brovi")}
+              />
+            </div>
+            <div className={styles.categoriesBlock1Img}>
+              <CategoriesUI
+                path={"/CategorieUI-5-min.jpg"}
+                content={"Татуаж"}
+                onClick={() => addCategorie("tatuaz")}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.categoriesBlock2}>
-          <CategoriesUI
-            path={"/CategorieUI-6-min.jpg"}
-            content={"Фарбування та зачіска"}
-            onClick={() => addCategorie("farbuvannia-volossia")}
-          />
-          <CategoriesUI
-            path={"/CategorieUI-7-min.jpg"}
-            content={"Косметологія"}
-            onClick={() => addCategorie("kosmetologiia")}
-          />
+          <div className={styles.categoriesBlock2Img}>
+            <CategoriesUI
+              path={"/CategorieUI-6-min.jpg"}
+              content={"Фарбування та зачіска"}
+              onClick={() => addCategorie("farbuvannia-volossia")}
+            />
+          </div>
+          <div className={styles.categoriesBlock2Img}>
+            <CategoriesUI
+              path={"/CategorieUI-7-min.jpg"}
+              content={"Косметологія"}
+              onClick={() => addCategorie("kosmetologiia")}
+            />
+          </div>
         </div>
         <div className={styles.categoriesBlock3}>
-          <CategoriesUI
-            path={"/CategorieUI-8-min.jpg"}
-            content={"Чоловіча стрижка"}
-            onClick={() => addCategorie("colovica-strizka")}
-          />
-          <CategoriesUI
-            path={"/CategorieUI-9-min.jpg"}
-            content={"Масаж"}
-            onClick={() => addCategorie("masaz")}
-          />
-          <CategoriesUI
-            path={"/CategorieUI-10-min.jpg"}
-            content={"Видалення волосся"}
-            onClick={() => addCategorie("vidalennia-volossia")}
-          />
+          <div className={styles.categoriesBlock3Img}>
+            <CategoriesUI
+              path={"/CategorieUI-8-min.jpg"}
+              content={"Чоловіча стрижка"}
+              onClick={() => addCategorie("colovica-strizka")}
+            />
+          </div>
+          <div className={styles.categoriesBlock3Img}>
+            <CategoriesUI
+              path={"/CategorieUI-9-min.jpg"}
+              content={"Масаж"}
+              onClick={() => addCategorie("masaz")}
+            />
+          </div>
+          <div className={styles.categoriesBlock3Img}>
+            <CategoriesUI
+              path={"/CategorieUI-10-min.jpg"}
+              content={"Видалення волосся"}
+              onClick={() => addCategorie("vidalennia-volossia")}
+            />
+          </div>
         </div>
       </div>
     </div>

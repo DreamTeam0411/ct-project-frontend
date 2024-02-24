@@ -1,42 +1,49 @@
 .promoContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 1280px;
-  height: 544px;
-  margin: auto;
+  width: 360px;
+  height: auto;
+  margin: 0 auto;
 
-  padding-top: 52px;
 }
 
 .promoLeftBlock {
+  position: absolute;
+  top: 70px;
+  padding-left: 16px;
   display: flex;
-  width: 630px;
+  width: 328px;
+ margin-left: auto;
+ margin-right: auto;
   align-items: flex-start;
   align-content:center;
-  gap: 8px 12px;
   flex-shrink: 0;
   flex-wrap: wrap;
 }
 
 .promoRightBlock {
-  width: 630px;
-  height: 464px;
+  position: absolute;
+  top: 320px;
+  padding-left: 16px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .promoText1 {
   font-weight: 500;
-  font-size: 48px;
+  font-size: 28px;  
+  margin-bottom: 0px;
+  margin-top: 3px;
+  margin-right: 4px;
+  color: var(--black);
 }
 
 .promoBlockText2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 270px;
-  height: 64px;
-  margin-top: 7px;
-  background: var(--blue-dark);
-
+  width: 172px;
+  height: 42px;
+ padding-bottom: 8px;
+  background: #044AB2;
   border-top-left-radius: 12px;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
@@ -44,22 +51,25 @@
 
 .promoText2 {
   font-weight: 500;
-  font-size: 48px;
+  font-size: 28px;
   color: var(--white);
-  padding-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .promoText3 {
   font-weight: 500;
-  font-size: 48px;
+  font-size: 28px;
+  color: var(--black);
+  margin-top: 1px;
+  margin-bottom: 8px;
 }
 
 .promoBlockText4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 415px;
-  height: 64px;
+  width: 253px;
+  height: 42px;
 
   background: var(--pink);
 
@@ -69,32 +79,144 @@
 }
 
 .promoText4 {
+  margin-top: 6px;
   font-weight: 500;
-  font-size: 48px;
+  font-size: 28px;
+  
   color: var(--white);
 }
 
 .promoText5 {
-  font-weight: 400;
-  font-size: 18px;
-  color: #8f8f98;
+  font-size: 16px;
+  color: var(--grey);
   margin-top: 12px;
 }
 
 .promoRightBlock {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+line-height: 0;
+gap: 16px;
 }
 
 .promoFotoSmall {
-  width: 197px;
-  height: 276px;
-  flex-shrink: 0;
-}
+  width: 99px;
+  height: 142px;
+  }
 
 .promoFotoLarge {
-  width: 413px;
-  height: 276px;
-  flex-shrink: 0;
+  width: 213px;
+  height: 138px;
+}
+
+@media screen and (min-width: 1440px) {
+  .promoContainer {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    height: 544px;
+    margin: auto;
+  
+    padding-top: 52px;
+  }
+  
+  .promoLeftBlock {
+    position: relative;
+    top: 0;
+    display: flex;
+    width: 630px;
+    align-items: flex-start;
+    align-content:center;
+    gap: 8px 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+  
+  .promoRightBlock {
+    position: relative;
+    top: 0;
+    height: 464px;
+  }
+  
+  .promoText1 {
+    padding-top: 15px;
+    /* padding-bottom: 10px; */
+    font-weight: 500;
+    font-size: 48px;
+  }
+  
+  .promoBlockText2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 64px;
+    margin-top: 7px;
+    padding-bottom: 8px;
+    background: #044AB2;
+  
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  
+  .promoText2 {
+    font-weight: 500;
+    font-size: 48px;
+    color: var(--white);
+    padding-bottom: 7px;
+  }
+  
+  .promoText3 {
+    font-weight: 500;
+    font-size: 48px;
+  }
+  
+  .promoBlockText4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 415px;
+    height: 64px;
+  
+    background: var(--pink);
+  
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  
+  .promoText4 {
+    font-weight: 500;
+    font-size: 48px;
+    color: var(--white);
+  }
+  
+  .promoText5 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #8f8f98;
+    margin-top: 12px;
+  }
+  
+  .promoRightBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .promoFotoSmall {
+    width: 197px;
+    height: 276px;
+    flex-shrink: 0;
+  }
+  
+  .promoFotoLarge {
+    width: 413px;
+    height: 276px;
+    flex-shrink: 0;
+  }
+    
+  
 }
