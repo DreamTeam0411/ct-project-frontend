@@ -1,6 +1,8 @@
 .container {
-    width: 1280px;
-    height: 72px;
+    min-width: 360px;
+    max-width: 767px;
+    
+    /* height: 72px;
     margin-top: 81px;
     margin-bottom: 15px;
     display: flex;
@@ -8,22 +10,79 @@
     justify-content: space-between;
     background-color: white;
     margin: 0 auto;
-    position: relative;
+    position: relative; */
 }
 
-.headerButtons {
-    display: flex;
-    gap: 20px;
-    color: #fff;
-
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    justify-content: center;
-    align-items: center;
+.linksBlock{
+    padding-top: 20px;
+    padding-left: 16px;
+    width: 360px;
+    height: 64px;
+    
 }
 
-.buttonBusiness {
-    text-decoration: none;
+.searchForm{
+  
+  
+
 }
+.buttonBusiness{
+visibility:hidden;
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+   
+    }
+    
+    .headerButtons {
+      
+    }
+    
+    .buttonBusiness {
+        visibility:visible;
+      
+    }
+  }
+
+
+@media screen and (min-width: 1280px) {
+    .container {
+        min-width: 1280px;
+        height: 72px;
+        margin-top: 81px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        margin: 0 auto;
+        /* position: relative; */
+    }
+    
+    .headerButtons {
+        display: flex;
+        gap: 20px;
+        color: #fff;
+    
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .buttonBusiness {
+        visibility:visible;
+        text-decoration: none;
+    }
+    .linksBlock{
+        
+        width: 345px;
+        height: 64px;
+        
+    }
+    
+  }

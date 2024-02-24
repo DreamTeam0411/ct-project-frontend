@@ -1,67 +1,57 @@
 .aboutUsContainer {
-  width: 1280px;
-  height: 511px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: auto auto 96px;
+  position: absolute;
+  top: 3600px;
+  width: 328px;
+margin-left: 16px;
 }
 
 .aboutUsImage {
-  width: 413px;
-  height: 511px;
-  border-radius: 12px;
+ visibility: hidden;
 }
 
 .aboutUsBlockText {
-  width: 738px;
-  height: 460px;
-  margin-top:80px;
-  margin-left:129px;
+  width: 328px;
 }
 
 .aboutUsText1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 289px;
-  height: 64px;
+  width: 213px;
+  height: 42px;
   margin-top: 7px;
-  background: var(--blue-dark);
+  background: #044AB2;
 
   font-weight: 500;
-  font-size: 48px;
+  font-size: 30px;
   color: var(--white);
  margin-bottom: 20px;
 
-  border-top-left-radius: 12px;
+ border-top-right-radius: 12px;
+
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
 }
 
 
-.aboutUsBlockText2 {
-  display: flex;
-  align-items: center;
- }
+
 
 .aboutUsText2{
   font-weight: 500;
-  font-size: 48px;
-  font-weight: 500;
+  font-size: 30px;
+  color: var(--black);
 }
 
 .aboutUsText3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 164px;
-  height: 64px;
-  margin-left: 10px;
+  width: 120px;
+  height: 42px;
+ 
 
   font-weight: 500;
-  font-size: 48px;
+  font-size: 30px;
   color: var(--white);
 
   background: var(--pink);
@@ -72,7 +62,95 @@
 }
 
 .aboutUsText4{
-  font-size: 21px;
-  color: var(--gray);
+  font-size: 16px;
+  color: var(--black);
   line-height: 2;
+}
+
+
+
+@media screen and (min-width: 1440px) {
+  .aboutUsContainer {
+    position: relative;
+  top: 0px;
+    width: 1280px;
+    height: 511px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto auto 96px;
+  }
+  
+  .aboutUsImage {
+  visibility:visible;
+
+    width: 413px;
+    height: 511px;
+    border-radius: 12px;
+  }
+  
+  .aboutUsBlockText {
+    width: 738px;
+    height: 460px;
+    margin-top:80px;
+    margin-left:129px;
+  }
+  
+  .aboutUsText1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 289px;
+    height: 64px;
+    margin-top: 7px;
+    background: var(--blue-dark);
+  
+    font-weight: 500;
+    font-size: 48px;
+    color: var(--white);
+   margin-bottom: 20px;
+  
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  
+  
+  .aboutUsBlockText2 {
+    display: flex;
+    align-items: center;
+   }
+  
+  .aboutUsText2{
+    font-weight: 500;
+    font-size: 48px;
+    font-weight: 500;
+  }
+  
+  .aboutUsText3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 164px;
+    height: 64px;
+    margin-left: 10px;
+  
+    font-weight: 500;
+    font-size: 48px;
+    color: var(--white);
+  
+    background: var(--pink);
+  
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  
+  .aboutUsText4{
+    font-size: 21px;
+    color: var(--gray);
+    line-height: 2;
+  }
+  
 }

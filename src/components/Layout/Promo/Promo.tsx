@@ -13,7 +13,7 @@ const Promo = () => {
           <p className={styles.promoText4}>послуги онлайн !</p>
         </div>
         <p className={styles.promoText5}>
-          Записуйтеся на наступний сеанс зручно та просто!
+          Записуйтеся на сеанс зручно та просто!
         </p>
       </div>
       <div className={styles.promoRightBlock}>
