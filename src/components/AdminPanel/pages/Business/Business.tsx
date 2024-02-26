@@ -1,6 +1,6 @@
 import styles from "./Business.module.css";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useBusinessStore } from "../../../../stores/localStores/for_business.tsx";
 
@@ -20,9 +20,38 @@ function Business() {
   } = useBusinessStore();
   const fileInputRef = useRef(null);
   const [showMessage, setShowMessage] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
+
+  const [subtitleLength, setSubtitleLength] = useState(0);
+  const [contentLength, setContentLength] = useState(0);
+
+  const handleSubtitleChange = (event) => {
+    if (event.target.value.length <= 300) {
+      setValue("subtitle", event.target.value);
+      setSubtitleLength(event.target.value.length);
+    }
+  };
+
+  const handleContentChange = (event) => {
+    if (event.target.value.length <= 300) {
+      setValue("content", event.target.value);
+      setContentLength(event.target.value.length);
+    }
+  };
+
+  useEffect(() => {
+    setSubtitleLength(subtitle.length);
+    setContentLength(content.length);
+  }, [subtitle, content]);
 
   const onSubmit = (data) => {
     const { title, subtitle, contentSubtitle, content, photo } = data;
+    if (imageFile) {
+      setPhoto(URL.createObjectURL(imageFile));
+    } else {
+      setPhoto(null);
+    }
+
     setTitle(title);
     setSubtitle(subtitle);
     setContentSubtitle(contentSubtitle);
@@ -34,8 +63,10 @@ function Business() {
 
   const handleImageChange = (event) => {
     if (event.target.files) {
+      const file = event.target.files[0];
       setValue("photo", URL.createObjectURL(event.target.files[0]));
       setPhoto(URL.createObjectURL(event.target.files[0]));
+      setImageFile(file);
     }
   };
 
@@ -74,8 +105,12 @@ function Business() {
                 {...register("subtitle")}
                 defaultValue={subtitle}
                 placeholder="Введіть підзаголовок"
+                onChange={handleSubtitleChange}
+                maxLength={300}
               ></textarea>
-              <p className={styles.p}>0/300</p>
+              <p className={subtitleLength > 300 ? styles.red : styles.p}>
+                {subtitleLength}/300
+              </p>
             </div>
             <div className={styles.inputsSubtitle}>
               <label htmlFor="content-subtitle">Заголовок контенту</label>
@@ -90,8 +125,12 @@ function Business() {
                 {...register("content")}
                 defaultValue={content}
                 placeholder="Введіть текст контенту"
+                onChange={handleContentChange}
+                maxLength={300}
               ></textarea>
-              <p className={styles.p}>0/300</p>
+              <p className={contentLength > 300 ? styles.red : styles.p}>
+                {contentLength}/300
+              </p>
             </div>
           </div>
           <div className={styles.photo}>
