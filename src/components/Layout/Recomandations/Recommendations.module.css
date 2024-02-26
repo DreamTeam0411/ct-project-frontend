@@ -1,7 +1,9 @@
 .recommendations {
+    width: 328px;
     position: absolute;
     top: 2650px;
-    width: 328px;
+    left: 50%;
+  transform: translateX(-50%);
     display: block;
     flex-direction: column;
     justify-content: flex-start;
@@ -37,6 +39,8 @@
     .recommendations {
         position: relative;
         top:0px;
+        left: 0;
+    transform: translateX(0);
         width: 1280px;
         display: flex;
         flex-direction: column;

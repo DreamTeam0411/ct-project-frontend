@@ -1,33 +1,70 @@
-.searchByCityBlock {
-    max-width: 1280px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto ;
-    flex-wrap: wrap;
-    min-height: 200px;
-
-
+.container {
+  display: flex;
+  position: relative;
+  top: 4250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 328px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-left: 16px;
 }
 
 .title {
-    color: var(--black, #21151F);
+  color: var(--black, #21151f);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.cities {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    min-height: 200px;
+  }
+
+  .title {
+    color: var(--black, #21151f);
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     margin-bottom: 40px;
-}
+  }
 
-.cities {
+  .cities {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     gap: 40px;
-}
-.wrap {
+  }
+  .wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    
+  }
 }
