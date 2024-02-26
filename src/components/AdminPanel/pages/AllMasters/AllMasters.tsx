@@ -44,7 +44,7 @@ function AllMasters() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <NavLink to={"/"}>+ Додати майстра</NavLink>
+        <NavLink to={"/admin-panel/add-master"}>+ Додати майстра</NavLink>
       </div>
       <div className={styles.list}>
         <ul>

@@ -15,6 +15,7 @@ import BookmarkCities from "../../pages/MainPage/MainPageBookmarks/BookmarkCitie
 import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAboutUs/BookmarkAboutUs.tsx";
 import BookmarkAddRecommendation from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.tsx";
 import AddBookmarkCity from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCity/AddBookmarkCity.tsx";
+import AddMaster from "./pages/AllMasters/AddMaster/AddMaster.tsx";
 
 function AdminPanel() {
   return (
@@ -53,6 +54,7 @@ function AdminPanel() {
             <Route path="contacts" element={<Contacts />} />
             <Route path="business" element={<Business />} />
             <Route path="all-masters" element={<AllMasters />} />
+            <Route path="add-master" element={<AddMaster />} />
           </Route>
         </Routes>
       </div>

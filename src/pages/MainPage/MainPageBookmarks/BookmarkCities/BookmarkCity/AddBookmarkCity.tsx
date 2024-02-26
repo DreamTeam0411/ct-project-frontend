@@ -2,7 +2,10 @@ import { useState } from "react";
 import styles from "../../BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.module.css";
 import useFetchAdminCities from "../../../../../stores/AdminStore/fetch_admin_cities.tsx";
 
+import { useNavigate } from "react-router-dom";
+
 const AddBookmarkCity = () => {
+  const navigate = useNavigate();
   const { addCity } = useFetchAdminCities();
   const [cityName, setCityName] = useState("");
   const [showMessage, setShowMessage] = useState(false);
@@ -11,7 +14,10 @@ const AddBookmarkCity = () => {
     addCity(cityName);
     setCityName("");
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 3000);
+    setTimeout(() => {
+      setShowMessage(false);
+      navigate("/admin-panel/main-page/cities");
+    }, 1000);
   };
 
   const handleCancel = (e) => {
