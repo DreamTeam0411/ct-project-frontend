@@ -1,224 +1,222 @@
 .footerContainer {
-    position: absolute;
-    top:4650px;
-    width: 100%;
-    background: var(--blue-dark);
-    color: var(--white);
-
-   }
+  position: absolute;
+  top: 4650px;
+  width: 100%;
+  background: var(--blue-dark);
+  color: var(--white);
+}
 
 .footerTop {
-    width: 328px;
-    height: 330px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  width: 328px;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   padding-left: 16px;
-   
 }
 .footerTop::after {
-    width: 98%;
-    position: absolute;
-    bottom: 0;
-    content: '';
-    margin: 0 auto;
-    border: .2px solid #E8E8E8;
+  width: 98%;
+  position: absolute;
+  bottom: 0;
+  content: "";
+  margin: 0 auto;
+  border: 0.2px solid #e8e8e8;
 }
 .logoSocialBlock {
-    padding-top: 25px;
+  padding-top: 25px;
 }
 
 .logo {
-    width: 112px;
-    height: 12px;
-    margin-bottom: 14px;
-    cursor: pointer;
+  width: 112px;
+  height: 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
 }
 
 .about {
-    width: 260px;
-    margin-bottom: 14px;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
+  width: 260px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .socialBlock {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 32px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .social {
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
 }
 
 .footerInformationBlock {
-    display: flex;
-    gap: 28px;
+  display: flex;
+  gap: 28px;
 }
 
 .footerContactsBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .title {
-    color: var(--white);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 32px;
+  color: var(--white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
 }
 
 .contacts {
-    color: var(--white);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
+  color: var(--white);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
 }
 .docs {
-    color: var(--white);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    cursor: help;
+  color: var(--white);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  cursor: help;
 }
-.docs a{
-    cursor: help;
+.docs a {
+  cursor: help;
 }
 .copyright {
-    margin-top: 15px;
+  margin-top: 15px;
+  color: var(--white);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 50px;
+}
+
+@media screen and (min-width: 1440px) {
+  .footerContainer {
+    position: relative;
+    top: 0;
+    display: flex;
+    width: 100%;
+    
+    background: var(--blue-dark);
+    color: var(--white);
+    align-items: center;
+    flex-direction: column;
+    max-height: 640px;
+    justify-content: space-between;
+  }
+
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    width: 1268px;
+    margin-top: 45px;
+    position: relative;
+    left: 0;
+    transform: translateX(0);
+    height: 250px;
+  }
+  .footerTop::after {
+    width: 98%;
+    position: absolute;
+    bottom: 0;
+    content: "";
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: 0.2px solid #e8e8e8;
+  }
+  .logoSocialBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo {
+    display: flex;
+    width: 112px;
+    height: 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .about {
+    width: 320px;
+    height: 99px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .socialBlock {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+
+  .footerInformationBlock {
+    display: flex;
+    gap: 60px;
+  }
+
+  .footerContactsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title {
+    color: var(--white);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .contacts {
+    color: var(--white);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .docs {
+    color: var(--white);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: help;
+  }
+  .docs a {
+    cursor: help;
+  }
+  .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--white);
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    height: 100px;
-}
-
-
-
-@media screen and (min-width: 1440px) {
-    .footerContainer {
-        position: relative;
-        top: 0;
-        display: flex;
-        width: 1440px;
-        background: var(--blue-dark);
-        color: var(--white);
-        align-items: center;
-        flex-direction: column;
-        max-height: 640px;
-        justify-content: space-between;
-    
-    }
-    
-    .footerTop {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin-top: 45px;
-        position: relative;
-        height: 250px;
-    }
-    .footerTop::after {
-        width: 98%;
-        position: absolute;
-        bottom: 0;
-        content: '';
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        border: .2px solid #E8E8E8;
-    }
-    .logoSocialBlock {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .logo {
-        display: flex;
-        width: 112px;
-        height: 12px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-    
-    .about {
-        width: 320px;
-        height: 99px;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    
-    .socialBlock {
-        display: flex;
-        gap: 16px;
-    }
-    
-    .social {
-        width: 36px;
-        height: 36px;
-        cursor: pointer;
-    }
-    
-    .footerInformationBlock {
-        display: flex;
-        gap: 60px;
-    }
-    
-    .footerContactsBlock {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .title {
-        color: var(--white);
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 32px;
-    }
-    
-    .contacts {
-        color: var(--white);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    .docs {
-        color: var(--white);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-        cursor: help;
-    }
-    .docs a{
-        cursor: help;
-    }
-    .copyright {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        height: 150px;
-    }
+    height: 150px;
   }
+}
