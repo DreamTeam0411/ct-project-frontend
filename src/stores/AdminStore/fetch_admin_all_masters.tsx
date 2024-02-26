@@ -4,6 +4,7 @@ import { FetchDataAdmin } from "./fetch_admin_data.tsx";
 import { ADMIN_SERVICES } from "../ROUTES.tsx";
 import axios from "axios";
 
+const token = localStorage.getItem("token");
 interface RootMasters {
   dataMasters: Master[];
   fetchData: () => Promise<Master>;
@@ -76,7 +77,11 @@ const useFetchAdminMasters = create<RootMasters>()(
         return await response;
       },
       addMaster: async (newMaster: Master) => {
-        const response = await axios.post(ADMIN_SERVICES, newMaster);
+        const response = await axios.post(ADMIN_SERVICES, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
         if (response.status === 200) {
           set((state) => ({
             dataMasters: [...state.dataMasters, newMaster],
