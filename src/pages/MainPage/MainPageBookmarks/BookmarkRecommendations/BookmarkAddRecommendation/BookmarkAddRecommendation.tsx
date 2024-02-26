@@ -2,8 +2,10 @@ import styles from "./BookmarkAddRecommendation.module.css";
 import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
 import { useEffect, useState } from "react";
 import { useStoreRecommendations } from "../../../../../stores/localStores/recommendationsStore.tsx";
+import { useNavigate } from "react-router-dom";
 
 const BookmarkAddRecommendation = () => {
+  const navigate = useNavigate();
   const { dataMasters, fetchData } = useFetchAdminMasters();
   const { addItem } = useStoreRecommendations();
   const [recommendation, setRecommendation] = useState("");
@@ -24,7 +26,10 @@ const BookmarkAddRecommendation = () => {
     console.log(items);
     addItem(items);
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 3000);
+    setTimeout(() => {
+      setShowMessage(false);
+      navigate("/admin-panel/main-page/recommendations");
+    }, 1000);
   };
   useEffect(() => {
     fetchData();
