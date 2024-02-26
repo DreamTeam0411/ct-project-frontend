@@ -1,6 +1,6 @@
 import Card from "./Card/Card.tsx";
 import styles from "./Recommendations.module.css";
-import { useStoreRecommendations } from "../../../stores/fakeStores/recommendationsStore.tsx";
+import { useStoreRecommendations } from "../../../stores/localStores/recommendationsStore.tsx";
 
 const Recommendations = () => {
   const items = useStoreRecommendations((state) => state.items);

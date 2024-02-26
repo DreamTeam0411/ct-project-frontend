@@ -14,6 +14,7 @@ import BookmarkCategories from "../../pages/MainPage/MainPageBookmarks/BookmarkC
 import BookmarkCities from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCities.tsx";
 import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAboutUs/BookmarkAboutUs.tsx";
 import BookmarkAddRecommendation from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.tsx";
+import AddBookmarkCity from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCity/AddBookmarkCity.tsx";
 
 function AdminPanel() {
   return (
@@ -38,8 +39,12 @@ function AdminPanel() {
                   />
                 </Route>
                 <Route path="categories" element={<BookmarkCategories />} />
-                <Route path="cities" element={<BookmarkCities />}>
-                  <Route path="city/:id" />
+                <Route path="cities" element={<PagesLayer />}>
+                  <Route
+                    path="/main-page/cities/"
+                    element={<BookmarkCities />}
+                  />
+                  <Route path="add-city" element={<AddBookmarkCity />} />
                 </Route>
                 <Route path="about-us" element={<BookmarkAboutUs />} />
               </Route>

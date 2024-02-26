@@ -90,10 +90,11 @@ h2 {
     font-weight: 500;
 }
 .photoBlock {
-    width: 328px;
-    height: 220px;
-    background-color: #F2F4F7;
-    border-radius: 8px;
+    min-width: 328px;
+    min-height: 220px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    cursor: pointer;
 
 }
 
@@ -120,4 +121,20 @@ h2 {
 }
 .buttons button:active {
     background-color: var(--blue-dark);
+}
+.messageShow {
+    position: fixed;
+    bottom: 20px;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.messageShow {
+    opacity: 1;
 }

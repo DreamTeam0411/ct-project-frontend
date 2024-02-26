@@ -1,6 +1,6 @@
 import styles from "../Documents/Documents.module.css";
 import { useForm } from "react-hook-form";
-import { useStoreContacts } from "../../../../stores/fakeStores/contactsStore.tsx";
+import { useStoreContacts } from "../../../../stores/localStores/contactsStore.tsx";
 import { useState } from "react";
 
 function Contacts() {
