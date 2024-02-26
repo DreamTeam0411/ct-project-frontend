@@ -2,10 +2,12 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { FetchDataAdmin } from "./fetch_admin_data.tsx";
 import { ADMIN_SERVICES } from "../ROUTES.tsx";
+import axios from "axios";
 
 interface RootMasters {
   dataMasters: Master[];
   fetchData: () => Promise<Master>;
+  addMaster: (newMaster: Master) => Promise<void>;
 }
 
 export interface Master {
@@ -72,6 +74,16 @@ const useFetchAdminMasters = create<RootMasters>()(
         set({ dataMasters: await response });
         console.log(await response);
         return await response;
+      },
+      addMaster: async (newMaster: Master) => {
+        const response = await axios.post(ADMIN_SERVICES, newMaster);
+        if (response.status === 200) {
+          set((state) => ({
+            dataMasters: [...state.dataMasters, newMaster],
+          }));
+        } else {
+          throw new Error("Не удалось добавить мастера");
+        }
       },
     }),
     {

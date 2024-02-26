@@ -11,7 +11,7 @@ interface Item {
 
 interface MyState {
   items: Item[];
-  addItem: (item: Item) => void;
+  addItem: (item: Item[]) => void;
   updateItem: (id: number, updatedFields: Partial<Item>) => void;
   removeItem: (id: number) => void;
 }
@@ -50,7 +50,8 @@ export const useStoreRecommendations = create<MyState>((set) => ({
       cardTel: "073-677-55-90",
     },
   ],
-  addItem: (item) => set((state) => ({ items: [...state.items, item] })),
+  addItem: (items: Item[]) =>
+    set((state) => ({ items: [...state.items, ...items] })),
   updateItem: (id, updatedFields) =>
     set((state) => ({
       items: state.items.map((item) =>

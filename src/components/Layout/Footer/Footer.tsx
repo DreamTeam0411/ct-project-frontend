@@ -1,7 +1,7 @@
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import useFetchData from "../../../stores/fetchData.tsx";
-import { useStoreContacts } from "../../../stores/fakeStores/contactsStore.tsx";
+import { useStoreContacts } from "../../../stores/localStores/contactsStore.tsx";
 
 const Footer = () => {
   const dataState = useFetchData((state) => state.data);

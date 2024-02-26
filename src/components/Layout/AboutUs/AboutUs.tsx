@@ -1,5 +1,5 @@
 import styles from "./AboutUs.module.css";
-import { useStoreAboutUs } from "../../../stores/fakeStores/aboutUsStore.tsx";
+import { useStoreAboutUs } from "../../../stores/localStores/aboutUsStore.tsx";
 
 const AboutUs = () => {
   const { item } = useStoreAboutUs();
