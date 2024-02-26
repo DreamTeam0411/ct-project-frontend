@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { useStoreRecommendations } from "../../../../../stores/localStores/recommendationsStore.tsx";
+import { useNavigate } from "react-router-dom";
 
 const BookmarkAddRecommendation = () => {
   const navigate = useNavigate();
