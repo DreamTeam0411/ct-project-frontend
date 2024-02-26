@@ -13,7 +13,7 @@ const SearchByCity = () => {
 	};
 
 	return (
-		<div className={styles.searchByCityBlock}>
+		<div className={styles.container}>
 			<div className={styles.title}>Обирайте по містах</div>
 
 			<div className={styles.wrap}>

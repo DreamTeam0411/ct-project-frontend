@@ -104,7 +104,8 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.copyright}>
-        Розробка “Team Challenge” 2024. Усі права захищені.
+      &#xa9; Розробка “Team Challenge” 2024. Усі права захищені.
+        
       </div>
     </div>
   );

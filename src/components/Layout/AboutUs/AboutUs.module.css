@@ -1,7 +1,9 @@
 .aboutUsContainer {
+  width: 328px;
   position: absolute;
   top: 3600px;
-  width: 328px;
+  left: 50%;
+  transform: translateX(-50%);
 margin-left: 16px;
 }
 
@@ -73,6 +75,8 @@ margin-left: 16px;
   .aboutUsContainer {
     position: relative;
   top: 0px;
+  left: 0;
+    transform: translateX(0);
     width: 1280px;
     height: 511px;
     display: flex;
