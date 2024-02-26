@@ -4,10 +4,17 @@ import Header from "../../components/Layout/Header/Header.tsx";
 import Footer from "../../components/Layout/Footer/Footer.tsx";
 import { Button } from "../../components/UI/buttons/Button/Button.tsx";
 import StepperApp from "../../components/Stepper/StepperApp.tsx";
+import { useBusinessStore } from "../../stores/localStores/for_business.tsx";
 
 export const ForBusiness = () => {
   const [activeJoinUs, setActiveJoinUs] = useState(false);
+  const {
+    title,
+    subtitle,
+    contentSubtitle,
 
+    photo,
+  } = useBusinessStore();
   const joinUs = () => {
     setActiveJoinUs(true);
   };
@@ -30,15 +37,10 @@ export const ForBusiness = () => {
             {" "}
             <div className={styles.forBusinessBlock}>
               <div className={styles.informationBlock}>
-                <div className={styles.forBusinessTitle}>
-                  Розкрийте свій талант на BeautyBook
-                </div>
-                <div className={styles.forBusinessShortInfo}>
-                  Якщо ви є професійним б'юті-майстром і хочете розмістити своє
-                  оголошення на нашому сайті, ми вас вітаємо!
-                </div>
+                <div className={styles.forBusinessTitle}>{title}</div>
+                <div className={styles.forBusinessShortInfo}>{subtitle}</div>
                 <div className={styles.forBusinessTitleList}>
-                  Приєднуйтеся та отримайте унікальні переваги:
+                  {contentSubtitle}
                   <ul>
                     <li>
                       Збільшіть потік клієнтів завдяки ефективному залученню.
@@ -60,7 +62,7 @@ export const ForBusiness = () => {
                 </div>
               </div>
               <div className={styles.imageForBusiness}>
-                <img src="/forBusinessImage.png" alt="forBusiness" />
+                <img src={photo} alt="forBusiness" />
               </div>
             </div>
           </>

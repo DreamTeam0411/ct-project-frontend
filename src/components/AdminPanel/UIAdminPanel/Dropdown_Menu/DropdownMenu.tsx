@@ -22,7 +22,7 @@ function DropdownMenu({ editMethod, deleteMethod }) {
           <li className={style.menu__item} onClick={deleteMethod}>
             Видалити
           </li>
-          <li className={style.menu__item} onClick={() => editMethod}>
+          <li className={style.menu__item} onClick={editMethod}>
             Редагувати
           </li>
         </ul>

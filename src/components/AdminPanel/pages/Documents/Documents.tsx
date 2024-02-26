@@ -11,6 +11,7 @@ export const Documents = () => {
     privacyPolicyLink: dataState.footer.privacyPolicyLink,
     termsAndCondition: dataState.footer.termsAndCondition,
   });
+  const [showMessage, setShowMessage] = useState(false);
   const token = localStorage.getItem("token");
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -25,13 +26,14 @@ export const Documents = () => {
         },
       })
       .then((response) => {
-        alert("Resource updated successfully:");
         console.log(response.data);
       })
       .catch((error) => {
         alert("Error updating resource");
         console.error(error);
       });
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 3000);
   };
 
   const handleClearForm = () => {
@@ -73,6 +75,7 @@ export const Documents = () => {
           <button type={"submit"}>Зберегти</button>
         </div>
       </form>
+      {showMessage && <div className={styles.messageShow}>Збереженно</div>}
     </div>
   );
 };

@@ -35,14 +35,6 @@ const Header = () => {
           <Button children={"Login"} />
         </Link>
       </div>
-      <div>
-        <Link
-          to="/admin-panel/main-page/banner"
-          className={styles.buttonBusiness}
-        >
-          <Button children={"Admin"} />
-        </Link>
-      </div>
 
       <div>
         <Link to="/for-business" className={styles.buttonBusiness}>
