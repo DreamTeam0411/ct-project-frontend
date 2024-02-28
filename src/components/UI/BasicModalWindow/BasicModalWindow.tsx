@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import styles from "./BasicModalWindow.module.css";
 
 export interface Data {

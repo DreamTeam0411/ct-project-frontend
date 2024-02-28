@@ -85,10 +85,10 @@ const LoginPage = () => {
                 placeholder="example@gmail.com"
                 {...register("email", {
                   required: "Обов'язкове для заповнення",
-                  pattern: {
-                    value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
-                    message: "Невірний email",
-                  },
+                  // pattern: {
+                  //   value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
+                  //   message: "Невірний email",
+                  // },
                 })}
                 type="email"
                 id="email"
