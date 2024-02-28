@@ -1,0 +1,190 @@
+.container {
+    padding: 48px 40px;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 38px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+h2 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+.content {
+    display: flex;
+    gap: 32px;
+}
+.inputsTitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    width: 576px;
+}
+.inputsSubtitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+.inputsTitle input, .inputsTitle textarea, .inputsSubtitle input, .inputsSubtitle textarea[placeholder] {
+    color: #8F8F98;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.inputsTitle input {
+    width: 576px;
+    height: 44px;
+    padding: 12px 16px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.inputsTitle select {
+    width: 576px;
+    height: 44px;
+    padding: 12px 16px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.select {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--gray3);
+    background: var(--white, #FFF);
+    color: var(--gray4, #8F8F98);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+.inputsTitle textarea {
+    width: 576px;
+    height: 112px;
+    padding: 12px 16px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    resize: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    scrollbar-width:thin;
+}
+.p {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray2);
+}
+.inputsSubtitle input {
+    width: 576px;
+    height: 44px;
+    padding: 12px 16px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.inputsSubtitle textarea  {
+    width: 576px;
+    min-height: 112px;
+    padding: 12px 16px;
+    border: 1px solid #B6B6BC;
+    border-radius: 8px;
+    resize: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    max-height: 200px;
+    scrollbar-width:thin;
+}
+
+.inputs label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+.photoBlock {
+    min-width: 328px;
+    min-height: 220px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.downloadImage {
+    color: #044AB2;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--blue-dark);
+    border: 1px solid var(--blue-dark);
+    padding: 8px 24px;
+    border-radius: 8px;
+    background: var(--white);
+    width: 124px;
+}
+
+.buttons button:hover {
+    color: var(--white);
+    background: #8CB7F5;
+    border: none;
+}
+.buttons button:active {
+    background-color: var(--blue-dark);
+}
+.messageShow {
+    position: fixed;
+    bottom: 20px;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.red {
+    color: red;
+}
+
+.messageShow {
+    opacity: 1;
+}
+.message {
+    position: fixed;
+    bottom: 10px;
+    background-color: black;
+    border-radius: 8px;
+    width: fit-content;
+    height: 50px;
+    color: white;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: opacity 1s
+
+}

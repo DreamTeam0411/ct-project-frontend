@@ -100,8 +100,8 @@ h2 {
 }
 
 .photoBlock {
-    width: 328px;
-    height: 220px;
+    min-width: 328px;
+    min-height: 220px;
     background-color: #F2F4F7;
     border-radius: 8px;
 
@@ -135,6 +135,7 @@ h2 {
 .image {
     max-width:100%;
     height:auto;
+    border-radius: 12px;
 }
 
 .message {
@@ -151,5 +152,9 @@ h2 {
     justify-content: center;
     padding: 20px;
     transition: opacity 1s
+
+}
+.photo {
+    cursor: pointer;
 
 }

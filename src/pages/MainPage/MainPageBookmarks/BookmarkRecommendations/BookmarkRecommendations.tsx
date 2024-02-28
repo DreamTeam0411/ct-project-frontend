@@ -1,5 +1,5 @@
 import styles from "./BookmarkRecommendations.module.css";
-import { useStoreRecommendations } from "../../../../stores/fakeStores/recommendationsStore.tsx";
+import { useStoreRecommendations } from "../../../../stores/localStores/recommendationsStore.tsx";
 import { NavLink } from "react-router-dom";
 import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
 

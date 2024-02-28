@@ -1,5 +1,5 @@
 import styles from "../BookmarkBanner/BookmarkBanner.module.css";
-import { useStoreAboutUs } from "../../../../stores/fakeStores/aboutUsStore.tsx";
+import { useStoreAboutUs } from "../../../../stores/localStores/aboutUsStore.tsx";
 import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
 
