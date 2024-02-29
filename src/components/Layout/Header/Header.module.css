@@ -7,9 +7,11 @@
   padding-top: 20px;
   padding-left: 16px;
 }
+.btn_login{
+  visibility: hidden}
 
-.buttonBusiness {
-  visibility: hidden;
+.btn_Business {
+  visibility: hidden
 }
 
 .burger_container {
@@ -22,11 +24,52 @@
   .burger_container {
     visibility: hidden;
   }
-}
+
+  .hidden_element {
+    display: none;
+  }
+    .container {
+      position: relative;
+      min-width: 720px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      margin: 0 auto;
+      margin-top: 15px;
+      }
+  
+    .headerButtons {
+      display: flex;
+      gap: 20px;
+      color: #fff;
+  
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .btn_Business {
+      visibility: visible;
+      text-decoration: none;
+    }
+    .linksBlock {
+      width: 345px;
+      height: 64px;
+    }
+  
+    .burger_container {
+      visibility: hidden;
+    }
+  }
+
 
 @media screen and (min-width: 1440px) {
-  .container {
-    position: relative;
+   .container {
     min-width: 1280px;
     height: 72px;
     margin-top: 81px;
@@ -36,8 +79,7 @@
     justify-content: space-between;
     background-color: white;
     margin: 0 auto;
-    /* position: relative; */
-  }
+    }
 
   .headerButtons {
     display: flex;
@@ -51,6 +93,9 @@
     justify-content: center;
     align-items: center;
   }
+
+  .btn_login{
+    visibility: visible}
 
   .buttonBusiness {
     visibility: visible;

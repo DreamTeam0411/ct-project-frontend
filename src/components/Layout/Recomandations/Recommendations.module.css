@@ -1,69 +1,67 @@
 .recommendations {
-    width: 328px;
-    position: absolute;
-    top: 2650px;
-    left: 50%;
+  width: 328px;
+  position: absolute;
+  top: 2650px;
+  left: 50%;
   transform: translateX(-50%);
-    display: block;
+  display: block;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto auto 80px;
+}
+.recommendationsTitle {
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  color: #21151f;
+  font-family: "Lato", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .recommendations {
+    position: relative;
+    top: 0px;
+    left: 0;
+    transform: translateX(0);
+    width: 630px;
+    
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: auto auto 80px;
-}
-.recommendationsTitle {
-    margin-top: 80px;
+    margin: auto auto 50px;
+  }
+  .recommendationsTitle {
+    margin-top: 50px;
     margin-bottom: 40px;
-        
-    color:#21151F;
+    color: #21151f;
     font-family: "Lato", sans-serif;
     font-size: 32px;
     font-weight: 500;
-
-}
-.cards {
+  }
+  .cards {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
     justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-  
-  
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  
-    .recommendations {
-        position: relative;
-        top:0px;
-        left: 0;
-    transform: translateX(0);
-        width: 1280px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: auto auto 80px;
+  .recommendations {
+       width: 1280px;
     }
-    .recommendationsTitle {
-        margin-top: 80px;
-        margin-bottom: 40px;
-            
-        color:#21151F;
-        font-family: "Lato", sans-serif;
-        font-size: 32px;
-        font-weight: 500;
-    
-    }
-    .cards {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-}
+  }
