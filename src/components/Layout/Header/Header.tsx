@@ -31,20 +31,19 @@ const Header = () => {
       <div className={styles.searchForm}>
         <SearchForm />
       </div>
-      <div>
-        <Link to="/login" className={styles.buttonBusiness}>
+      <div >
+        <Link to="/login" className={styles.btn_login}>
           <Button children={"Login"} />
         </Link>
       </div>
-
+      
       <div>
-        <Link to="/for-business" className={styles.buttonBusiness}>
+        <Link to="/for-business" className={styles.btn_Business}>
           <Button children={"Для бізнесу"} />
         </Link>
       </div>
       <div className={styles.burger_container}>
         <DropdownMenuHeader />
-        
       </div>
     </div>
   );

@@ -1,25 +1,29 @@
 .container {
+  display: flex;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  cursor: pointer;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
     display: flex;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
     cursor: pointer;
-    gap: 40px;
+  }
 }
 
-
 @media screen and (min-width: 1440px) {
-    .container {
-        display: flex;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 30px;
-        cursor: pointer;
-        gap: 40px;
-    
-    }
+  .container {
+    font-size: 20px;
+    gap: 40px;
+  }
 }
 /* @-webkit-keyframes swing {
     15% {

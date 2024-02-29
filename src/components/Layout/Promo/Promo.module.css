@@ -61,7 +61,6 @@
   color: var(--black);
   margin-top: 1px;
   margin-bottom: 8px;
-  
 }
 
 .promoBlockText4 {
@@ -110,13 +109,13 @@
   height: 138px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .promoContainer {
     display: flex;
     justify-content: space-between;
-    width: 1280px;
-    height: 544px;
-    margin: auto;
+    width: 720px;
+    /* height: 544px; */
+    margin: 0 auto;
     padding-top: 52px;
   }
 
@@ -124,12 +123,118 @@
     position: relative;
     top: 0;
     display: flex;
-    width: 630px;
+    width: 407px;
+    height: 189px;
     align-items: flex-start;
     align-content: center;
-    gap: 8px 12px;
+    padding-top: 30px;
+    padding-left: 0px;
+    gap: 8px;
     flex-shrink: 0;
     flex-wrap: wrap;
+  }
+
+  .promoRightBlock {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    margin-right: 0;
+    gap: 12px;
+    width: 302px;
+    height: 223px;
+  }
+
+  .promoText1 {
+    padding-top: 15px;
+    font-weight: 500;
+    font-size: 34px;
+    margin-right: 0px;
+    margin-top: 7px;
+    padding-top: 0px;
+  }
+
+  .promoBlockText2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 48px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    /* padding-bottom: 8px; */
+    background: #044ab2;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .promoText2 {
+    font-weight: 500;
+    font-size: 34px;
+    color: var(--white);
+    padding-bottom: 7px;
+  }
+
+  .promoText3 {
+    font-weight: 500;
+    font-size: 34px;
+  }
+
+  .promoBlockText4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 313px;
+    height: 48px;
+    background: var(--pink);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .promoText4 {
+    font-weight: 500;
+    font-size: 34px;
+    color: var(--white);
+  }
+
+  .promoText5 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #8f8f98;
+    margin-top: 3px;
+  }
+
+  .promoRightBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 302px;
+  }
+
+  .promoFotoSmall {
+    width: 96px;
+    flex-shrink: 0;
+  }
+
+  .promoFotoLarge {
+    width: 193px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .promoContainer {
+    width: 1280px;
+    height: 544px;
+  }
+
+  .promoLeftBlock {
+    width: 630px;
+    gap: 8px 12px;
+    padding-top: 150px;
   }
 
   .promoRightBlock {
@@ -139,48 +244,29 @@
   }
 
   .promoText1 {
-    padding-top: 15px;
-    font-weight: 500;
-    font-size: 48px;
+    margin-top: 10px;
+      font-size: 48px;
   }
 
   .promoBlockText2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
     width: 270px;
     height: 64px;
-    margin-top: 7px;
     padding-bottom: 8px;
-    background: #044ab2;
-    border-top-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
+     }
 
   .promoText2 {
-    font-weight: 500;
-    font-size: 48px;
-    color: var(--white);
-    padding-bottom: 7px;
-  }
+        font-size: 48px;
+      }
 
   .promoText3 {
-    font-weight: 500;
-    font-size: 48px;
+      font-size: 48px;
   }
 
   .promoBlockText4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 415px;
+       width: 415px;
     height: 64px;
-    background: var(--pink);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
+     }
 
   .promoText4 {
     font-weight: 500;
@@ -189,15 +275,10 @@
   }
 
   .promoText5 {
-    font-weight: 400;
-    font-size: 18px;
-    color: #8f8f98;
-    margin-top: 12px;
+     margin-top: 12px;
   }
 
   .promoRightBlock {
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     width: 650px;
   }
@@ -205,12 +286,12 @@
   .promoFotoSmall {
     width: 197px;
     height: 276px;
-    flex-shrink: 0;
+    
   }
 
   .promoFotoLarge {
     width: 413px;
     height: 276px;
-    flex-shrink: 0;
+    
   }
 }
