@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import useFetchAdminCategories from "../../../../../stores/AdminStore/fetch_admin_categories.tsx";
 import styles from "./AddMaster.module.css";
 import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
+import { motion } from "framer-motion";
 
 const AddMaster = () => {
   const { dataCategory, fetchData } = useFetchAdminCategories();
@@ -47,7 +48,13 @@ const AddMaster = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Додати майстра</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -165,7 +172,7 @@ const AddMaster = () => {
           {message}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,6 +3,7 @@ import styles from "./Business.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useBusinessStore } from "../../../../stores/localStores/for_business.tsx";
+import { motion } from "framer-motion";
 
 function Business() {
   const { register, handleSubmit, setValue, reset } = useForm();
@@ -85,7 +86,13 @@ function Business() {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Для бізнесу</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -159,7 +166,7 @@ function Business() {
         </div>
       </form>
       {showMessage && <div className={styles.messageShow}>Збереженно</div>}
-    </div>
+    </motion.div>
   );
 }
 

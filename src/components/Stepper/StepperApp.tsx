@@ -4,6 +4,7 @@ import { StepOne } from "./Steps/StepOne/StepOne.tsx";
 import { StepThree } from "./Steps/StepThree/StepThree.tsx";
 import { StepTwo } from "./Steps/StepTwo/StepoTwo.tsx";
 import { StepFour } from "./Steps/StepFour/StepFour.tsx";
+import { motion } from "framer-motion";
 
 // import "./App.css";
 
@@ -51,7 +52,12 @@ function StepperApp() {
   }, [activeStep, steps]);
 
   return (
-    <div>
+    <motion.div
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div>
         <Stepper
           steps={steps}
@@ -60,7 +66,7 @@ function StepperApp() {
         />
         {activeComponent}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

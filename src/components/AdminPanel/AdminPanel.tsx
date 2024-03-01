@@ -1,7 +1,7 @@
 import SideBar from "./UIAdminPanel/SideBar/SideBar.tsx";
 import styles from "./AdminPanel.module.css";
 import PagesLayer from "./UIAdminPanel/PagesLayer/PagesLayer.tsx";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Contacts from "./pages/Contacts/Contacts.tsx";
 import MainPageAdmin from "./pages/MainPageAdmin/MainPageAdmin.tsx";
 import Business from "./pages/Business/Business.tsx";
@@ -16,49 +16,65 @@ import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAbou
 import BookmarkAddRecommendation from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.tsx";
 import AddBookmarkCity from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCity/AddBookmarkCity.tsx";
 import AddMaster from "./pages/AllMasters/AddMaster/AddMaster.tsx";
+import { AnimatePresence, motion } from "framer-motion";
 
 function AdminPanel() {
+  const location = useLocation();
   return (
-    <div className={styles.container}>
-      <div className={styles.sidebar}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: 10, opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.05, ease: "linear" }}
+    >
+      <motion.div
+        initial={{ x: "-45%", opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className={styles.sidebar}
+      >
         <SideBar />
-      </div>
+      </motion.div>
       <div className={styles.content}>
-        <Routes>
-          <Route path="/" element={<PagesLayer />}>
-            <Route path="main-page" element={<MainPageAdmin />}>
-              <Route path="/main-page/" element={<BookmarkPagesLayer />}>
-                <Route path="banner" element={<BookmarkBanner />} />
-                <Route path="recommendations" element={<PagesLayer />}>
-                  <Route
-                    path="/main-page/recommendations/"
-                    element={<BookmarkRecommendations />}
-                  />
-                  <Route
-                    path="add-recommendation"
-                    element={<BookmarkAddRecommendation />}
-                  />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PagesLayer />}>
+              <Route path="main-page" element={<MainPageAdmin />}>
+                <Route path="/main-page/" element={<BookmarkPagesLayer />}>
+                  <Route path="banner" element={<BookmarkBanner />} />
+                  <Route path="recommendations" element={<PagesLayer />}>
+                    <Route
+                      path="/main-page/recommendations/"
+                      element={<BookmarkRecommendations />}
+                    />
+                    <Route
+                      path="add-recommendation"
+                      element={<BookmarkAddRecommendation />}
+                    />
+                  </Route>
+                  <Route path="categories" element={<BookmarkCategories />} />
+                  <Route path="cities" element={<PagesLayer />}>
+                    <Route
+                      path="/main-page/cities/"
+                      element={<BookmarkCities />}
+                    />
+                    <Route path="add-city" element={<AddBookmarkCity />} />
+                  </Route>
+                  <Route path="about-us" element={<BookmarkAboutUs />} />
                 </Route>
-                <Route path="categories" element={<BookmarkCategories />} />
-                <Route path="cities" element={<PagesLayer />}>
-                  <Route
-                    path="/main-page/cities/"
-                    element={<BookmarkCities />}
-                  />
-                  <Route path="add-city" element={<AddBookmarkCity />} />
-                </Route>
-                <Route path="about-us" element={<BookmarkAboutUs />} />
               </Route>
+              <Route path="documents" element={<Documents />} />
+              <Route path="contacts" element={<Contacts />} />
+              <Route path="business" element={<Business />} />
+              <Route path="all-masters" element={<AllMasters />} />
+              <Route path="add-master" element={<AddMaster />} />
             </Route>
-            <Route path="documents" element={<Documents />} />
-            <Route path="contacts" element={<Contacts />} />
-            <Route path="business" element={<Business />} />
-            <Route path="all-masters" element={<AllMasters />} />
-            <Route path="add-master" element={<AddMaster />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

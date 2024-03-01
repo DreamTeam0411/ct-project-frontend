@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PuffLoader } from "react-spinners";
 import { NavLink } from "react-router-dom";
 import useFetchAdminMasters from "../../../../stores/AdminStore/fetch_admin_all_masters.tsx"; /* eslint-disable  @typescript-eslint/no-explicit-any */
+import { motion } from "framer-motion";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function AllMasters() {
@@ -32,7 +33,13 @@ function AllMasters() {
     setLoading(false);
   }, []);
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={styles.title}>
         <h1>Всі майстри</h1>
       </div>
@@ -63,8 +70,21 @@ function AllMasters() {
           <PuffLoader color="#21151F" size={200} />
         </div>
       ) : data.length > 0 ? (
-        data.map((item) => (
-          <div key={item.id}>
+        data.map((item, index) => (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.1, ease: "linear" },
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "linear",
+              delay: index * 0.1,
+            }}
+            key={item.id}
+          >
             <ul className={styles.mastersList}>
               <li className={styles.id}>{item.id}</li>
               <li className={styles.name}>
@@ -83,12 +103,12 @@ function AllMasters() {
                 }
               </li>
             </ul>
-          </div>
+          </motion.div>
         ))
       ) : (
         <p>Нічого не знайдено</p>
       )}
-    </div>
+    </motion.div>
   );
 }
 

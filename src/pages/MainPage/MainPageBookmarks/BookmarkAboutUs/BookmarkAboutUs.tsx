@@ -2,6 +2,7 @@ import styles from "../BookmarkBanner/BookmarkBanner.module.css";
 import { useStoreAboutUs } from "../../../../stores/localStores/aboutUsStore.tsx";
 import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const BookmarkAboutUs = () => {
   const { item, updateItem } = useStoreAboutUs();
@@ -87,7 +88,13 @@ const BookmarkAboutUs = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: 10, opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2, ease: "linear" }}
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.content}>
           <div className={styles.forms}>
@@ -148,7 +155,7 @@ const BookmarkAboutUs = () => {
           {message}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

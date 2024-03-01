@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./StepOne.module.css";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 
 export interface IStepProps {
   changeActiveStep: (step: number) => void;
@@ -26,7 +27,13 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
   };
 
   return (
-    <div className={styles.formBlock}>
+    <motion.div
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className={styles.formBlock}
+    >
       <form onSubmit={handleSubmit(submit)}>
         <div className={styles.form}>
           <div className={styles.nameOfUserBlock}>
@@ -126,8 +133,10 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
             </div>
           </div>
         </div>
-        <button type={"submit"}>Продовжити</button>
+        <button type={"submit"} className={styles.bn54}>
+          Продовжити
+        </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
