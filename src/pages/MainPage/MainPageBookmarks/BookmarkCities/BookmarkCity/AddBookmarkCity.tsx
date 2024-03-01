@@ -3,6 +3,7 @@ import styles from "../../BookmarkRecommendations/BookmarkAddRecommendation/Book
 import useFetchAdminCities from "../../../../../stores/AdminStore/fetch_admin_cities.tsx";
 
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const AddBookmarkCity = () => {
   const navigate = useNavigate();
@@ -26,7 +27,13 @@ const AddBookmarkCity = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <form>
         <div className={styles.content}>
           <div className={styles.forms}>
@@ -49,7 +56,7 @@ const AddBookmarkCity = () => {
         </div>
       </form>
       {showMessage && <div className={styles.messageShow}>Збереженно</div>}
-    </div>
+    </motion.div>
   );
 };
 export default AddBookmarkCity;

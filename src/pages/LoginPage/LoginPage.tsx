@@ -5,6 +5,7 @@ import { RegistrationForm } from "../RegistrationPage/RegistrationPageTypes.tsx"
 
 import { useGetData } from "../../stores/auth";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface GetDataFunction {
   execute: (email: string | number, password: string | number) => void; // Adjust the return type as needed
@@ -46,12 +47,17 @@ const LoginPage = () => {
     } else {
       x.type = "password";
       eyeIcon.src = "/eye-close-min.svg";
-      
     }
   }
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
+      transition={{ duration: 0.5, ease: "linear" }}
+      className={styles.container}
+    >
       <div className={styles.loginBlock}>
         <Link to={"/"} className={styles.logo}>
           <div className={styles.logo}>
@@ -115,7 +121,9 @@ const LoginPage = () => {
                 name="password"
               />
 
-              <button className={styles.toggleButton}onClick={tooglePassword} ><img id="eyeIcon" src="/eye-close-min.svg" alt="" /></button>
+              <button className={styles.toggleButton} onClick={tooglePassword}>
+                <img id="eyeIcon" src="/eye-close-min.svg" alt="" />
+              </button>
 
               <div className={styles.error}>
                 {errors?.password && <p>{errors?.password?.message}</p>}
@@ -139,7 +147,7 @@ const LoginPage = () => {
       <div className={styles.loginImg}>
         <img src="/LoginImg-min.jpg" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default LoginPage;

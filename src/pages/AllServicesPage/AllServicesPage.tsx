@@ -7,6 +7,7 @@ import { ServiceCard } from "./ServiceCard/ServiceCard.tsx";
 import { AllServicesSelect } from "../../components/UI/AllServicesSelect/AllServicesSelect.tsx";
 import { useSearchParams } from "react-router-dom";
 import useFetchCategories from "../../stores/fetchCategories.tsx";
+import { motion } from "framer-motion";
 
 export const AllServicesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -57,25 +58,52 @@ export const AllServicesPage = () => {
             <div className={styles.servicesBlock}>
               <div className={styles.contentHeadBlock}>
                 <div className={styles.contentHead}>
-                  <div className={styles.allServices}>
+                  <motion.div
+                    className={styles.allServices}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.1, ease: "linear" },
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "linear",
+                    }}
+                  >
                     Вибрано ({dataState.length})
-                  </div>
+                  </motion.div>
                 </div>
               </div>
               <div className={styles.serviceCardList}>
-                {dataState.map((data) => (
-                  <ServiceCard
-                    id={data.id}
-                    category={data.category}
-                    title={data.title}
-                    key={data.id}
-                    description={data.description}
-                    photo={data.photo}
-                    user={data.user}
-                    price={data.price}
-                    createdAt={data.createdAt}
-                    city={data.city}
-                  />
+                {dataState.map((data, index) => (
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.1, ease: "linear" },
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "linear",
+                      delay: index * 0.3,
+                    }}
+                    className={styles.motionComponent}
+                  >
+                    <ServiceCard
+                      id={data.id}
+                      category={data.category}
+                      title={data.title}
+                      key={data.id}
+                      description={data.description}
+                      photo={data.photo}
+                      user={data.user}
+                      price={data.price}
+                      createdAt={data.createdAt}
+                      city={data.city}
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>

@@ -5,6 +5,7 @@ import useFetchDataAllMasters from "../../stores/fetchAllMasters.tsx";
 import { useParams } from "react-router-dom";
 import { ServiceCardDescription } from "../AllServicesPage/ServiceCardDescription/ServiceCardDescription.tsx";
 import { PuffLoader } from "react-spinners";
+import { motion } from "framer-motion";
 
 export const ServicePage = () => {
   const searchParams = useParams();
@@ -19,7 +20,13 @@ export const ServicePage = () => {
           <Header />
         </div>
 
-        <div className={styles.wrapper}>
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
+          transition={{ duration: 0.5, ease: "linear" }}
+          className={styles.wrapper}
+        >
           {dataState.map(
             /* eslint-disable-next-line no-mixed-spaces-and-tabs */ (data) =>
               data.id === +searchId ? (
@@ -36,7 +43,7 @@ export const ServicePage = () => {
                 ""
               )
           )}
-        </div>
+        </motion.div>
         <Footer />
       </div>
     );

@@ -30,6 +30,9 @@
     justify-content: center;
     padding: 50px;
 }
+.motionComponent {
+    width: 100%;
+}
 
 .notFound {
     height: 245px;

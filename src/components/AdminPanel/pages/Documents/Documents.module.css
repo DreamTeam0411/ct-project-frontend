@@ -49,6 +49,8 @@ h1 {
     border-radius: 8px;
     background: var(--white);
     width: 124px;
+    transition-duration: 0.6s;
+    
 }
 
 .buttons button:hover {

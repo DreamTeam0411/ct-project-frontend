@@ -3,6 +3,7 @@ import useFetchData from "../../../../stores/fetchData.tsx";
 import { ADMIN_FOOTER_UPDATE } from "../../../../stores/ROUTES.tsx";
 import axios from "axios";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const Documents = () => {
   const dataState = useFetchData((state) => state.data);
@@ -44,7 +45,13 @@ export const Documents = () => {
     });
   };
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Документи</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputs}>
@@ -76,6 +83,6 @@ export const Documents = () => {
         </div>
       </form>
       {showMessage && <div className={styles.messageShow}>Збереженно</div>}
-    </div>
+    </motion.div>
   );
 };

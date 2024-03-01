@@ -12,15 +12,24 @@ import { StrictMode } from "react";
 import { ForBusiness } from "./pages/ForBusiness/ForBusiness.tsx";
 import MainPage from "./pages/MainPage/Main.tsx";
 import AdminPanel from "./components/AdminPanel/AdminPanel.tsx";
+import { AnimatePresence } from "framer-motion";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage />,
+    element: (
+      <AnimatePresence mode="wait">
+        <MainPage key="/" />
+      </AnimatePresence>
+    ),
   },
   {
     path: "/login",
-    element: <LoginPage />,
+    element: (
+      <AnimatePresence mode="wait">
+        <LoginPage key="/login" />
+      </AnimatePresence>
+    ),
   },
   {
     path: "/registration",
@@ -32,11 +41,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/all-services",
-    element: <AllServicesPage />,
+    element: (
+      <AnimatePresence mode="wait">
+        <AllServicesPage key="/all-services" />
+      </AnimatePresence>
+    ),
   },
   {
     path: "/all-services/:serviceId",
-    element: <ServicePage />,
+    element: (
+      <AnimatePresence mode="wait">
+        <ServicePage key="/all-services/:serviceId" />
+      </AnimatePresence>
+    ),
   },
   {
     path: "/*",
@@ -44,11 +61,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/for-business",
-    element: <ForBusiness />,
+    element: (
+      <AnimatePresence mode="wait">
+        <ForBusiness key="/for-business" />
+      </AnimatePresence>
+    ),
   },
   {
     path: "/admin-panel/*",
-    element: <AdminPanel />,
+    element: (
+      <AnimatePresence mode="wait">
+        <AdminPanel key="/admin-panel/*" />
+      </AnimatePresence>
+    ),
   },
 ]);
 

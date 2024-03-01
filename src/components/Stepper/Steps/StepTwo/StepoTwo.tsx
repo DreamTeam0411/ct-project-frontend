@@ -3,6 +3,7 @@ import { IStepProps } from "../StepOne/StepOne.tsx";
 import styles from "./StepTwo.module.css";
 import useFetchCategories from "../../../../stores/fetchCategories.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 
 interface IFormData {
   services: string;
@@ -30,7 +31,13 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
     changeActiveStep(3);
   };
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className={styles.container}
+    >
       <form onSubmit={handleSubmit(submit)}>
         <div className={styles.categoriesBlock}>
           <label htmlFor="services">Назва послуги</label>
@@ -79,8 +86,10 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
           </div>
         </div>
 
-        <button type="submit">Продовжити</button>
+        <button type="submit" className={styles.bn54}>
+          Продовжити
+        </button>
       </form>
-    </div>
+    </motion.div>
   );
 };

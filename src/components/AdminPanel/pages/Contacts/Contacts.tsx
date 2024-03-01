@@ -2,6 +2,7 @@ import styles from "../Documents/Documents.module.css";
 import { useForm } from "react-hook-form";
 import { useStoreContacts } from "../../../../stores/localStores/contactsStore.tsx";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function Contacts() {
   const { register, handleSubmit, setValue } = useForm();
@@ -21,7 +22,13 @@ function Contacts() {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: "5%", opacity: 0 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Контакти</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputs}>
@@ -52,7 +59,7 @@ function Contacts() {
         </div>
       </form>
       {showMessage && <div className={styles.messageShow}>Збереженно</div>}
-    </div>
+    </motion.div>
   );
 }
 

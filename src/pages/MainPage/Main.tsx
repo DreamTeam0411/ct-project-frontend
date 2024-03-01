@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import useFetchData from "../../stores/fetchData.tsx";
 import { SubCategories } from "../../components/Layout/SubCategories/SubCategories.tsx";
 import { PuffLoader } from "react-spinners";
+import { motion } from "framer-motion";
 
 function MainPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +32,13 @@ function MainPage() {
   if (isLoading) return <PuffLoader color="#36d7b7" />;
   if (Object.keys(dataState).length !== 0 && !isError)
     return (
-      <div className={styles.app}>
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
+        transition={{ duration: 0.5, ease: "linear" }}
+        className={styles.app}
+      >
         <div className={styles.header}>
           <Header />
         </div>
@@ -43,11 +50,15 @@ function MainPage() {
         <div className={styles.footer}>
           <Footer />
         </div>
-      </div>
+      </motion.div>
     );
   else {
     return (
-      <div
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: "linear" }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -61,7 +72,7 @@ function MainPage() {
         <div>
           <PuffLoader color="#36d7b7" />
         </div>
-      </div>
+      </motion.div>
     );
   }
 }

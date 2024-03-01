@@ -5,6 +5,7 @@ import Footer from "../../components/Layout/Footer/Footer.tsx";
 import { Button } from "../../components/UI/buttons/Button/Button.tsx";
 import StepperApp from "../../components/Stepper/StepperApp.tsx";
 import { useBusinessStore } from "../../stores/localStores/for_business.tsx";
+import { motion } from "framer-motion";
 
 export const ForBusiness = () => {
   const [activeJoinUs, setActiveJoinUs] = useState(false);
@@ -22,12 +23,24 @@ export const ForBusiness = () => {
   return (
     <>
       <Header />
-      <div className={styles.container}>
+      <motion.div
+        initial={{ x: "5%", opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className={styles.container}
+      >
         {activeJoinUs ? (
           <div className={styles.containerStepper}>
-            <div className={styles.imgStepper}>
+            <motion.div
+              initial={{ x: "-5%", opacity: 0 }}
+              exit={{ opacity: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className={styles.imgStepper}
+            >
               <img src="/join-us-min.jpg" alt="" />
-            </div>
+            </motion.div>
             <div className={styles.stepperBlock}>
               <StepperApp />
             </div>
@@ -67,7 +80,7 @@ export const ForBusiness = () => {
             </div>
           </>
         )}
-      </div>
+      </motion.div>
       <Footer />
     </>
   );

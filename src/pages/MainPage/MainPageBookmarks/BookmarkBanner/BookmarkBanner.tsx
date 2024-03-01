@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import styles from "./BookmarkBanner.module.css";
 import { useStoreBanner } from "../../../../stores/localStores/banner_store.tsx";
+import { motion } from "framer-motion";
 
 const BookmarkBanner = () => {
   const { item, updateItem } = useStoreBanner();
@@ -59,7 +60,13 @@ const BookmarkBanner = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ x: 10, opacity: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.05, ease: "linear" }}
+    >
       <form onSubmit={handleInputChange}>
         <div className={styles.content}>
           <div className={styles.forms}>
@@ -111,7 +118,7 @@ const BookmarkBanner = () => {
           {message}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
