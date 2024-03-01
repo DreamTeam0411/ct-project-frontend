@@ -1,7 +1,7 @@
 .container {
   display: flex;
   position: relative;
-  top: 4250px;
+  top: 4380px;
   left: 50%;
   transform: translateX(-50%);
   width: 328px;
@@ -31,6 +31,46 @@
   justify-content: center;
   width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 52px;
+    flex-wrap: wrap;
+    /* min-height: 100px; */
+  }
+
+  .title {
+    color: var(--black, #21151f);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 40px;
+  }
+
+  .cities {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    color: var((--grey));
+  }
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 
 @media screen and (min-width: 1440px) {
   .container {

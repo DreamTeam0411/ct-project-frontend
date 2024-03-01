@@ -77,11 +77,13 @@ const useFetchAdminMasters = create<RootMasters>()(
         return await response;
       },
       addMaster: async (newMaster: Master) => {
+
         const response = await axios.post(ADMIN_SERVICES, {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
+
         if (response.status === 200) {
           set((state) => ({
             dataMasters: [...state.dataMasters, newMaster],

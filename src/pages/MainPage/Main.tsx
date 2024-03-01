@@ -35,15 +35,14 @@ function MainPage() {
         <div className={styles.header}>
           <Header />
         </div>
-
         <Promo />
         <Recommendations />
         <SubCategories />
         <AboutUs />
-         <SearchByCity /> 
-         <div className={styles.footer}>
+        <SearchByCity />
+        <div className={styles.footer}>
           <Footer />
-        </div> 
+        </div>
       </div>
     );
   else {

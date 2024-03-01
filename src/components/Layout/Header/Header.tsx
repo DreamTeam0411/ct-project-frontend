@@ -2,6 +2,7 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../UI/buttons/Button/Button.tsx";
 import { SearchForm } from "../SearchForm/SearchForm.tsx";
+import DropdownMenuHeader from "./Dropdown_Menu/DropdownMenuHeader.tsx";
 
 const Header = () => {
   return (
@@ -30,16 +31,18 @@ const Header = () => {
       <div className={styles.searchForm}>
         <SearchForm />
       </div>
-      <div>
-        <Link to="/login" className={styles.buttonBusiness}>
+      <div >
+        <Link to="/login" className={styles.btn_login}>
           <Button children={"Login"} />
         </Link>
       </div>
-
       <div>
         <Link to="/for-business" className={styles.buttonBusiness}>
           <Button children={"Для бізнесу"} />
         </Link>
+      </div>
+      <div className={styles.burger_container}>
+        <DropdownMenuHeader />
       </div>
     </div>
   );
