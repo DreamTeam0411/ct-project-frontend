@@ -36,9 +36,8 @@ const Header = () => {
           <Button children={"Login"} />
         </Link>
       </div>
-      
       <div>
-        <Link to="/for-business" className={styles.btn_Business}>
+        <Link to="/for-business" className={styles.buttonBusiness}>
           <Button children={"Для бізнесу"} />
         </Link>
       </div>
