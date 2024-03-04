@@ -16,7 +16,7 @@ import { AnimatePresence } from "framer-motion";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     element: (
       <AnimatePresence mode="wait">
         <MainPage key="/" />
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/login",
+    path: "/login/*",
     element: (
       <AnimatePresence mode="wait">
         <LoginPage key="/login" />

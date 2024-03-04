@@ -25,16 +25,28 @@ function SideBar() {
     });
   }, []);
   const logout = async () => {
-    localStorage.removeItem("token");
 
     try {
       const response = await axios.post(LOGOUT);
-      setData({ email: null });
-      alert(`Ответ от сервера: ${response.data.message}`);
-      navigate("/");
-    } catch (error) {
+      if (response.status === 200 ){
+        alert(`Ответ от сервера: ${response.data.message}`);
+        setData({ email: null });
+        localStorage.removeItem("token");
+        navigate("/");
+      }
+      if(response.status === 401) {
+
+        alert(`Ответ от сервера: ${response.data.message}`);
+        localStorage.removeItem("token");
+        navigate('/login')
+
+      }
+
+      } catch (error) {
       console.error("Ошибка при выходе из системы", error);
       alert(`Ошибка: ${error.message}`);
+      localStorage.removeItem("token");
+      navigate("/");
     }
   };
 

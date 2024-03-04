@@ -35,19 +35,19 @@ export const useGetData = create((set) => {
         });
 
         res.data.roles.forEach((role) => {
-          if (role.id === 1) {
-            const token = res.data.Bearer.accessToken;
-            console.log(token);
-            setAuthHeader(token);
-            localStorage.setItem("token", token);
-            set({
-              ...initialState,
-              success: true,
-              data: token,
-            });
-          } else {
+          if (role.id !== 1) {
+
             alert("You are not an admin ");
           }
+          const token = res.data.Bearer.accessToken;
+          console.log(token);
+          setAuthHeader(token);
+          localStorage.setItem("token", token);
+          set({
+            ...initialState,
+            success: true,
+            data: token,
+          });
         });
       } catch (err) {
         console.error("Error in data fetch:", err);

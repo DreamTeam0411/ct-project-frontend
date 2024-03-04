@@ -138,7 +138,7 @@ const LoginPage = () => {
             </div>
 
             <div className={styles.formButton}>
-              <button type={"submit"}>Увійти</button>
+              <button type={"submit"} className={styles.bn54}><span>Увійти</span></button>
             </div>
           </form>
         </div>

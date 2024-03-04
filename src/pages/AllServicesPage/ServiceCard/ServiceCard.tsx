@@ -26,9 +26,10 @@ export const ServiceCard = (props: DataAllMasters) => {
       <div className={styles.mainPart}>
         <div className={styles.cardImgBlock}>
           <img
+              className={styles.image}
             key={props.id}
             onClick={() => handleCardClick(props.id)}
-            src={"/master.png"}
+            src={`https://ct-project-images.s3.eu-central-1.amazonaws.com/service-photos/${props.photo}`}
             alt="master-photo"
           />
         </div>

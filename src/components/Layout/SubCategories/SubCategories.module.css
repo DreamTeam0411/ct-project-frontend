@@ -29,12 +29,13 @@
 
 .categoriesBlock2 {
   display: block;
-  width: 328px;
+  width: 100%;
   height: auto;
   margin-bottom: 8px;
 }
 .categoriesBlock2Img {
   margin-bottom: 8px;
+
 }
 
 .categoriesBlock3 {
@@ -151,12 +152,13 @@
 
   .categoriesBlock2 {
     display: flex;
-    width: 328px;
+    width: 1400px;
+
     gap: 20px;
     margin-bottom: 20px;
   }
   .categoriesBlock2Img {
-    max-width: 1400px;
+    width: 630px;
   }
 
   .categoriesBlock3 {
