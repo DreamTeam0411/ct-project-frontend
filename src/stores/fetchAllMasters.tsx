@@ -54,7 +54,7 @@ const useFetchDataAllMasters = create<Root>()(
           },
           title: "",
           description: "",
-          photo: null,
+          photo: '',
           user: {
             id: 0,
             firstName: "",

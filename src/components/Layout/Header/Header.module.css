@@ -21,6 +21,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .btn_login{
+    display: none}
+  .searchForm {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .burger_container {
     visibility: hidden;
   }
@@ -29,6 +35,7 @@
     display: none;
   }
     .container {
+
       position: relative;
       min-width: 720px;
       height: 40px;
@@ -58,7 +65,7 @@
       text-decoration: none;
     }
     .linksBlock {
-      width: 345px;
+
       height: 64px;
     }
   
@@ -71,9 +78,9 @@
 @media screen and (min-width: 1440px) {
    .container {
     min-width: 1280px;
+     max-width: 1440px;
     height: 72px;
-    margin-top: 81px;
-    margin-bottom: 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,14 +102,15 @@
   }
 
   .btn_login{
-    visibility: visible}
+    visibility: visible;
+  display: block}
 
   .buttonBusiness {
     visibility: visible;
     text-decoration: none;
   }
   .linksBlock {
-    width: 345px;
+
     height: 64px;
   }
 

@@ -27,10 +27,12 @@
   font-size: 16px;
   border: none;
   color: var(--gray4);
+  background-color: var(--white);
 }
 .searchFormCategoryBox:focus {
   border: none;
   color: var(--gray4);
+  background-color: var(--white);
 }
 
 .searchFormDivLine {
@@ -55,10 +57,12 @@
   border: none;
   color: var(--gray4);
   font-size: 16px;
+  background-color: var(--white);
 }
 .searchFormSelectBox:focus {
   border: none;
   color: var(--gray4);
+  background-color: var(--white);
 }
 
 @media screen and (min-width: 768px) {

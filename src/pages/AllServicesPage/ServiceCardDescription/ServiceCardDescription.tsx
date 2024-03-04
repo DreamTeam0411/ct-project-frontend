@@ -18,6 +18,7 @@ export const ServiceCardDescription = ({
   user,
   category,
   city,
+                                         photo
 }: PropsType) => {
   const [openModal, setOpenModal] = useState(false);
 
@@ -35,7 +36,9 @@ export const ServiceCardDescription = ({
         <div className={styles.breadCrumbsCategory}>{category.title}</div>
       </div>
       <div className={styles.container}>
-        <div className={styles.imageBlock}></div>
+        <div className={styles.imageBlock}>
+          <img src={`https://ct-project-images.s3.eu-central-1.amazonaws.com/service-photos/${photo}`} alt=""/>
+        </div>
         <div>
           <div className={styles.mainPart}>
             <div className={styles.cardInformation}>
