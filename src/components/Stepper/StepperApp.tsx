@@ -4,7 +4,7 @@ import { StepOne } from "./Steps/StepOne/StepOne.tsx";
 import { StepThree } from "./Steps/StepThree/StepThree.tsx";
 import { StepTwo } from "./Steps/StepTwo/StepoTwo.tsx";
 import { StepFour } from "./Steps/StepFour/StepFour.tsx";
-import { motion } from "framer-motion";
+import {motion} from 'framer-motion'
 
 // import "./App.css";
 

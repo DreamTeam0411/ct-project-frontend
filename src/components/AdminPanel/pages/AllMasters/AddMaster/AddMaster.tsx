@@ -103,7 +103,7 @@ const AddMaster = () => {
                 {...register("service")}
                 className={styles.select}
                 name="service"
-                placeholder="Введіть заголовок"
+
               >
                 <option value="" hidden selected>
                   Виберіть послугу
