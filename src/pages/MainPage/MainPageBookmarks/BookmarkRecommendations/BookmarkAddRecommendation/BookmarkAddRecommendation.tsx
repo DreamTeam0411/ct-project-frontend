@@ -52,7 +52,7 @@ const BookmarkAddRecommendation = () => {
               <select
                 className={styles.select}
                 name="title"
-                placeholder="Введіть заголовок"
+
                 value={recommendation}
                 onChange={(event) => setRecommendation(event.target.value)}
               >
