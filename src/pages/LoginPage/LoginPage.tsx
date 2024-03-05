@@ -52,10 +52,7 @@ const LoginPage = () => {
 
   return (
     <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
-      transition={{ duration: 0.5, ease: "linear" }}
+
       className={styles.container}
     >
       <div className={styles.loginBlock}>
@@ -78,7 +75,13 @@ const LoginPage = () => {
           </div>
         </Link>
 
-        <div className={styles.loginForm}>
+        <motion.div
+            initial={{ x: -60, opacity: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
+            transition={{ duration: 0.5, ease: "linear" }}
+
+            className={styles.loginForm}>
           <h2 className={styles.loginHeader}>Вхід (admin only)</h2>
           <form
             action=""
@@ -141,12 +144,17 @@ const LoginPage = () => {
               <button type={"submit"} className={styles.bn54}><span>Увійти</span></button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
 
-      <div className={styles.loginImg}>
-        <img src="/LoginImg-min.jpg" />
-      </div>
+      <motion.div
+          initial={{ x: "40%", opacity: 0 }}
+          exit={{ opacity: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className={styles.loginImg}>
+        <img src="/LoginImg-min.jpg" alt='login'/>
+      </motion.div>
     </motion.div>
   );
 };

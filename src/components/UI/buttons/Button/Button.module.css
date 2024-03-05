@@ -55,9 +55,9 @@
     letter-spacing: 0.7px;
 }
 
-.bn54:hover {
-    animation: bn54rotate 0.7s ease-in-out both;
-}
+/*.bn54:hover {*/
+/*    animation: bn54rotate 0.7s ease-in-out both;*/
+/*}*/
 
 .bn54:hover .bn54span {
     animation: bn54storm 0.7s ease-in-out both;

@@ -27,7 +27,7 @@ export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
           className={styles.bn54}
           onClick={() => completeSteps()}
         >
-          Продовжити
+          <span>Продовжити</span>
         </button>
       </div>
     </motion.div>

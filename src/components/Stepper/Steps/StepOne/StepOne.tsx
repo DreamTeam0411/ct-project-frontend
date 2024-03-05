@@ -134,7 +134,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
           </div>
         </div>
         <button type={"submit"} className={styles.bn54}>
-          Продовжити
+          <span>Продовжити</span>
         </button>
       </form>
     </motion.div>
