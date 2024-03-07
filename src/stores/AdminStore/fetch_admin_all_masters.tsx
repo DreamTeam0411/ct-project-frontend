@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { FetchDataAdmin } from "./fetch_admin_data.tsx";
-import { ADMIN_SERVICES } from "../ROUTES.tsx";
+import { ADMIN_SERVICES} from "../ROUTES.tsx";
 import axios from "axios";
 
 const token = localStorage.getItem("token");
@@ -69,11 +68,16 @@ const useFetchAdminMasters = create<RootMasters>()(
       ],
 
       fetchData: async (): Promise<Master> => {
-        const response = FetchDataAdmin(ADMIN_SERVICES).then(
+        const token = localStorage.getItem('token')
+        const response = await axios.get(ADMIN_SERVICES, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }).then(
           (res) => res.data.data
         );
         set({ dataMasters: await response });
-        console.log(await response);
+
         return await response;
       },
       addMaster: async (newMaster: Master) => {

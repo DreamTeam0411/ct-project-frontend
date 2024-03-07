@@ -29,7 +29,8 @@ export interface Category {
     lastName: string;
   };
 }
-
+const token =localStorage.getItem("token")
+console.log(token)
 const useFetchAdminCategories = create<RootCategories>()(
   persist(
     (set): RootCategories => ({
@@ -59,10 +60,15 @@ const useFetchAdminCategories = create<RootCategories>()(
 
       fetchData: async (): Promise<Category> => {
         const response = FetchDataAdmin(ADMIN_CATEGORIES).then(
-          (res) => res.data.data
+
+          (res) =>
+            res.data.data
+
+
         );
         set({ dataCategory: await response });
-        console.log(await response);
+
+
         return await response;
       },
     }),

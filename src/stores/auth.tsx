@@ -1,13 +1,13 @@
 // auth.tsx
 
 import axios from "axios";
-import { create } from "zustand";
-import { API } from "./ROUTES.tsx";
+import {create} from "zustand";
+import {API} from "./ROUTES.tsx";
 
 axios.defaults.baseURL = API;
 
-const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+const setAuthHeader = (token: string) => {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 // const clearAuthHeader = () => {
@@ -15,45 +15,46 @@ const setAuthHeader = (token) => {
 // };
 
 const initialState = {
-  loading: false,
-  success: false,
-  error: false,
-  data: null,
-  errorData: null,
+    loading: false,
+    success: false,
+    error: false,
+    data: null,
+    errorData: null,
 };
 
 export const useGetData = create((set) => {
-  return {
-    ...initialState,
+    return {
+        ...initialState,
 
-    execute: async (email: string, password: string) => {
-      set({ ...initialState, loading: true });
-      try {
-        const res = await axios.post("/login", {
-          email: email,
-          password: password,
-        });
+        execute: async (email: string, password: string) => {
+            set({...initialState, loading: true});
+            try {
+                const res = await axios.post("/login", {
+                    email: email,
+                    password: password,
+                });
 
-        res.data.roles.forEach((role) => {
-          if (role.id !== 1) {
+                res.data.roles.forEach((role) => {
+                    if (role.id !== 1) {
 
-            alert("You are not an admin ");
-          }
-          const token = res.data.Bearer.accessToken;
-          console.log(token);
-          setAuthHeader(token);
-          localStorage.setItem("token", token);
-          set({
-            ...initialState,
-            success: true,
-            data: token,
-          });
-        });
-      } catch (err) {
-        console.error("Error in data fetch:", err);
+                        alert("You are not an admin ");
+                    }
+                    const token = res.data.Bearer.accessToken;
+                    console.log(token);
+                    setAuthHeader(token);
+                    localStorage.setItem("token", token);
 
-        set({ ...initialState, error: true, errorData: err.message });
-      }
-    },
-  };
+                    set({
+                        ...initialState,
+                        success: true,
+                        data: token,
+                    });
+                });
+            } catch (err) {
+                console.error("Error in data fetch:", err);
+
+                set({...initialState, error: true, errorData: err.message});
+            }
+        },
+    };
 });

@@ -18,7 +18,10 @@ import AddBookmarkCity from "../../pages/MainPage/MainPageBookmarks/BookmarkCiti
 import AddMaster from "./pages/AllMasters/AddMaster/AddMaster.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 
+
 function AdminPanel() {
+
+
   const location = useLocation();
   return (
     <motion.div
