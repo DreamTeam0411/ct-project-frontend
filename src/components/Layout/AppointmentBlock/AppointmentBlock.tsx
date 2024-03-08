@@ -1,4 +1,5 @@
 import styles from "./AppointmentBlock.module.css";
+import React from "react";
 
 export interface Data {
   tel: string;
@@ -10,12 +11,10 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
     const country = phoneNumber.slice(0, 2);
     const operator = phoneNumber.slice(2, 5);
     const rest = phoneNumber.slice(5);
-    const formattedNumber = `+${country}(${operator}) ${rest.slice(
-      0,
-      3
+      return `+${country}(${operator}) ${rest.slice(
+        0,
+        3
     )} ${rest.slice(3, 5)} ${rest.slice(5)}`;
-
-    return formattedNumber;
   }
 
   const formattedPhoneNumber = formatPhoneNumber(tel);
@@ -37,7 +36,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
       <p className={styles.appointmentText}>
         Для запису у салон, будь-ласка, зателефонуйте за вказаним номером:
       </p>
-      <div className={styles.appointmentTel}><a href={`tel:${formattedPhoneNumber}`}>{formattedPhoneNumber}</a></div>
+      <p className={styles.appointmentTel}><a href={`tel:${formattedPhoneNumber}`}>{formattedPhoneNumber}</a></p>
     </div>
   );
 };
