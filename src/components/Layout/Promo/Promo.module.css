@@ -25,6 +25,10 @@
     padding-left: 16px;
     height: 200px;
     margin: 0 auto;
+
+}
+.promoRightBlock img {
+    border-radius: 12px;
 }
 
 .promoText1 {
