@@ -32,7 +32,7 @@ function AllMasters() {
     setData(dataMasters);
     console.log(dataMasters);
     setLoading(false);
-  }, []);
+  }, [dataMasters.length]);
   return (
     <motion.div
       className={styles.container}
