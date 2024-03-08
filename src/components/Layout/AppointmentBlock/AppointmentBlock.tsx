@@ -27,7 +27,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
           onClick={() => setActive(true)}
           className={styles.appointmentButton}
         >
-          <img src="/ExitIcon.svg" className={styles.appointmentImgButton} />
+          <img src="/ExitIcon.svg" alt='exit' className={styles.appointmentImgButton} />
 
 
         </button>
@@ -37,7 +37,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
       <p className={styles.appointmentText}>
         Для запису у салон, будь-ласка, зателефонуйте за вказаним номером:
       </p>
-      <p className={styles.appointmentTel}><a href={`tel:${formattedPhoneNumber}`}>{formattedPhoneNumber}</a></p>
+      <div className={styles.appointmentTel}><a href={`tel:${formattedPhoneNumber}`}>{formattedPhoneNumber}</a></div>
     </div>
   );
 };
