@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
+
 
 export async function deleteCityAdmin(id: number): Promise<void> {
   try {
+    const token = localStorage.getItem("token");
     const response = await axios.delete(
       `https://ct-project.pp.ua/api/v1/admin/cities/${id}`,
       {

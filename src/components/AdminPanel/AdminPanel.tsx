@@ -10,15 +10,20 @@ import { Documents } from "./pages/Documents/Documents.tsx";
 import BookmarkPagesLayer from "../../pages/MainPage/MainPageBookmarks/BookmarkPagesLayer/BookmarkPagesLayer.tsx";
 import BookmarkBanner from "../../pages/MainPage/MainPageBookmarks/BookmarkBanner/BookmarkBanner.tsx";
 import BookmarkRecommendations from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkRecommendations.tsx";
-import BookmarkCategories from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/BookmarkCategories.tsx";
 import BookmarkCities from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCities.tsx";
 import BookmarkAboutUs from "../../pages/MainPage/MainPageBookmarks/BookmarkAboutUs/BookmarkAboutUs.tsx";
 import BookmarkAddRecommendation from "../../pages/MainPage/MainPageBookmarks/BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.tsx";
 import AddBookmarkCity from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/BookmarkCity/AddBookmarkCity.tsx";
 import AddMaster from "./pages/AllMasters/AddMaster/AddMaster.tsx";
 import { AnimatePresence, motion } from "framer-motion";
+import AddBookmarkCategory
+  from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/AddBookmarkCategory/AddBookmarkCategory.tsx";
+import BookmarkCategories from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/BookmarkCategories.tsx";
+
 
 function AdminPanel() {
+
+
   const location = useLocation();
   return (
     <motion.div
@@ -54,7 +59,13 @@ function AdminPanel() {
                       element={<BookmarkAddRecommendation />}
                     />
                   </Route>
-                  <Route path="categories" element={<BookmarkCategories />} />
+                  <Route path="categories" element={<PagesLayer />} >
+                    <Route
+                        path="/main-page/categories/"
+                        element={<BookmarkCategories/>}
+                    />
+                    <Route path="add-category" element={<AddBookmarkCategory />} />
+                  </Route>
                   <Route path="cities" element={<PagesLayer />}>
                     <Route
                       path="/main-page/cities/"

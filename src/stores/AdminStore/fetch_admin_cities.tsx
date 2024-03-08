@@ -43,11 +43,11 @@ const useFetchAdminCities = create<RootCities>()(
       ],
 
       fetchData: async (): Promise<City> => {
-        const response = FetchDataAdmin(ADMIN_CITIES).then(
+          const response = FetchDataAdmin(ADMIN_CITIES).then(
           (res) => res.data.data
         );
         set({ dataCity: await response });
-        console.log(await response);
+
         return await response;
       },
       deleteCity: async (id: number): Promise<void> => {

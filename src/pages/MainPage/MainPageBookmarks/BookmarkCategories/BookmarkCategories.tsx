@@ -1,23 +1,22 @@
 import styles from "./BookmarkCategories.module.css";
-
 import { useEffect, useState } from "react";
-import { PuffLoader } from "react-spinners";
 import { NavLink } from "react-router-dom";
 import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
 import useFetchAdminCategories from "../../../../stores/AdminStore/fetch_admin_categories.tsx";
 import { motion } from "framer-motion";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCategories = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+
+  const [, setLoading] = useState(false);
   const { dataCategory, fetchData } = useFetchAdminCategories();
+
   useEffect(() => {
     setLoading(true);
     fetchData();
-    setData(dataCategory);
     console.log(dataCategory);
     setLoading(false);
   }, []);
+
   return (
     <motion.div
       initial={{ x: "5%", opacity: 0 }}
@@ -31,7 +30,7 @@ const BookmarkCategories = () => {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.title}>
-        <NavLink to={"/"}>+ Додати категорію</NavLink>
+        <NavLink to={"/admin-panel/main-page/categories/add-category"}>+ Додати категорію</NavLink>
       </div>
 
       <div className={styles.list}>
@@ -42,13 +41,7 @@ const BookmarkCategories = () => {
           </div>
         </ul>
       </div>
-      {loading ? (
-        <div className={"loader-box"}>
-          {" "}
-          <PuffLoader color="#21151F" size={200} />
-        </div>
-      ) : (
-        data.map((item, index) => (
+      {dataCategory.map((item, index) => (
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,14 +65,14 @@ const BookmarkCategories = () => {
 
               <li className={styles.empty}>
                 <DropdownMenu
-                  deleteMethod={() => setData}
-                  editMethod={() => setData}
+                  deleteMethod={() => alert('Delete')}
+                  editMethod={() => alert('Edit')}
                 />
               </li>
             </ul>
           </motion.div>
         ))
-      )}
+      }
     </motion.div>
   );
 };

@@ -8,9 +8,10 @@ import { motion } from "framer-motion";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function AllMasters() {
-  const [data, setData] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const { dataMasters, fetchData } = useFetchAdminMasters();
+  const [data, setData] = useState(dataMasters);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -93,7 +94,7 @@ function AllMasters() {
               <li className={styles.service}>{item.category.title}</li>
               <li className={styles.email}>{item.user.email}</li>
               <li className={styles.address}>{item.city.name}</li>
-              <li className={styles.phone}>{Date.now()}</li>
+              <li className={styles.phone}>{item.id}</li>
               <li className={styles.empty}>
                 {
                   <DropdownMenu

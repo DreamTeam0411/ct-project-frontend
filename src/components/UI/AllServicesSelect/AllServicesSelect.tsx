@@ -24,6 +24,7 @@ export const AllServicesSelect = () => {
   return (
     <div className={styles.serviceListBlock}>
       <ul className={styles.servicesList}>
+
         {dataCategories.map((el, index) => (
           <motion.li
             initial={{ y: 20, opacity: 0 }}

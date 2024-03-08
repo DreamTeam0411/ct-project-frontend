@@ -87,7 +87,7 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
         </div>
 
         <button type="submit" className={styles.bn54}>
-          Продовжити
+          <span>Продовжити</span>
         </button>
       </form>
     </motion.div>

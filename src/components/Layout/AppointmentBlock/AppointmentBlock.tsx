@@ -1,4 +1,5 @@
 import styles from "./AppointmentBlock.module.css";
+import React from "react";
 
 export interface Data {
   tel: string;
@@ -10,12 +11,10 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
     const country = phoneNumber.slice(0, 2);
     const operator = phoneNumber.slice(2, 5);
     const rest = phoneNumber.slice(5);
-    const formattedNumber = `+${country}(${operator}) ${rest.slice(
-      0,
-      3
+      return `+${country}(${operator}) ${rest.slice(
+        0,
+        3
     )} ${rest.slice(3, 5)} ${rest.slice(5)}`;
-
-    return formattedNumber;
   }
 
   const formattedPhoneNumber = formatPhoneNumber(tel);
@@ -27,7 +26,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
           onClick={() => setActive(true)}
           className={styles.appointmentButton}
         >
-          <img src="/ExitIcon.svg" className={styles.appointmentImgButton} />
+          <img src="/ExitIcon.svg" alt='exit' className={styles.appointmentImgButton} />
 
 
         </button>

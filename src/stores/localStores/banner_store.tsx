@@ -21,7 +21,7 @@ export const useStoreBanner = create<State>((set) => ({
       "послуги онлайн !",
     titleSecondLineText: "Записуйтеся на сеанс зручно та просто!",
 
-    image: "/promo2-min.jpg",
+    image: "/PromoBanner.jpg",
   },
 
   updateItem: (key, value) =>
