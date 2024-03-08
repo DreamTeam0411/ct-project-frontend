@@ -30,7 +30,7 @@ const BookmarkCategories = () => {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.title}>
-        <NavLink to={"/"}>+ Додати категорію</NavLink>
+        <NavLink to={"/admin-panel/main-page/categories/add-category"}>+ Додати категорію</NavLink>
       </div>
 
       <div className={styles.list}>
