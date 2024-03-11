@@ -6,6 +6,9 @@ import { ADMIN_CATEGORIES } from "../ROUTES.tsx";
 interface RootCategories {
   dataCategory: Category[];
   fetchData: () => Promise<Category>;
+  deleteCategory: (id:number) => void;
+  editCategory: (id: number, updatedCategory: Category) => void
+  addCategory:(title:string, photo:string)=> void
 }
 
 export interface Category {
@@ -17,7 +20,7 @@ export interface Category {
     lastName: string;
   };
   icon: string;
-  id: null;
+  id: null | number;
   parentId: null;
   slug: string;
   title: string;
@@ -25,15 +28,15 @@ export interface Category {
   updatedBy: {
     email: string;
     firstName: string;
-    id: null;
+    id: null | number;
     lastName: string;
   };
 }
-const token =localStorage.getItem("token")
-console.log(token)
+
+
 const useFetchAdminCategories = create<RootCategories>()(
   persist(
-    (set): RootCategories => ({
+    (set,get): RootCategories => ({
       dataCategory: [
         {
           createdAt: "",
@@ -60,17 +63,48 @@ const useFetchAdminCategories = create<RootCategories>()(
 
       fetchData: async (): Promise<Category> => {
         const response = FetchDataAdmin(ADMIN_CATEGORIES).then(
-
           (res) =>
             res.data.data
-
-
         );
         set({ dataCategory: await response });
-
-
         return await response;
       },
+      addCategory: (title: string, photo:string): void => {
+        const newId = Math.max(...get().dataCategory.map((city) => city.id)) + 1;
+        const newCategory: Category = {
+          createdAt: "",
+          createdBy: {
+            email: "",
+            firstName: "",
+            id: null,
+            lastName: "",
+          },
+          icon: photo,
+          id: newId,
+          parentId: null,
+          slug: "",
+          title: title,
+          updatedAt: "",
+          updatedBy: {
+            email: "",
+            firstName: "",
+            id: null,
+            lastName: "",
+          },
+        };
+        const updatedData: Category[] = [...get().dataCategory, newCategory];
+        set({ dataCategory: updatedData });
+      },
+      deleteCategory: (id: number): void => {
+        set(state => ({ dataCategory: state.dataCategory.filter(category => category.id !== id),
+        }));
+      },
+
+      editCategory: (id: number, updatedCategory: Category): void => {
+        set(state => ({
+          dataCategory: state.dataCategory.map(category => category.id === id ? updatedCategory : category)
+        }));
+      }
     }),
     {
       name: "dataAdminCategories",

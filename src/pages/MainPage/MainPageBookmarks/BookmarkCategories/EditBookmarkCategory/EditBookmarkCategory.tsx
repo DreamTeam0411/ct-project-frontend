@@ -1,31 +1,46 @@
-import {useNavigate} from "react-router-dom";
+import {useForm} from "react-hook-form";
 import {useEffect, useRef, useState} from "react";
 import {motion} from "framer-motion";
-import styles from "../../BookmarkRecommendations/BookmarkAddRecommendation/BookmarkAddRecommendation.module.css";
+import styles from "../../BookmarkBanner/BookmarkBanner.module.css";
 import useFetchAdminCategories from "../../../../../stores/AdminStore/fetch_admin_categories.tsx";
-import {useForm} from "react-hook-form";
+import {useNavigate} from "react-router-dom";
 
 
-const AddBookmarkCategory = () => {
+const EditBookmarkCategory = ({title, id, icon}) => {
     const navigate = useNavigate();
-    const {addCategory} = useFetchAdminCategories();
+    const {dataCategory, editCategory} = useFetchAdminCategories();
     const {register, handleSubmit, setValue, reset, getValues} = useForm({
         defaultValues: {
-            input: '',
-            image: '',
+            input: title,
+            image: icon,
         },
     });
 
     const fileInputRef = useRef(null);
     const [message, setMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('');
+    const [selectedImage, setSelectedImage] = useState(icon);
 
+
+
+    useEffect(() => {
+        setValue(
+            "input",
+            `${title}`
+        );
+
+        setValue("image", icon);
+    }, [icon, setValue]);
 
     const onSubmit = (data) => {
         console.log(data)
+        const updatedCategory = {
+            ...dataCategory.find(category => category.id === id),
+            title: data.input,
+            icon: getValues('image'),
 
-        addCategory(data.input, getValues('image'));
+        };
+        editCategory(id, updatedCategory);
 
 
         setMessage("Збережено");
@@ -42,8 +57,7 @@ const AddBookmarkCategory = () => {
         const reader = new FileReader();
 
         reader.onloadend = () => {
-
-            setSelectedImage(reader.result as string);
+            setSelectedImage(reader.result);
             setValue("image", reader.result as string);
         };
 
@@ -57,15 +71,15 @@ const AddBookmarkCategory = () => {
     };
 
     const handleReset = () => {
-        setSelectedImage('')
+        setSelectedImage(icon)
         reset({
-            input: '',
-            image: '',
+            input: title,
+            image: icon,
         });
     };
     useEffect(() => {
         setValue("image", getValues("image"));
-    }, [getValues("image"), handleImageChange, handleImageClick]);
+    }, [getValues("image"),handleImageChange,handleImageClick]);
 
     return (
         <motion.div
@@ -126,4 +140,5 @@ const AddBookmarkCategory = () => {
     );
 };
 
-export default AddBookmarkCategory;
+
+export default EditBookmarkCategory;

@@ -67,7 +67,10 @@ const BookmarkRecommendations = () => {
               <li className={styles.empty}>
                 <DropdownMenu
                   editMethod={() => updateItem}
-                  deleteMethod={() => removeItem(item.id)}
+                  deleteMethod={() => {
+                    removeItem(item.id)
+                    alert('Видалено')
+                  }}
                 />
               </li>
             </ul>

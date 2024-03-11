@@ -9,6 +9,7 @@ interface RootCities {
   fetchData: () => Promise<City>;
   deleteCity: (id: number) => Promise<void>;
   addCity: (city: string) => void;
+  editCity:(id:number, newName:string)=>void;
 }
 
 export interface City {
@@ -60,6 +61,12 @@ const useFetchAdminCities = create<RootCities>()(
         const updatedData = [...get().dataCity, { id: newId, name: city }];
         set({ dataCity: updatedData });
       },
+        editCity: (id: number, newName: string): void => {
+            const updatedData = get().dataCity.map((city) =>
+                city.id === id ? { ...city, name: newName } : city
+            );
+            set({ dataCity: updatedData });
+        },
     }),
     {
       name: "dataAdminCities",
