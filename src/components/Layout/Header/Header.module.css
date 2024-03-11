@@ -7,11 +7,12 @@
   padding-top: 20px;
   padding-left: 16px;
 }
-.btn_login{
-  visibility: hidden}
+.btn_login {
+  visibility: hidden;
+}
 
 .btn_Business {
-  visibility: hidden
+  visibility: hidden;
 }
 
 .burger_container {
@@ -19,10 +20,14 @@
   top: 15px;
   left: 313px;
 }
+.searchForm {
+  visibility: hidden;
+}
 
 @media screen and (min-width: 768px) {
-  .btn_login{
-    display: none}
+  .btn_login {
+    display: none;
+  }
   .searchForm {
     margin-left: 20px;
     margin-right: 20px;
@@ -34,59 +39,17 @@
   .hidden_element {
     display: none;
   }
-    .container {
-
-      position: relative;
-      min-width: 720px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: white;
-      margin: 0 auto;
-      margin-top: 15px;
-      }
-  
-    .headerButtons {
-      display: flex;
-      gap: 20px;
-      color: #fff;
-  
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .btn_Business {
-      visibility: visible;
-      text-decoration: none;
-    }
-    .linksBlock {
-
-      height: 64px;
-    }
-  
-    .burger_container {
-      visibility: hidden;
-    }
-  }
-
-
-@media screen and (min-width: 1440px) {
-   .container {
-    min-width: 1280px;
-     max-width: 1440px;
-    height: 72px;
-
+  .container {
+    position: relative;
+    min-width: 720px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: white;
     margin: 0 auto;
-    }
+    margin-top: 15px;
+  }
 
   .headerButtons {
     display: flex;
@@ -101,16 +64,59 @@
     align-items: center;
   }
 
-  .btn_login{
+  .btn_Business {
     visibility: visible;
-  display: block}
+    text-decoration: none;
+  }
+  .linksBlock {
+    height: 64px;
+  }
+
+  .burger_container {
+    visibility: hidden;
+  }
+
+  .searchForm {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    min-width: 1280px;
+    max-width: 1440px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0 auto;
+  }
+
+  .headerButtons {
+    display: flex;
+    gap: 20px;
+    color: #fff;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn_login {
+    visibility: visible;
+    display: block;
+  }
 
   .buttonBusiness {
     visibility: visible;
     text-decoration: none;
   }
   .linksBlock {
-
     height: 64px;
   }
 

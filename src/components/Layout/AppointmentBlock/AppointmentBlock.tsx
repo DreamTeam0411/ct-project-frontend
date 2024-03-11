@@ -13,7 +13,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
     const formattedNumber = `+${country}(${operator}) ${rest.slice(
       0,
       3
-    )} ${rest.slice(3, 5)} ${rest.slice(5)}`;
+    )}- ${rest.slice(3, 5)} ${rest.slice(5)}`;
 
     return formattedNumber;
   }
