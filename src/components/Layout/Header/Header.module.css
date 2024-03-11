@@ -119,7 +119,12 @@
   .linksBlock {
     height: 64px;
   }
-
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
   .burger_container {
     visibility: hidden;
   }

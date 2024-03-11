@@ -26,7 +26,7 @@ export const StepFour: React.FC<IStepProps> = () => {
       </motion.div>
       <div>
         <Link to={"/"}>
-          <button className={styles.bn54}>На головну</button>
+          <button className={styles.bn54}><span>На головну</span></button>
         </Link>
       </div>
     </motion.div>

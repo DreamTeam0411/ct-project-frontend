@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { FetchDataAdmin } from "./fetch_admin_data.tsx";
-import { ADMIN_SERVICES } from "../ROUTES.tsx";
+import { ADMIN_SERVICES} from "../ROUTES.tsx";
 import axios from "axios";
 
-const token = localStorage.getItem("token");
+
 interface RootMasters {
   dataMasters: Master[];
   fetchData: () => Promise<Master>;
   addMaster: (newMaster: Master) => Promise<void>;
+  deleteMaster:(id:number)=> void
 }
 
 export interface Master {
@@ -69,15 +69,20 @@ const useFetchAdminMasters = create<RootMasters>()(
       ],
 
       fetchData: async (): Promise<Master> => {
-        const response = FetchDataAdmin(ADMIN_SERVICES).then(
+        const token = localStorage.getItem('token')
+        const response = await axios.get(ADMIN_SERVICES, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }).then(
           (res) => res.data.data
         );
         set({ dataMasters: await response });
-        console.log(await response);
+
         return await response;
       },
       addMaster: async (newMaster: Master) => {
-
+        const token = localStorage.getItem('token')
         const response = await axios.post(ADMIN_SERVICES, {
           headers: {
             Authorization: "Bearer " + token,
@@ -92,6 +97,24 @@ const useFetchAdminMasters = create<RootMasters>()(
           throw new Error("Не удалось добавить мастера");
         }
       },
+      deleteMaster: async (id: number) => {
+        const token = localStorage.getItem('token')
+        const response = await axios.delete(`${ADMIN_SERVICES}/${id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+
+        if (response.status === 200) {
+          set((state) => ({
+            dataMasters: state.dataMasters.filter(master => master.id !== id),
+          }));
+        } else {
+          throw new Error("Не удалось удалить мастера");
+        }
+      },
+
+
     }),
     {
       name: "dataAdminMaters",

@@ -9,6 +9,7 @@ interface RootCities {
   fetchData: () => Promise<City>;
   deleteCity: (id: number) => Promise<void>;
   addCity: (city: string) => void;
+  editCity:(id:number, newName:string)=>void;
 }
 
 export interface City {
@@ -43,11 +44,11 @@ const useFetchAdminCities = create<RootCities>()(
       ],
 
       fetchData: async (): Promise<City> => {
-        const response = FetchDataAdmin(ADMIN_CITIES).then(
+          const response = FetchDataAdmin(ADMIN_CITIES).then(
           (res) => res.data.data
         );
         set({ dataCity: await response });
-        console.log(await response);
+
         return await response;
       },
       deleteCity: async (id: number): Promise<void> => {
@@ -60,6 +61,12 @@ const useFetchAdminCities = create<RootCities>()(
         const updatedData = [...get().dataCity, { id: newId, name: city }];
         set({ dataCity: updatedData });
       },
+        editCity: (id: number, newName: string): void => {
+            const updatedData = get().dataCity.map((city) =>
+                city.id === id ? { ...city, name: newName } : city
+            );
+            set({ dataCity: updatedData });
+        },
     }),
     {
       name: "dataAdminCities",

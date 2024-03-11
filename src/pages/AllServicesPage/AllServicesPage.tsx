@@ -42,7 +42,7 @@ export const AllServicesPage = () => {
     fetchDataCategories();
   }, []);
 
-  if (dataState.length !== 0 && !isError && !isLoading) {
+  if (dataState.length !== 0 || !isError || !isLoading) {
     return (
       <><div className={styles.container}>
       <div className={styles.header}>

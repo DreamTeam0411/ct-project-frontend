@@ -1,4 +1,5 @@
 import styles from "./AppointmentBlock.module.css";
+import React from "react";
 
 export interface Data {
   tel: string;
@@ -27,7 +28,7 @@ export const AppointmentBlock: React.FC<Data> = ({ tel, setActive }) => {
           onClick={() => setActive(true)}
           className={styles.appointmentButton}
         >
-          <img src="/ExitIcon.svg" className={styles.appointmentImgButton} />
+          <img src="/ExitIcon.svg" alt='exit' className={styles.appointmentImgButton} />
 
 
         </button>
