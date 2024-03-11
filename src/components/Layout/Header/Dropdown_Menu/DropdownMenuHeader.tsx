@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { useOnClickOutside } from "./useOnClickOutside";
 import { Link } from "react-router-dom";
-import useFetchDataCities from "../../../../stores/fetcthCities.tsx";
+// import useFetchDataCities from "../../../../stores/fetcthCities.tsx";
 import style from "./DropdownMenuHeader.module.css";
 
 function DropdownMenuHeader() {
-  const dataStateCities = useFetchDataCities((state) => state.data);
+  // const dataStateCities = useFetchDataCities((state) => state.data);
   
   const menuRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
