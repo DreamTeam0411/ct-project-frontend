@@ -10,11 +10,12 @@ export async function deleteCityAdmin(id: number): Promise<void> {
       {
         headers: { Authorization: "Bearer " + token },
       }
+
     );
 
     if (response.status !== 200) {
       throw new Error("Failed to delete city");
-    }
+    } alert('City deleted')
   } catch (error) {
     console.error(error);
   }

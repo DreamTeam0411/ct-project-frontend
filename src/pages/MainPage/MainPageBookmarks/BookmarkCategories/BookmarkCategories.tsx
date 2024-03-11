@@ -1,14 +1,14 @@
 import styles from "./BookmarkCategories.module.css";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import DropdownMenu from "../../../../components/AdminPanel/UIAdminPanel/Dropdown_Menu/DropdownMenu.tsx";
 import useFetchAdminCategories from "../../../../stores/AdminStore/fetch_admin_categories.tsx";
 import { motion } from "framer-motion";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 const BookmarkCategories = () => {
-
+  const navigate = useNavigate();
   const [, setLoading] = useState(false);
-  const { dataCategory, fetchData } = useFetchAdminCategories();
+  const { dataCategory,deleteCategory, fetchData } = useFetchAdminCategories();
 
   useEffect(() => {
     setLoading(true);
@@ -16,7 +16,9 @@ const BookmarkCategories = () => {
     console.log(dataCategory);
     setLoading(false);
   }, []);
-
+  const handleCityClick = (cityId: number) => {
+    navigate(`/admin-panel/main-page/categories/${cityId}`);
+  };
   return (
     <motion.div
       initial={{ x: "5%", opacity: 0 }}
@@ -65,8 +67,11 @@ const BookmarkCategories = () => {
 
               <li className={styles.empty}>
                 <DropdownMenu
-                  deleteMethod={() => alert('Delete')}
-                  editMethod={() => alert('Edit')}
+                  deleteMethod={() => {
+                    deleteCategory(item.id)
+                    alert('Видалено')
+                  }}
+                  editMethod={() => handleCityClick(item.id)}
                 />
               </li>
             </ul>

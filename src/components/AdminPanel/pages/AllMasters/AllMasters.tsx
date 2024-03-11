@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 function AllMasters() {
 
   const [loading, setLoading] = useState(false);
-  const { dataMasters, fetchData } = useFetchAdminMasters();
+  const { dataMasters, fetchData, deleteMaster } = useFetchAdminMasters();
   const [data, setData] = useState(dataMasters);
   const [search, setSearch] = useState("");
 
@@ -98,7 +98,14 @@ function AllMasters() {
               <li className={styles.empty}>
                 {
                   <DropdownMenu
-                    deleteMethod={() => setData}
+                    deleteMethod={
+
+
+                    () => {
+                      const confirmDelete = confirm('Впевненні')
+
+                      confirmDelete && deleteMaster(item.id)
+                    }}
                     editMethod={() => setData}
                   />
                 }
