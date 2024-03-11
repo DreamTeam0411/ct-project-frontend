@@ -44,104 +44,106 @@ export const AllServicesPage = () => {
 
   if (dataState.length !== 0 || !isError || !isLoading) {
     return (
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <Header />
+      <><div className={styles.container}>
+      <div className={styles.header}>
+        <Header />
+      </div>
+
+      <div className={styles.mainBlock}>
+        <div className={styles.linksBlock}>
+          <AllServicesSelect />
         </div>
 
-        <div className={styles.mainBlock}>
-          <div className={styles.linksBlock}>
-            <AllServicesSelect />
-          </div>
-
-          <div className={styles.content}>
-            <div className={styles.servicesBlock}>
-              <div className={styles.contentHeadBlock}>
-                <div className={styles.contentHead}>
-                  <motion.div
-                    className={styles.allServices}
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.1, ease: "linear" },
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "linear",
-                    }}
-                  >
-                    Вибрано ({dataState.length})
-                  </motion.div>
-                </div>
+        <div className={styles.content}>
+          <div className={styles.servicesBlock}>
+            <div className={styles.contentHeadBlock}>
+              <div className={styles.contentHead}>
+                <motion.div
+                  className={styles.allServices}
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.1, ease: "linear" },
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "linear",
+                  }}
+                >
+                  Вибрано ({dataState.length})
+                </motion.div>
               </div>
-              <div className={styles.serviceCardList}>
-                {dataState.map((data, index) => (
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.1, ease: "linear" },
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "linear",
-                      delay: index * 0.3,
-                    }}
-                    className={styles.motionComponent}
-                  >
-                    <ServiceCard
-                      id={data.id}
-                      category={data.category}
-                      title={data.title}
-                      key={data.id}
-                      description={data.description}
-                      photo={data.photo}
-                      user={data.user}
-                      price={data.price}
-                      createdAt={data.createdAt}
-                      city={data.city}
-                    />
-                  </motion.div>
-                ))}
-              </div>
+            </div>
+            <div className={styles.serviceCardList}>
+              {dataState.map((data, index) => (
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.1, ease: "linear" },
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "linear",
+                    delay: index * 0.3,
+                  }}
+                  className={styles.motionComponent}
+                >
+                  <ServiceCard
+                    id={data.id}
+                    category={data.category}
+                    title={data.title}
+                    key={data.id}
+                    description={data.description}
+                    photo={data.photo}
+                    user={data.user}
+                    price={data.price}
+                    createdAt={data.createdAt}
+                    city={data.city}
+                  />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
       </div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
+    </div></>
+      
     );
   } else {
     return (
-      <div className={styles.container}>
-        <Header />
-        <div className={styles.mainBlock}>
-          <div className={styles.linksBlock}>
-            <AllServicesSelect />
-          </div>
+      <>
+        {" "}
+        <div className={styles.container}>
+          <Header />
+          <div className={styles.mainBlock}>
+            <div className={styles.linksBlock}>
+              <AllServicesSelect />
+            </div>
 
-          <div className={styles.content}>
-            <div className={styles.servicesBlock}>
-              <div className={styles.contentHeadBlock}>
-                <div className={styles.contentHead}>
-                  <div className={styles.allServices}>
-                    Всі сервіси ({dataState.length})
+            <div className={styles.content}>
+              <div className={styles.servicesBlock}>
+                <div className={styles.contentHeadBlock}>
+                  <div className={styles.contentHead}>
+                    <div className={styles.allServices}>
+                      Всі сервіси ({dataState.length})
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.serviceCardList}>
-                <div className={styles.notFound}>Сервісів не знайдено :(</div>
+                <div className={styles.serviceCardList}>
+                  <div className={styles.notFound}>Сервісів не знайдено :(</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 };

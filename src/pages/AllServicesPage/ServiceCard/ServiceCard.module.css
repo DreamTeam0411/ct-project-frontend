@@ -1,52 +1,254 @@
 .container {
-    max-width: 1280px;
+  width: 328px;
+}
+
+.mainPart {
+  display: flex;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.cardImgBlock {
+  width: 99px;
+  height: 99px;
+}
+
+.cardImgBlock:hover {
+  cursor: pointer;
+}
+
+.cardImgBlock img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.mainInformation {
+  max-width: 16rem;
+  display: bo;
+}
+
+.mainInformation:hover {
+  cursor: pointer;
+}
+
+.cardInformation {
+  width: 213px;
+  border-radius: 8px;
+  margin-left: 16px;
+}
+
+.cardTitle {
+  margin-bottom: 4px;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.cardProfession {
+  display: none;
+}
+
+.cardAddress {
+  color: #5b5b5b;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.phoneNumber {
+  color: var(--gray);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.cardCategory {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.cardDescription {
+  width: 213px;
+  height: 35px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  height: 30px;
+  align-items: end;
+  margin-top: 25px;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: end;
+}
+
+.orderButton {
+  position: relative;
+  left: 200px;
+  bottom: 32px;
+}
+
+.buttonSC {
+  display: flex;
+  padding: 8px 24px;
+  justify-content: flex-end;
+  border-radius: 8px;
+  border: 1px solid var(--blue-dark);
+  color: var(--blue-dark);
+  font-feature-settings: "clig" off, "liga" off;
+  background-color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  transition-duration: 0.5s;
+  width: 132px;
+}
+
+.buttonSC:hover {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.rating {
+  position: absolute;
+  right: 0;
+  border-radius: 8px;
+  background-color: var(--gray2);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 70px;
+  height: 50px;
+}
+
+.cardStarsNumber {
+  color: var(--white);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  gap: 5px;
+}
+
+.cardRatingNumber {
+  color: var(--white);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+  .cardImgBlock {
+    width: 219px;
+    height: 214px;
+  }
+  .cardInformation {
+    width: 469px;
+    margin-left: 32px;
+  }
+  .cardTitle {
+    font-size: 24px;
+  }
+  .cardAddress {
+    font-size: 14px;
+  }
+  .cardDescription {
+    width: 469px;
+    height: 80px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+  .orderButton {
+    position: relative;
+    left: 580px;
+    bottom: 200px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1280px;
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
     gap: 10px;
     height: fit-content;
     margin: 20px auto;
-}
+  }
 
-.mainPart {
+  .mainPart {
     width: 100%;
     display: flex;
     border-radius: 8px;
     gap: 10px;
-
     margin: 0 auto;
-}
+  }
 
-.cardImgBlock {
-
+  .cardImgBlock {
     background-color: var(--gray2);
     border-radius: 12px;
     width: 264px;
     height: 214px;
     position: relative;
-
-
-}
-.cardImgBlock:hover {
+  }
+  .cardImgBlock:hover {
     cursor: pointer;
-}
-.cardImgBlock img {
+  }
+  .cardImgBlock img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
+  }
 
-}
-
-.mainInformation {
+  .mainInformation {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-.mainInformation:hover {
+  }
+  .mainInformation:hover {
     cursor: pointer;
-}
-.cardInformation {
+  }
+  .cardInformation {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,78 +257,86 @@
     border-radius: 8px;
     font-size: 18px;
     margin-left: 20px;
-}
+  }
 
-.cardTitle {
+  .cardTitle {
     color: #000;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-}
+  }
 
-.cardProfession {
+  .cardProfession {
     color: #000;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
+  }
 
-.cardAddress {
-    color: #5B5B5B;
+  .cardAddress {
+    color: #5b5b5b;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-.phoneNumber {
+  }
+  .phoneNumber {
     color: var(--gray);
-    font-feature-settings: 'clig' off, 'liga' off;
+    font-feature-settings: "clig" off, "liga" off;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-}
+  }
 
-.cardCategory {
+  .cardCategory {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
     display: flex;
     gap: 10px;
-}
+  }
 
-.cardDescription {
+  .cardDescription {
     width: 640px;
+    height: 40px;
+    -webkit-line-clamp: 2;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-}
+  }
 
-.social {
+  .social {
     display: flex;
     gap: 10px;
     height: 30px;
     align-items: end;
-}
+  }
 
-.icon {
+  .icon {
     cursor: pointer;
     display: flex;
     align-items: end;
-}
+  }
 
-.buttonSC {
+  .orderButton {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+
+  .buttonSC {
     display: flex;
     padding: 8px 24px;
     justify-content: flex-end;
     border-radius: 8px;
     border: 1px solid var(--blue-dark);
     color: var(--blue-dark);
-    font-feature-settings: 'clig' off, 'liga' off;
+    font-feature-settings: "clig" off, "liga" off;
     background-color: var(--white);
     font-size: 16px;
     font-style: normal;
@@ -134,14 +344,14 @@
     line-height: 20px;
     transition-duration: 0.5s;
     width: 132px;
-}
-.buttonSC:hover {
+  }
+  .buttonSC:hover {
     background-color: var(--blue-dark);
     color: var(--white);
     cursor: pointer;
-}
+  }
 
-.rating {
+  .rating {
     position: absolute;
     right: 0;
     border-radius: 8px;
@@ -154,23 +364,24 @@
     padding: 5px;
     width: 70px;
     height: 50px;
-}
+  }
 
-.cardStarsNumber {
+  .cardStarsNumber {
     color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     display: flex;
-    gap: 5px
-}
+    gap: 5px;
+  }
 
-.cardRatingNumber {
+  .cardRatingNumber {
     color: var(--white);
     font-size: 8px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     padding: 3px;
+  }
 }
