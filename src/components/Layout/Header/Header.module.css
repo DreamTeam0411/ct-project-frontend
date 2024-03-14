@@ -15,9 +15,9 @@
 }
 
 .burger_container {
-  position: relative;
+  /* position: relative;
   top:-165px;
-  left: 300px;
+  left: 300px; */
 }
 
 @media screen and (min-width: 768px) {
