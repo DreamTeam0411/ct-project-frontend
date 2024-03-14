@@ -1,12 +1,17 @@
 .container {
-  display: block;
-  align-items: center;
+  width: 328px;
+  margin: 0 auto;
+  
  }
 
 .menu_button {
+  display: block;
   width: 30px;
   height: 30px;
-  padding: 0;
+position: relative;
+top: -170px;
+left:300px;
+ 
   border: 0;
   cursor: pointer;
 }
@@ -16,22 +21,26 @@
 }
 
 .menu {
-  width: 360px;
+  width: 328px;
   height: 100%;
+
+
+  
   padding-top: 5px;
   background-color: #fff;
   border: 1px solid #EAECF0;
   border-radius: 5px;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(10px);
   visibility: hidden;
   transition: 0.3s;
+  
 }
 
 .menu.active {
   position: relative;
-  top: -40px;
-  left: -313px;
+  top: -170px;
+  /* left: -463px; */
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
@@ -54,8 +63,7 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  /* pointer-events: none; */
-}
+ }
 
 .menu__item:hover {
   background-color: #eaecf0;
@@ -69,13 +77,12 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  /* pointer-events: none; */
 }
 
 .exitButton {
   position: absolute;
   top: 10px;
-  left: 330px;
+  left: 305px;
   width: 14px;
 }
 
