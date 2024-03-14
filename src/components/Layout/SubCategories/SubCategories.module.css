@@ -1,14 +1,16 @@
 .container {
-  width: 360px;
-  position: absolute;
-  top: 600px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-left: 16px;
+  width: 332px;
+  display: block;
+  align-self: center;
+  margin: 0 auto;
 }
-
-.categoriesBlock1 {
-  /* display: flex; */
+.title {
+  color: var(--black, #21151f);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 24px;
 }
 
 .categoriesBlock1Left {
@@ -29,13 +31,13 @@
 
 .categoriesBlock2 {
   display: block;
-  width: 100%;
+
   height: auto;
   margin-bottom: 8px;
 }
 .categoriesBlock2Img {
+  width: 328px;
   margin-bottom: 8px;
-
 }
 
 .categoriesBlock3 {
@@ -49,22 +51,13 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
     margin-left: auto;
     margin-right: auto;
     width: 720px;
-    
+ 
   }
   .title {
-    color: var(--black, #21151f);
     font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 24px;
   }
 
   .categoriesBlock1 {
@@ -76,7 +69,7 @@
   .categoriesBlock1Left {
     width: 354px;
     height: 416px;
-     }
+  }
 
   .categoriesBlock1Right {
     display: flex;
@@ -97,7 +90,11 @@
     gap: 12px;
     margin-bottom: 12px;
   }
- 
+
+  .categoriesBlock2Img {
+    width: 352px;
+    height: 202px;
+  }
 
   .categoriesBlock3 {
     display: flex;
@@ -108,22 +105,14 @@
 
 @media screen and (min-width: 1440px) {
   .container {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
     margin-left: auto;
     margin-right: auto;
     width: 1280px;
+    height:1580px;
     margin-bottom: 80px;
   }
   .title {
-    color: var(--black, #21151f);
     font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 50px;
   }
 
   .categoriesBlock1 {
@@ -153,6 +142,7 @@
   .categoriesBlock2 {
     display: flex;
     width: 1400px;
+    height: 362px;
 
     gap: 20px;
     margin-bottom: 20px;
@@ -166,5 +156,4 @@
     width: auto;
     gap: 20px;
   }
- 
 }

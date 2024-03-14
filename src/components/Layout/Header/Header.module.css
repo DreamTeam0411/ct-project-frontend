@@ -1,12 +1,11 @@
 .container {
-  position: absolute;
-  width: 360px;
+  width: 328px;
+  margin: 0 auto;
+  margin-top: 20px;
+  
+  height: 100px;
 }
 
-.linksBlock {
-  padding-top: 20px;
-  padding-left: 16px;
-}
 .btn_login {
   visibility: hidden;
 }
@@ -16,20 +15,27 @@
 }
 
 .burger_container {
-  position: absolute;
-  top: 15px;
-  left: 313px;
-}
-.searchForm {
-  visibility: hidden;
+  position: relative;
+  top:-165px;
+  left: 300px;
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    min-width: 720px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
   .btn_login {
     display: none;
   }
   .searchForm {
-    margin-left: 20px;
+    margin-left:20px;
     margin-right: 20px;
   }
   .burger_container {
@@ -38,17 +44,6 @@
 
   .hidden_element {
     display: none;
-  }
-  .container {
-    position: relative;
-    min-width: 720px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 15px;
   }
 
   .headerButtons {
@@ -65,11 +60,9 @@
   }
 
   .btn_Business {
+    
     visibility: visible;
     text-decoration: none;
-  }
-  .linksBlock {
-    height: 64px;
   }
 
   .burger_container {
@@ -77,21 +70,15 @@
   }
 
   .searchForm {
-    visibility: visible;
+       visibility: visible;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    min-width: 1280px;
-    max-width: 1440px;
+    width: 1280px;
     height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    margin: 0 auto;
+    
   }
 
   .headerButtons {
@@ -109,23 +96,24 @@
 
   .btn_login {
     visibility: visible;
-    display: block;
+   display: flex;
   }
 
   .buttonBusiness {
     visibility: visible;
     text-decoration: none;
   }
-  .linksBlock {
-    height: 64px;
+ 
+  .searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
   }
-.searchForm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-}
-  .burger_container {
-    visibility: hidden;
+
+  .buttons{
+    display: flex;
+gap: 10px;
+margin-left: 100px;
   }
 }
