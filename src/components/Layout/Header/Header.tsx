@@ -31,23 +31,23 @@ const Header = () => {
       <div className={styles.searchForm}>
         <SearchForm />
       </div>
-        <div className={styles.buttons}>
-            <div>
-                <Link to="/login" className={styles.btn_login}>
-                    <Button children={"Адмін"}/>
-                </Link>
-            </div>
-
-            <div>
-                <Link to="/for-business" className={styles.btn_Business}>
-                    <Button children={"Для бізнесу"}/>
-                </Link>
-            </div>
+      <div className={styles.buttons}>
+        <div>
+          <Link to="/login" className={styles.btn_login}>
+            <Button children={"Адмін"} />
+          </Link>
         </div>
 
-        <div className={styles.burger_container}>
-            <DropdownMenuHeader/>
+        <div>
+          <Link to="/for-business" className={styles.btn_Business}>
+            <Button children={"Для бізнесу"} />
+          </Link>
         </div>
+      </div>
+
+      <div className={styles.burger_container}>
+        <DropdownMenuHeader />
+      </div>
     </div>
   );
 };

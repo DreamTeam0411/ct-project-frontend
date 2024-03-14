@@ -1,13 +1,15 @@
-.container {
+.content {
   width: 360px;
-}
-
-.footer {
-  width: 100%;
+  margin: 0 auto;
+  display: block;
+  gap: 40px;
+  align-content: space-between;
+  font-size: 20px;
+  min-height: 500px;
 }
 
 .linksBlock {
-  visibility: hidden;
+  display: none;
 }
 
 .notFound {
@@ -23,16 +25,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.content {
-  width: 360px;
-  margin: 0 auto;
-  display: block;
-  gap: 40px;
-  align-content: space-between;
-  font-size: 20px;
-  min-height: 500px;
 }
 
 .filtersBlock {
@@ -131,7 +123,6 @@
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
 .contentHead {
@@ -275,67 +266,46 @@
   width: 100%;
   font-size: 15px;
 }
-.footer{
-  width: 100%;
-}
+
 
 @media screen and (min-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin: 0 auto;
+  .content {
     width: 720px;
-    height: 100vh;
+    margin: 0 auto;
+    gap: 40px;
+    font-size: 20px;
   }
 
-  .content {
+  .mainBlock {
+    width: 720px;
     margin: 0 auto;
-    display: flex;
-    gap: 40px;
-    align-content: space-between;
-    font-size: 20px;
-    min-height: 500px;
+    margin-top: 15px;
   }
 
   .servicesBlock {
-    width: 720px;
-    margin-left: 5px;
-    height: auto;
+    margin-left: 0px;
   }
-  .linksBlock {
-    visibility: hidden;
-  }
-
   .serviceCardList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 30px;
     height: fit-content;
   }
-  .contentHeadBlock {
-    width: 720px;
-    margin-left: 0px;
-    margin-bottom: 30px;
-  }
-
-  /* .footer{
-    width: 100%;
-  } */
- }
-
-
+}
 
 @media screen and (min-width: 1440px) {
-  .linksBlock {
-    visibility: visible;
+  .content {
     width: 1280px;
-    padding-left: 16px;
+    margin: 0 auto;
   }
-  .footer{
+  .linksBlock {
+    display: block;
+    width: 1280px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .footer {
     width: 1400px;
   }
+  .mainBlock{
+    width: 1280px;
+      }
 }

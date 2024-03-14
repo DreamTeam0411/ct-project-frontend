@@ -1,36 +1,10 @@
-.app {
-    justify-content: center; 
+
+
+@media screen and (min-width: 768px) {
 }
-
-.header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    width: 100%
-}
-
-/* .footer {
-    width: 100%;
-
-} */
 
 @media screen and (min-width: 1440px) {
-    .app {
-        width: 100%;
-        margin: auto;
 
-    
-    }
-    
-    .header {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        width: 100%
-    }
-    
-    .footer {
-        width: 100%;
-    
-    }
+
+ 
 }
