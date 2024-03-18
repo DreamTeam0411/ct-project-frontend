@@ -51,6 +51,7 @@ button.searchFormButton {
 
 
 .searchFormCategoryBox:focus {
+
   border: none;
   color: var(--gray4);
   background-color: var(--white);

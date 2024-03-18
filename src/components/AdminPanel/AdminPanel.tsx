@@ -26,6 +26,7 @@ import {
 } from "../../pages/MainPage/MainPageBookmarks/BookmarkCities/EditBookmarkCity/EditBookmarkCityPage.tsx";
 import EditBookmarkCategoryPage
     from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/EditBookmarkCategory/EditBookmarkCategoryPage.tsx";
+import EditMasterPage from "./pages/AllMasters/EditMaster/EditMasterPage.tsx";
 
 
 function AdminPanel() {
@@ -88,8 +89,15 @@ function AdminPanel() {
                             <Route path="documents" element={<Documents/>}/>
                             <Route path="contacts" element={<Contacts/>}/>
                             <Route path="business" element={<Business/>}/>
-                            <Route path="all-masters" element={<AllMasters/>}/>
+                            <Route path="all-masters/" element={<PagesLayer/>}>
+                                <Route
+                                    path="/all-masters/"
+                                    element={<AllMasters/>}
+                                />
+                                <Route path=':id' element={<EditMasterPage/>}/>
+                            </Route>
                             <Route path="add-master" element={<AddMaster/>}/>
+
                         </Route>
                     </Routes>
                 </AnimatePresence>

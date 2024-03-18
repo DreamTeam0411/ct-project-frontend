@@ -1,76 +1,99 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { FetchDataAdmin } from "./fetch_admin_data.tsx";
-import { ADMIN_CITIES } from "../ROUTES.tsx";
-import { deleteCityAdmin } from "./deleteCityAdmin.tsx";
+import {create} from "zustand";
+import {persist} from "zustand/middleware";
+import {FetchDataAdmin} from "./fetch_admin_data.tsx";
+import {ADMIN_CITIES} from "../ROUTES.tsx";
+import {deleteCityAdmin} from "./deleteCityAdmin.tsx";
+import axios from "axios";
 
 interface RootCities {
-  dataCity: City[];
-  fetchData: () => Promise<City>;
-  deleteCity: (id: number) => Promise<void>;
-  addCity: (city: string) => void;
-  editCity:(id:number, newName:string)=>void;
+    dataCity: City[];
+    fetchData: () => Promise<City>;
+    deleteCity: (id: number) => Promise<void>;
+    addCity: (city: string) => void;
+    editCity: (id: number, newName: string) => void;
 }
 
 export interface City {
-  country?: {
+    country?: {
+        id?: number;
+        name?: string;
+    };
+    createdAt?: string;
     id?: number;
     name?: string;
-  };
-  createdAt?: string;
-  id?: number;
-  name?: string;
-  parentId?: null;
-  slug?: string;
-  updatedAt?: string;
+    parentId?: null;
+    slug?: string;
+    updatedAt?: string;
 }
 
 const useFetchAdminCities = create<RootCities>()(
-  persist(
-    (set, get): RootCities => ({
-      dataCity: [
+    persist(
+        (set, get): RootCities => ({
+            dataCity: [
+                {
+                    country: {
+                        id: null,
+                        name: "",
+                    },
+                    createdAt: "",
+                    id: null,
+                    name: "",
+                    parentId: null,
+                    slug: "",
+                    updatedAt: "",
+                },
+            ],
+
+            fetchData: async (): Promise<City> => {
+                const response = FetchDataAdmin(ADMIN_CITIES).then(
+                    (res) => res.data.data
+                );
+                set({dataCity: await response});
+
+                return await response;
+            },
+            deleteCity: async (id: number): Promise<void> => {
+                await deleteCityAdmin(id);
+                const updatedData = get().dataCity.filter((city) => city.id !== id);
+                set({dataCity: updatedData});
+            },
+            addCity: async (city: string): Promise<void> => {
+                const token = localStorage.getItem("token");
+
+                const newId = Math.max(...get().dataCity.map((city) => city.id)) + 1;
+                const updatedData = [...get().dataCity, {id: newId, name: city}];
+                try {
+                    await axios.post(`https://ct-project.pp.ua/api/v1/admin/cities`, {id: newId, name: city}, {
+                        headers: {
+                            Authorization: 'Bearer' + token
+                        }
+                    });
+                } catch (error) {
+                    console.error('Server update failed', error);
+                }
+                set({dataCity: updatedData});
+            },
+            editCity:async (id: number, newName: string): Promise<void> => {
+                const token = localStorage.getItem("token");
+                try {
+                    await axios.put(`https://ct-project.pp.ua/api/v1/admin/cities/${id}`, { id, name: newName }, {
+                        headers: {
+                            Authorization: 'Bearer' + token
+                        }
+                    });
+
+                    const updatedData = get().dataCity.map((city) =>
+                        city.id === id ? {...city, name: newName} : city
+                    );
+                    set({dataCity: updatedData});
+                } catch (error) {
+                    console.error('Server update failed', error);
+                }
+            },
+        }),
         {
-          country: {
-            id: null,
-            name: "",
-          },
-          createdAt: "",
-          id: null,
-          name: "",
-          parentId: null,
-          slug: "",
-          updatedAt: "",
-        },
-      ],
-
-      fetchData: async (): Promise<City> => {
-          const response = FetchDataAdmin(ADMIN_CITIES).then(
-          (res) => res.data.data
-        );
-        set({ dataCity: await response });
-
-        return await response;
-      },
-      deleteCity: async (id: number): Promise<void> => {
-        await deleteCityAdmin(id);
-        const updatedData = get().dataCity.filter((city) => city.id !== id);
-        set({ dataCity: updatedData });
-      },
-      addCity: (city: string): void => {
-        const newId = Math.max(...get().dataCity.map((city) => city.id)) + 1;
-        const updatedData = [...get().dataCity, { id: newId, name: city }];
-        set({ dataCity: updatedData });
-      },
-        editCity: (id: number, newName: string): void => {
-            const updatedData = get().dataCity.map((city) =>
-                city.id === id ? { ...city, name: newName } : city
-            );
-            set({ dataCity: updatedData });
-        },
-    }),
-    {
-      name: "dataAdminCities",
-    }
-  )
+            name: "dataAdminCities",
+        }
+    )
 );
 export default useFetchAdminCities;

@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { FetchDataAdmin } from "./fetch_admin_data.tsx";
 import { ADMIN_CATEGORIES } from "../ROUTES.tsx";
+import axios from "axios";
 
 interface RootCategories {
   dataCategory: Category[];
@@ -69,7 +70,7 @@ const useFetchAdminCategories = create<RootCategories>()(
         set({ dataCategory: await response });
         return await response;
       },
-      addCategory: (title: string, photo:string): void => {
+      addCategory: async (title: string, photo:string):Promise<void> => {
         const newId = Math.max(...get().dataCategory.map((city) => city.id)) + 1;
         const newCategory: Category = {
           createdAt: "",
@@ -92,18 +93,35 @@ const useFetchAdminCategories = create<RootCategories>()(
             lastName: "",
           },
         };
-        const updatedData: Category[] = [...get().dataCategory, newCategory];
-        set({ dataCategory: updatedData });
+        const  token = localStorage.getItem('token')
+        const response = await axios.post('https://ct-project.pp.ua/api/v1/admin/categories', newCategory, {
+          headers: { Authorization: "Bearer " + token }
+        });
+        if (response.status === 200) {
+          const updatedData: Category[] = [...get().dataCategory, response.data];
+          set({ dataCategory: updatedData });
+        }
       },
-      deleteCategory: (id: number): void => {
-        set(state => ({ dataCategory: state.dataCategory.filter(category => category.id !== id),
-        }));
+      deleteCategory: async (id: number): Promise<void> => {
+        const  token = localStorage.getItem('token')
+        const response = await axios.delete(`https://ct-project.pp.ua/api/v1/admin/categories/${id}`, {
+          headers: { Authorization: "Bearer " + token }
+        });
+        if (response.status === 204) {
+          set(state => ({ dataCategory: state.dataCategory.filter(category => category.id !== id) }));
+        }
       },
 
-      editCategory: (id: number, updatedCategory: Category): void => {
-        set(state => ({
-          dataCategory: state.dataCategory.map(category => category.id === id ? updatedCategory : category)
-        }));
+      editCategory: async (id: number, updatedCategory: Category): Promise<void> => {
+        const  token = localStorage.getItem('token')
+        const response = await axios.put(`https://ct-project.pp.ua/api/v1/admin/categories/${id}`, updatedCategory, {
+          headers: { Authorization: "Bearer " + token }
+        });
+        if (response.status === 200) {
+          set(state => ({
+            dataCategory: state.dataCategory.map(category => category.id === id ? response.data : category)
+          }));
+        }
       }
     }),
     {

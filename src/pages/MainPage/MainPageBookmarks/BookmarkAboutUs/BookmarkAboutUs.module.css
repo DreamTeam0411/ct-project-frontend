@@ -90,8 +90,8 @@ h2 {
     font-weight: 500;
 }
 .photoBlock {
-    width: 328px;
-    height: 220px;
+    min-width: 328px;
+    min-height: 220px;
     background-color: #F2F4F7;
     border-radius: 8px;
 

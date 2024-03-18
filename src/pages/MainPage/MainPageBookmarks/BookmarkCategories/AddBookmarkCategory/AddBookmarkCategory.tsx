@@ -24,17 +24,15 @@ const AddBookmarkCategory = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-
         addCategory(data.input, getValues('image'));
-
-
         setMessage("Збережено");
         setShowMessage(true);
         setTimeout(() => {
             setShowMessage(false);
             setMessage("");
-        }, 3000);
-        navigate("/admin-panel/main-page/categories");
+            navigate("/admin-panel/main-page/categories");
+        }, 2000);
+
     };
 
     const handleImageChange = (e) => {
@@ -88,6 +86,12 @@ const AddBookmarkCategory = () => {
                             />
 
                         </div>
+                        <div className={styles.buttons}>
+                            <button type="button" onClick={handleReset}>
+                                Відмінити
+                            </button>
+                            <button type="submit">Зберегти</button>
+                        </div>
                     </div>
                     <div className={styles.photo}>
                         <h2>Фото</h2>
@@ -99,6 +103,7 @@ const AddBookmarkCategory = () => {
                             style={{display: "none"}}
                         />
                         <img
+
                             className={styles.image}
                             src={selectedImage}
                             alt="Image"
@@ -107,21 +112,9 @@ const AddBookmarkCategory = () => {
                         />
                     </div>
                 </div>
-                <div className={styles.buttons}>
-                    <button type="button" onClick={handleReset}>
-                        Відмінити
-                    </button>
-                    <button type="submit">Зберегти</button>
-                </div>
+
             </form>
-            {showMessage && (
-                <div
-                    className={styles.message}
-                    style={{transition: "opacity 1s", opacity: showMessage ? 1 : 0}}
-                >
-                    {message}
-                </div>
-            )}
+            {showMessage && <div className={styles.messageShowCategory}>{message}</div>}
         </motion.div>
     );
 };
