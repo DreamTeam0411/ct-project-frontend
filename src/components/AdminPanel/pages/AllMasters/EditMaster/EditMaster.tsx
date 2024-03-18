@@ -96,7 +96,7 @@ const EditMaster = ({data}) => {
                                 name="surname"
                                 placeholder="Введіть прізвище"
                                 value={surname}
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setSurname(e.target.value)}
                             />
                         </div>
                         <div className={styles.inputsTitle}>
@@ -107,7 +107,7 @@ const EditMaster = ({data}) => {
                                 name="phone"
                                 placeholder="Введіть номер телефону"
                                 value={phone}
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setPhone(e.target.value)}
                             />
                         </div>
                         <div className={styles.inputsSubtitle}>
@@ -118,7 +118,7 @@ const EditMaster = ({data}) => {
                                 name="social"
                                 placeholder="https://www.instagram.com/"
                                 value={social}
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setSocial(e.target.value)}
                             />
                         </div>
                         <div className={styles.inputsSubtitle}>
@@ -128,7 +128,7 @@ const EditMaster = ({data}) => {
                                 className={styles.select}
                                 name="service"
                                 value={service}
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setService(e.target.value)}
                             >
                                 <option value="" hidden selected>
                                     Виберіть послугу
@@ -148,7 +148,7 @@ const EditMaster = ({data}) => {
                                 name="address"
                                 placeholder="вул. Макарова 18, м. Київ"
                                 value={address}
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setAddress(e.target.value)}
                             />
                         </div>
                         <div className={styles.inputsSubtitle}>
