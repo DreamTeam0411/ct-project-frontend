@@ -61,7 +61,7 @@ const Footer = () => {
                 />
               </svg>
             </div>
-            <div className={styles.social}>
+            {/* <div className={styles.social}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -75,7 +75,7 @@ const Footer = () => {
                   fill="#044AB2"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.footerInformationBlock}>
@@ -104,8 +104,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.copyright}>
-      &#xa9; Розробка “Team Challenge” 2024. Усі права захищені.
-      
+        &#xa9; Розробка “Team Challenge” 2024. Усі права захищені.
       </div>
     </div>
   );

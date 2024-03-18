@@ -106,6 +106,7 @@
 }
 
 .orderButton {
+  width: 132px;
   position: relative;
   left: 200px;
   bottom: 32px;

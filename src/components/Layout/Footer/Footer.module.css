@@ -1,5 +1,6 @@
 .footerContainer {
-  position: relative;
+  width: 100%;
+
   background-color: var(--blue-dark);
   color: var(--white);
 }
@@ -100,9 +101,7 @@
 
 @media screen and (min-width: 768px) {
   .footerContainer {
-    position: relative;
-    top: 0;
-    display: flex;
+      display: flex;
     align-items: center;
     justify-content: center;
      margin-top: 10px;
@@ -221,10 +220,10 @@
 
 @media screen and (min-width: 1440px) {
   .footerContainer {
-    width: 100%;
-    position: relative;
-    top: 0;
+
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     flex-direction: column;
     max-height: 640px;
