@@ -22,14 +22,14 @@ function DropdownMenuHeader() {
         <button onClick={() => setOpen(false)}>
           <img src="/ExitIcon.svg" className={style.exitButton} />
         </button>
-        <ul className={style.menu__list}>
+        <ul className={style.menu__list} onClick={() => setOpen(!isOpen)}>
           <li className={style.menu__item}>
-            <Link to="/for-business" className={style.menu__link}>
+            <Link to="/for-business" className={style.menu__link} >
               <button className={style.menu__link__btn}>Для бізнесу</button>
             </Link>
           </li>
           <li className={style.menu__item}>
-            <Link to="/all-services" className={style.menu__link}>
+            <Link to="/all-services" className={style.menu__link} >
               <button className={style.menu__link__btn}>Всі сервіси</button>
             </Link>
           </li>
