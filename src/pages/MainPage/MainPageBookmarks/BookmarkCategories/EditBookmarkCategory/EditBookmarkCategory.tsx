@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 
 
 const EditBookmarkCategory = ({title, id, icon}) => {
+    console.log(icon)
     const navigate = useNavigate();
     const {dataCategory, editCategory} = useFetchAdminCategories();
     const {register, handleSubmit, setValue, reset, getValues} = useForm({
@@ -20,7 +21,6 @@ const EditBookmarkCategory = ({title, id, icon}) => {
     const [message, setMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [selectedImage, setSelectedImage] = useState(icon);
-
 
 
     useEffect(() => {
@@ -79,7 +79,7 @@ const EditBookmarkCategory = ({title, id, icon}) => {
     };
     useEffect(() => {
         setValue("image", getValues("image"));
-    }, [getValues("image"),handleImageChange,handleImageClick]);
+    }, [getValues("image"), handleImageChange, handleImageClick]);
 
     return (
         <motion.div
@@ -92,7 +92,7 @@ const EditBookmarkCategory = ({title, id, icon}) => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.content}>
                     <div className={styles.forms}>
-                        <h2>Редагувати Про нас</h2>
+                        <h2>Редагувати Категорію</h2>
                         <div className={styles.inputsTitle}>
                             <label htmlFor="title">Заголовок</label>
                             <input
@@ -101,6 +101,12 @@ const EditBookmarkCategory = ({title, id, icon}) => {
                                 name="input"
                             />
 
+                        </div>
+                        <div className={styles.buttons}>
+                            <button type="button" onClick={handleReset}>
+                                Відмінити
+                            </button>
+                            <button type="submit">Зберегти</button>
                         </div>
                     </div>
                     <div className={styles.photo}>
@@ -114,19 +120,15 @@ const EditBookmarkCategory = ({title, id, icon}) => {
                         />
                         <img
                             className={styles.image}
-                            src={selectedImage}
+                            src={`https://ct-project-images.s3.eu-central-1.amazonaws.com/category-photos/
+${selectedImage}`}
                             alt="Image"
                             onClick={handleImageClick}
                             style={{cursor: "pointer"}}
                         />
                     </div>
                 </div>
-                <div className={styles.buttons}>
-                    <button type="button" onClick={handleReset}>
-                        Відмінити
-                    </button>
-                    <button type="submit">Зберегти</button>
-                </div>
+
             </form>
             {showMessage && (
                 <div

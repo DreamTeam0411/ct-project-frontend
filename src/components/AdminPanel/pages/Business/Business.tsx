@@ -147,7 +147,7 @@ function Business() {
                 src={photo}
                 alt="Selected"
                 onClick={handleImageClick}
-                className={styles.photoBlock}
+                className={styles.photoBlockImage}
               />
               <input
                 type="file"

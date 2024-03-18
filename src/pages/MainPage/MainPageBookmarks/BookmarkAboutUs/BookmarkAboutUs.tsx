@@ -102,33 +102,39 @@ const BookmarkAboutUs = () => {
             <div className={styles.inputsTitle}>
               <label htmlFor="title">Заголовок</label>
               <input
-                {...register("input1")}
-                type="text"
-                name="title"
-                placeholder="Введіть заголовок"
+                  {...register("input1")}
+                  type="text"
+                  name="title"
+                  placeholder="Введіть заголовок"
               />
               <label htmlFor="subtitle">Підзаголовок</label>
               <textarea
-                {...register("input2", { maxLength: 300 })}
-                placeholder="Введіть підзаголовок"
-                name="subtitle"
-                onChange={handleInputChange}
+                  {...register("input2", {maxLength: 300})}
+                  placeholder="Введіть підзаголовок"
+                  name="subtitle"
+                  onChange={handleInputChange}
               />
               <p
-                className={styles.p}
-                style={{ color: text.length > 300 ? "red" : "lightgray" }}
+                  className={styles.p}
+                  style={{color: text.length > 300 ? "red" : "lightgray"}}
               >
                 {text.length}/300
               </p>
+            </div>
+            <div className={styles.buttons}>
+              <button type="button" onClick={handleReset}>
+                Відмінити
+              </button>
+              <button type="submit">Зберегти</button>
             </div>
           </div>
           <div className={styles.photo}>
             <h2>Фото</h2>
             <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                ref={fileInputRef}
               style={{ display: "none" }}
             />
             <img
@@ -140,12 +146,7 @@ const BookmarkAboutUs = () => {
             />
           </div>
         </div>
-        <div className={styles.buttons}>
-          <button type="button" onClick={handleReset}>
-            Відмінити
-          </button>
-          <button type="submit">Зберегти</button>
-        </div>
+
       </form>
       {showMessage && (
         <div

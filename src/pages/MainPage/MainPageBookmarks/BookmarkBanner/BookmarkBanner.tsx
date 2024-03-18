@@ -74,20 +74,26 @@ const BookmarkBanner = () => {
             <div className={styles.inputsTitle}>
               <label htmlFor="title">Заголовок</label>
               <input
-                type="text"
-                name="titleFirstLineText"
-                placeholder="Введіть заголовок"
-                value={item.titleFirstLineText}
-                onChange={handleInputChange}
+                  type="text"
+                  name="titleFirstLineText"
+                  placeholder="Введіть заголовок"
+                  value={item.titleFirstLineText}
+                  onChange={handleInputChange}
               />
               <label htmlFor="subtitle">Підзаголовок</label>
               <textarea
-                placeholder="Введіть підзаголовок"
-                name="titleSecondLineText"
-                value={item.titleSecondLineText}
-                onChange={handleInputChange}
+                  placeholder="Введіть підзаголовок"
+                  name="titleSecondLineText"
+                  value={item.titleSecondLineText}
+                  onChange={handleInputChange}
               ></textarea>
               <p className={styles.p}>{item.titleSecondLineText.length}/300</p>
+            </div>
+            <div className={styles.buttons}>
+              <button type="button" onClick={resetForm}>
+                Відмінити
+              </button>
+              <button type={"submit"}>Зберегти</button>
             </div>
           </div>
           <div className={styles.photo}>
@@ -103,12 +109,7 @@ const BookmarkBanner = () => {
             </div>
           </div>
         </div>
-        <div className={styles.buttons}>
-          <button type="button" onClick={resetForm}>
-            Відмінити
-          </button>
-          <button type={"submit"}>Зберегти</button>
-        </div>
+
       </form>
       {showMessage && (
         <div
