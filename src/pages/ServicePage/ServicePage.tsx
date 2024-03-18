@@ -14,10 +14,11 @@ export const ServicePage = () => {
   console.log(searchParams.serviceId);
 
   if (dataState.length !== 0 && searchId !== undefined)
-    return (
-      <div className={styles.container}>
+    return (<>
+    <Header />
+       <div className={styles.container}>
         <div className={styles.header}>
-          <Header />
+          
         </div>
 
         <motion.div
@@ -25,7 +26,7 @@ export const ServicePage = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, transition: { duration: 0.1, ease: "linear" } }}
           transition={{ duration: 0.5, ease: "linear" }}
-          className={styles.wrapper}
+          className={styles.wrapper1}
         >
           {dataState.map(
             /* eslint-disable-next-line no-mixed-spaces-and-tabs */ (data) =>
@@ -44,8 +45,11 @@ export const ServicePage = () => {
               )
           )}
         </motion.div>
-        <Footer />
+        
       </div>
+      <Footer />
+    </>
+   
     );
   else {
     <PuffLoader color="#36d7b7" size={200} />;
