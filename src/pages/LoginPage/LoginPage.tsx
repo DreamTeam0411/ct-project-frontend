@@ -34,13 +34,14 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
     getData.execute(data.email, data.password);
     !errors && alert("Вхід успішний");
+    console.log(errors)
   };
 
   const forgetPassword = () => {
     alert("Женя нагадає!");
   };
 
-  function tooglePassword() {
+  function togglePassword() {
     const x = document.getElementById("password") as HTMLInputElement;
     const eyeIcon = document.getElementById("eyeIcon") as HTMLImageElement;
     if (x.type === "password") {
@@ -127,7 +128,7 @@ const LoginPage = () => {
                         name="password"
                     />
 
-                    <button className={styles.toggleButton} onClick={tooglePassword}>
+                    <button className={styles.toggleButton} onClick={togglePassword}>
                       <img id="eyeIcon" src="/eye-close-min.svg" alt=""/>
                     </button>
 
@@ -144,7 +145,7 @@ const LoginPage = () => {
                   </div>
 
                   <div className={styles.formButton}>
-                    <button type={"submit"} className={styles.bn54}><span>Увійти</span></button>
+                    <button type="submit" className={styles.bn54}><span>Увійти</span></button>
                   </div>
                 </form>
               </motion.div>

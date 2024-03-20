@@ -12,7 +12,7 @@ export const EditBookmarkCity = ({city, id}) => {
     const [showMessage, setShowMessage] = useState(false);
     const handleSave = (e) => {
         e.preventDefault();
-        editCity(id, cityName)
+        editCity(id, cityName, 1)
         setShowMessage(true);
         setTimeout(() => {
             setShowMessage(false);

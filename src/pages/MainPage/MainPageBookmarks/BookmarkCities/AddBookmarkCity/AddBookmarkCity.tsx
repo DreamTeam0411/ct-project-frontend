@@ -12,7 +12,7 @@ const AddBookmarkCity = () => {
   const [showMessage, setShowMessage] = useState(false);
   const handleSave = (e) => {
     e.preventDefault();
-    addCity(cityName);
+    addCity(cityName, 1);
     setCityName("");
     setShowMessage(true);
     setTimeout(() => {
