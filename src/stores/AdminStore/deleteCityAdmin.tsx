@@ -13,9 +13,9 @@ export async function deleteCityAdmin(id: number): Promise<void> {
 
     );
 
-    if (response.status !== 200) {
+    if (response.status !== 204) {
       throw new Error("Failed to delete city");
-    } alert('City deleted')
+    } alert('Видалено')
   } catch (error) {
     console.error(error);
   }

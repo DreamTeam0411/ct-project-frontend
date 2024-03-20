@@ -33,13 +33,14 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<RegistrationForm> = (data) => {
     getData.execute(data.email, data.password);
     !errors && alert("Вхід успішний");
+    console.log(errors)
   };
 
   const forgetPassword = () => {
     alert("Звернітся до адміністратора!");
   };
 
-  function tooglePassword() {
+  function togglePassword() {
     const x = document.getElementById("password") as HTMLInputElement;
     const eyeIcon = document.getElementById("eyeIcon") as HTMLImageElement;
     if (x.type === "password") {
@@ -122,14 +123,33 @@ const LoginPage = () => {
                 name="password"
               />
               <div className={styles.toggleBlock}>
-                
+
                 <button
                   className={styles.toggleButton}
-                  onClick={tooglePassword}
+                  onClick={togglePassword}
                 >
                   <img id="eyeIcon" src="/eye-close-min.svg" alt="" height={15}/>
                 </button>
               </div>
+                  <div className={styles.password}>
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        placeholder="Ввведіть password"
+                        {...register("password", {
+                          required: "Обов'язкове для заповнення",
+                          // pattern: {
+                          //   value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
+                          //   message: "Невірний password",
+                          // },
+                        })}
+                        type="password"
+                        id="password"
+                        name="password"
+                    />
+
+                    <button className={styles.toggleButton} onClick={togglePassword}>
+                      <img id="eyeIcon" src="/eye-close-min.svg" alt=""/>
+                    </button>
 
               <div className={styles.errorP}>
                 {errors?.password && <p>{errors?.password?.message}</p>}
@@ -151,6 +171,12 @@ const LoginPage = () => {
           </form>
         </motion.div>
       </div>
+                  <div className={styles.formButton}>
+                    <button type="submit" className={styles.bn54}><span>Увійти</span></button>
+                  </div>
+                </form>
+              </motion.div>
+            </div>
 
       <motion.div
         initial={{ x: "40%", opacity: 0 }}
