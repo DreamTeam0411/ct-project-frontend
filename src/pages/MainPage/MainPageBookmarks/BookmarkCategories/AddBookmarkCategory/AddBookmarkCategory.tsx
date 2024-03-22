@@ -20,33 +20,38 @@ const AddBookmarkCategory = () => {
     const [message, setMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
+    const [URLImage, setURLImage] = useState(`https://ct-project-images.s3.eu-central-1.amazonaws.com/category-photos/${selectedImage}`)
 
-
-    const onSubmit = (data) => {
+    const onSubmit = (data, event) => {
+        event.preventDefault();
         console.log(data)
-        addCategory(data.input, getValues('image'));
+        if (typeof data.image === "string" || data.image === '') {
+            data.image = null
+        }
+        const addCategoryStore = {
+            title: data.input,
+            icon: data.image,
+            _method: "PATCH"
+        };
+
+        addCategory(addCategoryStore);
         setMessage("Збережено");
         setShowMessage(true);
         setTimeout(() => {
+
+
             setShowMessage(false);
             setMessage("");
             navigate("/admin-panel/main-page/categories");
         }, 2000);
-
+        (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
     };
 
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-
-            setSelectedImage(reader.result as string);
-            setValue("image", reader.result as string);
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
+        if(e.target.files.length !== 0){
+            console.log(e.target.files[0])
+            setValue("image", e.target.files[0])
+            setURLImage(URL.createObjectURL(e.target.files[0]))
         }
     };
 
@@ -76,7 +81,7 @@ const AddBookmarkCategory = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.content}>
                     <div className={styles.forms}>
-                        <h2>Редагувати Про нас</h2>
+                        <h2>Додати категорію</h2>
                         <div className={styles.inputsTitle}>
                             <label htmlFor="title">Заголовок</label>
                             <input
@@ -97,7 +102,7 @@ const AddBookmarkCategory = () => {
                         <h2>Фото</h2>
                         <input
                             type="file"
-                            accept="image/*"
+                            accept="image/jpeg"
                             onChange={handleImageChange}
                             ref={fileInputRef}
                             style={{display: "none"}}
@@ -105,7 +110,7 @@ const AddBookmarkCategory = () => {
                         <img
 
                             className={styles.image}
-                            src={selectedImage}
+                            src={URLImage}
                             alt="Image"
                             onClick={handleImageClick}
                             style={{cursor: "pointer"}}

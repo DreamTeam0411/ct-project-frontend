@@ -102,12 +102,8 @@ function AllMasters() {
                             <li className={styles.empty}>
                                 {
                                     <DropdownMenu
-                                        deleteMethod={
-
-
-                                            () => {
-                                                const confirmDelete = confirm('Впевненні')
-
+                                        deleteMethod={() => {
+                                                const confirmDelete = confirm('Видалити майстра?')
                                                 confirmDelete && deleteMaster(item.id)
                                             }}
                                         editMethod={() => handleCityClick(item.id)}

@@ -6,10 +6,10 @@ import useFetchAdminCategories from "../../../../../stores/AdminStore/fetch_admi
 import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
 import {useNavigate} from "react-router-dom";
 
-const EditMaster = ({data}) => {
+const EditMaster = ({data, id}) => {
     console.log(data.photo)
     const navigate = useNavigate();
-    const {editMaster} = useFetchAdminMasters();
+    const {editMaster, deleteMaster} = useFetchAdminMasters();
     const {dataCategory} = useFetchAdminCategories();
     const {register, handleSubmit, reset} = useForm();
     const [image, setImage] = useState(data.photo);
@@ -72,8 +72,21 @@ const EditMaster = ({data}) => {
             transition={{duration: 0.5}}
         >
             <h1>Змінити майстра</h1>
+            <div className={styles.deleteButtonBlock}>
+                <button className={styles.deleteButton} onClick={(e) => {
+                    e.preventDefault();
+                    const assign = confirm("Видалити майстра?")
+                    if (assign) {
+                        deleteMaster(id);
+                        navigate("/admin-panel/all-masters");
+                    }
+                    (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
+                }}
+                ><img src="/bin.svg" alt="delete"/></button>
+            </div>
 
             <form onSubmit={handleSubmit(onSubmit)}>
+
                 <div className={styles.content}>
                     <div className={styles.forms}>
                         <h2>Основні дані</h2>

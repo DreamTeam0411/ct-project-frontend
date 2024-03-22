@@ -12,10 +12,13 @@ export async function deleteCityAdmin(id: number): Promise<void> {
       }
 
     );
+if (response.status === 204) {
 
+  alert('Видалено')
+}
     if (response.status !== 204) {
       throw new Error("Failed to delete city");
-    } alert('Видалено')
+    }
   } catch (error) {
     console.error(error);
   }

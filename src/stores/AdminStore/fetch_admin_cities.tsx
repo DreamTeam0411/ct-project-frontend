@@ -2,7 +2,7 @@ import {create} from "zustand";
 import {persist} from "zustand/middleware";
 import {FetchDataAdmin} from "./fetch_admin_data.tsx";
 import {ADMIN_CITIES} from "../ROUTES.tsx";
-import {deleteCityAdmin} from "./deleteCityAdmin.tsx";
+
 import axios from "axios";
 
 interface RootCities {
@@ -53,9 +53,26 @@ const useFetchAdminCities = create<RootCities>()(
                 return await response;
             },
             deleteCity: async (id: number): Promise<void> => {
-                await deleteCityAdmin(id);
-                const updatedData = get().dataCity.filter((city) => city.id !== id);
-                set({dataCity: updatedData});
+                try {
+                    const token = localStorage.getItem("token");
+                    const response = await axios.delete(
+                        `https://ct-project.pp.ua/api/v1/admin/cities/${id}`,
+                        {
+                            headers: { Authorization: "Bearer " + token },
+                        }
+
+                    );
+
+                    if (response.status === 204) {
+                        const updatedData = get().dataCity.filter((city) => city.id !== id);
+                        set({dataCity: updatedData});
+                        alert('Видалено')
+                    }
+
+                } catch (error) {
+                    console.error(error);
+                }
+
             },
             addCity: async (city: string, countryId: number ): Promise<void> => {
                 const token = localStorage.getItem("token");

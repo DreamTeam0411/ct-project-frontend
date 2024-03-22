@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 const EditBookmarkCategory = ({title, id, icon}) => {
 
     const navigate = useNavigate();
-    const {editCategory} = useFetchAdminCategories();
+    const {editCategory, deleteCategory} = useFetchAdminCategories();
     const {register, handleSubmit, setValue, reset, getValues} = useForm({
         defaultValues: {
             input: title,
@@ -24,7 +24,8 @@ const EditBookmarkCategory = ({title, id, icon}) => {
     const [URLImage, setURLImage] = useState(`https://ct-project-images.s3.eu-central-1.amazonaws.com/category-photos/${selectedImage}`)
 
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, event) => {
+        event.preventDefault();
         console.log(data)
         if (typeof data.image === "string") {
             data.image = null
@@ -36,14 +37,16 @@ const EditBookmarkCategory = ({title, id, icon}) => {
         };
         editCategory(id, updatedCategory);
 
-
+        (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
         setMessage("Збережено");
         setShowMessage(true);
         setTimeout(() => {
             setShowMessage(false);
             setMessage("");
-        }, 3000);
-        navigate("/admin-panel/main-page/categories");
+
+            navigate("/admin-panel/main-page/categories");
+        }, 2000);
+
     };
 
     const handleImageChange = (e) => {
@@ -78,7 +81,21 @@ const EditBookmarkCategory = ({title, id, icon}) => {
             transition={{duration: 0.2, ease: "linear"}}
         >
             <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={styles.deleteButtonBlock}>
+                    <button className={styles.deleteButton} onClick={(e) => {
+                        e.preventDefault();
+                        const assign = confirm("Видалити категорію?")
+                        if (assign) {
+                        deleteCategory(id);
+                        navigate("/admin-panel/main-page/categories");
+                        }
+                        (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
+                    }}
+                    ><img src="/bin.svg" alt="delete"/></button>
+                </div>
+
                 <div className={styles.content}>
+
                     <div className={styles.forms}>
                         <h2>Редагувати Категорію</h2>
                         <div className={styles.inputsTitle}>
@@ -116,6 +133,8 @@ const EditBookmarkCategory = ({title, id, icon}) => {
                             style={{cursor: "pointer"}}
                         />
                     </div>
+
+
                 </div>
                 <input type="hidden" name='_method' value='PATCH'/>
             </form>
@@ -127,6 +146,7 @@ const EditBookmarkCategory = ({title, id, icon}) => {
                     {message}
                 </div>
             )}
+
         </motion.div>
     );
 };

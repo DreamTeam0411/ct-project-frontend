@@ -4,12 +4,13 @@ import {FetchDataAdmin} from "./fetch_admin_data.tsx";
 import {ADMIN_CATEGORIES} from "../ROUTES.tsx";
 import axios from "axios";
 
+
 interface RootCategories {
     dataCategory: Category[];
     fetchData: () => Promise<Category>;
     deleteCategory: (id: number) => void;
     editCategory: (id: number, updatedCategory) => void
-    addCategory: (title: string, photo: string) => void
+    addCategory: (addCategoryStore) => void
 }
 
 export interface Category {
@@ -70,7 +71,7 @@ const useFetchAdminCategories = create<RootCategories>()(
                 set({dataCategory: await response});
                 return await response;
             },
-            addCategory: async (title: string, photo: string): Promise<void> => {
+            addCategory: async (addCategoryStore): Promise<void> => {
                 const newId = Math.max(...get().dataCategory.map((city) => city.id)) + 1;
                 const newCategory: Category = {
                     createdAt: "",
@@ -80,11 +81,11 @@ const useFetchAdminCategories = create<RootCategories>()(
                         id: null,
                         lastName: "",
                     },
-                    icon: photo,
+                    icon: addCategoryStore.icon,
                     id: newId,
                     parentId: null,
                     slug: "",
-                    title: title,
+                    title: addCategoryStore.title,
                     updatedAt: "",
                     updatedBy: {
                         email: "",
@@ -94,25 +95,46 @@ const useFetchAdminCategories = create<RootCategories>()(
                     },
                 };
                 const token = localStorage.getItem('token')
-                const response = await axios.post('https://ct-project.pp.ua/api/v1/admin/categories', newCategory, {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                        "Content-Type": 'application/json'
+                try {
+                    const response = await axios.post('https://ct-project.pp.ua/api/v1/admin/categories', newCategory, {
+                        headers: {
+                            Authorization: "Bearer " + token,
+                            "Content-Type": 'multipart/form-data'
+                        }
+                    });
+
+                    if (response.status === 201) {
+                        const updatedData: Category[] = [...get().dataCategory, response.data];
+                        set({dataCategory: updatedData});
+                        alert('Категорія додана')
                     }
-                });
-                if (response.status === 200) {
-                    const updatedData: Category[] = [...get().dataCategory, response.data];
-                    set({dataCategory: updatedData});
+                } catch (error) {
+                    if (error.response.status === 400) {
+                        alert("Категорія с таким ім'ям вже існує")
+                    }
+                    if (error.response.status === 422) {
+                        alert("Зображення обов'язково має бути доданне")
+                    }
+                    console.log(error.response.status);
+
                 }
             },
             deleteCategory: async (id: number): Promise<void> => {
+
                 const token = localStorage.getItem('token')
-                const response = await axios.delete(`https://ct-project.pp.ua/api/v1/admin/categories/${id}`, {
-                    headers: {Authorization: "Bearer " + token}
-                });
-                if (response.status === 204) {
-                    set(state => ({dataCategory: state.dataCategory.filter(category => category.id !== id)}));
+                try {
+                    const response = await axios.delete(`https://ct-project.pp.ua/api/v1/admin/categories/${id}`, {
+                        headers: {Authorization: "Bearer " + token}
+                    });
+                    if (response.status === 204) {
+                        set(state => ({dataCategory: state.dataCategory.filter(category => category.id !== id)}));
+                        alert('Категорію видаленно')
+                    }
+                } catch (error) {
+                    console.log(error)
                 }
+
+
             },
 
             editCategory: async (id: number, updatedCategory): Promise<void> => {
@@ -126,7 +148,7 @@ const useFetchAdminCategories = create<RootCategories>()(
                         },
 
                     });
-                    console.log('sfdsf')
+
                     if (response.status === 200) {
                         set(state => ({
                             dataCategory: state.dataCategory.map(category => category.id === id ? response.data : category)
@@ -134,7 +156,7 @@ const useFetchAdminCategories = create<RootCategories>()(
                     }
                 } catch (error) {
                     console.error(error);
-                    alert(error.message)
+
                 }
 
             }

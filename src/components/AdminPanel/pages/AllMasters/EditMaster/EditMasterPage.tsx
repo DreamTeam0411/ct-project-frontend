@@ -20,6 +20,7 @@ const EditMasterPage = () => {
                             <EditMaster
                                 key={data.id}
                                 data={data}
+                                id={data.id}
                             />
                         ) : (
                             ""

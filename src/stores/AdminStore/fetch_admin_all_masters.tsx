@@ -105,8 +105,8 @@ const useFetchAdminMasters = create<RootMasters>()(
                         Authorization: "Bearer " + token,
                     },
                 });
-
-                if (response.status === 200) {
+                console.log(response.status)
+                if (response.status === 200 || response.status === 422) {
 
                     set((state) => ({
                         dataMasters: state.dataMasters.filter(master => master.id !== id),

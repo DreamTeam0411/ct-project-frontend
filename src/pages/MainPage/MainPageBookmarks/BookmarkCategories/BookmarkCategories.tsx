@@ -71,8 +71,10 @@ const BookmarkCategories = () => {
                 <DropdownMenu
                     key={item.id}
                   deleteMethod={() => {
+                    const assign = confirm("Видалити категорію?")
+                    if (assign) {
                     deleteCategory(item.id)
-                    alert('Видалено')
+                    alert('Видалено')}
                   }}
                   editMethod={() => handleCityClick(item.id)}
                 />

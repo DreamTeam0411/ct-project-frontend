@@ -76,7 +76,11 @@ const BookmarkCities = () => {
                                 {
                                     <DropdownMenu
                                         deleteMethod={() => {
+                                            const assign = confirm("Видалити місто?")
+                                            if (assign) {
                                             deleteCity(item.id)
+
+                                            }
 
                                         }}
                                         editMethod={() => handleCityClick(item.id)}
