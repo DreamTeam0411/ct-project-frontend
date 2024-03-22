@@ -8,6 +8,12 @@
     font-size: 14px;
 }
 
+.errorP p{
+    color: red;
+    font-size: 14px;
+    margin-top:25px;
+}
+
 .loginBlock {
     width: 720px;
     height: auto;
@@ -79,17 +85,26 @@
     margin-bottom: 20px;
 }
 
+.toggleBlock{
+    position: relative;
+    margin-top: -28px;
+    margin-left: 365px;
+    display:flex;
+    width: 28px;
+    height:8px;
+}
 
 .toggleButton {
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 365px;
+   
     padding-left: 5px;
     padding-right: 5px;
     display: flex;
     justify-content: start;
-    width: 30px;
-    height: 30px;
+    margin: 0 auto;
+    /* margin-bottom:15px; */
+    width:25px;
+    height:0px;
+
     background-color: var(--white);
     cursor: pointer;
     border: none;
