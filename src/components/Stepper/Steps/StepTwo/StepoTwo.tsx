@@ -42,7 +42,7 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
         <div className={styles.categoriesBlock}>
           <label htmlFor="services">Назва послуги</label>
 
-          <select {...register("services", { required: "Выберіть опцію" })}>
+          <select {...register("services", { required: "Виберіть, будь ласка, послугу яку ви надаєте" })}>
             <option value="" hidden selected>
               Виберіть послугу
             </option>
@@ -63,7 +63,7 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
             className={styles.inputAddress}
             placeholder="Введіть адресу"
             name="address"
-            {...register("address", { required: "Введіть адрессу" })}
+            {...register("address", { required: "Введіть, будь ласка, адресу" })}
           />
           <div className={styles.error}>
             {errors?.address && <p>{errors?.address?.message}</p>}

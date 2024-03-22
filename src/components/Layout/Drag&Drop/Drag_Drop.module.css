@@ -9,7 +9,7 @@
 h2 {
   font-size: 24px;
   font-weight: 400;
-  }
+}
 
 p {
   margin-top: 8px;
@@ -22,7 +22,7 @@ p {
   align-items: center;
   width: 100%;
   padding: 50px 20px;
-  border: 2px  #044AB2;
+  border: 2px #044ab2;
   border-style: dashed;
   border-spacing: 5px;
   border-radius: 20px;
@@ -44,32 +44,27 @@ p {
 }
 
 .input {
-   visibility: hidden;
+  visibility: hidden;
 }
 
 .file_name {
-   margin-top: 1.25rem;
+  margin-top: 1.25rem;
+  margin-right: 15px;
   list-style-type: none;
 }
 
-.addedFile{
+.addedFile {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 70px;
 }
 
-.button_reset {
-  /* visibility: hidden; */
- }
-
 .deleteFileButton {
-
-/* position: absolute; */
-/* margin-right: 0; */
-margin-right: 5px;
+  margin-top: 5px;
   background-color: var(--white);
-  fill: #8F8F98;
+  fill: #8f8f98;
 }
 
-.deleteFileImg{
- 
+.deleteFileImg {
 }
