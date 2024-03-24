@@ -1,18 +1,18 @@
 import {create} from "zustand";
 import {persist} from "zustand/middleware";
-import {ADMIN_SERVICES} from "../ROUTES.tsx";
+import { ADMIN_SERVICES_} from "../ROUTES.tsx";
 import axios from "axios";
 
 
-interface RootMasters {
-    dataMasters: Master[];
-    fetchData: () => Promise<Master>;
-    addMaster: (newMaster) => Promise<void>;
-    deleteMaster: (id: number) => void
-    editMaster: (id: number, updatedMaster: Master) => Promise<void>
+interface RootServices {
+    dataServices: Service[];
+    fetchData: () => Promise<Service>;
+    addService: (newService) => Promise<void>;
+    deleteService: (id: number) => void
+    editService: (id: number, updatedService: Service) => Promise<void>
 }
 
-export interface Master {
+export interface Service {
     category: {
         id: number;
         slug: string;
@@ -35,13 +35,16 @@ export interface Master {
         firstName: string;
         id: number;
         lastName: string;
+        address:string;
+        phoneNumber:number;
+        link:string;
     };
 }
 
-const useFetchAdminMasters = create<RootMasters>()(
+const useFetchAdminServices = create<RootServices>()(
     persist(
-        (set): RootMasters => ({
-            dataMasters: [
+        (set): RootServices => ({
+            dataServices: [
                 {
                     category: {
                         id: null,
@@ -65,26 +68,30 @@ const useFetchAdminMasters = create<RootMasters>()(
                         firstName: "",
                         id: null,
                         lastName: "",
+                        address:'',
+                        phoneNumber: null,
+                        link:'',
+
                     },
                 },
             ],
 
-            fetchData: async (): Promise<Master> => {
+            fetchData: async (): Promise<Service> => {
                 const token = localStorage.getItem('token')
-                const response = await axios.get(ADMIN_SERVICES, {
+                const response = await axios.get(ADMIN_SERVICES_, {
                     headers: {
                         Authorization: "Bearer " + token,
                     },
                 }).then(
                     (res) => res.data.data
                 );
-                set({dataMasters: await response});
+                set({dataServices: await response});
 
                 return await response;
             },
-            addMaster: async (newMaster: Master) => {
+            addService: async (newService: Service) => {
                 const token = localStorage.getItem('token')
-                const response = await axios.post(ADMIN_SERVICES, newMaster,{
+                const response = await axios.post(ADMIN_SERVICES_, newService,{
                     headers: {
                         Authorization: "Bearer " + token,
                     },
@@ -92,15 +99,17 @@ const useFetchAdminMasters = create<RootMasters>()(
 
                 if (response.status === 201) {
                     set((state) => ({
-                        dataMasters: [...state.dataMasters, newMaster],
+                        dataServices: [...state.dataServices, newService],
                     }));
                 } else {
+                    alert("Не удалось добавить мастера")
                     throw new Error("Не удалось добавить мастера");
+
                 }
             },
-            deleteMaster: async (id: number) => {
+            deleteService: async (id: number) => {
                 const token = localStorage.getItem('token')
-                const response = await axios.delete(`${ADMIN_SERVICES}/${id}`, {
+                const response = await axios.delete(`${ADMIN_SERVICES_}/${id}`, {
                     headers: {
                         Authorization: "Bearer " + token,
                     },
@@ -109,16 +118,16 @@ const useFetchAdminMasters = create<RootMasters>()(
                 if (response.status === 200 || response.status === 422) {
 
                     set((state) => ({
-                        dataMasters: state.dataMasters.filter(master => master.id !== id),
+                        dataServices: state.dataServices.filter(Service => Service.id !== id),
                     }));
                 } else {
                     throw new Error("Не удалось удалить мастера");
 
                 }
             },
-            editMaster: async (id: number, updatedMaster: Master) => {
+            editService: async (id: number, updatedService: Service) => {
                 const token = localStorage.getItem('token')
-                const response = await axios.put(`${ADMIN_SERVICES}/${id}`, updatedMaster, {
+                const response = await axios.put(`${ADMIN_SERVICES_}/${id}`, updatedService, {
                     headers: {
                         Authorization: "Bearer " + token,
                     },
@@ -126,8 +135,8 @@ const useFetchAdminMasters = create<RootMasters>()(
 
                 if (response.status === 200) {
                     set((state) => ({
-                        dataMasters: state.dataMasters.map((master) =>
-                            master.id === id ? updatedMaster : master
+                        dataServices: state.dataServices.map((Service) =>
+                            Service.id === id ? updatedService : Service
                         ),
                     }));
                 } else {
@@ -139,8 +148,8 @@ const useFetchAdminMasters = create<RootMasters>()(
 
         }),
         {
-            name: "dataAdminMaters",
+            name: "dataAdminServices",
         }
     )
 );
-export default useFetchAdminMasters;
+export default useFetchAdminServices;

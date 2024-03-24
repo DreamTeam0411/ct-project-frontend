@@ -7,7 +7,7 @@ import axios from "axios";
 
 interface RootCities {
     dataCity: City[];
-    fetchData: () => Promise<City>;
+    fetchDataCities: () => Promise<City>;
     deleteCity: (id: number) => Promise<void>;
     addCity: (city: string, countryId:number) => void;
     editCity: (id: number, newName: string, countryId:number) => void;
@@ -44,7 +44,7 @@ const useFetchAdminCities = create<RootCities>()(
                 },
             ],
 
-            fetchData: async (): Promise<City> => {
+            fetchDataCities: async (): Promise<City> => {
                 const response = FetchDataAdmin(ADMIN_CITIES).then(
                     (res) => res.data.data
                 );

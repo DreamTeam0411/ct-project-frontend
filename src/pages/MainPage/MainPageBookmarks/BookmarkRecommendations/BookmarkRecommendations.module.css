@@ -87,6 +87,7 @@ input[placeholder] {
 
 .email {
     width: 195px;
+    overflow: hidden;
 }
 
 .address {

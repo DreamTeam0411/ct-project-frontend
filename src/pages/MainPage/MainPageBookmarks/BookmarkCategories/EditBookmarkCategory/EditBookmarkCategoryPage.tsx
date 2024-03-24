@@ -19,6 +19,7 @@ const EditBookmarkCategoryPage = () => {
                                 title={data.title}
                                 id={data.id}
                                 icon={data.icon}
+
                             />
                         ) : (
                             ""

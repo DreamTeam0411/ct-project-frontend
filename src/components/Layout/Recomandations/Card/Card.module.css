@@ -9,9 +9,16 @@
 .card:hover {
   scale: 105%;
 }
+.imageBlock {
+  width: 305px;
+  height: 164px;
+}
 .image {
   width: 305px;
   height: 164px;
+  overflow: hidden;
+  border-radius: 12px;
+  object-fit:cover;
 }
 .serviceName {
   display: flex;

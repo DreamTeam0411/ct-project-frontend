@@ -3,13 +3,14 @@ import {useForm} from "react-hook-form";
 import styles from "./EditMater.module.css";
 import {motion} from "framer-motion";
 import useFetchAdminCategories from "../../../../../stores/AdminStore/fetch_admin_categories.tsx";
-import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
+
 import {useNavigate} from "react-router-dom";
+import useFetchAdminServices from "../../../../../stores/AdminStore/fetch_admin_services.tsx";
 
 const EditMaster = ({data, id}) => {
-    console.log(data.photo)
+    console.log(data.user)
     const navigate = useNavigate();
-    const {editMaster, deleteMaster} = useFetchAdminMasters();
+    const {editService, deleteService} = useFetchAdminServices();
     const {dataCategory} = useFetchAdminCategories();
     const {register, handleSubmit, reset} = useForm();
     const [image, setImage] = useState(data.photo);
@@ -18,10 +19,10 @@ const EditMaster = ({data, id}) => {
     const [description, setDescription] = useState("");
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
-    const [phone, setPhone] = useState("");
+    const [phone, setPhone] = useState(data.user.phoneNumber);
     const [social, setSocial] = useState("");
     const [service, setService] = useState("");
-    const [address, setAddress] = useState("");
+    const [address, setAddress] = useState(data.user.address);
 
     useEffect(() => {
         if (data) {
@@ -30,7 +31,7 @@ const EditMaster = ({data, id}) => {
             setPhone(data.phone || "");
             setSocial(data.user.email || "");
             setService(data.service || "");
-            setAddress(data.city.name || "");
+            setAddress(data.user.address || "");
             setDescription(data.description || "");
         }
     }, [data]);
@@ -52,7 +53,7 @@ const EditMaster = ({data, id}) => {
 
     const onSubmit = (data, event) => {
         event.preventDefault();
-        editMaster({...data}, image)
+        editService({...data}, image)
         setMessage("Збережено");
         setShowMessage(true);
         setTimeout(() => {
@@ -77,7 +78,7 @@ const EditMaster = ({data, id}) => {
                     e.preventDefault();
                     const assign = confirm("Видалити майстра?")
                     if (assign) {
-                        deleteMaster(id);
+                        deleteService(id);
                         navigate("/admin-panel/all-masters");
                     }
                     (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
@@ -118,8 +119,9 @@ const EditMaster = ({data, id}) => {
                                 {...register("phone")}
                                 type="number"
                                 name="phone"
-                                placeholder="Введіть номер телефону"
-                                value={phone}
+                                placeholder={"Введіть номер телефону"}
+                                defaultValue={phone}
+
                                 onChange={e => setPhone(e.target.value)}
                             />
                         </div>
@@ -141,6 +143,7 @@ const EditMaster = ({data, id}) => {
                                 className={styles.select}
                                 name="service"
                                 value={service}
+                                defaultValue={data.category.title}
                                 onChange={e => setService(e.target.value)}
                             >
                                 <option value="" hidden selected>

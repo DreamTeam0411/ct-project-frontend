@@ -10,11 +10,11 @@ import {useNavigate} from "react-router-dom";
 const BookmarkCities = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const {dataCity, deleteCity, fetchData} = useFetchAdminCities();
+    const {dataCity, deleteCity, fetchDataCities} = useFetchAdminCities();
 
     useEffect(() => {
         setLoading(true);
-        fetchData();
+        fetchDataCities();
         console.log(dataCity);
         setLoading(false);
     }, [deleteCity]);
