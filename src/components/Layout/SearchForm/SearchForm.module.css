@@ -49,9 +49,7 @@ button.searchFormButton {
   background-color: var(--white);
 }
 
-
 .searchFormCategoryBox:focus {
-
   border: none;
   color: var(--gray4);
   background-color: var(--white);
@@ -107,22 +105,19 @@ button.searchFormButton {
     border: 1px solid #eaecf0;
     border-radius: 10px;
     background-color: #ffffff;
-   
   }
 
   .searchFormCategoryBox {
-    width: 160px;
+    width: 180px;
     font-size: 14px;
-    border: none;
-    outline: none;
+     outline: none;
     margin-left: 10px;
     color: var(--gray);
   }
 
   .searchFormCategoryBox:focus {
-    width: 243px;
+    width: 180px;
     font-size: 14px;
-    border: none;
     outline: none;
     color: var(--gray);
   }
@@ -138,9 +133,9 @@ button.searchFormButton {
   }
 
   .searchFormSelect {
-   width: 150px;
+    width: 150px;
   }
-  .searchFormSelectBox{
+  .searchFormSelectBox {
     width: 130px;
   }
 
@@ -162,7 +157,7 @@ button.searchFormButton {
     color: var(--gray);
     font-size: 14px;
   }
-  button.searchFormButton{
+  button.searchFormButton {
     margin-right: 5px;
     width: 32px;
     height: 32px;
@@ -171,22 +166,26 @@ button.searchFormButton {
 
 @media screen and (min-width: 1440px) {
   .searchFormContainer {
-    
     display: flex;
     justify-content: center;
     width: fit-content;
     gap: 12px;
     margin-left: 20px;
   }
-.searchForm{
-  width: 648px;
-}
+  .searchForm {
+    width: 648px;
+  }
 
   .searchFormCategoryBox {
     width: 343px;
   }
-  .searchFormCategoryBox option {
+
+  .searchFormCategoryBox:focus {
     width: 343px;
+  
+  }
+  .searchFormCategoryBox option {
+    /* width: 343px; */
   }
 
   .searchFormButton {
@@ -208,7 +207,7 @@ button.searchFormButton {
     background-color: #376dc4;
     cursor: pointer;
   }
-  .searchFormSelectBox{
+  .searchFormSelectBox {
     width: 250px;
   }
 }
