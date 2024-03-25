@@ -94,7 +94,7 @@ const LoginPage = () => {
                                 {...register("email", {
                                     required: "Це поле є обов'язковим",
                                     pattern: {
-                                        value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
+                                        value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
                                         message: "Невірний email",
                                     },
                                 })}
@@ -114,10 +114,10 @@ const LoginPage = () => {
                                 placeholder="Ввведіть password"
                                 {...register("password", {
                                     required: "Обов'язкове для заповнення",
-                                    // pattern: {
-                                    //   value: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/,
-                                    //   message: "Невірний password",
-                                    // },
+                                    pattern: {
+                                      value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
+                                      message: "Невірний password",
+                                    },
                                 })}
                                 type="password"
                                 id="password"
