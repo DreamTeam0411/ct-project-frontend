@@ -3,25 +3,26 @@ import styles from "./AllMasters.module.css";
 import {useEffect, useState} from "react";
 import {PuffLoader} from "react-spinners";
 import {NavLink, useNavigate} from "react-router-dom";
-import useFetchAdminMasters from "../../../../stores/AdminStore/fetch_admin_all_masters.tsx"; /* eslint-disable  @typescript-eslint/no-explicit-any */
+ /* eslint-disable  @typescript-eslint/no-explicit-any */
 import {motion} from "framer-motion";
+import useFetchAdminServices from "../../../../stores/AdminStore/fetch_admin_services.tsx";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 function AllMasters() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const {dataMasters, fetchData, deleteMaster} = useFetchAdminMasters();
-    const [data, setData] = useState(dataMasters);
+    const {dataServices, fetchData, deleteService} = useFetchAdminServices();
+    const [data, setData] = useState(dataServices);
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-        const filteredData = dataMasters.filter(
+        const filteredData = dataServices.filter(
             (item) =>
                 item.user.firstName.toLowerCase().includes(search.toLowerCase()) ||
                 item.user.lastName.toLowerCase().includes(search.toLowerCase()) ||
                 item.user.email.toLowerCase().includes(search.toLowerCase()) ||
                 item.category.title.toLowerCase().includes(search.toLowerCase()) ||
-                item.city.name.toLowerCase().includes(search.toLowerCase())
+                item.user.address.toLowerCase().includes(search.toLowerCase())
         );
         setData(filteredData);
     }, [search]);
@@ -31,10 +32,10 @@ function AllMasters() {
     useEffect(() => {
         setLoading(true);
         fetchData();
-        setData(dataMasters);
-        console.log(dataMasters);
+        setData(dataServices);
+        console.log(dataServices);
         setLoading(false);
-    }, [dataMasters.length]);
+    }, [dataServices.length]);
 
 
     return (
@@ -97,18 +98,14 @@ function AllMasters() {
                             </li>
                             <li className={styles.service}>{item.category.title}</li>
                             <li className={styles.email}>{item.user.email}</li>
-                            <li className={styles.address}>{item.city.name}</li>
-                            <li className={styles.phone}>{item.id}</li>
+                            <li className={styles.address}>{item.user.address}</li>
+                            <li className={styles.phone}>{item.user.phoneNumber}</li>
                             <li className={styles.empty}>
                                 {
                                     <DropdownMenu
-                                        deleteMethod={
-
-
-                                            () => {
-                                                const confirmDelete = confirm('Впевненні')
-
-                                                confirmDelete && deleteMaster(item.id)
+                                        deleteMethod={() => {
+                                                const confirmDelete = confirm('Видалити майстра?')
+                                                confirmDelete && deleteService(item.id)
                                             }}
                                         editMethod={() => handleCityClick(item.id)}
                                     />

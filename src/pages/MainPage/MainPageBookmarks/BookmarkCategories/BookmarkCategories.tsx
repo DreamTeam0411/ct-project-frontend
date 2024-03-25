@@ -21,6 +21,7 @@ const BookmarkCategories = () => {
   };
   return (
     <motion.div
+
       initial={{ x: "5%", opacity: 0 }}
       exit={{
         opacity: 0,
@@ -45,6 +46,7 @@ const BookmarkCategories = () => {
       </div>
       {dataCategory.map((item, index) => (
           <motion.div
+
             initial={{ y: 20, opacity: 0 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{
@@ -67,9 +69,12 @@ const BookmarkCategories = () => {
 
               <li className={styles.empty}>
                 <DropdownMenu
+                    key={item.id}
                   deleteMethod={() => {
+                    const assign = confirm("Видалити категорію?")
+                    if (assign) {
                     deleteCategory(item.id)
-                    alert('Видалено')
+                    alert('Видалено')}
                   }}
                   editMethod={() => handleCityClick(item.id)}
                 />

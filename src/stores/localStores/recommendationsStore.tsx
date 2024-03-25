@@ -6,7 +6,9 @@ interface Item {
   serviceName: string;
   cardCategory: string;
   cardAddress: string;
-  cardTel: string;
+  cardTel: number | string;
+  cardEmail:string;
+
 }
 
 interface MyState {
@@ -24,6 +26,7 @@ export const useStoreRecommendations = create<MyState>((set) => ({
       cardCategory: "Майстер манікюру",
       cardAddress: "Політехнічна, 15, Львів",
       cardTel: "050-312-66-55",
+      cardEmail:'4554@gmail.com'
     },
     {
       id: 2,
@@ -32,6 +35,7 @@ export const useStoreRecommendations = create<MyState>((set) => ({
       cardCategory: "Косметолог",
       cardAddress: "Шевченківська, 15, Київ",
       cardTel: "073-658-86-77",
+      cardEmail:'hgfg@gmail.com'
     },
     {
       id: 3,
@@ -40,6 +44,7 @@ export const useStoreRecommendations = create<MyState>((set) => ({
       cardCategory: "Перукар",
       cardAddress: "Героїв праці, 20, Харків",
       cardTel: "093-207-67-55",
+      cardEmail:'fdfs@gmail.com'
     },
     {
       id: 4,
@@ -48,6 +53,7 @@ export const useStoreRecommendations = create<MyState>((set) => ({
       cardCategory: "Масажист",
       cardAddress: "Перемоги, 100, Дніпро",
       cardTel: "073-677-55-90",
+      cardEmail:'dfd54@gmail.com'
     },
   ],
   addItem: (items: Item[]) =>
