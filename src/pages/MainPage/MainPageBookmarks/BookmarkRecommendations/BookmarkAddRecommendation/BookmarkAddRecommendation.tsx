@@ -1,28 +1,33 @@
 import styles from "./BookmarkAddRecommendation.module.css";
-import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useStoreRecommendations} from "../../../../../stores/localStores/recommendationsStore.tsx";
 import {motion} from "framer-motion";
+import useFetchAdminServices from "../../../../../stores/AdminStore/fetch_admin_services.tsx";
 
 const BookmarkAddRecommendation = () => {
     const navigate = useNavigate();
-    const {dataMasters} = useFetchAdminMasters();
+    const {dataServices, fetchData} = useFetchAdminServices();
     const {addItem} = useStoreRecommendations();
     const [recommendation, setRecommendation] = useState("");
     const [showMessage, setShowMessage] = useState(false);
+    useEffect(() => {
+        fetchData()
+    }, []);
     const addRecommendationItem = (id: string | number, e) => {
         e.preventDefault();
         console.log(id);
-        const master = dataMasters.filter((item) => item.user.id == id);
+        const master = dataServices.filter((item) => item.user.id == id);
         console.log(master);
         const items = master.map((master) => ({
-            image: "",
+            image: `https://ct-project-images.s3.eu-central-1.amazonaws.com/service-photos/${master.photo}
+`,
             id: master.user.id,
-            serviceName: master.user.firstName,
+            serviceName: master.user.firstName + ' ' + master.user.lastName,
             cardCategory: master.category.title,
             cardAddress: master.city.name,
-            cardTel: master.user.email,
+            cardTel: master.user.phoneNumber,
+            cardEmail:master.user.email
         }));
         console.log(items);
         addItem(items);
@@ -57,9 +62,9 @@ const BookmarkAddRecommendation = () => {
                                 <option value="" hidden selected>
                                     Виберіть майстра
                                 </option>
-                                {dataMasters.map((el) => (
+                                {dataServices.map((el) => (
                                     <option key={el.user.id} value={el.user.id}>
-                                        {el.user.firstName}
+                                        {el.user.firstName +" "+ el.user.lastName +" "+" ("+  el.category.title+") "}
                                     </option>
                                 ))}
                             </select>

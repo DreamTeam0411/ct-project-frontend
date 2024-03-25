@@ -1,25 +1,26 @@
 import {useParams} from "react-router-dom";
 
 import EditMaster from "./EditMaster.tsx";
-import useFetchAdminMasters from "../../../../../stores/AdminStore/fetch_admin_all_masters.tsx";
+import useFetchAdminServices from "../../../../../stores/AdminStore/fetch_admin_services.tsx";
 
 
 
 
 const EditMasterPage = () => {
     const searchParams = useParams();
-    const {dataMasters} = useFetchAdminMasters();
+    const {dataServices} = useFetchAdminServices();
     console.log(searchParams)
-    if (dataMasters.length !== 0 && searchParams.id !== undefined)
+    if (dataServices.length !== 0 && searchParams.id !== undefined)
         return (
 
             <div>
-                {dataMasters.map(
+                {dataServices.map(
                     (data) =>
                         data.id === +searchParams.id ? (
                             <EditMaster
                                 key={data.id}
                                 data={data}
+                                id={data.id}
                             />
                         ) : (
                             ""

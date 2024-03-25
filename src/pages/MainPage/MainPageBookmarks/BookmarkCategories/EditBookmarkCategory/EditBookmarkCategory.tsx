@@ -7,9 +7,9 @@ import {useNavigate} from "react-router-dom";
 
 
 const EditBookmarkCategory = ({title, id, icon}) => {
-    console.log(icon)
+
     const navigate = useNavigate();
-    const {dataCategory, editCategory} = useFetchAdminCategories();
+    const {editCategory, deleteCategory} = useFetchAdminCategories();
     const {register, handleSubmit, setValue, reset, getValues} = useForm({
         defaultValues: {
             input: title,
@@ -21,49 +21,40 @@ const EditBookmarkCategory = ({title, id, icon}) => {
     const [message, setMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [selectedImage, setSelectedImage] = useState(icon);
+    const [URLImage, setURLImage] = useState(`https://ct-project-images.s3.eu-central-1.amazonaws.com/category-photos/${selectedImage}`)
 
 
-    useEffect(() => {
-        setValue(
-            "input",
-            `${title}`
-        );
-
-        setValue("image", icon);
-    }, [icon, setValue]);
-
-    const onSubmit = (data) => {
+    const onSubmit = (data, event) => {
+        event.preventDefault();
         console.log(data)
+        if (typeof data.image === "string") {
+            data.image = null
+        }
         const updatedCategory = {
-            ...dataCategory.find(category => category.id === id),
             title: data.input,
-            icon: getValues('image'),
-
+            icon: data.image,
+            _method: "PATCH"
         };
         editCategory(id, updatedCategory);
 
-
+        (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
         setMessage("Збережено");
         setShowMessage(true);
         setTimeout(() => {
             setShowMessage(false);
             setMessage("");
-        }, 3000);
-        navigate("/admin-panel/main-page/categories");
+
+            navigate("/admin-panel/main-page/categories");
+        }, 2000);
+
     };
 
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
+        console.log(e.target.files[0])
 
-        reader.onloadend = () => {
-            setSelectedImage(reader.result);
-            setValue("image", reader.result as string);
-        };
+        setValue("image", e.target.files[0])
+        setURLImage(URL.createObjectURL(e.target.files[0]))
 
-        if (file) {
-            reader.readAsDataURL(file);
-        }
     };
 
     const handleImageClick = () => {
@@ -78,8 +69,8 @@ const EditBookmarkCategory = ({title, id, icon}) => {
         });
     };
     useEffect(() => {
-        setValue("image", getValues("image"));
-    }, [getValues("image"), handleImageChange, handleImageClick]);
+        console.log(selectedImage)
+    }, [getValues("image"), handleImageChange, handleImageClick, selectedImage]);
 
     return (
         <motion.div
@@ -90,7 +81,21 @@ const EditBookmarkCategory = ({title, id, icon}) => {
             transition={{duration: 0.2, ease: "linear"}}
         >
             <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={styles.deleteButtonBlock}>
+                    <button className={styles.deleteButton} onClick={(e) => {
+                        e.preventDefault();
+                        const assign = confirm("Видалити категорію?")
+                        if (assign) {
+                        deleteCategory(id);
+                        navigate("/admin-panel/main-page/categories");
+                        }
+                        (document.querySelector('button[type="submit"]') as HTMLButtonElement).disabled = true;
+                    }}
+                    ><img src="/bin.svg" alt="delete"/></button>
+                </div>
+
                 <div className={styles.content}>
+
                     <div className={styles.forms}>
                         <h2>Редагувати Категорію</h2>
                         <div className={styles.inputsTitle}>
@@ -113,22 +118,25 @@ const EditBookmarkCategory = ({title, id, icon}) => {
                         <h2>Фото</h2>
                         <input
                             type="file"
-                            accept="image/*"
+                            accept="image/jpeg"
                             onChange={handleImageChange}
                             ref={fileInputRef}
                             style={{display: "none"}}
+
                         />
                         <img
                             className={styles.image}
-                            src={`https://ct-project-images.s3.eu-central-1.amazonaws.com/category-photos/
-${selectedImage}`}
+                            src={URLImage}
+
                             alt="Image"
                             onClick={handleImageClick}
                             style={{cursor: "pointer"}}
                         />
                     </div>
-                </div>
 
+
+                </div>
+                <input type="hidden" name='_method' value='PATCH'/>
             </form>
             {showMessage && (
                 <div
@@ -138,6 +146,7 @@ ${selectedImage}`}
                     {message}
                 </div>
             )}
+
         </motion.div>
     );
 };

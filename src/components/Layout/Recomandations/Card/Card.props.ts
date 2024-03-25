@@ -4,6 +4,6 @@ export interface CardProps {
     serviceName: string;
     cardCategory: string;
     cardAddress: string;
-    cardTel: string;
+    cardTel: string | number;
   
 }

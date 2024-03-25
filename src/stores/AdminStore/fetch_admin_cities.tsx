@@ -2,15 +2,15 @@ import {create} from "zustand";
 import {persist} from "zustand/middleware";
 import {FetchDataAdmin} from "./fetch_admin_data.tsx";
 import {ADMIN_CITIES} from "../ROUTES.tsx";
-import {deleteCityAdmin} from "./deleteCityAdmin.tsx";
+
 import axios from "axios";
 
 interface RootCities {
     dataCity: City[];
-    fetchData: () => Promise<City>;
+    fetchDataCities: () => Promise<City>;
     deleteCity: (id: number) => Promise<void>;
-    addCity: (city: string) => void;
-    editCity: (id: number, newName: string) => void;
+    addCity: (city: string, countryId:number) => void;
+    editCity: (id: number, newName: string, countryId:number) => void;
 }
 
 export interface City {
@@ -44,7 +44,7 @@ const useFetchAdminCities = create<RootCities>()(
                 },
             ],
 
-            fetchData: async (): Promise<City> => {
+            fetchDataCities: async (): Promise<City> => {
                 const response = FetchDataAdmin(ADMIN_CITIES).then(
                     (res) => res.data.data
                 );
@@ -53,19 +53,36 @@ const useFetchAdminCities = create<RootCities>()(
                 return await response;
             },
             deleteCity: async (id: number): Promise<void> => {
-                await deleteCityAdmin(id);
-                const updatedData = get().dataCity.filter((city) => city.id !== id);
-                set({dataCity: updatedData});
+                try {
+                    const token = localStorage.getItem("token");
+                    const response = await axios.delete(
+                        `https://ct-project.pp.ua/api/v1/admin/cities/${id}`,
+                        {
+                            headers: { Authorization: "Bearer " + token },
+                        }
+
+                    );
+
+                    if (response.status === 204) {
+                        const updatedData = get().dataCity.filter((city) => city.id !== id);
+                        set({dataCity: updatedData});
+                        alert('Видалено')
+                    }
+
+                } catch (error) {
+                    console.error(error);
+                }
+
             },
-            addCity: async (city: string): Promise<void> => {
+            addCity: async (city: string, countryId: number ): Promise<void> => {
                 const token = localStorage.getItem("token");
 
                 const newId = Math.max(...get().dataCity.map((city) => city.id)) + 1;
                 const updatedData = [...get().dataCity, {id: newId, name: city}];
                 try {
-                    await axios.post(`https://ct-project.pp.ua/api/v1/admin/cities`, {id: newId, name: city}, {
+                    await axios.post(`https://ct-project.pp.ua/api/v1/admin/cities`, {id: newId, name: city, countryId }, {
                         headers: {
-                            Authorization: 'Bearer' + token
+                            Authorization: 'Bearer ' + token
                         }
                     });
                 } catch (error) {
@@ -73,12 +90,13 @@ const useFetchAdminCities = create<RootCities>()(
                 }
                 set({dataCity: updatedData});
             },
-            editCity:async (id: number, newName: string): Promise<void> => {
+            editCity:async (id: number, newName: string, countryId:number): Promise<void> => {
                 const token = localStorage.getItem("token");
+                console.log(token)
                 try {
-                    await axios.put(`https://ct-project.pp.ua/api/v1/admin/cities/${id}`, { id, name: newName }, {
+                    await axios.put(`https://ct-project.pp.ua/api/v1/admin/cities/${id}`, { id, name: newName, countryId }, {
                         headers: {
-                            Authorization: 'Bearer' + token
+                            Authorization: 'Bearer ' + token
                         }
                     });
 

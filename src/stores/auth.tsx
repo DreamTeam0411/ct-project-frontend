@@ -36,11 +36,10 @@ export const useGetData = create((set) => {
 
                 res.data.roles.forEach((role) => {
                     if (role.id !== 1) {
-
                         alert("You are not an admin ");
                     }
                     const token = res.data.Bearer.accessToken;
-                    console.log(token);
+                    console.log(token, res);
                     setAuthHeader(token);
                     localStorage.setItem("token", token);
 
@@ -51,8 +50,8 @@ export const useGetData = create((set) => {
                     });
                 });
             } catch (err) {
-                console.error("Error in data fetch:", err);
-
+                console.log("Error in data fetch:", err.message);
+                alert(`Error in data fetch:${err.message}` );
                 set({...initialState, error: true, errorData: err.message});
             }
         },

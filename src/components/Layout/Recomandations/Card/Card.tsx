@@ -13,8 +13,8 @@ const Card: React.FC<CardProps> = ({
   const navigate = useNavigate();
   return (
     <div className={styles.card}>
-      <div className={styles.image}>
-        <img
+      <div className={styles.imageBlock}>
+        <img className={styles.image}
           src={image}
           alt="icon"
           onClick={() => {
