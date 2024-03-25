@@ -56,9 +56,6 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
               setCategoryState(evt.target.value);
             }}
           >
-            <option disabled hidden>
-              Сервіс
-            </option>
             <option value="">Всі сервіси</option>
             {dataStateCategories.map((el) => (
               <option key={el.id} value={el.slug}>
