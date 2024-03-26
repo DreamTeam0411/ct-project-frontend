@@ -17,13 +17,13 @@ const BookmarkAboutUs = () => {
   const fileInputRef = useRef(null);
   const [message, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
-  const [text, setText] = useState(getValues("input2")); // Используйте useState для отслеживания изменений в поле textarea
+  const [text, setText] = useState(getValues("input2"));
 
   const handleInputChange = (event) => {
-    setText(event.target.value); // Обновите состояние text при каждом изменении поля textarea
+    setText(event.target.value);
   };
   useEffect(() => {
-    setText(getValues("input2")); // Обновите состояние text при изменении input2
+    setText(getValues("input2"));
   }, [getValues("input2")]);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const BookmarkAboutUs = () => {
             <h2>Фото</h2>
             <input
                 type="file"
-                accept="image/*"
+                accept="image/jpeg"
                 onChange={handleImageChange}
                 ref={fileInputRef}
               style={{ display: "none" }}

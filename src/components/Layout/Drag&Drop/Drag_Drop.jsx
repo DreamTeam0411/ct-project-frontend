@@ -59,6 +59,7 @@ function FileUpload() {
           <input
             className={styles.input}
             type="file"
+            accept="image/jpeg"
             multiple={true}
             onChange={handleChange}
           />

@@ -8,7 +8,7 @@ interface State {
   clear: () => void;
 }
 export const useStoreContacts = create<State>((set) => ({
-  phoneNumber: "+380 735 98 67",
+  phoneNumber: "+38(063) 000-0000",
   email: "beautybook@gmail.com",
   setPhoneNumber: (number) => set({ phoneNumber: number }),
   setEmail: (email) => set({ email: email }),

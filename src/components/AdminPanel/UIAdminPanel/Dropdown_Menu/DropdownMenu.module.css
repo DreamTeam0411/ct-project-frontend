@@ -25,7 +25,7 @@ justify-content: center;
 .menu {
   position: absolute;
   top: calc(50% + 5px);
-  right: -150px;
+  right: 25px;
     min-width: 60px;
     min-height: 50px;
   max-width: 160px;

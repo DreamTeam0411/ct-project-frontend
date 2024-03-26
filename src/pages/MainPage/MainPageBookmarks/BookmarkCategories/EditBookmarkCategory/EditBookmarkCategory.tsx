@@ -1,5 +1,5 @@
 import {useForm} from "react-hook-form";
-import {useEffect, useRef, useState} from "react";
+import { useRef, useState} from "react";
 import {motion} from "framer-motion";
 import styles from "../../BookmarkBanner/BookmarkBanner.module.css";
 import useFetchAdminCategories from "../../../../../stores/AdminStore/fetch_admin_categories.tsx";
@@ -10,7 +10,7 @@ const EditBookmarkCategory = ({title, id, icon}) => {
 
     const navigate = useNavigate();
     const {editCategory, deleteCategory} = useFetchAdminCategories();
-    const {register, handleSubmit, setValue, reset, getValues} = useForm({
+    const {register, handleSubmit, setValue, reset, } = useForm({
         defaultValues: {
             input: title,
             image: icon,
@@ -68,9 +68,7 @@ const EditBookmarkCategory = ({title, id, icon}) => {
             image: icon,
         });
     };
-    useEffect(() => {
-        console.log(selectedImage)
-    }, [getValues("image"), handleImageChange, handleImageClick, selectedImage]);
+
 
     return (
         <motion.div

@@ -115,7 +115,7 @@ const LoginPage = () => {
                                 {...register("password", {
                                     required: "Обов'язкове для заповнення",
                                     pattern: {
-                                      value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$/,
+                                      value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,32}$/,
                                       message: "Невірний password",
                                     },
                                 })}
