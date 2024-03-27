@@ -26,7 +26,7 @@ export const StepTwo: React.FC<IStepProps> = ({ changeActiveStep }) => {
   useEffect(() => {
     fetchDataCategories();
   }, []);
-  const submit: SubmitHandler<IFormData> = (data): void => {
+  const submit: SubmitHandler<IFormData> = (): void => {
     // console.log("Form data submitted:", data);
     changeActiveStep(3);
   };

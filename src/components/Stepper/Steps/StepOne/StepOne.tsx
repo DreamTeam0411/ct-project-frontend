@@ -21,7 +21,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
     handleSubmit,
   } = useForm<IFormData>({ mode: "onChange" });
 
-  const submit: SubmitHandler<IFormData> = (data): void => {
+  const submit: SubmitHandler<IFormData> = (): void => {
     // console.log("Form data submitted:", data);
     changeActiveStep(2);
   };
