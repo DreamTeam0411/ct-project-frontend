@@ -92,12 +92,12 @@ const useFetchDataAllMasters = create<Root>()(
         if (!city && category) {
           categoryLink = `?category=${category}`;
         }
-        console.log(categoryLink, cityLink);
+        // console.log(categoryLink, cityLink);
         const url = `${SERVICES}${categoryLink + cityLink}`;
 
         const response = await axios.get(url);
         set({ data: await response.data.data });
-        console.log(response.data.data);
+        // console.log(response.data.data);
         return response.data.data;
       },
     }),

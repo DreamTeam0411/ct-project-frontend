@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export const StepThree: React.FC<IStepProps> = ({ changeActiveStep }) => {
   const completeSteps = () => {
     changeActiveStep(4);
-    console.log("check conditions and/or push to new route");
+    // console.log("check conditions and/or push to new route");
   };
 
   return (
