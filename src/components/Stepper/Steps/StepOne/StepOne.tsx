@@ -49,7 +49,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
                   },
                   pattern: {
                     value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
-                    message: "Неправильні сімволи",
+                    message: "Невірні символи",
                   },
                 })}
                 type="text"
@@ -74,7 +74,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
                   },
                   pattern: {
                     value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
-                    message: "Неправильні сімволи",
+                    message: "Невірні символи",
                   },
                 })}
                 type="text"

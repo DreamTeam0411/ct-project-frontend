@@ -5,6 +5,7 @@ import {ADMIN_CATEGORIES} from "../ROUTES.tsx";
 import axios from "axios";
 
 
+
 interface RootCategories {
     dataCategory: Category[];
     fetchData: () => Promise<Category>;
@@ -72,6 +73,7 @@ const useFetchAdminCategories = create<RootCategories>()(
                 return await response;
             },
             addCategory: async (addCategoryStore): Promise<void> => {
+
                 const newId = Math.max(...get().dataCategory.map((city) => city.id)) + 1;
                 const newCategory: Category = {
                     createdAt: "",
@@ -107,6 +109,7 @@ const useFetchAdminCategories = create<RootCategories>()(
                         const updatedData: Category[] = [...get().dataCategory, response.data];
                         set({dataCategory: updatedData});
                         alert('Категорія додана')
+
                     }
                 } catch (error) {
                     if (error.response.status === 400) {

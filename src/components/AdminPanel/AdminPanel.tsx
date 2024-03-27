@@ -1,7 +1,7 @@
 import SideBar from "./UIAdminPanel/SideBar/SideBar.tsx";
 import styles from "./AdminPanel.module.css";
 import PagesLayer from "./UIAdminPanel/PagesLayer/PagesLayer.tsx";
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes, useLocation, useNavigate,} from "react-router-dom";
 import Contacts from "./pages/Contacts/Contacts.tsx";
 import MainPageAdmin from "./pages/MainPageAdmin/MainPageAdmin.tsx";
 import Business from "./pages/Business/Business.tsx";
@@ -27,13 +27,24 @@ import {
 import EditBookmarkCategoryPage
     from "../../pages/MainPage/MainPageBookmarks/BookmarkCategories/EditBookmarkCategory/EditBookmarkCategoryPage.tsx";
 import EditMasterPage from "./pages/AllMasters/EditMaster/EditMasterPage.tsx";
+import {useEffect} from "react";
 
 
 function AdminPanel() {
 
-
     const location = useLocation();
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        if (!token) {
+            alert('Ви не адміністратор');
+            navigate('/');
+        }
+    }, [navigate, token]);
+
     return (
+
         <motion.div
             className={styles.container}
             initial={{x: 10, opacity: 0}}
@@ -103,6 +114,7 @@ function AdminPanel() {
                 </AnimatePresence>
             </div>
         </motion.div>
+
     );
 }
 

@@ -31,10 +31,16 @@ export interface Master {
     title: string;
     updatedAt: string;
     user: {
-        email: string;
+        id:number
         firstName: string;
-        id: number;
         lastName: string;
+        phoneNumber:string
+        address:string;
+        link:string;
+        email: string;
+
+
+
     };
 }
 
@@ -61,10 +67,14 @@ const useFetchAdminMasters = create<RootMasters>()(
                     title: "",
                     updatedAt: "",
                     user: {
+                        id:null,
+                        firstName:'',
+                        lastName:'',
+                        phoneNumber:'',
+                        address:'',
+                        link:'',
                         email: "",
-                        firstName: "",
-                        id: null,
-                        lastName: "",
+
                     },
                 },
             ],
@@ -87,6 +97,7 @@ const useFetchAdminMasters = create<RootMasters>()(
                 const response = await axios.post(ADMIN_SERVICES, newMaster,{
                     headers: {
                         Authorization: "Bearer " + token,
+                        "Content-Type": 'multipart/form-data'
                     },
                 });
 
