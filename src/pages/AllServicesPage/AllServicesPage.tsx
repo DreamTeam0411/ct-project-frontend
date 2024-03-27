@@ -24,7 +24,7 @@ export const AllServicesPage = () => {
   const category = searchParams.get("category");
   const city = searchParams.get("city");
 
-  console.log(city, category);
+  // console.log(city, category);
 
   useEffect(() => {
     try {

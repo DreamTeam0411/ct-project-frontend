@@ -11,7 +11,7 @@ export const ServicePage = () => {
   const searchParams = useParams();
   const searchId: undefined | string | number = searchParams.serviceId;
   const dataState = useFetchDataAllMasters((state) => state.data);
-  console.log(searchParams.serviceId);
+  // console.log(searchParams.serviceId);
 
   if (dataState.length !== 0 && searchId !== undefined)
     return (<>

@@ -22,7 +22,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
   } = useForm<IFormData>({ mode: "onChange" });
 
   const submit: SubmitHandler<IFormData> = (data): void => {
-    console.log("Form data submitted:", data);
+    // console.log("Form data submitted:", data);
     changeActiveStep(2);
   };
 
@@ -48,7 +48,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
                     message: "Мінімум три символи",
                   },
                   pattern: {
-                    value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
+                    value: /^[А-Яа-яёЁЇїІіЄєҐґa-zA-Z]{2,20}$/,
                     message: "Невірні символи",
                   },
                 })}
@@ -73,7 +73,7 @@ export const StepOne: React.FC<IStepProps> = ({ changeActiveStep }) => {
                     message: "Мінімум три символи",
                   },
                   pattern: {
-                    value: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/,
+                    value: /^[А-Яа-яёЁЇїІіЄєҐґa-zA-Z]{2,20}$/,
                     message: "Невірні символи",
                   },
                 })}

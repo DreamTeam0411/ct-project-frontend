@@ -4,7 +4,7 @@ import { useStoreRecommendations } from "../../../stores/localStores/recommendat
 
 const Recommendations = () => {
   const items = useStoreRecommendations((state) => state.items);
-  console.log(items);
+  // console.log(items);
   return (
     <div className={styles.recommendations}>
       <div className={styles.recommendationsTitle}>Рекомендовано</div>
